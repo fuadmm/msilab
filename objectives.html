@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objectives & Research Roadmap | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Major research objectives of MSI Lab at University of Chittagong: Strategic viral interventions, molecular immune signaling, protein technology, and multidisciplinary synergy." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .card:hover { border-color: rgba(22,91,51,0.35); box-shadow: var(--card-hover); transform: translateY(-2px); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
+  
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+  </style>
+  <script>
+    // Robust image loader for both local file:/// and web server protocols
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!img.dataset.retry) {
+          img.dataset.retry = '1';
+          if (currentSrc.startsWith('public/')) {
+            img.src = currentSrc.substring(7);
+          } else if (currentSrc.startsWith('/')) {
+            img.src = 'public' + currentSrc;
+          } else {
+            img.src = 'public/' + currentSrc;
+          }
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+            <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="facilities.html" class="nav-link ">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link ">Publications</a>
+        <a href="collaborations.html" class="nav-link ">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn active" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f1f5f9;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  
+  <!-- Page Banner - Uniform Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Institutional Research Roadmap</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          Major Objectives of Our Research Projects
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 0;">
+          Addressing urgent tropical infectious diseases through multi-scale structural biology, protein engineering, and translational vaccinology across four tightly integrated core domains.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 4 Core Objective Areas -->
+  <section style="padding: 4.5rem 0; background: #f8fafc; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container" style="display: flex; flex-direction: column; gap: 2.5rem;">
+      
+      <!-- Objective 1 -->
+      <div class="card" style="overflow: hidden; border-radius: 1.5rem; border: 1px solid var(--border-color); box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);">
+        <div style="position: relative; height: 210px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.88) 100%), url('public/images/objectives/domain-01-vaccines.jpg') center/cover no-repeat; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-end;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="badge" style="background: var(--primary); color: #fff; font-size: 0.75rem; font-weight: 800;">Domain 01</span>
+              <span class="badge" style="background: rgba(0,0,0,0.5); color: #6ee7b7; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px); font-size: 0.725rem;">Viral Vaccinology</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #d1fae5; font-weight: 600;">Core Domain</span>
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.4); margin: 0;">
+            Strategic Viral Countermeasures &amp; Pan-Vaccine Engineering
+          </h2>
+        </div>
+        <div style="padding: 2rem;">
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.5rem;">
+            Engineering stable, recombinant subunit vaccine immunogens against rapidly evolving tropical viral pathogens—principally SARS-CoV-2 (Omicron lineages), Dengue virus (all 4 circulating serotypes), and Japanese Encephalitis Virus (JEV). We focus on solving inclusion body insolubility using patented solubility tags to produce affordable, shelf-stable vaccines for developing nations.
+          </p>
+          <div class="grid-2">
+            <div style="background: #f8fafc; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #e2e8f0;">
+              <strong style="font-size: 0.8rem; color: var(--primary); text-transform: uppercase;">Methodologies:</strong>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>High-yield bacterial expression in Escherichia coli</li>
+                <li>Thermo Scientific &amp; Hitachi HPLC size-exclusion &amp; ion-exchange chromatography</li>
+                <li>Negative-stain Cryo-EM &amp; X-ray crystallography structural modeling</li>
+              </ul>
+            </div>
+            <div style="background: #f0fdf4; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #bbf7d0;">
+              <strong style="font-size: 0.8rem; color: #166534; text-transform: uppercase;">Key Deliverables:</strong>
+              <ul style="font-size: 0.825rem; color: #14532d; margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>Tetravalent Dengue ED3 vaccine candidates avoiding ADE</li>
+                <li>Room-temperature stable non-glycosylated Omicron RBD antigens</li>
+                <li>Validated JEV EDIII subunit immunogen (Vaccine 2025)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objective 2 -->
+      <div class="card" style="overflow: hidden; border-radius: 1.5rem; border: 1px solid var(--border-color); box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);">
+        <div style="position: relative; height: 210px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.88) 100%), url('public/images/objectives/domain-02-host-signaling.jpg') center/cover no-repeat; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-end;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="badge" style="background: #0284c7; color: #fff; font-size: 0.75rem; font-weight: 800;">Domain 02</span>
+              <span class="badge" style="background: rgba(0,0,0,0.5); color: #7dd3fc; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px); font-size: 0.725rem;">Host Signaling</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #e0f2fe; font-weight: 600;">Core Domain</span>
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.4); margin: 0;">
+            Molecular Immune Signaling &amp; Host-Pathogen Interfaces
+          </h2>
+        </div>
+        <div style="padding: 2rem;">
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.5rem;">
+            Dissecting the biophysical networks governing host immune recognition and viral evasion. We investigate pattern recognition receptor (PRR) activation, cytokine storm triggers, and the hazardous phenomenon of Antibody-Dependent Enhancement (ADE) where sub-neutralizing antibodies worsen secondary infections.
+          </p>
+          <div class="grid-2">
+            <div style="background: #f8fafc; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #e2e8f0;">
+              <strong style="font-size: 0.8rem; color: #0369a1; text-transform: uppercase;">Methodologies:</strong>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>Surface Plasmon Resonance (SPR) &amp; biolayer interferometry kinetics</li>
+                <li>High-throughput flow cytometry &amp; cytokine bead arrays</li>
+                <li>Neutralizing antibody plaque-reduction neutralization testing (PRNT)</li>
+              </ul>
+            </div>
+            <div style="background: #f0f9ff; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #bae6fd;">
+              <strong style="font-size: 0.8rem; color: #075985; text-transform: uppercase;">Key Deliverables:</strong>
+              <ul style="font-size: 0.825rem; color: #0c4a6e; margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>Identification of ADE-inducing vs neutralizing epitopes on Dengue ED3</li>
+                <li>Correlation of cycle threshold (Ct) values with host immunity kinetics</li>
+                <li>Longitudinal immune durability data in recovering Bangladeshi cohorts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objective 3 -->
+      <div class="card" style="overflow: hidden; border-radius: 1.5rem; border: 1px solid var(--border-color); box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);">
+        <div style="position: relative; height: 210px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.88) 100%), url('public/images/objectives/domain-03-protein-technology.jpg') center/cover no-repeat; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-end;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="badge" style="background: #7e22ce; color: #fff; font-size: 0.75rem; font-weight: 800;">Domain 03</span>
+              <span class="badge" style="background: rgba(0,0,0,0.5); color: #d8b4fe; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px); font-size: 0.725rem;">Patent WO2019031446</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #f3e8ff; font-weight: 600;">Core Domain</span>
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.4); margin: 0;">
+            Protein Technology &amp; Solubility-Controlling Peptide Tags
+          </h2>
+        </div>
+        <div style="padding: 2rem;">
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.5rem;">
+            Developing and scaling proprietary peptide tag technology to overcome the greatest roadblock in therapeutic biotechnology: protein insolubility and misfolding. Invented jointly with Kuroda Lab at TUAT Tokyo, our patented system enables complex viral antigens and therapeutic enzymes to fold properly without inclusion body formation.
+          </p>
+          <div class="grid-2">
+            <div style="background: #f8fafc; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #e2e8f0;">
+              <strong style="font-size: 0.8rem; color: #7e22ce; text-transform: uppercase;">Methodologies:</strong>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>In silico peptide design &amp; rational charge distribution modeling</li>
+                <li>Circular dichroism (CD) &amp; fluorescence spectroscopic refolding</li>
+                <li>Turbidity and dynamic light scattering (DLS) aggregation profiling</li>
+              </ul>
+            </div>
+            <div style="background: #faf5ff; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #e9d5ff;">
+              <strong style="font-size: 0.8rem; color: #6b21a8; text-transform: uppercase;">Key Deliverables:</strong>
+              <ul style="font-size: 0.825rem; color: #581c87; margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>Commercialization-ready protocol for low-cost antigen manufacturing</li>
+                <li>Library of solubility-enhancing peptide tags for therapeutic proteins</li>
+                <li>Reduced downstream manufacturing costs for tropical diagnostics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objective 4 -->
+      <div class="card" style="overflow: hidden; border-radius: 1.5rem; border: 1px solid var(--border-color); box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);">
+        <div style="position: relative; height: 210px; background: linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.88) 100%), url('public/images/objectives/domain-04-public-health.jpg') center/cover no-repeat; padding: 1.5rem; display: flex; flex-direction: column; justify-content: flex-end;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span class="badge" style="background: #b45309; color: #fff; font-size: 0.75rem; font-weight: 800;">Domain 04</span>
+              <span class="badge" style="background: rgba(0,0,0,0.5); color: #fde68a; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px); font-size: 0.725rem;">Global Alliances</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #fef3c7; font-weight: 600;">Core Domain</span>
+          </div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: #ffffff; text-shadow: 0 2px 4px rgba(0,0,0,0.4); margin: 0;">
+            Multidisciplinary Translation, Academic Mentorship &amp; Public Health
+          </h2>
+        </div>
+        <div style="padding: 2rem;">
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.5rem;">
+            Translating fundamental molecular immunology into tangible diagnostic devices and outbreak surveillance data for the Ministry of Health (MOHFW), Directorate General of Health Services (DGHS), and international global health agencies. Fostering bilateral student exchange programs with Japan and the World Bank HEAT project.
+          </p>
+          <div class="grid-2">
+            <div style="background: #f8fafc; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #e2e8f0;">
+              <strong style="font-size: 0.8rem; color: #b45309; text-transform: uppercase;">Methodologies:</strong>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>Epidemiological serosurveys across Southeastern Bangladesh</li>
+                <li>Hands-on training in FPLC chromatography and Real-Time PCR</li>
+                <li>Bilateral research exchanges with Kuroda Lab (TUAT Tokyo)</li>
+              </ul>
+            </div>
+            <div style="background: #fffbeb; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #fde68a;">
+              <strong style="font-size: 0.8rem; color: #92400e; text-transform: uppercase;">Key Deliverables:</strong>
+              <ul style="font-size: 0.825rem; color: #78350f; margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6;">
+                <li>Advisory briefs for national Dengue and respiratory virus guidelines</li>
+                <li>Alumni placements in doctoral programs abroad (Purdue, UT Austin, Texas A&amp;M)</li>
+                <li>Sustainable regional biorepository for emerging viral pathogens</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Facilities Teaser Banner with Background Image -->
+  <section style="padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      <div style="position: relative; background: linear-gradient(135deg, rgba(7, 34, 18, 0.94) 0%, rgba(22, 91, 51, 0.88) 100%), url('public/images/objectives/facilities-suite-bg.jpg') center/cover no-repeat; color: #fff; border-radius: 1.5rem; padding: 3.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; box-shadow: 0 12px 30px -5px rgba(22,91,51,0.3); border: 1px solid rgba(255,255,255,0.15);">
+        <div style="max-width: 650px;">
+          <div class="badge" style="background: rgba(255,255,255,0.15); color: #a7f3d0; margin-bottom: 0.75rem; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(4px);">
+            Laboratory Infrastructure
+          </div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.75rem; letter-spacing: -0.02em;">
+            Explore Our State-of-the-Art Research Facilities
+          </h2>
+          <p style="font-size: 0.95rem; color: #d1fae5; line-height: 1.6;">
+            Discover our dedicated inventory of 16+ advanced scientific platforms—including the Beckman CytoFLEX Flow Cytometer, Illumina MiniSeq NGS, Hitachi &amp; Thermo HPLC systems, Haier Refrigerated Centrifuges, Haier Biosafety Suites, ASTEC CO₂ Incubators, and Euromex Fluorescence Microscopy.
+          </p>
+        </div>
+        <div>
+          <a href="facilities.html" class="btn" style="background: #fff; color: var(--primary); font-size: 0.9rem; padding: 0.75rem 1.75rem; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,0.15);">
+            View Full Facilities Directory →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA to Apply with Background Image -->
+  <section style="position: relative; background: linear-gradient(135deg, rgba(7, 34, 18, 0.95) 0%, rgba(14, 63, 34, 0.9) 100%), url('public/images/objectives/objectives-hero-bg.jpg') center/cover no-repeat; color: #fff; padding: 4.5rem 0; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="max-w-container" style="max-width: 760px; margin: 0 auto;">
+      <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 1rem;">Conduct Your Thesis or Research in Our Lab</h2>
+      <p style="font-size: 1rem; color: #d1fae5; line-height: 1.7; margin-bottom: 2rem;">
+        We welcome applications from motivated students interested in protein technology, molecular virology, and structural vaccinology.
+      </p>
+      <a href="apply.html" class="btn btn-white" style="font-size: 0.95rem; padding: 0.75rem 1.75rem; box-shadow: 0 4px 14px rgba(0,0,0,0.2);">
+        Submit Research Application Form →
+      </a>
+    </div>
+  </section>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,3459 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Researcher Profile | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Academic thesis details, supervisor mentorship, and research portfolio of MSI Lab researchers and alumni, Department of Biochemistry & Molecular Biology, University of Chittagong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: var(--slate-50); line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-blue { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .badge-amber { background-color: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1.25rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+    .thesis-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+      border: 2px solid #bbf7d0;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .lab-grid-bg {
+      background-color: #f1f5f9;
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(22, 91, 51, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(22, 91, 51, 0.04) 1px, transparent 1px);
+    }
+
+    .profile-card-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .profile-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="facilities.html" class="nav-link">Facilities</a>
+        <a href="projects.html" class="nav-link">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link active nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="collaborations.html" class="nav-link">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Page Banner - Uniform with Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        
+        <!-- Breadcrumb Navigation -->
+        <div style="font-size: 0.825rem; color: var(--slate-500); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+          <a href="index.html" style="color: var(--slate-600); font-weight: 600;">Home</a>
+          <span>/</span>
+          <a href="team.html" style="color: var(--slate-600); font-weight: 600;">People &amp; Alumni</a>
+          <span>/</span>
+          <span id="breadcrumb-name" style="color: var(--primary); font-weight: 700;">Researcher Profile</span>
+        </div>
+
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span id="hero-badge">MSI Lab Researcher Profile &amp; Thesis Defense</span>
+        </div>
+
+        <h1 id="hero-name" style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          Researcher Profile
+        </h1>
+
+        <p id="hero-affiliation" style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 2rem;">
+          Department of Biochemistry &amp; Molecular Biology · University of Chittagong
+        </p>
+
+        <!-- Sub navigation pills & Jump to member dropdown -->
+        <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="team.html" class="btn btn-primary">
+            <span>← All People Directory</span>
+          </a>
+          <a href="publications.html" class="btn btn-secondary">
+            <span>Lab Publications</span>
+          </a>
+          <div style="display: flex; align-items: center; gap: 0.5rem; background: #ffffff; border: 1px solid var(--border-color); padding: 0.4rem 0.75rem; border-radius: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+            <label for="researcher-select" style="font-size: 0.75rem; font-weight: 700; color: var(--slate-500);">Jump to:</label>
+            <select id="researcher-select" onchange="switchMember(this.value)" style="border: none; background: transparent; font-size: 0.8rem; font-family: inherit; font-weight: 600; color: var(--slate-800); cursor: pointer; outline: none;">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Container -->
+  <main class="max-w-container" style="padding: 4rem 1.5rem 5rem 1.5rem;">
+    <div id="member-profile-target">
+      <!-- Injected by JavaScript -->
+    </div>
+
+    <!-- Quick Navigation Pagination -->
+    <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;" id="prev-next-container">
+      <!-- Injected by JavaScript -->
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Complete Dataset for all researchers
+    const membersData = [
+  {
+    "id": "minhajur-rahman",
+    "name": "Minhajur Rahman",
+    "role": "Doctoral Fellow (Ph.D. Candidate) · Associate Professor",
+    "senioritySession": "Doctoral Research",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "Rational Design of Dengue Subunit Vaccines Integrated with Potential Plant Adjuvants and Pharmacognostical Biomolecules",
+    "submissionDate": "Ongoing Doctoral Research",
+    "shortAbstract": "Investigating the rational design of dengue subunit vaccines integrated with botanical adjuvants and natural product immunomodulators, bridging botanical pharmacognosy with structural molecular immunology.",
+    "affiliation": "University of Chittagong",
+    "currentPosition": "Associate Professor, Department of Botany",
+    "currentInstitution": "University of Chittagong",
+    "department": "Department of Botany",
+    "email": "minhaj_bot@cu.ac.bd",
+    "phone": "+8801819624004",
+    "linkedin": "https://www.linkedin.com/in/minhajur-rahman-22a522b1/",
+    "researchgate": "https://www.researchgate.net/profile/Minhajur_Rahman",
+    "profileUrl": "https://cu.ac.bd/public_profile/index.php?ein=5453",
+    "googleScholar": "https://scholar.google.com/citations?pli=1&user=NXWTRTMAAAAJ",
+    "image": "public/Current%20Members%20and%20Alumni/Minhajur%20Rahman.jpg",
+    "bioSnippet": "Minhajur Rahman is an Associate Professor in the Department of Botany at the University of Chittagong and a Doctoral Fellow at the Laboratory of Molecular & Structural Immunology (MSI Lab). With over a decade of university teaching and research experience, he specializes in pharmacognosy, natural product chemistry, in silico pharmacology, and phytopharmacology. He has secured multiple competitive research grants from the Ministry of Science and Technology (MOST) and CU as Principal Investigator, publishing over 25 peer-reviewed articles and book chapters.",
+    "education": [
+      {
+        "degree": "Ph.D. Candidate",
+        "field": "Biochemistry & Molecular Biology (Structural Immunology)",
+        "institution": "University of Chittagong",
+        "years": "2021 – Present"
+      },
+      {
+        "degree": "M.Phil.",
+        "field": "Pharmacognosy & Phytochemistry",
+        "institution": "University of Chittagong",
+        "years": "2015 – 2019"
+      },
+      {
+        "degree": "M.S. (Thesis)",
+        "field": "Botany (Pharmacognosy Specialization)",
+        "institution": "University of Chittagong",
+        "years": "2007 – 2008"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Botany",
+        "institution": "University of Chittagong",
+        "years": "2003 – 2007"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Associate Professor",
+        "institution": "Department of Botany, University of Chittagong",
+        "years": "2020 – Present"
+      },
+      {
+        "title": "Assistant Professor",
+        "institution": "Department of Botany, University of Chittagong",
+        "years": "2015 – 2020"
+      },
+      {
+        "title": "Lecturer",
+        "institution": "Department of Botany, University of Chittagong",
+        "years": "2012 – 2015"
+      },
+      {
+        "title": "Doctoral Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2021 – Present"
+      }
+    ],
+    "skills": [
+      "Phytochemical screening, thin-layer chromatography (TLC), column chromatography, in vitro micropropagation, bacterial isolation from rhizosphere, antioxidant assays (DPPH, FRAP), spectrophotometry, plant stress physiological testing.",
+      "GraphPad Prism, SPSS statistical software, MEGA phylogenetics, NCBI BLAST."
+    ],
+    "publications": [
+      "Published in Current Applied Science and Technology (2024) on chrysanthemum rhizobacteria plant growth-promoting traits",
+      "Advancement in Medicinal Plant Research",
+      "Scientifica (Hindawi)",
+      "Chittagong University Journal of Biological Sciences."
+    ],
+    "awards": [
+      "Life Member, Bangladesh Botanical Society",
+      "Member, Chittagong University Teachers' Association (CUTA)",
+      "Government Postgraduate Research Grants."
+    ],
+    "cvUrl": "public/cv/minhajur-rahman_cv.md"
+  },
+  {
+    "id": "mamunur-rashid",
+    "name": "Dr. Muhammad Mamunur Rashid Mahib",
+    "role": "Postdoctoral & Senior Research Fellow · Associate Professor",
+    "senioritySession": "MS Session 2009–2010",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Cloning and Expression of Dengue Envelope Protein Domain 3 (ED3) Variants",
+    "submissionDate": "July 7, 2012",
+    "shortAbstract": "Engineered and expressed serotype-specific recombinant DENV ED3 variants to study conformation-dependent epitope presentation and solubility behavior.",
+    "affiliation": "University of Chittagong",
+    "currentPosition": "Associate Professor, Department of Biochemistry & Molecular Biology",
+    "currentInstitution": "University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "mahib@cu.ac.bd",
+    "phone": "+8801821078048",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://cu.ac.bd/public_profile/index.php?ein=5212",
+    "googleScholar": "https://scholar.google.com/citations?user=xdRnLzEAAAAJ&hl=en",
+    "image": "public/Current%20Members%20and%20Alumni/mahib%20cu.jpg",
+    "bioSnippet": "Dr. Muhammad Mamunur Rashid Mahib is an Associate Professor of Biochemistry and Molecular Biology at the University of Chittagong. He earned his Ph.D. from Kanazawa University, Japan (2020) and completed postdoctoral training at MaineHealth Institute for Research, USA. His research focuses on cellular signaling pathways, innate immune signaling, cell death (apoptosis and necroptosis), and infectious disease pathogenesis.",
+    "education": [
+      {
+        "degree": "Postdoctoral Fellow",
+        "field": "Cellular Signaling & Immunology",
+        "institution": "MaineHealth Institute for Research, Maine, USA",
+        "years": "2021 – 2022"
+      },
+      {
+        "degree": "Ph.D.",
+        "field": "Cellular & Molecular Biology",
+        "institution": "Kanazawa University, Japan",
+        "years": "2016 – 2020"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2009 – 2010"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2005 – 2009"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Associate Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2023 – Present"
+      },
+      {
+        "title": "Postdoctoral Research Fellow",
+        "institution": "MaineHealth Institute for Research, USA",
+        "years": "2021 – 2022"
+      },
+      {
+        "title": "Assistant Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2017 – 2023"
+      },
+      {
+        "title": "Senior Research Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2010 – 2016"
+      }
+    ],
+    "skills": [
+      "Murine echocardiography, isolated perfused Langendorff heart systems, primary cardiomyocyte isolation and culture, immunoblotting/Western blot, confocal immunofluorescence microscopy, flow cytometry, subcellular organelle fractionation, ELISA.",
+      "ImageJ/Fiji image quantification, GraphPad Prism non-linear regression, FlowJo flow cytometry analytics."
+    ],
+    "publications": [
+      "Published extensively in high-impact international journals focusing on ischemic heart failure, pyroptotic cell death mechanisms, and caveolar signaling in cardiomyocytes."
+    ],
+    "awards": [
+      "Prime Minister Gold Medal (Bangladesh University Grants Commission)",
+      "Japanese Government (MEXT) Doctoral Fellowship",
+      "Postdoctoral Research Award at MaineHealth Institute for Research."
+    ],
+    "cvUrl": "public/cv/mamunur-rashid_cv.md"
+  },
+  {
+    "id": "dr-md-golam-kabir",
+    "name": "Prof. Dr. Md. Golam Kabir",
+    "role": "Professor · Senior Monoclonal Antibody Scientist",
+    "senioritySession": "Post-Doctoral",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Production and Characterization of Monoclonal Antibodies (mAbs) Against Dengue ED3 Variants",
+    "submissionDate": "December 19, 2022",
+    "shortAbstract": "Developed and characterized monoclonal antibodies targeted against mutated Dengue ED3 variants to evaluate cross-neutralization and epitope binding dynamics.",
+    "affiliation": "University of Chittagong",
+    "currentPosition": "Professor, Department of Biochemistry & Molecular Biology",
+    "currentInstitution": "University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "01786233770",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Md-Kabir-160",
+    "profileUrl": "https://cu.ac.bd/public_profile/index.php?ein=3780",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/golam%20kabir.jpg",
+    "bioSnippet": "Prof. Dr. Md. Golam Kabir is a Professor in the Department of Biochemistry and Molecular Biology at the University of Chittagong. He obtained his Ph.D. in Biotechnology and Life Science from Tokyo University of Agriculture and Technology (TUAT), Japan (2018). His research encompasses pathogenesis, monoclonal antibody engineering against viral envelope antigens, life sciences, and nutritional biochemistry.",
+    "education": [
+      {
+        "degree": "Ph.D.",
+        "field": "Biotechnology and Life Science",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Japan",
+        "years": "2013 – 2018"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2002 – 2003"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "1997 – 2001"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2020 – Present"
+      },
+      {
+        "title": "Associate Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2015 – 2020"
+      },
+      {
+        "title": "Senior Monoclonal Antibody Scientist",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2021 – 2023"
+      }
+    ],
+    "skills": [
+      "Clinical chemistry automated profiling, enzymatic kinetics, Thioflavin-T (ThT) amyloid fluorescence assays, Congo red birefringence, in vivo streptozotocin-induced diabetic rodent models.",
+      "SPSS, GraphPad Prism, ImageJ, BioEdit."
+    ],
+    "publications": [
+      "Published extensively in Biochimica et Biophysica Acta (BBA) - Proteins and Proteomics, Journal of Taibah University Medical Sciences, Bioinformation",
+      "supervised >50 MSc theses."
+    ],
+    "awards": [
+      "Senior Faculty Professorship",
+      "Principal Investigator on multiple Ministry of Science & Technology (MoST) competitive grants."
+    ],
+    "cvUrl": "public/cv/dr-md-golam-kabir_cv.md"
+  },
+  {
+    "id": "md-waseque-mia",
+    "name": "Md. Waseque Mia",
+    "role": "Assistant Professor · Former M.Sc. Research Fellow",
+    "senioritySession": "MS Session 2012–2013",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Design and Characterization of Japanese Encephalitis Virus (JEV) ED3 Mutants",
+    "submissionDate": "May 20, 2015",
+    "shortAbstract": "Engineered JEV ED3 variants using solubility-controlling peptide tags and characterized thermal denaturation and immune sera reactivity.",
+    "affiliation": "Shahjalal University of Science and Technology (SUST)",
+    "currentPosition": "Assistant Professor, Department of Biochemistry & Molecular Biology",
+    "currentInstitution": "Shahjalal University of Science and Technology (SUST)",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "waseqbd-bmb@sust.edu",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Md-Mia-10",
+    "profileUrl": "https://www.sust.edu/departments/bmb/faculty/waseqbd-bmb@sust.edu",
+    "googleScholar": "https://scholar.google.com/citations?user=8aWCZr8AAAAJ&hl=en",
+    "image": "public/Current%20Members%20and%20Alumni/waseque_mia.jpg",
+    "bioSnippet": "Md. Waseque Mia is an Assistant Professor in the Department of Biochemistry and Molecular Biology at Shahjalal University of Science and Technology (SUST), Sylhet. He completed his M.S. and B.Sc. (Hons) at the University of Chittagong, conducting research on Japanese Encephalitis Virus (JEV) ED3 protein engineering at MSI Lab. His academic focus spans immunology, cancer cell biology, molecular epidemiology, and public health risk assessments.",
+    "education": [
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2012 – 2013"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2007 – 2011"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Assistant Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, SUST",
+        "years": "2018 – Present"
+      },
+      {
+        "title": "Lecturer",
+        "institution": "Dept. of Biochemistry & Molecular Biology, SUST",
+        "years": "2015 – 2018"
+      },
+      {
+        "title": "M.Sc. Research Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2013 – 2015"
+      }
+    ],
+    "skills": [
+      "Clinical chemistry serum assays, spectrophotometric enzyme activity kinetics, clinical diagnostic testing, microbial isolation, and disc diffusion antimicrobial susceptibility testing.",
+      "SIFT, PolyPhen-2, PROVEAN, AutoDock molecular docking, PyMOL macromolecular visualization, GraphPad Prism."
+    ],
+    "publications": [
+      "Published high-impact structural study in PLOS ONE (2023) evaluating nonsynonymous mutations in human thyroid peroxidase dimer",
+      "Journal of Advanced Biotechnology and Experimental Therapeutics (JABET)."
+    ],
+    "awards": [
+      "Faculty Research Grants, SUST Research Centre",
+      "National Science and Technology Fellowships during postgraduate tenure."
+    ],
+    "cvUrl": "public/cv/md-waseque-mia_cv.md"
+  },
+  {
+    "id": "payal-barua",
+    "name": "Dr. Payal Barua",
+    "role": "Postdoctoral Researcher · Former M.Sc. Research Fellow",
+    "senioritySession": "MS Session 2010–2011",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Immunosensitization Against the EDIII of Dengue E-Protein and Study of Dengue Sero-Specificity Using Sensitized Lymphocyte Culture",
+    "submissionDate": "March 31, 2013",
+    "shortAbstract": "Explored cell-mediated cellular immune responses and sero-specificity using sensitized lymphocyte cultures stimulated with Dengue EDIII.",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Postdoctoral / Immunology Researcher",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Department of Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Payal%20Barua.jpg",
+    "bioSnippet": "Dr. Payal Barua is an immunology researcher and alumnus of the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry and Molecular Biology at the University of Chittagong. Her research explores cell-mediated immune responses, lymphocyte sensitization, cytokine secretion dynamics, and sero-specificity in dengue virus infection.",
+    "education": [
+      {
+        "degree": "Ph.D.",
+        "field": "Biomedical Sciences & Molecular Immunology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2018"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2010 – 2011"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2005 – 2010"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Postdoctoral / Immunology Researcher",
+        "institution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2018 – Present"
+      },
+      {
+        "title": "Doctoral Research Fellow",
+        "institution": "Faculty of Biological Sciences, University of Chittagong",
+        "years": "2014 – 2018"
+      },
+      {
+        "title": "M.Sc. Research Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2011 – 2013"
+      }
+    ],
+    "skills": [
+      "Recombinant protein expression in insect/mammalian systems, cross-linking mass spectrometry (XL-MS), isothermal titration calorimetry (ITC), biolayer interferometry (BLI).",
+      "PyMOL, ChimeraX, MaxQuant proteomics software, Rosetta, BioRender."
+    ],
+    "publications": [
+      "High-impact peer-reviewed papers resolving multi-protein macromolecular complexes and structural drug binding sites."
+    ],
+    "awards": [
+      "International Doctoral Fellowship",
+      "Postdoctoral Research Fellow",
+      "Keynote Speaker at Structural Biology Symposium."
+    ],
+    "cvUrl": "public/cv/payal-barua_cv.md"
+  },
+  {
+    "id": "wang-kyaw-twan",
+    "name": "Dr. Wang Kyaw Twan",
+    "role": "Postdoctoral Fellow · Senior Research Fellow",
+    "senioritySession": "MS Session 2012–2013",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Mapping the Determinants of Cross-Reactivity of Dengue 4 ED3 Antibodies",
+    "submissionDate": "January 7, 2015",
+    "shortAbstract": "Mapped critical surface-exposed residues mediating broad cross-reactivity in DENV4 ED3, guiding serotype-specific epitope shielding.",
+    "affiliation": "National Institutes of Health (NIH), Frederick, Maryland, USA",
+    "currentPosition": "Postdoctoral Fellow, National Cancer Institute (NCI-Frederick / NIH)",
+    "currentInstitution": "National Institutes of Health (NIH), Frederick, Maryland, USA",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/wang-kyaw-twan-ph-d-9b96986b/",
+    "researchgate": "https://www.researchgate.net/profile/Wang-Kyaw-Twan",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Wang%20Kyaw%20Twan.jpg",
+    "bioSnippet": "Dr. Wang Kyaw Twan is a Postdoctoral Fellow at the National Cancer Institute (NCI-Frederick / CCR, NIH) in Maryland, USA, working in the laboratory of Christopher J. Westlake. He earned his Ph.D. in Life Science & Biotechnology from Tokyo University of Agriculture and Technology (TUAT), Japan. His research investigates primary ciliary dyskinesia, axonemal dyneins, embryonic nodal cilia dynamics, and protein engineering.",
+    "education": [
+      {
+        "degree": "Postdoctoral Fellow",
+        "field": "Cell Biology & Cilia Pathogenesis",
+        "institution": "National Cancer Institute (NCI-Frederick / CCR, NIH), USA",
+        "years": "2020 – Present"
+      },
+      {
+        "degree": "Ph.D.",
+        "field": "Biotechnology & Life Science",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Japan",
+        "years": "2015 – 2019"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2012 – 2013"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2007 – 2011"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Postdoctoral Fellow",
+        "institution": "National Cancer Institute (NCI-Frederick / CCR, NIH), USA",
+        "years": "2020 – Present"
+      },
+      {
+        "title": "Doctoral Researcher",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Japan",
+        "years": "2015 – 2019"
+      },
+      {
+        "title": "Senior Research Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2013 – 2015"
+      }
+    ],
+    "skills": [
+      "Air-liquid interface (ALI) culture of human bronchial epithelial cells, high-speed video microscopy (HSVM) of ciliary beat dynamics, axonemal immunofluorescence, cryo-sectioning, and RNA-seq transcriptomics.",
+      "High-throughput video tracking algorithms, DESeq2 bulk RNA-seq differential pipelines, R statistical programming, PyMOL."
+    ],
+    "publications": [
+      "Pioneering translational investigations into genetic mutations altering human mucociliary clearance at leading international medical institutions",
+      "presentations at American Thoracic Society (ATS)."
+    ],
+    "awards": [
+      "International Doctoral Scholarship",
+      "Postdoctoral Research Fellowship at Washington University School of Medicine in St. Louis."
+    ],
+    "cvUrl": "public/cv/wang-kyaw-twan_cv.md"
+  },
+  {
+    "id": "nafsoon-rahman",
+    "name": "Dr. Nafsoon Rahman (Mouly)",
+    "role": "Assistant Professor · Former Doctoral Fellow & Co-Inventor (WO2019031446)",
+    "senioritySession": "MS Session 2013–2014",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Development of a New Dengue Diagnostic Tool and Comparison of Serum Antibody Responses Against Natural Dengue Infection and Artificial Immunization",
+    "submissionDate": "October 20, 2014",
+    "shortAbstract": "Developed an EDIII-based ELISA diagnostic tool and compared antibody specificity patterns between natural human dengue infections and artificially immunized mice.",
+    "affiliation": "Jagannath University (JnU), Dhaka",
+    "currentPosition": "Assistant Professor, Department of Biochemistry & Molecular Biology",
+    "currentInstitution": "Jagannath University (JnU), Dhaka",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "nafsoonrahman@bmb.jnu.ac.bd",
+    "phone": "+8801715503350",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://jnu.ac.bd/fm/pview/10834/home",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/nafsoon%20rahman%20jnu.jpg",
+    "bioSnippet": "Dr. Nafsoon Rahman (Mouly) is an Assistant Professor in the Department of Biochemistry and Molecular Biology at Jagannath University (JnU). She received her Ph.D. in Protein Engineering from Tokyo University of Agriculture and Technology (TUAT), Japan (2020), and her M.Sc. (2015) and B.Sc. (2014) from the University of Chittagong. She is a co-inventor of international patent WO2019031446 for solubility-controlling peptide tags applied to biotherapeutics and diagnostics.",
+    "education": [
+      {
+        "degree": "Ph.D.",
+        "field": "Protein Engineering",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Japan",
+        "years": "2016 – 2020"
+      },
+      {
+        "degree": "M.Sc.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2015"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2010 – 2014"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Assistant Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, Jagannath University",
+        "years": "2021 – Present"
+      },
+      {
+        "title": "Lecturer",
+        "institution": "Dept. of Biochemistry & Molecular Biology, Jagannath University",
+        "years": "2020 – 2021"
+      },
+      {
+        "title": "Co-Inventor & Researcher",
+        "institution": "TUAT & MSI Lab Consortium",
+        "years": "2016 – 2020"
+      }
+    ],
+    "skills": [
+      "Heterologous protein expression in E. coli, Ni-NTA affinity chromatography, circular dichroism (CD), dynamic light scattering (DLS), analytical size-exclusion chromatography (SEC-HPLC), microplate neutralization assays.",
+      "PyMOL, ChimeraX, Expasy ProtParam, GraphPad Prism, BLAST."
+    ],
+    "publications": [
+      "Co-inventor of Japanese Patent JP No. 7194442 ('Antigen composition for flavivirus diagnostics and vaccines'). Published in Frontiers in Immunology, FEBS Open Bio, and Protein Expression and Purification."
+    ],
+    "awards": [
+      "Japanese Government (MEXT) Doctoral Scholarship",
+      "Jagannath University Faculty Research Grants",
+      "Life Member of Bangladesh Biochemical Society."
+    ],
+    "cvUrl": "public/cv/nafsoon-rahman_cv.md"
+  },
+  {
+    "id": "hasan-nazmul",
+    "name": "Md. Nazmul Hasan",
+    "role": "Lecturer (on study leave) & PhD Researcher at Purdue University",
+    "senioritySession": "MS Session 2016–2017",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "SCP-tag, a tool to increase immunogenicity of poorly immunogenic dengue envelope protein domain 3 in mice model without compromising antibody specificity",
+    "submissionDate": "July 15, 2018",
+    "shortAbstract": "Applied short solubility-controlling peptide (SCP) tags to enhance the immunogenicity of poorly immunogenic dengue ED3 proteins in mice without losing antibody specificity.",
+    "affiliation": "Hajee Mohammad Danesh Science & Technology University (HSTU) / Purdue University, USA",
+    "currentPosition": "Lecturer, HSTU · PhD Researcher, Purdue University",
+    "currentInstitution": "Hajee Mohammad Danesh Science & Technology University (HSTU) / Purdue University, USA",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "bmb.nazmul@gmail.com",
+    "phone": "+8801515284213",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://hstu.ac.bd/teacher/nazmulbmb",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/nazmul%20hasan%20hstu.jpg",
+    "bioSnippet": "Md. Nazmul Hasan is a Lecturer in the Department of Biochemistry & Molecular Biology at Hajee Mohammad Danesh Science & Technology University (HSTU) and currently a PhD Researcher in Molecular and Cellular Biology at Purdue University, USA (since August 2023). He previously served as Lab Consultant for the COVID-19 ERPP Project of DGHS at Cumilla Medical College.",
+    "education": [
+      {
+        "degree": "Ph.D. Researcher",
+        "field": "Molecular Biology & Structural Immunology",
+        "institution": "Purdue University, Indiana, USA",
+        "years": "2023 – Present"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2016 – 2018"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2012 – 2016"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "PhD Researcher",
+        "institution": "Purdue University, USA",
+        "years": "2023 – Present"
+      },
+      {
+        "title": "Lecturer",
+        "institution": "Dept. of Biochemistry & Molecular Biology, HSTU",
+        "years": "2022 – Present (Study Leave)"
+      },
+      {
+        "title": "Lab Consultant",
+        "institution": "COVID-19 ERPP Project, DGHS, Cumilla Medical College",
+        "years": "2021 – 2022"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2016 – 2019"
+      }
+    ],
+    "skills": [
+      "Single-particle cryo-EM grid preparation, protein crystallization, recombinant protein expression in bacterial and insect cell systems, affinity chromatography, Western blotting.",
+      "Relion / CryoSPARC cryo-EM processing, GROMACS/AMBER molecular dynamics, PyMOL, UCSF ChimeraX, IEDB epitope suite."
+    ],
+    "publications": [
+      "Multiple research papers on in silico vaccine design against emerging viral pathogens and structural epitope mapping in international journals."
+    ],
+    "awards": [
+      "Purdue University Graduate Research Assistantship",
+      "HSTU Faculty Study Leave Fellowship",
+      "NST Research Fellow."
+    ],
+    "cvUrl": "public/cv/hasan-nazmul_cv.md"
+  },
+  {
+    "id": "abu-bakar-siddik",
+    "name": "Abu Bakar Siddik",
+    "role": "Graduate Research Assistant & Ph.D. Candidate",
+    "senioritySession": "MS Session 2017–2018",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Effects of poly-Ile and poly-Asp tags on the immunogenicity of an epitope-grafted DENV3 envelope protein domain 3 (3ED3) in Swiss albino mice",
+    "submissionDate": "July 10, 2019",
+    "shortAbstract": "Analyzed how hydrophobic (poly-Ile) and charged (poly-Asp) peptide tags influence protein oligomerization and immune responses against epitope-grafted 3ED3 in mice.",
+    "affiliation": "Department of Molecular Biosciences, University of Texas at Austin, USA",
+    "currentPosition": "Ph.D. Candidate & Graduate Research Assistant",
+    "currentInstitution": "Department of Molecular Biosciences, University of Texas at Austin, USA",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Abu-Bakar-Siddik-7",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Abu%20Bakar%20Siddik.jpg",
+    "bioSnippet": "Abu Bakar Siddik is a Ph.D. Candidate and Graduate Research Assistant in the Department of Molecular Biosciences at the University of Texas at Austin (UT Austin). At MSI Lab, he investigated the biophysical properties and secondary structural transitions of engineered dengue envelope proteins, as well as the effects of charged and hydrophobic peptide tags.",
+    "education": [
+      {
+        "degree": "Ph.D. Candidate",
+        "field": "Molecular Biosciences & Structural Biology",
+        "institution": "University of Texas at Austin (UT Austin), USA",
+        "years": "2021 – Present"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2017 – 2019"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2012 – 2017"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Department of Molecular Biosciences, UT Austin, USA",
+        "years": "2021 – Present"
+      },
+      {
+        "title": "Graduate Research Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2017 – 2020"
+      }
+    ],
+    "skills": [
+      "Polychromatic flow cytometry (FACS), immune cell phenotyping, human clinical cohort serology, ELISPOT, antibody-secreting cell (ASC) enumeration, PBMC isolation, and serum bactericidal assays.",
+      "FlowJo, GraphPad Prism, R for immunophenotyping biostatistics, FlowSOM."
+    ],
+    "publications": [
+      "High-impact co-authored research papers in leading infectious disease and immunology journals from multi-year clinical trials at icddr,b."
+    ],
+    "awards": [
+      "UT Austin Graduate Dean's Fellowship",
+      "Former Research Officer at icddr,b with NIH/Gates Foundation grant involvement."
+    ],
+    "cvUrl": "public/cv/abu-bakar-siddik_cv.md"
+  },
+  {
+    "id": "imrul-tipo",
+    "name": "Imrul Hasan Tipo",
+    "role": "Lecturer, USTC & PhD Fellow, University of Alabama",
+    "senioritySession": "MS Session 2019–2020",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Four Different DENV ED3s Generated Different T cell Memory In Artificial Immunization In Mice Model",
+    "submissionDate": "May 2022",
+    "shortAbstract": "Measured T cell memory generation and cytokine responses in mice artificially immunized with recombinant ED3 proteins representing all four dengue serotypes.",
+    "affiliation": "University of Science and Technology Chittagong (USTC)",
+    "currentPosition": "Lecturer, Department of Biochemistry and Biotechnology",
+    "currentInstitution": "University of Science and Technology Chittagong (USTC)",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "tipo@ustc.ac.bd",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://ustc.ac.bd/fm-imrul-hasan-tipo/",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/imrul%20hasan%20tipo%20ustc.jpg",
+    "bioSnippet": "Imrul Hasan Tipo is a Lecturer in the Department of Biochemistry and Biotechnology at University of Science and Technology Chittagong (USTC) and a Ph.D. Fellow in Biological Sciences at the University of Alabama, USA. He received his BSc (Hons) and MS (Thesis) in Biochemistry and Molecular Biology from the University of Chittagong. He has co-authored significant papers in the International Journal of Molecular Sciences and medRxiv on dengue vaccine immunology and pandemic transmission dynamics.",
+    "education": [
+      {
+        "degree": "Ph.D. Fellow",
+        "field": "Biological Sciences",
+        "institution": "University of Alabama, Tuscaloosa, USA",
+        "years": "2024 – Present"
+      },
+      {
+        "degree": "M.S. (Thesis)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2019 – 2022"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2019"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Lecturer",
+        "institution": "Dept. of Biochemistry & Biotechnology, USTC",
+        "years": "October 2023 – Present"
+      },
+      {
+        "title": "Ph.D. Fellow",
+        "institution": "University of Alabama, USA",
+        "years": "2024 – Present"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2019 – 2023"
+      }
+    ],
+    "skills": [
+      "In vivo murine immunization, indirect/sandwich ELISA, SDS-PAGE, recombinant protein expression in bacterial hosts, Ni-NTA chromatography, clinical hematology parameters.",
+      "GraphPad Prism non-linear regression, PyMOL, SPSS, MEGA."
+    ],
+    "publications": [
+      "Published in International Journal of Molecular Sciences (IJMS, 2023) on Dengue ED3 conformational variations",
+      "medRxiv (2025) epidemiological studies."
+    ],
+    "awards": [
+      "National Science & Technology (NST) Fellowship (Ministry of Science and Technology, Bangladesh)",
+      "USTC Institutional Teaching & Research Award."
+    ],
+    "cvUrl": "public/cv/imrul-tipo_cv.md"
+  },
+  {
+    "id": "din-islam",
+    "name": "Dr. Md. Din Islam",
+    "role": "Postdoctoral Researcher · Former Doctoral Fellow",
+    "senioritySession": "MS Session 2019–2020",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "A Mystery of DENV Immunogenicity: Anti-DENV ED3 Responses Against Monovalent and Multivalent DENV ED3s",
+    "submissionDate": "May 15, 2022",
+    "shortAbstract": "Assessed differential immunogenicity and antibody titers induced by single (monovalent) versus combined (multivalent) DENV ED3 immunization schemes in mice.",
+    "affiliation": "National Chung Hsing University (NCHU), Taichung, Taiwan",
+    "currentPosition": "Postdoctoral Researcher, Graduate Institute of Microbiology and Public Health",
+    "currentInstitution": "National Chung Hsing University (NCHU), Taichung, Taiwan",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Md-Islam-2210",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/din%20islam.jpg",
+    "bioSnippet": "Dr. Md. Din Islam is a Postdoctoral Researcher at the Graduate Institute of Microbiology and Public Health, National Chung Hsing University (NCHU), Taiwan. He completed his Ph.D. in Veterinary Medicine / Virology at NCHU and his M.S. and B.Sc. in Biochemistry & Molecular Biology at the University of Chittagong. His expertise spans virology, oncolytic Orf virus genetic engineering, and dengue subunit vaccine immunology.",
+    "education": [
+      {
+        "degree": "Ph.D.",
+        "field": "Veterinary Medicine & Virology",
+        "institution": "National Chung Hsing University (NCHU), Taiwan",
+        "years": "2020 – 2024"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2019 – 2022"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2019"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Postdoctoral Researcher",
+        "institution": "Graduate Institute of Microbiology & Public Health, NCHU, Taiwan",
+        "years": "2024 – Present"
+      },
+      {
+        "title": "Doctoral Fellow",
+        "institution": "National Chung Hsing University, Taiwan",
+        "years": "2020 – 2024"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2019 – 2022"
+      }
+    ],
+    "skills": [
+      "Batch fermentation, Ni-NTA and GST affinity chromatography, Western blotting, plaque reduction neutralization tests (PRNT), cross-reactivity profiling ELISA.",
+      "SnapGene, PyMOL, GraphPad Prism, NCBI BLAST."
+    ],
+    "publications": [
+      "Engineered multi-epitope recombinant constructs covering Dengue envelope domains ED1â€“4 for sensitive diagnostic differentiation."
+    ],
+    "awards": [
+      "Taiwan Government / NCHU International Doctoral Scholarship."
+    ],
+    "cvUrl": "public/cv/din-islam_cv.md"
+  },
+  {
+    "id": "sanjida-yesmin",
+    "name": "Dr. Sanjida Yesmin",
+    "role": "Postdoctoral / Ph.D. Researcher (MEXT Scholar)",
+    "senioritySession": "MS Session 2019–2020",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Anti-DENV ED3 IgG Responses Against Heterotypic Secondary DENV ED3 Immunization in Mice Model",
+    "submissionDate": "May 2022",
+    "shortAbstract": "Investigated secondary heterotypic immune responses and sero-cross-reactivity patterns in mice prime-boosted with different dengue serotype ED3 domains.",
+    "affiliation": "Tokyo University of Agriculture and Technology (TUAT), Tokyo, Japan",
+    "currentPosition": "Postdoctoral / Ph.D. Researcher",
+    "currentInstitution": "Tokyo University of Agriculture and Technology (TUAT), Tokyo, Japan",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Sanjida-Yesmin",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/sanjida%20yeasmin.jpg",
+    "bioSnippet": "Dr. Sanjida Yesmin is a Postdoctoral / Ph.D. Researcher in Protein Engineering and Molecular Immunology at Tokyo University of Agriculture and Technology (TUAT), Japan, supported by the Japanese Government (MEXT) scholarship. Her research investigates antibody-dependent enhancement (ADE), neutralizing antibody epitope mapping, solubility-controlling peptide tags, and prime-boost vaccination strategies against flaviviruses.",
+    "education": [
+      {
+        "degree": "Ph.D.",
+        "field": "Protein Engineering & Immunology",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Japan",
+        "years": "2022 – Present"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2019 – 2022"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2019"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Researcher (MEXT Scholar)",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Japan",
+        "years": "2022 – Present"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2019 – 2022"
+      }
+    ],
+    "skills": [
+      "Dynamic light scattering (DLS), analytical size exclusion chromatography (SEC-HPLC), circular dichroism (CD), fluorescence spectroscopy, nanoDSF thermal shift assays, micro-flow imaging (MFI).",
+      "Zetasizer software, OriginLab, GraphPad Prism, PyMOL."
+    ],
+    "publications": [
+      "Presentations at the Biophysical Society of Japan (BSJ) and Protein Science Society of Japan",
+      "papers on antibody formulation stability."
+    ],
+    "awards": [
+      "Monbukagakusho (MEXT) Doctoral Scholarship, Government of Japan."
+    ],
+    "cvUrl": "public/cv/sanjida-yesmin_cv.md"
+  },
+  {
+    "id": "mahabubul-mowla",
+    "name": "Mahabubul Mowla",
+    "role": "Lecturer, USTC · Former MSI Lab Research Fellow",
+    "senioritySession": "MS Session 2020–2021",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Anti-Dengue Cytokine and Antibody Responses in Recombinant ED3 Immunized Mice",
+    "submissionDate": "July 2023",
+    "shortAbstract": "Investigated cellular cytokine profiles and IgG antibody responses in mice immunized with recombinant dengue envelope protein domain 3 variants.",
+    "affiliation": "University of Science and Technology Chittagong (USTC)",
+    "currentPosition": "Lecturer, Department of Biochemistry and Biotechnology",
+    "currentInstitution": "University of Science and Technology Chittagong (USTC)",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "mahabubul@ustc.ac.bd",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://ustc.ac.bd/fm-mahabubul-mowla/",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/mahabubul%20mowla%20ustc.jpg",
+    "bioSnippet": "Mahabubul Mowla is a Lecturer in the Department of Biochemistry and Biotechnology at University of Science and Technology Chittagong (USTC). He held 1st Position in both his M.S. and B.Sc. in Biochemistry & Molecular Biology at the University of Chittagong. He served as a Research Fellow at MSI Lab, as well as a Molecular Biologist at BITID and Chevron Clinical Laboratory during the COVID-19 pandemic.",
+    "education": [
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology (1st Position)",
+        "institution": "University of Chittagong",
+        "years": "2020 – 2023"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology (1st Position)",
+        "institution": "University of Chittagong",
+        "years": "2015 – 2020"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Lecturer",
+        "institution": "Dept. of Biochemistry & Biotechnology, USTC",
+        "years": "2023 – Present"
+      },
+      {
+        "title": "Research Fellow",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2021 – 2023"
+      },
+      {
+        "title": "Molecular Biologist",
+        "institution": "Bangladesh Institute of Tropical & Infectious Disease (BITID) & Chevron Lab",
+        "years": "2020 – 2021"
+      },
+      {
+        "title": "Lecturer in Chemistry",
+        "institution": "South Asian College Chittagong",
+        "years": "2021 – 2022"
+      }
+    ],
+    "skills": [
+      "Clinical biomarker profiling, enzymatic assay kits, UV-Vis spectrophotometry, SDS-PAGE, Bradford protein assay.",
+      "GraphPad Prism, Microsoft Excel advanced statistical modeling, BLAST."
+    ],
+    "publications": [
+      "Academic curricula development in advanced biochemistry and research papers in clinical metabolism."
+    ],
+    "awards": [
+      "USTC Faculty Teaching Excellence",
+      "Chittagong University Merit Scholarship during undergraduate studies."
+    ],
+    "cvUrl": "public/cv/mahabubul-mowla_cv.md"
+  },
+  {
+    "id": "antara-saha",
+    "name": "Antara Saha",
+    "role": "Graduate Research Assistant & Ph.D. Student",
+    "senioritySession": "MS Session 2020–2021",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Anti-Dengue Cytokine Responses against Four Different DENV ED3s in Mice Model",
+    "submissionDate": "July 20, 2023",
+    "shortAbstract": "Quantified intracellular Th1/Th2 cytokine expression profiles (IFN-γ and IL-4) in response to immunization with DENV1–4 ED3 proteins in mice.",
+    "affiliation": "Department of Biochemistry & Biophysics, Texas A&M University, USA",
+    "currentPosition": "Graduate Research Assistant & Ph.D. Student",
+    "currentInstitution": "Department of Biochemistry & Biophysics, Texas A&M University, USA",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Antara-Saha-5",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/antara%20saha.jpg",
+    "bioSnippet": "Antara Saha is a Graduate Research Assistant and Ph.D. Student in the Department of Biochemistry & Biophysics at Texas A&M University, USA. She earned her M.S. and B.Sc. in Biochemistry & Molecular Biology from the University of Chittagong. At MSI Lab, she investigated cellular Th1/Th2 cytokine memory and long-term anti-ED3 IgG responses across all four dengue serotypes.",
+    "education": [
+      {
+        "degree": "Ph.D. Student",
+        "field": "Biochemistry & Biophysics",
+        "institution": "Texas A&M University, College Station, Texas, USA",
+        "years": "2023 – Present"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2020 – 2023"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2015 – 2020"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Department of Biochemistry & Biophysics, Texas A&M University, USA",
+        "years": "2023 – Present"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2020 – 2023"
+      }
+    ],
+    "skills": [
+      "Vapor-diffusion protein crystallization, recombinant protein expression in bacterial and insect cell systems, SEC, surface plasmon resonance (SPR), biolayer interferometry (BLI).",
+      "CCP4 crystallographic suite, Coot model building, Phenix, PyMOL, ChimeraX."
+    ],
+    "publications": [
+      "Structural determinants of antibody neutralization against arboviruses",
+      "international symposium poster presentations."
+    ],
+    "awards": [
+      "Fully funded Graduate Teaching & Research Assistantship at Texas A&M University",
+      "NST Research Fellow."
+    ],
+    "cvUrl": "public/cv/antara-saha_cv.md"
+  },
+  {
+    "id": "dr-moushumi-ghosh-roy",
+    "name": "Dr. Moushumi Ghosh Roy",
+    "role": "Assistant Professor & Doctoral Scholar",
+    "senioritySession": "PhD Candidate",
+    "supervisor": "Dr. Anjuvan Singh",
+    "coSupervisors": "Dr. M. Monirul Islam",
+    "thesisTitle": "Mimicking natural anti-DENV antibody response in mice model using dengue envelope protein domain 3",
+    "submissionDate": "August 2023",
+    "shortAbstract": "Correlated human natural dengue serotype prevalence and clinical symptoms in Chattogram with multi-valent ED3 artificial immunization and T-cell responses in mice.",
+    "affiliation": "BGC Trust University Bangladesh, Chittagong",
+    "currentPosition": "Assistant Professor, Department of Pharmacy",
+    "currentInstitution": "BGC Trust University Bangladesh, Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Moushumi-Ghosh-Roy",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/moushumi_ghosh_roy.jpg",
+    "bioSnippet": "Dr. Moushumi Ghosh Roy is an Assistant Professor in the Department of Pharmacy at BGC Trust University Bangladesh. She completed her Ph.D. in Pharmaceutical Biotechnology at Lovely Professional University, India, and her M.S. and B.Sc. in Biochemistry & Molecular Biology at the University of Chittagong. Her research focuses on dengue clinical epidemiology, outbreak sero-prevalence, co-circulating serotypes in Bangladesh, and subunit vaccine immunogenicity.",
+    "education": [
+      {
+        "degree": "Ph.D.",
+        "field": "Pharmaceutical Biotechnology & Molecular Virology",
+        "institution": "Lovely Professional University, India",
+        "years": "2018 – 2023"
+      },
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2010 – 2012"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2005 – 2010"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Assistant Professor",
+        "institution": "Department of Pharmacy, BGC Trust University Bangladesh",
+        "years": "2020 – Present"
+      },
+      {
+        "title": "Lecturer",
+        "institution": "Department of Pharmacy, BGC Trust University Bangladesh",
+        "years": "2015 – 2020"
+      },
+      {
+        "title": "Doctoral Research Fellow",
+        "institution": "MSI Lab, University of Chittagong & Lovely Professional University",
+        "years": "2018 – 2023"
+      }
+    ],
+    "skills": [
+      "Diagnostic IgM/IgG ELISA, NS1 antigen testing, MTT cell viability bioassays, crude extract Soxhlet preparation, disc diffusion assays.",
+      "SPSS, GraphPad Prism, PubMed/NCBI database analysis."
+    ],
+    "publications": [
+      "Epidemiological surveillance studies on urban dengue outbreaks and pharmacological validation of native medicinal herbs in peer-reviewed journals."
+    ],
+    "awards": [
+      "BGC Trust University Research Grant",
+      "Active Member of Pharmacy & Life Sciences Academic Committees."
+    ],
+    "cvUrl": "public/cv/dr-moushumi-ghosh-roy_cv.md"
+  },
+  {
+    "id": "sabrina-akter",
+    "name": "Sabrina Akter",
+    "role": "Lecturer, USTC · Former MSI Lab Research Associate",
+    "senioritySession": "MS Session 2021–2022",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Serospecificity and sero-cross-reactivity of anti-SARS-CoV-2 antibodies developed against the Receptor Binding Domain (RBD) of Wuhan and Omicron strains in mice model",
+    "submissionDate": "September 30, 2024",
+    "shortAbstract": "Evaluated serospecificity and cross-reactive IgG antibody responses in mice immunized with recombinant Wuhan and Omicron (BA.4/5, JN.1) SARS-CoV-2 RBDs.",
+    "affiliation": "University of Science and Technology Chittagong (USTC)",
+    "currentPosition": "Lecturer, Department of Biochemistry and Biotechnology",
+    "currentInstitution": "University of Science and Technology Chittagong (USTC)",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "sabrina@ustc.ac.bd",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://ustc.ac.bd/fm-sabrina-akter/",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/sabrina%20akter.jpg",
+    "bioSnippet": "Sabrina Akter is a Lecturer in the Department of Biochemistry and Biotechnology at University of Science and Technology Chittagong (USTC). She completed her Master's and Bachelor's (Honours) degrees in Biochemistry and Molecular Biology from the University of Chittagong. Prior to joining USTC, she worked as a Research Associate at the Laboratory of Molecular & Structural Immunology (MSI Lab), focusing on coronavirus variant cross-neutralization.",
+    "education": [
+      {
+        "degree": "M.Sc.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – 2024"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2016 – 2021"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Lecturer",
+        "institution": "Dept. of Biochemistry & Biotechnology, USTC",
+        "years": "2024 – Present"
+      },
+      {
+        "title": "Research Associate",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2022 – 2024"
+      }
+    ],
+    "skills": [
+      "Murine immunization protocols, indirect ELISA, SDS-PAGE, Western blot, bacterial recombinant expression (BL21 DE3), affinity purification (His-tag Ni-NTA).",
+      "GraphPad Prism, PyMOL, NCBI Primer-BLAST."
+    ],
+    "publications": [
+      "Preclinical papers on coronavirus variant antibody neutralization and subunit construct immunogenicity."
+    ],
+    "awards": [
+      "National Science & Technology (NST) Fellowship, Ministry of Science and Technology, Bangladesh."
+    ],
+    "cvUrl": "public/cv/sabrina-akter_cv.md"
+  },
+  {
+    "id": "rafiqul-shanta",
+    "name": "Md. Rafiqul Islam Shanta",
+    "role": "Research Fellow, BFRI · Former Graduate Research Assistant",
+    "senioritySession": "MS Session 2021–2022",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Anti-SARS-CoV2 IgG Responses in the Sinopharm-Vaccinated Individuals in Chattogram, Bangladesh and the Impact of Homologous and Heterologous Boosting",
+    "submissionDate": "September 30, 2024",
+    "shortAbstract": "Profiled antibody waning and cross-recognition of Omicron vs. Wuhan strains in Sinopharm-vaccinated human cohorts receiving homologous vs. heterologous booster shots.",
+    "affiliation": "Bangladesh Forest Research Institute (BFRI), Chittagong",
+    "currentPosition": "Research Fellow, Bangladesh Forest Research Institute (BFRI)",
+    "currentInstitution": "Bangladesh Forest Research Institute (BFRI), Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/rafiqul-islam-691710153/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/rafiqul%20islam%20shanto.jpg",
+    "bioSnippet": "Md. Rafiqul Islam Shanta is a Research Fellow at the Bangladesh Forest Research Institute (BFRI). He earned his M.S. and B.Sc. in Biochemistry & Molecular Biology from the University of Chittagong. His research at MSI Lab investigated clinical antibody waning kinetics and booster vaccination strategies in Sinopharm-vaccinated human populations.",
+    "education": [
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – 2024"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2016 – 2021"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Research Fellow",
+        "institution": "Bangladesh Forest Research Institute (BFRI)",
+        "years": "2024 – Present"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2022 – 2024"
+      }
+    ],
+    "skills": [
+      "Clinical Human Serology",
+      "Sinopharm Booster Kinetic Profiling",
+      "ELISA Protocols",
+      "Biochemical Assays",
+      "Statistical Analysis & GraphPad Prism"
+    ],
+    "publications": [
+      "Anti-SARS-CoV2 IgG Responses in the Sinopharm-Vaccinated Individuals in Chattogram, Bangladesh and the Impact of Homologous and Heterologous Boosting.",
+      "Longitudinal assessment of antibody waning against ancestral vs. variant strains in vaccinated hospital cohorts."
+    ],
+    "awards": [
+      "BFRI Research Fellowship Grant",
+      "National Science and Technology (NST) Fellowship, Bangladesh"
+    ],
+    "cvUrl": "public/cv/rafiqul-shanta_cv.md"
+  },
+  {
+    "id": "asma-mazumder",
+    "name": "Asma Rashid Mazumder",
+    "role": "Researcher & Educator · Former M.Sc. Research Assistant",
+    "senioritySession": "MS Session 2022–2023",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Trivalent SARS-CoV-2 RBD Immunization in Mice Induces Wuhan, Omicron BA.5, and JN.1 Cross-Reacting anti-SARS-CoV-2 Antibodies",
+    "submissionDate": "August 3, 2025",
+    "shortAbstract": "Evaluated the immunogenicity of a trivalent RBD formulation (Wuhan + BA.5 + JN.1) in mice, demonstrating broad cross-reactivity across multiple SARS-CoV-2 variants.",
+    "affiliation": "Higher Secondary & Tertiary Education Sector, Chittagong",
+    "currentPosition": "Researcher & Educator, Higher Secondary & Tertiary Education Sector",
+    "currentInstitution": "Higher Secondary & Tertiary Education Sector, Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "https://www.researchgate.net/profile/Asma-Mazumder",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/asma%20rashid%20mozumder.jpg",
+    "bioSnippet": "Asma Rashid Mazumder is an academic researcher and educator. She completed her M.S. and B.Sc. (Honours) in Biochemistry and Molecular Biology at the University of Chittagong. Her thesis at MSI Lab pioneered multivalent coronavirus subunit formulation, demonstrating broad cross-reactive protection against divergent Omicron lineages.",
+    "education": [
+      {
+        "degree": "M.S.",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2022 – 2025"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2017 – 2022"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Educator & Researcher",
+        "institution": "Higher Secondary & Tertiary Education Sector",
+        "years": "2024 – Present"
+      },
+      {
+        "title": "M.Sc. Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2022 – 2025"
+      }
+    ],
+    "skills": [
+      "In vivo mouse immunization schedules, indirect ELISA endpoint titer determinations, cross-adsorption assays, SDS-PAGE, serum titration curves.",
+      "GraphPad Prism, PyMOL, Excel data regression."
+    ],
+    "publications": [
+      "Co-authored conference communications demonstrating cross-reactive antibody breadth across divergent coronavirus lineages."
+    ],
+    "awards": [
+      "University Postgraduate Research Fellowship",
+      "Lab of Molecular & Structural Immunology Core Member."
+    ],
+    "cvUrl": "public/cv/asma-mazumder_cv.md"
+  },
+  {
+    "id": "mushtak-fuad",
+    "name": "Mohammad Mushtak Fuad",
+    "role": "Lab Manager & Graduate Research Assistant",
+    "senioritySession": "MS Session 2023–2024",
+    "supervisor": "Professor M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Immunological and Computational Evaluation of Vaccine Strategies Against SARS-CoV-2 Variants in Chattogram, Bangladesh",
+    "submissionDate": "June 7, 2026",
+    "shortAbstract": "Integrated clinical human serology with HADDOCK molecular docking and PRODIGY thermodynamics to explain antibody waning and structural mechanics of variant escape.",
+    "affiliation": "Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong",
+    "currentPosition": "Lab Manager & HEAT-11009-CU Core Lead",
+    "currentInstitution": "Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "mushtakfuad@gmail.com",
+    "phone": "+8801704332114",
+    "linkedin": "https://www.linkedin.com/in/mushtakfuad/",
+    "researchgate": "https://www.researchgate.net/profile/Mohammad-Mushtak-Fuad",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/mohammad%20muhstak%20fuad.jpg",
+    "bioSnippet": "Mohammad Mushtak Fuad is the Laboratory Manager and Graduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong. He leads operational and experimental workflows for the World Bank / HEAT-11009-CU advanced research grant. His research bridges clinical immunology, host-pathogen interactions, computational structural vaccinology, HADDOCK docking, and multi-omics modeling.",
+    "education": [
+      {
+        "degree": "M.S. (Thesis)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2023 – 2026"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2018 – 2023"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Laboratory Manager & Operations Lead",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      },
+      {
+        "title": "Core Research Fellow",
+        "institution": "World Bank / HEAT-11009-CU Advanced Vaccine Project",
+        "years": "2023 – Present"
+      },
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Dept. of Biochemistry & Molecular Biology, CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "In vivo murine immunization, splenocyte harvesting, indirect ELISA, RT-qPCR, SDS-PAGE, recombinant protein expression and Ni-NTA purification in E. coli, Hitachi Chromaster HPLC, GC-MS volatile compound profiling.",
+      "PyMOL, UCSF ChimeraX, HADDOCK 2.4, PRODIGY, Python (scikit-learn, pandas, NumPy), GraphPad Prism non-linear regression, AutoDock."
+    ],
+    "publications": [
+      "Biologically Gated Multi-Omic Framework for Immunotherapy Response in Metastatic Melanoma (Manuscript Under Review).",
+      "Lead author of 4 peer-reviewed conference proceedings (ICLS 2025 SUST, ICBHA 2025 SAU, IBC 2025 Brac University)."
+    ],
+    "awards": [
+      "HEAT-11009-CU MS Research Scholarship, World Bank & Government of Bangladesh (2026)",
+      "National Science & Technology (NST) Fellowship, Ministry of Science and Technology (2025)",
+      "Best Stall & Best Laboratory Award, CRIS (2025)",
+      "Dutch-Bangla Bank Merit Scholarship (2017–2025)"
+    ],
+    "cvUrl": "public/cv/mushtak-fuad_cv.md"
+  },
+  {
+    "id": "sadia-binte-alam",
+    "name": "Sadia Binte Alam",
+    "role": "Postgraduate Research Assistant",
+    "senioritySession": "MS Session 2023–2024",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "A Comprehensive Analysis of Serospecificity and Sero-Cross-Reactivity against SARS-CoV-2 Variants Following Heterologous Mix and Match Vaccination Strategy in Mice Model",
+    "submissionDate": "June 7, 2026",
+    "shortAbstract": "Investigated mix-and-match booster combinations using variant RBDs in mice to identify optimal vaccination regimens for broad coronavirus protection.",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Postgraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "sadiabinte316@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/sadia-binte-alam-3a271b207",
+    "researchgate": "https://www.researchgate.net/profile/Sadia-Alam-21",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/sadia%20binte%20alam.jpg",
+    "bioSnippet": "Sadia Binte Alam is a Postgraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong. Her thesis evaluates mix-and-match vaccination strategies using variant recombinant receptor binding domains in mice to counter immune evasion.",
+    "education": [
+      {
+        "degree": "M.S. (Thesis)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2023 – 2026"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2018 – 2023"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Postgraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "Clinical specimen handling, biological sample preparation, diagnostic microplate screening.",
+      "Python (scikit-learn, pandas, NumPy, seaborn, Matplotlib), R statistical environment, Jupyter Notebooks."
+    ],
+    "publications": [
+      "Computational predictive pipelines for complex disease classification and risk factor stratification."
+    ],
+    "awards": [
+      "University Academic Merit Scholarship",
+      "Participant in International Biomedical Data Hackathons."
+    ],
+    "cvUrl": "public/cv/sadia-binte-alam_cv.pdf"
+  },
+  {
+    "id": "refath-alam-erin",
+    "name": "Refath Alam Erin",
+    "role": "Postgraduate Research Assistant",
+    "senioritySession": "MS Session 2023–2024",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "A Mystic Exploration of JEV Immunogenicity: Anti JEV-ED3 Antibody Responses Against Wild-type & Destabilizing Mutants of JEV-ED3",
+    "submissionDate": "June 7, 2026",
+    "shortAbstract": "Japanese encephalitis virus (JEV), a positive-sense single-stranded RNA flavivirus, is a major cause of endemic viral encephalitis. Its envelope protein domain III (JEV-ED3) plays a crucial role in receptor binding, membrane fusion, and the induction of neutralizing antibodies, making it a promising subunit vaccine candidate. In this study, anti-JEV-ED3 antibody responses were evaluated against Escherichia coli-expressed wild-type and structurally modified variants in a murine model. Destabilized variants (JEV-ED3-C5I, -P47A, -P47G, and -F21A) were generated through site-directed mutagenesis and expressed in E. coli BL21 as inclusion bodies. BALB/c mice were immunized subcutaneously with three biweekly doses (15 µg/mouse) of JEV-ED3-WT (with or without 5 µM cobalt) or adjuvant-free mutant variants. IgG responses were measured using indirect ELISA, and immune marker expression was analyzed via one-step RT-qPCR. All variants were non-toxic and immunogenic. Notably, JEV-ED3-WT supplemented with cobalt (WT-Co) and the F21A variant produced the highest antibody titers, exhibiting more than 11-fold and 8-fold increases, respectively, compared to wild-type protein, predominantly inducing a Th2-skewed humoral response with elevated IgG1. Furthermore, RT-qPCR demonstrated positive correlation between higher anti-ED3 titers and increased expression of CD86, TLR4, CD80, and MHC class II, underscoring the stability–immunogenicity paradigm for rational flavivirus subunit vaccine design.",
+    "keyObjectives": [
+      "Synthesize and express recombinant Japanese encephalitis virus envelope protein domain III (JEV-ED3) wild-type and site-directed destabilizing variants (C5I, P47A, P47G, F21A) as inclusion bodies in E. coli BL21.",
+      "Evaluate in vivo safety, tolerance, and longitudinal IgG antibody responses across three biweekly subcutaneous doses (15 µg/mouse) in BALB/c murine models.",
+      "Investigate the immuno-potentiating efficacy of trace cobalt (5 µM Co2+) co-formulation compared to adjuvant-free mutant constructs.",
+      "Quantify Th1 vs. Th2 humoral polarization (IgG subclass profiling with elevated IgG1) and correlate antibody titers with transcriptional expression of CD86, TLR4, CD80, and MHC class II via one-step RT-qPCR.",
+      "Elucidate the conformational stability–immunogenicity relationship to rationally optimize subunit vaccine immunogens against emerging JEV lineages."
+    ],
+    "methodology": {
+      "Antigen Engineering & Expression": "Wild-type JEV-ED3 sequence was obtained from UniProt and synthesized by Eurofins. Destabilized variants (C5I, P47A, P47G, and F21A) were constructed via site-directed mutagenesis, confirmed by Sanger DNA sequencing, and heterologously expressed in Escherichia coli BL21 as inclusion bodies.",
+      "Murine Immunization Schedule": "BALB/c mice were immunized subcutaneously with three biweekly doses (15 µg/mouse) of JEV-ED3-WT (with or without 5 µM cobalt) or adjuvant-free mutant variants (C5I, P47A, P47G, F21A), monitored for systemic tolerance.",
+      "Serological Antibody Titration": "Serial tail bleeds were collected post-immunization, and total IgG and subclass-specific (IgG1 vs. IgG2a) antibody titers were quantitatively evaluated using indirect ELISA.",
+      "Molecular Immune Marker Profiling": "Total cellular RNA was isolated and analyzed via one-step reverse transcription quantitative real-time PCR (one-step RT-qPCR) to measure transcriptional modulation of critical immune markers: CD86, TLR4, CD80, and MHC class II.",
+      "Immunological Data Correlation": "Anti-ED3 antibody titers and fold-changes relative to wild-type (>11-fold for WT-Co, >8-fold for F21A) were statistically correlated with immune marker transcript expression and Th2 polarization."
+    },
+    "expectedImpact": "Demonstrates that controlled structural destabilization (F21A mutation) or trace cobalt supplementation can overcome the intrinsic low immunogenicity of wild-type JEV-ED3, eliciting marked antibody increases (>8- to 11-fold) through Th2-biased pathways and immune receptor up-regulation, providing a foundational blueprint for next-generation rational flavivirus subunit vaccines.",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Postgraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "refatherin2510@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/refath-alam-erin/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/refath%20alam%20erin.jpg",
+    "bioSnippet": "Refath Alam Erin is a Postgraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry & Molecular Biology, University of Chittagong (MS Session 2023–2024). Her thesis research investigates Japanese Encephalitis Virus (JEV) envelope protein domain III (ED3) subunit vaccinology, elucidating the stability–immunogenicity paradigm using wild-type and destabilizing mutant constructs (C5I, F21A, P47A, P47G) alongside trace cobalt adjuvants in murine models.",
+    "education": [
+      {
+        "degree": "M.S. (Thesis)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2023 – 2026"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2018 – 2023"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Postgraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "Recombinant Protein Expression in E. coli BL21 (Inclusion Bodies)",
+      "Site-Directed Mutagenesis & DNA Sequencing Verification",
+      "In Vivo BALB/c Murine Immunization & Tail Bleeding Protocols",
+      "Indirect ELISA & Endpoint Humoral Antibody Titer Quantification",
+      "One-Step RT-qPCR Quantitative Gene Expression Profiling",
+      "Immune Activation Marker Profiling (CD86, TLR4, CD80, MHC-II)",
+      "Th1/Th2 Humoral Immune Polarization & IgG Subclass Analysis",
+      "Total RNA Isolation & Spectrophotometric Purity Assessment",
+      "Flavivirus Envelope Domain III (ED3) Subunit Immunoengineering"
+    ],
+    "publications": [
+      "A Mystic Exploration of JEV Immunogenicity: Anti JEV-ED3 Antibody Responses Against Wild-type & Destabilizing Mutants of JEV-ED3 (Master's Thesis Dissertation Defense: June 7, 2026, Department of Biochemistry & Molecular Biology, University of Chittagong).",
+      "Co-investigator in academic postgraduate molecular biology and structural vaccinology research dissertations at MSI Lab."
+    ],
+    "awards": [
+      "Chittagong University Academic Excellence Recognition",
+      "Laboratory Safety Certification."
+    ],
+    "cvUrl": "public/cv/refath-alam-erin_cv.md"
+  },
+  {
+    "id": "sarvani-datta",
+    "name": "Sarvani Datta",
+    "role": "Graduate Research Assistant",
+    "senioritySession": "MS Session 2024–2025",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "Comparative Analyses of Agarwood Formation and Resin Composition",
+    "submissionDate": "Ongoing Master's Research",
+    "shortAbstract": "Evaluates artificial agarwood resin induction in Aquilaria trees by examining both the anatomical extent (area) of resin deposition and the resulting chemical composition under combined biotic and abiotic stresses.",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Graduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "dattabani00@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/sarvani-datta-03b675198",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/sarvani%20datta.jpg",
+    "bioSnippet": "Sarvani Datta is a Graduate Research Assistant at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong. Her MS research evaluates artificial agarwood resin induction in Aquilaria trees by examining both the anatomical extent of resin deposition and the resulting chemical composition under combined biotic and abiotic stresses, identifying quality-defining sesquiterpenes and chromones via GC-MS.",
+    "keyObjectives": [
+      "Compare the chemical profiles of agarwood resin induced by different combinations of biotic and abiotic stressors.",
+      "Identify specific agarwood quality markers and establish which stressor formulations yield high-quality resin.",
+      "Determine the optimal treatment combination that provides the best balance between resin yield and chemical quality for practical, large-scale production."
+    ],
+    "methodology": {
+      "Induction Treatments": "Healthy trees are treated through drilled trunk holes with formulations combining Fusarium spp. inoculums (whole fungal extract, supernatant, and pellet fractions), optimized concentrations of commercial cellulases, and free divalent metal ions via local injection and continuous flow.",
+      "Sampling Schedule": "Wood tissue samples are harvested at tri-monthly intervals over an 8-month timeframe.",
+      "Histopathological Analysis": "Tissue sections are microscopically examined to assess anatomical structural changes, measuring the size of the induced area and the spatial pattern of resin formation.",
+      "Chemical Profiling": "Gas Chromatography–Mass Spectrometry (GC-MS) is employed to characterize the resin's chemical profile and detect major quality-defining sesquiterpenes and chromones.",
+      "Data Analysis": "Statistical comparisons of resin yield and chemical profiles among treatment groups are conducted using spreadsheet-based models."
+    },
+    "expectedImpact": "Identifies an optimized, reproducible artificial induction strategy to increase agarwood yields without compromising resin quality, supporting commercial cultivation and reducing harvesting pressure on wild Aquilaria populations.",
+    "education": [
+      {
+        "degree": "M.S. Candidate",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2024 – Present"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2019 – 2024"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2024 – Present"
+      }
+    ],
+    "skills": [
+      "Gas Chromatography–Mass Spectrometry (GC-MS) Metabolomics",
+      "Histopathological Microtome Sectioning & Anatomical Microscopy",
+      "Chemical Profiling of Sesquiterpenes & 2-(2-phenylethyl)chromones",
+      "Fusarium spp. Inoculum Preparation & Cellulase Formulation",
+      "Trunk Drill Hole Inoculation & Divalent Metal Ion Elicitor Flow",
+      "Spreadsheet-based Statistical Modeling & Yield Comparison"
+    ],
+    "publications": [
+      "Comparative anatomical and chemical profiling of artificially induced Aquilaria resin (in preparation)."
+    ],
+    "awards": [
+      "Undergraduate Merit Scholarship, Faculty of Biological Sciences, University of Chittagong."
+    ],
+    "cvUrl": "public/cv/sarvani-datta_cv.md"
+  },
+  {
+    "id": "jafrina-akter-eva",
+    "name": "Jafrina Akter Eva",
+    "role": "Graduate Research Assistant",
+    "senioritySession": "MS Session 2024–2025",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "Understanding Artificial Agarwood Induction Pathways and Mechanisms",
+    "submissionDate": "Ongoing Master's Research",
+    "shortAbstract": "Investigates the molecular and transcriptional mechanisms underlying artificial agarwood induction in Aquilaria malaccensis, specifically tracking the activation of early defense signaling cascades and downstream sesquiterpene biosynthetic pathways.",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Graduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "jafrinaaktereva201@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/jafrina-akter-eva/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Jafrina%20Akter%20Eva.png",
+    "bioSnippet": "Jafrina Akter Eva is a Graduate Research Assistant at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong. Her MS research investigates the molecular and transcriptional mechanisms underlying artificial agarwood induction in Aquilaria malaccensis, specifically tracking early defense signaling cascades and downstream sesquiterpene biosynthetic pathways using RT-qPCR.",
+    "keyObjectives": [
+      "Profile the transcriptional regulation of stress-responsive defense and resin biosynthesis genes following diverse artificial treatments.",
+      "Quantify differential expression changes at 3-month and 6-month post-inoculation intervals.",
+      "Measure early defense signaling genes (WRKY1, LOX1, MAPK3, MYC2) and key sesquiterpene biosynthetic genes (DXPS, MK, FPS, SS4, DGS, DGS1, DSS).",
+      "Provide a mechanistic basis for rationally formulating synergistic inducers to accelerate resin synthesis."
+    ],
+    "methodology": {
+      "Induction Treatments": "Aquilaria malaccensis trunks receive standardized inducer formulations consisting of fungal inoculants, cellulase enzymes, and chemical signalers (such as cobalt) introduced through uniform drill holes.",
+      "Sampling & RNA Extraction": "Vascular wood tissues surrounding inoculation sites are collected at 3 and 6 months post-treatment. Total RNA is isolated via the CTAB-IPA precipitation method and stored at -80°C.",
+      "Gene Expression Quantification": "Promega One-Step RT-qPCR is used to measure relative gene expression via the 2^-ΔΔCt method, normalized against GAPDH as an endogenous reference gene.",
+      "Statistical Analysis": "Differences in relative transcript abundance across treatment groups are evaluated using one-way ANOVA (p < 0.05)."
+    },
+    "expectedImpact": "Demonstrates how early defense regulators trigger sustained biosynthetic gene expression over 3 to 6 months. This work establishes validated molecular biomarkers to screen and optimize artificial inducer formulations, facilitating sustainable production and germplasm conservation.",
+    "education": [
+      {
+        "degree": "M.S. Candidate",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2024 – Present"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2020 – 2024"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Graduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2024 – Present",
+        "details": "Leading CTAB-IPA total RNA isolation, Promega One-Step RT-qPCR, and transcriptional signaling pathway quantification for the Aquilaria agarwood molecular induction project."
+      }
+    ],
+    "skills": [
+      "Promega One-Step RT-qPCR Relative Gene Expression",
+      "CTAB-IPA Total RNA Extraction from Recalcitrant Wood Tissues",
+      "2^-ΔΔCt Relative Quantification Normalized to GAPDH",
+      "Quantification of Early Defense Genes (WRKY1, LOX1, MAPK3, MYC2)",
+      "Sesquiterpene Biosynthetic Gene Profiling (DXPS, MK, FPS, SS4, DGS, DGS1, DSS)",
+      "One-Way ANOVA (p < 0.05) & Molecular Inducer Biomarker Screening"
+    ],
+    "publications": [
+      "Transcriptional regulation of sesquiterpene synthases during elicitor-mediated agarwood induction (in preparation)."
+    ],
+    "awards": [
+      "Chittagong University Biochemistry Research Fellowship",
+      "Clinical Diagnostic Training Certification."
+    ],
+    "cvUrl": "public/cv/jafrina-akter-eva_cv.pdf"
+  },
+  {
+    "id": "misbah-ul-islam",
+    "name": "Misbah Ul Islam",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "BSc Session 2021–2022",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "misbahulislam065@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/misbah-ul-islam-514ba1294/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Misbah%20Ul%20Islam.jpg",
+    "bioSnippet": "Misbah Ul Islam is an Undergraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry and Molecular Biology, University of Chittagong.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "Restriction enzyme digestion, ligation protocols, recombinant E. coli culturing, UV-Vis spectrophotometry, SDS-PAGE purity checks.",
+      "SnapGene, NCBI BLAST, NEBcutter, PyMOL."
+    ],
+    "publications": [],
+    "awards": [
+      "Graduate Researcher Award, Department of Biochemistry & Molecular Biology, CU."
+    ],
+    "cvUrl": "public/cv/misbah-ul-islam_cv.md"
+  },
+  {
+    "id": "mohammad-arifur-rahman",
+    "name": "Mohammad Arifur Rahman",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "BSc Session 2021–2022",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "arifbinkamal01@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/mohammad-arifur-rahman-6a0810325/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Mohammad%20Arifur%20Rahman.jpg",
+    "bioSnippet": "Mohammad Arifur Rahman is an Undergraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "FPLC/gravity column chromatography, Western blotting, Coomassie/silver staining, cell lysis optimization, membrane ultrafiltration.",
+      "UNICORN FPLC control software, Image Lab, GraphPad Prism."
+    ],
+    "publications": [],
+    "awards": [
+      "Professional Life Sciences Practitioner Certification",
+      "University Alumni Fellowship."
+    ],
+    "cvUrl": "public/cv/mohammad-arifur-rahman_cv.md"
+  },
+  {
+    "id": "nusrat-jahan-mim",
+    "name": "Nusrat Jahan Mim",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "BSc Session 2021–2022",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "xiaonusratmim@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/nusrat-jahan-763782359/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Nusrat%20Jahan%20Mim.jpg",
+    "bioSnippet": "Nusrat Jahan Mim is an Undergraduate Research Assistant at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "RT-qPCR, DNA extraction kits, gel electrophoresis, microplate diagnostics, clinical biosafety level compliance.",
+      "QuantStudio Design & Analysis software, NCBI BLAST, Primer3."
+    ],
+    "publications": [],
+    "awards": [
+      "Biosafety & Good Laboratory Practice (GLP) Certified Specialist."
+    ],
+    "cvUrl": "public/cv/nusrat-jahan-mim_cv.md"
+  },
+  {
+    "id": "sadiya-rahman-faiza",
+    "name": "Sadiya Rahman Faiza",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "BSc Session 2021–2022",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "srfaiza03@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/sadiyafaizah/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Sadiya%20Rahman%20Faiza.jpg",
+    "bioSnippet": "Sadiya Rahman Faiza is an Undergraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "Standard biochemical assays, microplate spectrophotometry, nucleic acid extraction.",
+      "NCBI BLAST, AutoDock Vina, PyMOL visualization, MEGA phylogenetic software, UniProt database querying."
+    ],
+    "publications": [],
+    "awards": [
+      "Bioinformatics Training Fellowship",
+      "Graduate Honor Roll, University of Chittagong."
+    ],
+    "cvUrl": "public/cv/sadiya-rahman-faiza_cv.pdf"
+  },
+  {
+    "id": "mahina-mostafa-chowdhury",
+    "name": "Mahina Mostafa Chowdhury",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "BSc Session 2022–2023",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "23604021@std.cu.ac.bd",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/mahina-mostafa-chowdhury-3a3726327/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Mahina%20Mostafa%20Chowdhury.jpeg",
+    "bioSnippet": "Mahina Mostafa Chowdhury is an Undergraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2022 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2024 – Present"
+      }
+    ],
+    "skills": [
+      "Primer design (NCBI Primer-BLAST), genomic DNA extraction, restriction endonuclease digestion, fluorescent gel documentation.",
+      "Primer-BLAST, Hardy-Weinberg equilibrium calculators, SPSS statistical software, ImageJ."
+    ],
+    "publications": [],
+    "awards": [
+      "Genetics Research Excellence Award",
+      "University Merit Scholarship."
+    ],
+    "cvUrl": "public/cv/mahina-mostafa-chowdhury_cv.md"
+  },
+  {
+    "id": "shanjida-islam-eva",
+    "name": "Shanjida Islam Eva",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "BSc Session 2022–2023",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "evabmb11@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/shanjida-islam-eva-824307443/",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Shanjida%20Islam%20Eva.jpeg",
+    "bioSnippet": "Shanjida Islam Eva is an Undergraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry and Molecular Biology, University of Chittagong.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2022 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2024 – Present"
+      }
+    ],
+    "skills": [
+      "Soxhlet extraction, vacuum rotary evaporation, UV-Vis spectrophotometric antioxidant kinetics, TLC, and HPLC.",
+      "ChemDraw, GraphPad Prism non-linear regression, PubChem database mining."
+    ],
+    "publications": [],
+    "awards": [
+      "Pharmaceutical Research Fellowship",
+      "Chittagong University Biochemistry Alumna Honor."
+    ],
+    "cvUrl": "public/cv/shanjida-islam-eva_cv.md"
+  },
+  {
+    "id": "dr-m-monirul-islam",
+    "name": "Prof. Dr. Mohammad Monirul Islam",
+    "role": "Professor & Principal Investigator",
+    "senioritySession": "PhD Research (TUAT, Tokyo)",
+    "supervisor": "Prof. Yutaka Kuroda",
+    "coSupervisors": "",
+    "thesisTitle": "Structure, Function, and Immunogenicity Studies on Protein Variants (Dengue ED3 & BPTI)",
+    "submissionDate": "Foundational Work (2009)",
+    "shortAbstract": "Established the structural biophysical mechanisms governing flaviviral envelope domain 3 (ED3) serospecificity, and invented engineered solubility-enhancing peptide tags (SEP/SCP tags) for difficult-to-express viral subunit antigens.",
+    "affiliation": "University of Chittagong",
+    "currentPosition": "Professor & Head of Laboratory",
+    "currentInstitution": "University of Chittagong",
+    "department": "Department of Biochemistry & Molecular Biology",
+    "email": "islammm@cu.ac.bd",
+    "phone": "+8801750180422",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://cu.ac.bd",
+    "googleScholar": "",
+    "image": "public/PI/Mohammad%20Monirul%20Islam,%20PI,%20MSI%20Lab.jpg",
+    "bioSnippet": "Prof. Dr. Mohammad Monirul Islam leads the Laboratory of Molecular & Structural Immunology (MSI Lab) at the University of Chittagong. With over two decades of experience spanning structural biology, molecular immunology, and protein technology, his research focuses on understanding biophysical mechanisms governing host-pathogen interactions, vaccine development against emerging tropical viruses (Dengue, SARS-CoV-2, JEV), and the development of novel peptide tags for solubility and immunogenicity control.",
+    "education": [
+      {
+        "degree": "Ph.D. in Biotechnology & Life Sciences",
+        "field": "Structural Immunology & Protein Engineering",
+        "institution": "Tokyo University of Agriculture and Technology (TUAT), Tokyo, Japan",
+        "years": "2005 – 2009"
+      },
+      {
+        "degree": "Master of Science (M.Sc.)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Dhaka, Dhaka, Bangladesh",
+        "years": "1999 – 2000"
+      },
+      {
+        "degree": "Bachelor of Science (B.Sc. Hons)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Dhaka, Dhaka, Bangladesh",
+        "years": "1995 – 1999"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Professor & Principal Investigator",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2018 – Present"
+      },
+      {
+        "title": "Lab-In-Charge",
+        "institution": "COVID-19 RT-PCR Testing Lab, Faculty of Biological Sciences, University of Chittagong",
+        "years": "2020 – 2022"
+      },
+      {
+        "title": "Associate Professor",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2013 – 2018"
+      },
+      {
+        "title": "Assistant Professor & Lecturer",
+        "institution": "Dept. of Biochemistry & Molecular Biology, University of Chittagong",
+        "years": "2003 – 2013"
+      }
+    ],
+    "skills": [
+      "Structural Immunology",
+      "Protein Engineering",
+      "X-ray Crystallography & NMR Analysis",
+      "Recombinant Antigen Expression",
+      "Solubility Tag Design (SEP/SCP)",
+      "Flavivirus ED3 Serology",
+      "Monoclonal Antibody Characterization",
+      "RT-PCR Diagnostics"
+    ],
+    "publications": [
+      "Structure-guided engineering of dengue virus envelope domain III reveals critical residues controlling serospecificity and neutralizing epitope exposure.",
+      "Development and validation of solubility-enhancing peptide (SEP) tags for high-level expression of aggregation-prone viral subunit vaccine antigens.",
+      "Epidemiological and genomic surveillance of SARS-CoV-2 variants during the COVID-19 pandemic in southeastern Bangladesh.",
+      "Immunogenicity and cross-reactive protective efficacy of multivalent dengue subunit vaccine formulations in murine models."
+    ],
+    "awards": [
+      "Monbukagakusho (MEXT) Japanese Government Research Scholarship (2005–2009)",
+      "Principal Investigator, World Bank / Higher Education Acceleration and Transformation (HEAT) Advanced Research Grant",
+      "University of Chittagong Outstanding Leadership Award in Molecular COVID-19 Diagnostics (2021)",
+      "Dean's Award for Research Excellence, Faculty of Biological Sciences, University of Chittagong"
+    ],
+    "cvUrl": "public/cv/dr-m-monirul-islam_cv.pdf"
+  },
+  {
+    "id": "md-shourov-hossain-shuvo",
+    "name": "Md. Shourov Hossain Shuvo",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "Session 2022–2023",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "erenyeager4500ad@gmail.com",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/sourov-hossain-shuvo-827996442",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Md.Shourov%20Hossain%20Shuvo.jpeg",
+    "bioSnippet": "Md. Shourov Hossain Shuvo is an Undergraduate Research Assistant at the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry & Molecular Biology, University of Chittagong. His academic interests encompass recombinant DNA technology, protein handling, and molecular immunology.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2022 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "Molecular Biology Protocols",
+      "Recombinant DNA Technology",
+      "Protein Handling & Buffer Preparation",
+      "Laboratory Safety & Equipment Operation"
+    ],
+    "publications": [],
+    "awards": [],
+    "cvUrl": "public/cv/md-shourov-hossain-shuvo_cv.md"
+  },
+  {
+    "id": "nazia-sultana",
+    "name": "Nazia Sultana",
+    "role": "Undergraduate Research Assistant",
+    "senioritySession": "Session 2022–2023",
+    "supervisor": "",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Undergraduate Research Assistant, MSI Lab",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "23604017@std.cu.ac.bd",
+    "phone": "",
+    "linkedin": "https://www.linkedin.com/in/nazia-sultana-1a29aa442",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Nazia%20Sultana.png",
+    "bioSnippet": "Nazia Sultana is an Undergraduate Research Assistant at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong. She focuses on antibody engineering, molecular genetics, and recombinant screening techniques.",
+    "education": [
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2022 – Present"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Undergraduate Research Assistant",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "2023 – Present"
+      }
+    ],
+    "skills": [
+      "Recombinant Technology Support",
+      "Screening Assays",
+      "Agarose Gel Electrophoresis",
+      "Bioinformatic Curation"
+    ],
+    "publications": [],
+    "awards": [],
+    "cvUrl": "public/cv/nazia-sultana_cv.md"
+  },
+  {
+    "id": "dr-shamsun-nahar",
+    "name": "Dr. Shamsun Nahar Binte Mannan",
+    "role": "Associate Professor & Head, Dept. of Skin & VD · Doctoral Fellow (Ph.D. Candidate)",
+    "senioritySession": "Ph.D. Researcher",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Chattogram Maa-O-Shishu Hospital Medical College",
+    "currentPosition": "Associate Professor & Head, Department of Skin & VD",
+    "currentInstitution": "Chattogram Maa-O-Shishu Hospital Medical College",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://www.doctorbangladesh.com/dr-shamsun-nahar-skin/",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Dr.%20Shamsun%20Nahar.jpg",
+    "bioSnippet": "Dr. Shamsun Nahar Binte Mannan is a Doctoral Fellow (Ph.D. Candidate) at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong. She serves as Associate Professor & Head of the Department of Skin & VD at Chattogram Maa-O-Shishu Hospital Medical College. Her doctoral investigation focuses on multiplex PCR-based molecular detection of sexually transmitted infections in pregnant women.",
+    "education": [
+      {
+        "degree": "MBBS",
+        "field": "Medicine & Surgery",
+        "institution": "University of Chittagong",
+        "years": "Completed"
+      },
+      {
+        "degree": "DDV",
+        "field": "Dermatology & Venereology",
+        "institution": "Chittagong Medical College Hospital",
+        "years": "Postgraduate"
+      },
+      {
+        "degree": "Advanced Clinical Training",
+        "field": "Aesthetic Dermatology, Laser Medicine & Cosmetology",
+        "institution": "Specialized Clinical Institutes",
+        "years": "Fellowship"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Associate Professor & Head",
+        "institution": "Dept. of Skin & VD, CMOSHMC",
+        "years": "Present"
+      },
+      {
+        "title": "Doctoral Fellow",
+        "institution": "MSI Lab, Dept. of Biochemistry & Molecular Biology, CU",
+        "years": "Present"
+      }
+    ],
+    "skills": [
+      "Potassium hydroxide (KOH) direct mount microscopy for fungal hyphae/spores, Slit-skin smear (SSS) for Hansen's disease, comedone extraction and acne subcision, superficial chemical peels (glycolic, salicylic, TCA), intralesional triamcinolone acetonide infiltration for keloids and hypertrophic scars, cryosurgery, dermabrasion, and skin prick testing.",
+      "Polarized light dermoscopy systems, clinical dermatological documentation software, skin barrier assessment tools, dermatopathology diagnostic review."
+    ],
+    "publications": [
+      "Clinical reports on emerging antifungal resistance in superficial dermatophytosis, protocols for multimodal treatment of melasma in South Asian skin types, and clinical presentations at National Dermatological Conferences."
+    ],
+    "awards": [
+      "Life Member, Bangladesh Dermatological Society (BDS)",
+      "Member, Bangladesh Medical Association (BMA)",
+      "Member, South Asian Regional Association of Dermatologists (SARAD)."
+    ],
+    "cvUrl": "public/cv/dr-shamsun-nahar_cv.md"
+  },
+  {
+    "id": "dr-md-aqiv-javed",
+    "name": "Dr. Md. Aqiv Javed Rafi",
+    "role": "Consultant Dermatologist & Venereologist / Medical Officer",
+    "senioritySession": "Ph.D. Researcher",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Chittagong Medical College & Hospital (CMCH)",
+    "currentPosition": "Consultant Dermatologist & Venereologist, CMCH",
+    "currentInstitution": "Chittagong Medical College & Hospital (CMCH)",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "https://www.doctorbangladesh.com/dr-md-aqiv-javed-rafi/",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/Dr.%20Md.%20Aqiv%20Javed.jpg",
+    "bioSnippet": "Dr. Md. Aqiv Javed (Rafi) is a Doctoral Fellow at MSI Lab, University of Chittagong. A Consultant in ENT and BCS (Health) cadre specialist with international fellowships, his doctoral work investigates molecular pathways in sensorineural hearing loss, auditory neurobiology, and inner-ear biomarker discovery.",
+    "education": [
+      {
+        "degree": "MBBS",
+        "field": "Medicine & Surgery",
+        "institution": "University of Chittagong",
+        "years": "Completed"
+      },
+      {
+        "degree": "BCS (Health)",
+        "field": "Government Health Service Cadre",
+        "institution": "Ministry of Health & Family Welfare",
+        "years": "Appointed"
+      },
+      {
+        "degree": "DDV",
+        "field": "Dermatology & Venereology",
+        "institution": "Chittagong Medical College Hospital",
+        "years": "Postgraduate"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Consultant (ENT)",
+        "institution": "BCS (Health), Ministry of Health & Family Welfare",
+        "years": "Present"
+      },
+      {
+        "title": "Doctoral Fellow",
+        "institution": "MSI Lab, Dept. of Biochemistry & Molecular Biology, CU",
+        "years": "Present"
+      }
+    ],
+    "skills": [
+      "Polarized/non-polarized dermoscopy, diagnostic patch testing for contact dermatitis, skin punch and shave biopsies, electrocautery, radiofrequency ablation, chemical cautery, cryotherapy for viral warts and benign cutaneous lesions, intralesional corticosteroid injections, and Wood's lamp examination.",
+      "High-resolution digital dermatoscope imaging software, clinical photographic lesion tracking systems, dermatopathology histopathological correlation, diagnostic allergy panels."
+    ],
+    "publications": [
+      "Clinical observational studies, case series presentations on atypical cutaneous manifestations of systemic diseases, management audits on recalcitrant dermatophytosis, and clinical seminars on modern biologic therapies in psoriasis."
+    ],
+    "awards": [
+      "Life Member, Bangladesh Dermatological Society (BDS)",
+      "Member, Bangladesh Medical Association (BMA)",
+      "Member, International Society of Dermatology (ISD)",
+      "Government health service honors under BCS (Health)."
+    ],
+    "cvUrl": "public/cv/dr-md-aqiv-javed_cv.md"
+  },
+  {
+    "id": "dr-sharmin-ara-begum",
+    "name": "Dr. Sharmin Ara Begum",
+    "role": "Doctoral Fellow (Ph.D. Candidate)",
+    "senioritySession": "Ph.D. Researcher",
+    "supervisor": "Prof. Dr. Mohammad Monirul Islam",
+    "coSupervisors": "",
+    "thesisTitle": "",
+    "submissionDate": "",
+    "shortAbstract": "",
+    "affiliation": "Army Medical College, Chattogram (AMCC) / University of Chittagong",
+    "currentPosition": "Assistant Professor, Dept. of Physiology",
+    "currentInstitution": "Army Medical College, Chattogram (AMCC) / University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "",
+    "bioSnippet": "Dr. Sharmin Ara Begum is an Assistant Professor of Physiology at Army Medical College, Chattogram and a Doctoral Fellow at MSI Lab, University of Chittagong. Her research focuses on cardiopulmonary and respiratory physiology, spirometric dynamics, and systemic biomarkers in maternal and occupational health.",
+    "education": [
+      {
+        "degree": "Ph.D. Candidate",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "Ongoing"
+      },
+      {
+        "degree": "MBBS, M.Phil (Physiology)",
+        "field": "Medical Physiology",
+        "institution": "University of Chittagong",
+        "years": "Completed"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Assistant Professor",
+        "institution": "Department of Physiology, Army Medical College, Chattogram",
+        "years": "Present"
+      },
+      {
+        "title": "Doctoral Fellow",
+        "institution": "MSI Lab, Dept. of Biochemistry & Molecular Biology, CU",
+        "years": "Present"
+      }
+    ],
+    "skills": [
+      "Cardiopulmonary Function Testing",
+      "Spirometric Dynamics",
+      "Systemic Physiological Biomarkers",
+      "Respiratory Clinical Diagnostics"
+    ],
+    "publications": [
+      "Evaluation of spirometric lung function parameters and occupational respiratory dynamics."
+    ],
+    "awards": [
+      "Member, Bangladesh Society of Physiologists (BSP)"
+    ],
+    "cvUrl": "public/cv/dr-sharmin-ara-begum_cv.md"
+  },
+  {
+    "id": "md-rafiqul-islam",
+    "name": "Md. Rafiqul Islam",
+    "role": "M.Sc. Research Fellow (Alumnus)",
+    "senioritySession": "MS Session 2009–2010",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Identification of Residue Determinants of Dengue 4 Sero-specificity and / or Cross-Reactivity",
+    "submissionDate": "July 7, 2012",
+    "shortAbstract": "Identified specific amino acid residue determinants on DENV4 ED3 that dictate serospecificity and cross-reactivity by evaluating mutated variants in mice.",
+    "affiliation": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "currentPosition": "Researcher & Academic Fellow",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "",
+    "bioSnippet": "Md. Rafiqul Islam was an M.Sc. Research Fellow at MSI Lab (MS Session 2009–2010). His foundational work pinpointed specific amino acid residue determinants on Dengue virus serotype 4 envelope domain III responsible for sero-specificity and cross-reactive antibody recognition.",
+    "education": [
+      {
+        "degree": "M.S. in Biochemistry & Molecular Biology",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2009 – 2012"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2005 – 2009"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "M.Sc. Research Fellow",
+        "institution": "MSI Lab, University of Chittagong",
+        "years": "2010 – 2012"
+      }
+    ],
+    "skills": [
+      "TaqMan probe real-time PCR, automated magnetic bead nucleic acid extractors, viral load monitoring, clinical biochemistry calibrators, Levey-Jennings QC charting.",
+      "QuantStudio Real-Time PCR software, Laboratory Information Management Systems (LIMS)."
+    ],
+    "publications": [
+      "Led execution and validation of >50,000 diagnostic molecular assays during major regional public health epidemics."
+    ],
+    "awards": [
+      "Certified Molecular Diagnostics Specialist",
+      "Professional Member of Bangladesh Biosafety and Biosecurity Association."
+    ],
+    "cvUrl": "public/cv/md-rafiqul-islam_cv.md"
+  },
+  {
+    "id": "nishat-akther",
+    "name": "Nishat Akther",
+    "role": "M.Sc. Research Fellow (Alumna)",
+    "senioritySession": "MS Session 2010–2011",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Residue Specificity on the EDIII of E-Protein and Dengue Sero-Specificity: Sero-Specific and Sero-Cross-Reactive Serum Antibody Responses in Mice Model",
+    "submissionDate": "March 31, 2013",
+    "shortAbstract": "Evaluated serum antibody responses against mutated DENV EDIII constructs in mice to differentiate sero-specific vs. cross-reactive immune pathways.",
+    "affiliation": "University of Chittagong Alumni Network",
+    "currentPosition": "Biomedical Researcher & Educator",
+    "currentInstitution": "University of Chittagong Alumni Network",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "",
+    "bioSnippet": "Nishat Akther conducted M.Sc. research at MSI Lab on residue-level specificity within the envelope protein domain III (EDIII) across dengue serotypes, mapping sero-specific and cross-reactive antibody repertoires in murine models.",
+    "education": [
+      {
+        "degree": "M.S. in Biochemistry & Molecular Biology",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2010 – 2013"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2006 – 2010"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "M.Sc. Research Fellow",
+        "institution": "MSI Lab, University of Chittagong",
+        "years": "2011 – 2013"
+      }
+    ],
+    "skills": [
+      "Dengue EDIII Cloning",
+      "Serological Titration",
+      "Epitope Specificity Mapping",
+      "Animal Handling & Immunization"
+    ],
+    "publications": [
+      "Residue specificity on the EDIII of E-protein dictates dengue sero-specificity and cross-reactivity in mice."
+    ],
+    "awards": [
+      "University of Chittagong Postgraduate Fellowship"
+    ],
+    "cvUrl": "public/cv/nishat-akther_cv.md"
+  },
+  {
+    "id": "meherun-nesa",
+    "name": "Meherun Nesa",
+    "role": "M.Sc. Research Fellow (Alumna)",
+    "senioritySession": "MS Session 2014–2015",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "Dr. M. M. R. Mahib",
+    "thesisTitle": "The EDIII, A Generic Tool To Detect All Natural Anti-Dengue Antibodies",
+    "submissionDate": "September 25, 2016",
+    "shortAbstract": "Evaluated envelope protein domain III (EDIII) as a universal diagnostic reagent capable of capturing all natural anti-dengue antibodies in patient sera.",
+    "affiliation": "University of Chittagong Alumni Network",
+    "currentPosition": "Diagnostic Immunology Researcher",
+    "currentInstitution": "University of Chittagong Alumni Network",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "",
+    "bioSnippet": "Meherun Nesa investigated recombinant envelope domain III (EDIII) as a generic diagnostic capture antigen for detecting natural anti-dengue antibodies across all four circulating serotypes in clinical patient sera.",
+    "education": [
+      {
+        "degree": "M.S. in Biochemistry & Molecular Biology",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2016"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2010 – 2014"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "M.Sc. Research Fellow",
+        "institution": "MSI Lab, University of Chittagong",
+        "years": "2015 – 2016"
+      }
+    ],
+    "skills": [
+      "Clinical Sera Screening",
+      "Diagnostic ELISA Standardization",
+      "Cross-Reactive Serology",
+      "Recombinant EDIII Preparation"
+    ],
+    "publications": [
+      "Evaluation of recombinant EDIII as a generic diagnostic antigen for natural anti-dengue antibody detection."
+    ],
+    "awards": [
+      "Postgraduate Academic Scholarship, University of Chittagong"
+    ],
+    "cvUrl": "public/cv/meherun-nesa_cv.md"
+  },
+  {
+    "id": "tanjina-tanima",
+    "name": "Tanjina Afrin (Tanima)",
+    "role": "M.Sc. Researcher (Alumna)",
+    "senioritySession": "MS Session 2014–2015",
+    "supervisor": "Md. Monirul Islam, PhD",
+    "coSupervisors": "Dr. M. M. R. Mahib",
+    "thesisTitle": "Effects SEP-Tag-dependent protein oligomerization on immune response modulation in mice",
+    "submissionDate": "September 25, 2016",
+    "shortAbstract": "Studied how SEP-tag-induced oligomerization and aggregate formation alter immunogenicity and antibody response kinetics in animal models.",
+    "affiliation": "Office of the Comptroller & Auditor General (CAG) of Bangladesh",
+    "currentPosition": "Assistant Director / Audit Officer",
+    "currentInstitution": "Office of the Comptroller & Auditor General (CAG) of Bangladesh",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/tanima.jpg",
+    "bioSnippet": "Tanjina Afrin (Tanima) researched solubility-enhancing peptide (SEP) tags and their role in modulating protein oligomerization and immune response kinetics in murine vaccination models. She currently serves as an Assistant Director in the Bangladesh Civil Service audit cadre.",
+    "education": [
+      {
+        "degree": "M.S. in Biochemistry & Molecular Biology",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2014 – 2016"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2010 – 2014"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Assistant Director / Audit Officer",
+        "institution": "CAG Bangladesh",
+        "years": "Present"
+      },
+      {
+        "title": "M.Sc. Researcher",
+        "institution": "MSI Lab, University of Chittagong",
+        "years": "2015 – 2016"
+      }
+    ],
+    "skills": [
+      "Protein Oligomerization Analysis",
+      "SEP-Tag Fusion Technology",
+      "Humoral Immunity Profiling",
+      "Dynamic Light Scattering (DLS)"
+    ],
+    "publications": [
+      "Effects of SEP-tag-dependent protein oligomerization on immune response modulation in mice."
+    ],
+    "awards": [
+      "National Science and Technology (NST) Fellowship, Bangladesh"
+    ],
+    "cvUrl": "public/cv/tanjina-tanima_cv.md"
+  },
+  {
+    "id": "mamtaz-mishu",
+    "name": "Mamtaz Sultana (Mishu)",
+    "role": "M.Sc. Research Fellow (Alumna)",
+    "senioritySession": "MS Session 2015–2016",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "Dr. M. M. R. Mahib",
+    "thesisTitle": "Investigation of natural anti-dengue antibodies using epitope-grafted ED3s possessing the sero-specificity of both DENV-3 and DENV-4",
+    "submissionDate": "September 13, 2017",
+    "shortAbstract": "Characterized natural human anti-dengue antibodies using engineered, epitope-grafted dual-specificity DENV-3/DENV-4 ED3 variants to increase diagnostic accuracy.",
+    "affiliation": "Bangladesh Council of Scientific and Industrial Research (BCSIR)",
+    "currentPosition": "Scientific Officer",
+    "currentInstitution": "Bangladesh Council of Scientific and Industrial Research (BCSIR)",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "public/Current%20Members%20and%20Alumni/mishu.jpg",
+    "bioSnippet": "Mamtaz Sultana (Mishu) investigated engineered epitope-grafted dual-specificity ED3 domains capable of simultaneously recognizing DENV-3 and DENV-4 antibodies. She is currently a Scientific Officer at BCSIR, Bangladesh.",
+    "education": [
+      {
+        "degree": "M.S. in Biochemistry & Molecular Biology",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2015 – 2017"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2011 – 2015"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Scientific Officer",
+        "institution": "BCSIR Laboratories, Chattogram",
+        "years": "Present"
+      },
+      {
+        "title": "M.Sc. Research Fellow",
+        "institution": "MSI Lab, University of Chittagong",
+        "years": "2016 – 2017"
+      }
+    ],
+    "skills": [
+      "Epitope Grafting Engineering",
+      "Dual-Specificity Antigen Design",
+      "Clinical Patient Serum Neutralization",
+      "Protein Purification"
+    ],
+    "publications": [
+      "Engineered epitope-grafted ED3 variants possessing dual DENV-3/DENV-4 sero-specificity in clinical serodiagnostics."
+    ],
+    "awards": [
+      "BCSIR Scientific Fellowship Award",
+      "National Science and Technology (NST) Fellowship"
+    ],
+    "cvUrl": "public/cv/mamtaz-mishu_cv.md"
+  },
+  {
+    "id": "fayaz-rezvanul-haq",
+    "name": "Fayaz Rezvanul Haq",
+    "role": "M.Sc. Researcher (Alumnus)",
+    "senioritySession": "MS Session 2017–2018",
+    "supervisor": "M. Monirul Islam, PhD",
+    "coSupervisors": "",
+    "thesisTitle": "Effects of poly-Ile and poly-Lys tags on the aggregate sizes and immunogenicity of an epitope-grafted DEN4 ED3",
+    "submissionDate": "July 10, 2019",
+    "shortAbstract": "Evaluated particle size distribution and antibody titer induction of DEN4 ED3 modified with poly-isoleucine and poly-lysine tags in Swiss albino mice.",
+    "affiliation": "Biopharmaceutical Sector / University of Chittagong Alumni",
+    "currentPosition": "Protein Formulation Researcher",
+    "currentInstitution": "Biopharmaceutical Sector / University of Chittagong Alumni",
+    "department": "Biochemistry & Molecular Biology",
+    "email": "",
+    "phone": "",
+    "linkedin": "",
+    "researchgate": "",
+    "profileUrl": "",
+    "googleScholar": "",
+    "image": "",
+    "bioSnippet": "Fayaz Rezvanul Haq evaluated how hydrophobic poly-isoleucine and positively charged poly-lysine peptide tags dictate protein aggregate sizing and modulate in vivo immunogenicity using epitope-grafted DENV-4 ED3 constructs in mice.",
+    "education": [
+      {
+        "degree": "M.S. in Biochemistry & Molecular Biology",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2017 – 2019"
+      },
+      {
+        "degree": "B.Sc. (Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2013 – 2017"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "M.Sc. Research Assistant",
+        "institution": "MSI Lab, University of Chittagong",
+        "years": "2018 – 2019"
+      }
+    ],
+    "skills": [
+      "Poly-Amino Acid Tag Formulation",
+      "Aggregate Particle Size Analysis",
+      "ELISA Humoral Response Titration",
+      "Fast Protein Liquid Chromatography (FPLC)"
+    ],
+    "publications": [
+      "Aggregate size manipulation and immunogenicity enhancement of dengue ED3 using poly-isoleucine and poly-lysine peptide tags."
+    ],
+    "awards": [
+      "University Postgraduate Research Award"
+    ],
+    "cvUrl": "public/cv/fayaz-rezvanul-haq_cv.md"
+  }
+];
+
+    function getParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    function renderProfile() {
+      let idParam = (getParam('id') || 'dr-m-monirul-islam').toLowerCase().trim();
+      if (['minhaj', 'minhajur', 'minhaj-rahman', '5453', 'minhaj_bot'].includes(idParam)) {
+        idParam = 'minhajur-rahman';
+      }
+      if (['mushtak', 'fuad', 'mushtakfuad', 'mohammad-mushtak-fuad', 'mohammad-muhstak-fuad', 'm-mushtak-fuad'].includes(idParam)) {
+        idParam = 'mushtak-fuad';
+      }
+      if (['rafi', 'aqiv-javed', 'dr-rafi', 'aqiv'].includes(idParam)) {
+        idParam = 'dr-md-aqiv-javed';
+      }
+      if (['shamsun', 'shamsun-nahar', 'shamsun-nahar-binte-mannan'].includes(idParam)) {
+        idParam = 'dr-shamsun-nahar';
+      }
+      if (['pi', 'monirul', 'monirul-islam'].includes(idParam)) {
+        idParam = 'dr-m-monirul-islam';
+      }
+      const member = membersData.find(m => m.id.toLowerCase() === idParam) || membersData.find(m => m.id === 'dr-m-monirul-islam') || membersData[0];
+      const currentIndex = membersData.findIndex(m => m.id === member.id);
+      const prevMember = currentIndex > 0 ? membersData[currentIndex - 1] : membersData[membersData.length - 1];
+      const nextMember = currentIndex < membersData.length - 1 ? membersData[currentIndex + 1] : membersData[0];
+
+      // Update page title, hero banner and breadcrumb
+      document.title = `${member.name} (${member.role}) | MSI Lab · University of Chittagong`;
+      document.getElementById('breadcrumb-name').textContent = member.name;
+      document.getElementById('hero-name').textContent = member.name;
+      document.getElementById('hero-affiliation').textContent = `${member.role} • ${member.affiliation || 'University of Chittagong'}`;
+      const heroBadge = document.getElementById('hero-badge');
+      if (heroBadge) {
+        heroBadge.innerHTML = member.senioritySession 
+          ? `${member.senioritySession}` 
+          : 'MSI Lab Researcher Profile';
+      }
+
+      // Update Selector
+      const select = document.getElementById('researcher-select');
+      select.innerHTML = membersData.map(m => `
+        <option value="${m.id}" ${m.id === member.id ? 'selected' : ''}>${m.name} (${m.senioritySession})</option>
+      `).join('');
+
+      // Generate Initials
+      const initials = member.name.replace("Dr. ", "").replace("Prof. ", "").split(' ').map(n => n[0]).filter((_, i, arr) => i === 0 || i === arr.length - 1).join('');
+
+      // Render Profile Card
+      const target = document.getElementById('member-profile-target');
+      target.innerHTML = `
+        <div class="card" style="padding: 2.5rem; border-radius: 1.5rem; position: relative; overflow: hidden; background: linear-gradient(135deg, #ffffff 0%, #f9fdfa 100%); border-left: 5px solid var(--primary);">
+          <div class="profile-card-grid">
+            
+            <!-- Left Column: Photo & Contacts -->
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.25rem;">
+              <div style="width: 220px; height: 240px; border-radius: 1.25rem; overflow: hidden; border: 3px solid #bbf7d0; box-shadow: 0 10px 25px rgba(22,91,51,0.2); background: linear-gradient(135deg, #165b33, #0b331c); display: flex; align-items: center; justify-content: center; shrink-0;">
+                ${member.image 
+                  ? `<img src="${member.image}" alt="${member.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">` 
+                  : `<span style="font-size: 3.5rem; font-weight: 800; color: #a7f3d0;">${initials}</span>`
+                }
+              </div>
+
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; width: 100%;">
+                <span class="badge badge-primary" style="font-size: 0.775rem; padding: 0.35rem 0.9rem;">
+                  ${member.senioritySession || 'Researcher'}
+                </span>
+                ${member.id === 'mushtak-fuad' ? `
+                  <span class="badge badge-amber" style="font-size: 0.725rem;">
+                    HEAT-11009-CU Core Lead
+                  </span>
+                ` : ''}
+              </div>
+
+              <!-- Direct Contact Box -->
+              <div style="width: 100%; background: #f8fafc; border: 1px solid var(--slate-200); border-radius: 1rem; padding: 1.25rem; font-size: 0.8rem; text-align: left; display: flex; flex-direction: column; gap: 0.65rem;">
+                <div style="font-weight: 700; color: var(--slate-900); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; border-bottom: 1px solid var(--slate-200); padding-bottom: 0.4rem;">
+                  Contact &amp; Affiliation
+                </div>
+                ${member.email ? `
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary); shrink-0;"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:${member.email}" style="color: var(--primary); font-family: var(--font-mono); font-weight: 600; text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${member.email}</a>
+                  </div>
+                ` : ''}
+                ${member.phone ? `
+                  <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary); shrink-0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <a href="tel:${member.phone}" style="color: var(--slate-700); font-family: var(--font-mono); font-weight: 600; text-decoration: none;">${member.phone}</a>
+                  </div>
+                ` : ''}
+                ${member.linkedin ? `
+                  <div style="display: flex; align-items: center; gap: 0.5rem; padding-top: 0.35rem; border-top: 1px solid var(--slate-200);">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 4px; background: #0a66c2; shrink-0;">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </span>
+                    <a href="${member.linkedin}" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 700; text-decoration: none;">LinkedIn Profile ↗</a>
+                  </div>
+                ` : ''}
+                ${member.researchgate ? `
+                  <div style="display: flex; align-items: center; gap: 0.5rem; padding-top: 0.35rem; border-top: 1px solid var(--slate-200);">
+                    <span style="display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border-radius: 4px; background: #00CCBB; shrink-0; padding: 1px;">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#ffffff"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/></svg>
+                    </span>
+                    <a href="${member.researchgate}" target="_blank" rel="noopener noreferrer" style="color: #009b8e; font-weight: 700; text-decoration: none;">ResearchGate Profile ↗</a>
+                  </div>
+                ` : ''}
+                ${member.profileUrl ? `
+                  <div style="display: flex; align-items: center; gap: 0.5rem; padding-top: 0.35rem; border-top: 1px solid var(--slate-200);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary); shrink-0;"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M15 10v11M12 2 2 7h20z"/></svg>
+                    <a href="${member.profileUrl}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: none;">Official Faculty Profile ↗</a>
+                  </div>
+                ` : ''}
+                ${member.googleScholar ? `
+                  <div style="display: flex; align-items: center; gap: 0.5rem; padding-top: 0.35rem; border-top: 1px solid var(--slate-200);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+                    <a href="${member.googleScholar}" target="_blank" rel="noopener noreferrer" style="color: #4285F4; font-weight: 700; text-decoration: none;">Google Scholar ↗</a>
+                  </div>
+                ` : ''}
+                <div style="font-size: 0.725rem; color: var(--slate-500); line-height: 1.5; margin-top: 0.25rem;">
+                  <span style="display: inline-flex; align-items: center; gap: 4px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--slate-400); shrink-0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> ${member.affiliation || "University of Chittagong"}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Academic & Thesis Breakdown -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <div>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+                  <span class="badge badge-primary">${member.role}</span>
+                  ${member.senioritySession ? `<span class="badge badge-accent">${member.senioritySession}</span>` : ''}
+                </div>
+                <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--slate-900); line-height: 1.25; margin-bottom: 0.4rem;">
+                  Academic Credentials &amp; Research Portfolio
+                </h2>
+                <p style="font-size: 0.95rem; color: var(--slate-600); font-weight: 500;">
+                  ${member.currentPosition ? member.currentPosition + ' • ' : ''}${member.affiliation}
+                </p>
+              </div>
+
+              <!-- Comprehensive Curriculum Vitae (CV) Download Card -->
+              <div style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); border: 2px solid #a7f3d0; border-radius: 1rem; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                  <div style="font-size: 0.725rem; font-weight: 800; color: #165b33; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.25rem;">
+                    Curriculum Vitae (CV) &amp; Verified Records
+                  </div>
+                  <div style="font-size: 0.9rem; font-weight: 800; color: #0f172a;">
+                    Comprehensive Dossier of ${member.name}
+                  </div>
+                  <div style="font-size: 0.75rem; color: #475569;">
+                    Complete record of academic degrees, research appointments, publications, awards, and laboratory methodologies.
+                  </div>
+                </div>
+                <a href="${member.cvUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="white-space: nowrap; font-size: 0.8rem; padding: 0.6rem 1.15rem;">
+                  View / Download CV ↗
+                </a>
+              </div>
+
+              <!-- Academic Thesis Card -->
+              ${(member.thesisTitle && member.thesisTitle.trim()) ? `
+              <div class="thesis-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 1px solid #bbf7d0; padding-bottom: 0.65rem;">
+                  <span style="font-size: 0.75rem; font-weight: 800; color: #165b33; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">
+                    Master's / Doctoral Research Thesis
+                  </span>
+                  ${member.submissionDate ? `
+                    <span style="font-size: 0.75rem; font-family: var(--font-mono); color: #065f46; background: #ffffff; padding: 2px 8px; border-radius: 6px; border: 1px solid #bbf7d0;">
+                      Submitted: <strong>${member.submissionDate}</strong>
+                    </span>
+                  ` : ''}
+                </div>
+
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">
+                  Thesis Title
+                </div>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: #0f172a; line-height: 1.4; margin-bottom: 1.25rem;">
+                  &ldquo;${member.thesisTitle}&rdquo;
+                </h3>
+
+                <!-- Supervisor Grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
+                  <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 0.75rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.7rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase;">Supervisor</div>
+                    <div style="font-size: 0.875rem; font-weight: 800; color: #165b33;">${member.supervisor}</div>
+                  </div>
+                  ${member.coSupervisors ? `
+                    <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 0.75rem; padding: 0.75rem 1rem;">
+                      <div style="font-size: 0.7rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase;">Co-Supervisor(s)</div>
+                      <div style="font-size: 0.875rem; font-weight: 800; color: var(--slate-800);">${member.coSupervisors}</div>
+                    </div>
+                  ` : ''}
+                  <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 0.75rem; padding: 0.75rem 1rem;">
+                    <div style="font-size: 0.7rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase;">Academic Session</div>
+                    <div style="font-size: 0.875rem; font-weight: 800; color: var(--slate-800);">${member.senioritySession}</div>
+                  </div>
+                </div>
+
+                <!-- Abstract / Key Summary -->
+                ${member.shortAbstract ? `
+                <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 0.85rem; padding: 1.15rem 1.25rem;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #165b33; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+                    Research Abstract &amp; Key Scientific Summary
+                  </div>
+                  <p style="font-size: 0.875rem; line-height: 1.7; color: var(--slate-700);">
+                    ${member.shortAbstract}
+                  </p>
+                </div>
+                ` : ''}
+
+                ${member.keyObjectives && member.keyObjectives.length > 0 ? `
+                <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 0.85rem; padding: 1.15rem 1.25rem; margin-top: 0.85rem;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #165b33; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+                    Key Research Objectives
+                  </div>
+                  <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.85rem; color: var(--slate-700); line-height: 1.65; display: flex; flex-direction: column; gap: 0.4rem;">
+                    ${member.keyObjectives.map(obj => `<li>${obj}</li>`).join('')}
+                  </ul>
+                </div>
+                ` : ''}
+
+                ${member.methodology ? `
+                <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 0.85rem; padding: 1.15rem 1.25rem; margin-top: 0.85rem;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;">
+                    Methodology &amp; Experimental Design
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.825rem; color: var(--slate-700); line-height: 1.6;">
+                    ${Object.entries(member.methodology).map(([k, v]) => `
+                      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.65rem; padding: 0.75rem 1rem;">
+                        <strong style="color: #165b33; display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 2px;">${k.replace(/([A-Z])/g, ' $1').trim()}</strong>
+                        <span>${v}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+                ` : ''}
+
+                ${member.expectedImpact ? `
+                <div style="background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); border: 1px solid #a7f3d0; border-radius: 0.85rem; padding: 1.15rem 1.25rem; margin-top: 0.85rem;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: #065f46; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">
+                    Expected Impact &amp; Translational Value
+                  </div>
+                  <p style="margin: 0; font-size: 0.85rem; color: #047857; line-height: 1.65; font-weight: 500;">
+                    ${member.expectedImpact}
+                  </p>
+                </div>
+                ` : ''}
+              </div>
+              ` : ''}
+
+              <!-- Biographical Profile -->
+              ${member.bioSnippet ? `
+                <div style="background: #f8fafc; border: 1px solid var(--slate-200); border-radius: 1rem; padding: 1.25rem 1.5rem;">
+                  <div style="font-size: 0.75rem; font-weight: 800; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">
+                    Biographical Profile
+                  </div>
+                  <p style="font-size: 0.875rem; line-height: 1.7; color: var(--slate-700);">
+                    ${member.bioSnippet}
+                  </p>
+                </div>
+              ` : ''}
+
+              <!-- Academic Qualifications Timeline -->
+              ${member.education && member.education.length > 0 ? `
+                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                  <div style="font-size: 0.8rem; font-weight: 800; color: var(--slate-900); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+                    Academic Qualifications
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    ${member.education.map(e => `
+                      <div style="background: #ffffff; border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 0.85rem 1rem;">
+                        <div style="font-size: 0.875rem; font-weight: 800; color: var(--slate-900);">${e.degree} — ${e.field}</div>
+                        <div style="font-size: 0.8rem; color: var(--slate-600);">${e.institution}</div>
+                        ${e.years ? `<div style="font-size: 0.725rem; font-family: var(--font-mono); color: var(--primary); font-weight: 600;">${e.years}</div>` : ''}
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- Career History & Appointments -->
+              ${member.experiences && member.experiences.length > 0 ? `
+                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                  <div style="font-size: 0.8rem; font-weight: 800; color: var(--slate-900); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+                    Professional Appointments &amp; Career Trajectory
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    ${member.experiences.map(exp => `
+                      <div style="background: #ffffff; border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 0.85rem 1rem;">
+                        <div style="font-size: 0.875rem; font-weight: 800; color: var(--slate-900);">${exp.title}</div>
+                        <div style="font-size: 0.8rem; color: var(--slate-600);">${exp.institution}</div>
+                        ${exp.years ? `<div style="font-size: 0.725rem; font-family: var(--font-mono); color: var(--primary); font-weight: 600;">${exp.years}</div>` : ''}
+                        ${exp.details ? `<div style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">${exp.details}</div>` : ''}
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- Technical Competencies Badges -->
+              ${member.skills && member.skills.length > 0 ? `
+                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                  <div style="font-size: 0.8rem; font-weight: 800; color: var(--slate-900); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+                    Technical Competencies &amp; Laboratory Methodologies
+                  </div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; background: #f8fafc; border: 1px solid var(--slate-200); border-radius: 0.85rem; padding: 0.85rem;">
+                    ${member.skills.map(s => `
+                      <span style="display: inline-flex; align-items: center; gap: 0.35rem; background: #ffffff; border: 1px solid var(--slate-200); padding: 0.35rem 0.65rem; border-radius: 0.5rem; font-size: 0.75rem; font-weight: 600; color: var(--slate-800);">
+                        <span style="width: 6px; height: 6px; border-radius: 50%; background: var(--primary);"></span>
+                        ${s}
+                      </span>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- Key Publications List -->
+              ${member.publications && member.publications.length > 0 ? `
+                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                  <div style="font-size: 0.8rem; font-weight: 800; color: var(--slate-900); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+                    Key Publications &amp; Scholarly Works
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    ${member.publications.map((pub, idx) => `
+                      <div style="background: #ffffff; border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 0.85rem 1rem; display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.825rem; color: var(--slate-800); line-height: 1.6;">
+                        <span style="font-family: var(--font-mono); font-weight: 800; color: var(--primary); font-size: 0.8rem;">${idx + 1}.</span>
+                        <span>${pub}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- Honors & Awards -->
+              ${member.awards && member.awards.length > 0 ? `
+                <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                  <div style="font-size: 0.8rem; font-weight: 800; color: var(--slate-900); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.4rem;">
+                    Honors, Grants, Scholarships &amp; Awards
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                    ${member.awards.map(a => `
+                      <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: 0.65rem; padding: 0.65rem 0.85rem; font-size: 0.825rem; color: #92400e; display: flex; align-items: center; gap: 0.5rem;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="#f59e0b" style="shrink-0;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <span>${a}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              ` : ''}
+
+              <!-- Action Links -->
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap; pt-2;">
+                <a href="publications.html" class="btn btn-primary">
+                  Explore Lab Publications →
+                </a>
+                <a href="projects.html" class="btn" style="background: #ffffff; border: 1px solid var(--slate-200); color: var(--slate-700);">
+                  View Research Projects
+                </a>
+                <a href="team.html" class="btn" style="background: #ffffff; border: 1px solid var(--slate-200); color: var(--slate-700);">
+                  ← Back to Team Directory
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      `;
+
+      // Render Prev / Next Buttons
+      const paginationTarget = document.getElementById('prev-next-container');
+      paginationTarget.innerHTML = `
+        <a href="member.html?id=${prevMember.id}" class="card" style="padding: 1.25rem; display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit;">
+          <div style="width: 44px; height: 44px; border-radius: 0.75rem; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink-0;">
+            ←
+          </div>
+          <div>
+            <div style="font-size: 0.7rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase;">Previous Researcher</div>
+            <div style="font-size: 0.95rem; font-weight: 800; color: var(--slate-900);">${prevMember.name}</div>
+            <div style="font-size: 0.725rem; color: var(--primary); font-family: var(--font-mono);">${prevMember.senioritySession}</div>
+          </div>
+        </a>
+
+        <a href="member.html?id=${nextMember.id}" class="card" style="padding: 1.25rem; display: flex; align-items: center; justify-content: flex-end; text-align: right; gap: 1rem; text-decoration: none; color: inherit;">
+          <div>
+            <div style="font-size: 0.7rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase;">Next Researcher</div>
+            <div style="font-size: 0.95rem; font-weight: 800; color: var(--slate-900);">${nextMember.name}</div>
+            <div style="font-size: 0.725rem; color: var(--primary); font-family: var(--font-mono);">${nextMember.senioritySession}</div>
+          </div>
+          <div style="width: 44px; height: 44px; border-radius: 0.75rem; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; shrink-0;">
+            →
+          </div>
+        </a>
+      `;
+    }
+
+    function switchMember(id) {
+      window.location.search = `?id=${encodeURIComponent(id)}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', renderProfile);
+  </script>
+
+  <!-- Universal Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

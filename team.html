@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Team & Alumni Network | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Meet the members, principal investigator, and alumni network of the Laboratory of Molecular & Structural Immunology (MSI Lab), University of Chittagong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-purple { background-color: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+    .badge-amber { background-color: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .badge-blue { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .card:hover { border-color: rgba(22,91,51,0.35); box-shadow: var(--card-hover); transform: translateY(-2px); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    .tab-btn { padding: 0.5rem 1.15rem; font-size: 0.825rem; font-weight: 700; border-radius: 0.75rem; background: var(--slate-100); color: var(--slate-600); border: 1px solid transparent; cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn:hover { background: var(--slate-200); color: var(--slate-900); }
+    .tab-btn.active { background: var(--primary); color: #fff; box-shadow: 0 4px 12px rgba(22,91,51,0.25); }
+    .form-input { width: 100%; padding: 0.65rem 0.9rem; border: 1px solid var(--slate-200); border-radius: 0.65rem; font-size: 0.85rem; font-family: inherit; }
+    .form-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(22,91,51,0.15); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
+  
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+  
+    .researcher-filter-btn {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      color: var(--slate-600);
+      border-radius: 9999px;
+      font-size: 0.775rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .researcher-filter-btn:hover {
+      background: #f1f5f9;
+      color: var(--slate-900);
+      border-color: #cbd5e1;
+    }
+    .researcher-filter-btn.active {
+      background: var(--primary) !important;
+      border-color: var(--primary) !important;
+      color: #ffffff !important;
+      box-shadow: 0 3px 10px rgba(22, 91, 51, 0.25);
+    }
+
+  </style>
+  <script>
+    // Robust image loader for both local file:/// and web server protocols
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!img.dataset.retry) {
+          img.dataset.retry = '1';
+          if (currentSrc.startsWith('public/')) {
+            img.src = currentSrc.substring(7);
+          } else if (currentSrc.startsWith('/')) {
+            img.src = 'public' + currentSrc;
+          } else {
+            img.src = 'public/' + currentSrc;
+          }
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+            <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="facilities.html" class="nav-link ">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link active nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link ">Publications</a>
+        <a href="collaborations.html" class="nav-link ">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  
+  <!-- Page Banner - Uniform Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Research Group & Academic Family</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          People
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 0;">
+          Led by Prof. Dr. Mohammad Monirul Islam, our laboratory brings together doctoral fellows, graduate researchers, medical doctors, and undergraduate scholars solving real-world challenges.
+        </p>
+
+        <!-- Category Jump Pills -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem;">
+          <a href="#pi" class="badge" style="background: #ffffff; color: #165b33; border: 1px solid #bbf7d0; text-decoration: none; padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">Principal Investigator</a>
+          <a href="#doctoral" class="badge" style="background: #ffffff; color: #165b33; border: 1px solid #bbf7d0; text-decoration: none; padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">Doctoral (Ph.D.)</a>
+          <a href="#masters" class="badge" style="background: #ffffff; color: #165b33; border: 1px solid #bbf7d0; text-decoration: none; padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">Master's (M.Sc.)</a>
+          <a href="#staff" class="badge" style="background: #ffffff; color: #165b33; border: 1px solid #bbf7d0; text-decoration: none; padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">Research Staff &amp; RAs</a>
+          <a href="#undergraduate" class="badge" style="background: #ffffff; color: #165b33; border: 1px solid #bbf7d0; text-decoration: none; padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 700; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">Undergraduates (B.Sc.)</a>
+          <a href="#alumni" class="badge" style="background: #f0fdf4; color: #165b33; border: 1.5px solid #165b33; text-decoration: none; padding: 0.45rem 0.85rem; font-size: 0.825rem; font-weight: 800; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">Alumni Network</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Cohort & Scholarly Community Banner - Matching Publication Banner Aesthetic -->
+  <section style="padding: 1.75rem 0; background: linear-gradient(135deg, #0b331c 0%, #165b33 50%, #1e7845 100%); color: #fff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.4rem; color: #a7f3d0;">
+          Multidisciplinary Research Roster &amp; Alumni Network
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">
+          Academic Family &amp; Global Scholarly Community
+        </h2>
+        <p style="font-size: 0.825rem; color: #d1fae5; max-width: 650px; line-height: 1.5;">
+          A collaborative training environment fostering scientific excellence across molecular virology, protein engineering, immunoinformatics, and clinical serology with alumni serving worldwide.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Cohort</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">39+</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Researchers</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Alumni</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">18</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Global Network</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Reach</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">6</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Countries</div>
+        </div>
+        <a href="apply.html" class="btn" style="background: #ffffff; color: #0b331c; font-weight: 800; font-size: 0.825rem; padding: 0.7rem 1.15rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          Join Us ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principal Investigator Comprehensive Card -->
+  <section id="pi" style="padding: 4rem 0; background: #fff; border-bottom: 1px solid var(--border-color); scroll-margin-top: 5rem;">
+    <div class="max-w-container">
+      
+      <div style="margin-bottom: 1.5rem;">
+        <div class="badge badge-primary" style="margin-bottom: 0.4rem;">Principal Investigator</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--slate-900);">Prof. Dr. Mohammad Monirul Islam</h2>
+        <p style="font-size: 0.95rem; color: var(--primary); font-weight: 600;">Professor & Head of Laboratory · Department of Biochemistry & Molecular Biology · University of Chittagong</p>
+      </div>
+
+      <div class="card" style="padding: 2.25rem; background: linear-gradient(135deg, #ffffff 0%, #f9fdfa 100%); border-left: 5px solid var(--primary);">
+        <div style="display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start;">
+          
+          <div>
+            <div style="width: 260px; height: 280px; border-radius: 1.25rem; overflow: hidden; border: 3px solid #bbf7d0; box-shadow: 0 10px 25px rgba(22,91,51,0.2); margin-bottom: 1rem;">
+              <img src="public/PI/Mohammad%20Monirul%20Islam,%20PI,%20MSI%20Lab.jpg" alt="Prof. Dr. Mohammad Monirul Islam" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            <div class="badge badge-primary" style="display: block; text-align: center; margin-bottom: 0.5rem;">
+              TUAT Tokyo Ph.D. (2005–2009)
+            </div>
+            <div style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6; text-align: center;">
+              Room 304, Department of Biochemistry & Molecular Biology, CU<br>
+              <a href="mailto:islammm@cu.ac.bd" style="color: var(--primary); font-weight: 600;">islammm@cu.ac.bd</a><br>
+              <span style="font-family: var(--font-mono); font-size: 0.775rem;">+8801750180422</span>
+              <div style="margin-top: 0.75rem;"><a href="member.html?id=dr-m-monirul-islam" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.75rem; border: 1px solid var(--primary); padding: 4px 10px; border-radius: 6px;">View Full Academic Profile →</a></div>
+            </div>
+          </div>
+
+          <div>
+            <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.25rem 1.5rem; border-radius: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 0.25rem;">Academic Biography</div>
+              <p style="font-size: 0.925rem; color: #14532d; line-height: 1.6;">
+                Prof. Dr. Mohammad Monirul Islam leads the Laboratory of Molecular & Structural Immunology (MSI Lab) at the University of Chittagong. With over two decades of experience in structural biology, molecular immunology, and protein technology, his research focuses on understanding the biophysical mechanisms governing host-pathogen interactions, vaccine development against emerging tropical viruses (Dengue, SARS-CoV-2, JEV), and patented peptide tags for solubility and immunogenicity control.
+              </p>
+            </div>
+
+            <div style="margin-bottom: 1.25rem;">
+              <h3 style="font-size: 0.85rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Education & Qualifications:</h3>
+              <div class="grid-3" style="gap: 0.75rem;">
+                <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 0.75rem; border: 1px solid var(--slate-200);">
+                  <strong style="font-size: 0.8rem; color: var(--slate-900); display: block;">Ph.D. in Biotechnology</strong>
+                  <span style="font-size: 0.725rem; color: var(--primary); font-weight: 600;">Structural Immunology</span>
+                  <p style="font-size: 0.725rem; color: var(--slate-500);">Tokyo University of Agriculture & Tech (TUAT), Japan (2005–2009)</p>
+                </div>
+                <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 0.75rem; border: 1px solid var(--slate-200);">
+                  <strong style="font-size: 0.8rem; color: var(--slate-900); display: block;">M.Sc. in Biochemistry</strong>
+                  <span style="font-size: 0.725rem; color: var(--primary); font-weight: 600;">Molecular Biology</span>
+                  <p style="font-size: 0.725rem; color: var(--slate-500);">University of Dhaka, Bangladesh (1999–2000)</p>
+                </div>
+                <div style="background: #f8fafc; padding: 0.75rem 1rem; border-radius: 0.75rem; border: 1px solid var(--slate-200);">
+                  <strong style="font-size: 0.8rem; color: var(--slate-900); display: block;">B.Sc. (Hons) in Biochemistry</strong>
+                  <span style="font-size: 0.725rem; color: var(--primary); font-weight: 600;">Biochemistry & Mol. Biology</span>
+                  <p style="font-size: 0.725rem; color: var(--slate-500);">University of Dhaka, Bangladesh (1995–1999)</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.825rem; color: var(--slate-800);">
+              <div>• <strong>Professor</strong>, Department of Biochemistry & Molecular Biology, University of Chittagong</div>
+              <div>• <strong>Lab-In-Charge</strong>, COVID-19 Testing Lab (over 100,000 RT-PCR molecular tests curated)</div>
+              <div>• <strong>Head</strong>, Animal Ethics Review Board, University of Chittagong</div>
+              <div>• <strong>Principal Investigator</strong>, World Bank / HEAT Advanced Vaccine Research Grant</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Research Group Members: 3 Distinct Sections -->
+  <section style="padding: 4.5rem 0; background: var(--slate-50); border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+
+      
+      
+      <!-- ================= EMBEDDED DEDICATED RESEARCHER SEARCH TOOL ================= -->
+      <div id="researcher-search-hub" style="margin-bottom: 3.5rem; background: #ffffff; border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 2rem; box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #165b33, #10b981, #0a66c2);"></div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.35rem;">
+              <span class="badge badge-primary" style="font-size: 0.725rem; padding: 3px 10px; display: inline-flex; align-items: center; gap: 0.35rem;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                Dedicated Search Tool
+              </span>
+              <span style="font-size: 0.75rem; color: var(--slate-300);">•</span>
+              <span id="researcher-search-count" style="font-size: 0.825rem; font-weight: 700; color: #165b33;">Showing all 41 researchers</span>
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--slate-900); letter-spacing: -0.02em; margin: 0;">
+              Search Researchers &amp; Lab Fellows
+            </h2>
+            <p style="font-size: 0.85rem; color: var(--slate-500); margin-top: 0.25rem; margin-bottom: 0;">
+              Quickly locate investigators, doctoral fellows, graduate scholars, lab managers, and alumni by name, thesis, or keyword.
+            </p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button type="button" onclick="clearResearcherSearch()" id="clear-researcher-search-btn" style="display: none; background: #f8fafc; border: 1px solid var(--slate-200); color: var(--slate-600); border-radius: 0.5rem; font-size: 0.775rem; font-weight: 700; padding: 0.4rem 0.85rem; cursor: pointer; transition: all 0.15s ease;">
+              Reset Filters ↺
+            </button>
+          </div>
+        </div>
+
+        <!-- Search Input Bar -->
+        <div style="position: relative; margin-bottom: 1.25rem;">
+          <div style="position: absolute; left: 1.15rem; top: 50%; transform: translateY(-50%); color: #165b33; display: flex; align-items: center; pointer-events: none;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <input 
+            type="text" 
+            id="researcher-team-search" 
+            placeholder="Search researchers by name (e.g. Mushtak, Minhajur, Rafi), thesis topic, or session..." 
+            oninput="filterResearchersLive()" 
+            style="width: 100%; padding: 0.85rem 2.85rem 0.85rem 2.85rem; border: 2px solid #e2e8f0; border-radius: 0.85rem; font-size: 0.95rem; font-family: inherit; color: var(--slate-800); background: #f8fafc; outline: none; transition: all 0.2s ease; box-sizing: border-box;"
+            onfocus="this.style.borderColor='var(--primary)'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(22,91,51,0.08)';"
+            onblur="this.style.borderColor='#e2e8f0'; this.style.background='#f8fafc'; this.style.boxShadow='none';"
+          />
+          <button 
+            type="button" 
+            id="clear-input-x" 
+            onclick="clearResearcherInput()" 
+            style="position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%); display: none; background: #e2e8f0; border: none; color: var(--slate-600); cursor: pointer; width: 22px; height: 22px; border-radius: 50%; font-size: 0.75rem; line-height: 1; align-items: center; justify-content: center; font-weight: 800;"
+            title="Clear text"
+          >✕</button>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+          <span style="font-size: 0.725rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.25rem;">Filter by:</span>
+          <button type="button" class="researcher-filter-btn active" data-category="all" onclick="setResearcherCategory('all', this)">
+            All Members
+          </button>
+          <button type="button" class="researcher-filter-btn" data-category="doctoral" onclick="setResearcherCategory('doctoral', this)">
+            Doctoral (Ph.D.)
+          </button>
+          <button type="button" class="researcher-filter-btn" data-category="masters" onclick="setResearcherCategory('masters', this)">
+            Master's (M.Sc.)
+          </button>
+          <button type="button" class="researcher-filter-btn" data-category="staff" onclick="setResearcherCategory('staff', this)">
+            Research Staff &amp; RAs
+          </button>
+          <button type="button" class="researcher-filter-btn" data-category="undergraduate" onclick="setResearcherCategory('undergraduate', this)">
+            Undergraduates (B.Sc.)
+          </button>
+          <button type="button" class="researcher-filter-btn" data-category="alumni" onclick="setResearcherCategory('alumni', this)">
+            Alumni Network
+          </button>
+        </div>
+
+        <!-- Empty State Message -->
+        <div id="researcher-empty-state" style="display: none; padding: 2.5rem 1rem 1.5rem 1rem; text-align: center;">
+          <div style="width: 48px; height: 48px; border-radius: 50%; background: #fef2f2; border: 1px solid #fecaca; display: inline-flex; align-items: center; justify-content: center; color: #dc2626; margin-bottom: 0.75rem;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </div>
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.35rem;">No researchers match your search</h3>
+          <p id="researcher-empty-desc" style="font-size: 0.85rem; color: var(--slate-500); max-width: 440px; margin: 0 auto 1.25rem auto;">
+            We couldn't find any lab members matching your query.
+          </p>
+          <button type="button" onclick="clearResearcherSearch()" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1.25rem;">
+            Clear Search &amp; Show All
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= SECTION 1: PhD STUDENTS & DOCTORAL FELLOWS ================= -->
+      <div id="doctoral" style="margin-bottom: 4rem; scroll-margin-top: 5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: var(--primary); display: inline-block;"></span>
+            <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--slate-900);">PhD Students & Doctoral Fellows</h2>
+          </div>
+          <span class="badge badge-primary">4 Doctoral Fellows</span>
+        </div>
+
+        <div class="grid-2">
+          <!-- Minhajur Rahman (Doctoral) -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 72px; height: 72px; border-radius: 1.25rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/Minhajur%20Rahman.jpg" alt="Minhajur Rahman" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--slate-900);">Minhajur Rahman</h3>
+                  <span class="badge badge-primary" style="font-size: 10px; padding: 2px 8px; margin-top: 2px;">Doctoral Fellow (Ph.D. Candidate)</span>
+                  <div style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-top: 3px;">Associate Professor, Department of Botany · CU</div>
+                </div>
+              </div>
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.65rem; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.75rem; color: #165b33;">
+                <div style="font-weight: 800; font-size: 0.675rem; text-transform: uppercase; margin-bottom: 2px;">Ph.D. Research Thesis:</div>
+                <div style="font-style: italic; line-height: 1.4;">&ldquo;Rational Design of Dengue Subunit Vaccines Integrated with Potential Plant Adjuvants and Pharmacognostical Biomolecules&rdquo;</div>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+                Plant-derived immunomodulators and structural characterization of therapeutic macromolecules. Investigating tropical phytocompounds with bioactivity against viral surface targets.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <a href="mailto:minhaj_bot@cu.ac.bd" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none;">minhaj_bot@cu.ac.bd</a>
+              <a href="tel:+8801819624004" style="color: var(--slate-600); font-family: var(--font-mono); text-decoration: none;">+8801819624004</a>
+              <a href="https://www.linkedin.com/in/minhajur-rahman-22a522b1/" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="https://www.researchgate.net/profile/Minhajur_Rahman" target="_blank" rel="noopener noreferrer" style="color: #009b8e; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #00CCBB; shrink-0; padding: 1px;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/></svg></span>
+                <span>ResearchGate Profile ↗</span>
+              </a>
+              <a href="member.html?id=minhajur-rahman" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);">
+                <span>View Full Academic Profile &amp; Thesis →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Dr. Shamsun Nahar Binte Mannan (Doctoral) -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 72px; height: 72px; border-radius: 1.25rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/Dr.%20Shamsun%20Nahar.jpg" alt="Dr. Shamsun Nahar Binte Mannan" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--slate-900);">Dr. Shamsun Nahar Binte Mannan</h3>
+                  <span class="badge badge-primary" style="font-size: 10px; padding: 2px 8px; margin-top: 2px;">Doctoral Fellow (Ph.D. Candidate)</span>
+                  <div style="font-size: 0.725rem; color: var(--slate-500); font-weight: 600; margin-top: 3px;">Associate Professor &amp; Head, Dept. of Skin &amp; VD · CMOSHMC</div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--slate-200); border-radius: 0.5rem; padding: 0.4rem 0.65rem; margin-bottom: 0.75rem; font-size: 0.725rem; color: var(--slate-600);">
+                <strong>Credentials:</strong> MBBS, DDV (CU), MPH · Fellow in Aesthetic Dermatology &amp; Trichology
+              </div>
+              <p style="font-size: 0.85rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+                Multiplex PCR-based molecular detection of sexually transmitted infections (STIs) in pregnant women in Chittagong for early clinical intervention and appropriate maternal-fetal treatment.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <span style="color: var(--primary);">Department of Biochemistry &amp; Molecular Biology · CU</span>
+              <a href="member.html?id=dr-shamsun-nahar" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);"><span>View Academic Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Dr. Md. Aqiv Javed (Rafi) (Doctoral) -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 72px; height: 72px; border-radius: 1.25rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/Dr.%20Md.%20Aqiv%20Javed.jpg" alt="Dr. Md. Aqiv Javed (Rafi)" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--slate-900);">Dr. Md. Aqiv Javed (Rafi)</h3>
+                  <span class="badge badge-primary" style="font-size: 10px; padding: 2px 8px; margin-top: 2px;">Doctoral Fellow (Ph.D. Candidate)</span>
+                  <div style="font-size: 0.725rem; color: var(--slate-500); font-weight: 600; margin-top: 3px;">Consultant (ENT) · Ex-Resident Surgeon, Cumilla Medical College · BCS (Health)</div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--slate-200); border-radius: 0.5rem; padding: 0.4rem 0.65rem; margin-bottom: 0.75rem; font-size: 0.725rem; color: var(--slate-600);">
+                <strong>Credentials:</strong> MBBS (Dhaka), BCS (Health), DLO (ENT), MD (Audiology, Spain), FICS (USA), MRCPS (Glasgow)
+              </div>
+              <p style="font-size: 0.85rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+                Molecular otorhinolaryngology, auditory neurobiology, and clinical biomarker discovery in Head &amp; Neck pathologies and hearing sciences. Investigating molecular pathways in sensorineural hearing loss and inner-ear disorders.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <span style="color: var(--primary);">Department of Biochemistry &amp; Molecular Biology · CU</span>
+              <a href="member.html?id=dr-md-aqiv-javed" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);"><span>View Academic Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Dr. Sharmin Ara Begum (Doctoral) -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+            <div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 72px; height: 72px; border-radius: 1.25rem; background: linear-gradient(135deg, #165b33, #0b331c); color: #a7f3d0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.35rem; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  SB
+                </div>
+                <div>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--slate-900);">Dr. Sharmin Ara Begum</h3>
+                  <span class="badge badge-primary" style="font-size: 10px; padding: 2px 8px; margin-top: 2px;">Doctoral Fellow (Ph.D. Candidate)</span>
+                  <div style="font-size: 0.725rem; color: var(--slate-500); font-weight: 600; margin-top: 3px;">Assistant Professor, Dept. of Physiology · Army Medical College, Chattogram</div>
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1px solid var(--slate-200); border-radius: 0.5rem; padding: 0.4rem 0.65rem; margin-bottom: 0.75rem; font-size: 0.725rem; color: var(--slate-600);">
+                <strong>Affiliation &amp; Society:</strong> AMCC · Member, Bangladesh Society of Physiologists (BSP)
+              </div>
+              <p style="font-size: 0.85rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+                Cardiopulmonary and respiratory physiology, spirometric lung function dynamics, environmental impacts on respiratory parameters, and clinical physiological biomarkers in maternal and systemic health.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <span style="color: var(--primary);">Department of Biochemistry &amp; Molecular Biology · CU</span>
+              <a href="member.html?id=dr-sharmin-ara-begum" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);"><span>View Academic Profile</span><span>→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SECTION 2: MASTER'S FELLOWS (M.Sc.) & RESEARCH ASSISTANTS ================= -->
+      <div id="masters" style="scroll-margin-top: 5rem;"></div>
+      <div id="staff" style="margin-bottom: 4rem; scroll-margin-top: 5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+            <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--slate-900);">Master&apos;s Fellows (M.Sc.) &amp; Research Staff</h2>
+          </div>
+          <span class="badge badge-accent">Postgraduate Scholars &amp; Lab Operations</span>
+        </div>
+
+        <!-- MS Session 2023-2024 (Seniors First) -->
+        <div style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--slate-700); background: var(--slate-100); padding: 0.25rem 0.75rem; border-radius: 9999px; border: 1px solid var(--border-color);">MS Session 2023–2024</span>
+          <span style="font-size: 0.75rem; color: var(--slate-500);">Department of Biochemistry &amp; Molecular Biology, University of Chittagong</span>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem; margin-bottom: 2.5rem;">
+
+          <!-- Mohammad Mushtak Fuad (Lab Manager & HEAT-11009-CU Lead) -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary); background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);">
+            <div>
+              <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                <span class="badge" style="background: var(--primary); color: #fff; font-size: 10px; padding: 2px 7px;">Lab Manager</span>
+                <span class="badge badge-amber" style="font-size: 10px; padding: 2px 7px;">HEAT-11009-CU Core Lead</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 68px; height: 68px; border-radius: 1.15rem; overflow: hidden; border: 2px solid #86efac; box-shadow: 0 4px 10px rgba(0,0,0,0.12); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/mohammad%20muhstak%20fuad.jpg" alt="Mohammad Mushtak Fuad" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900);">Mohammad Mushtak Fuad</h3>
+                  <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Lab Manager & Research Assistant</div>
+                  <div style="font-size: 0.725rem; color: var(--slate-500); font-family: var(--font-mono); margin-top: 1px;">MS Session 2023–2024 · BMB CU</div>
+                </div>
+              </div>
+              
+              <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 0.65rem; padding: 0.6rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.775rem; color: #065f46; line-height: 1.45;">
+                <strong>Project Role:</strong> Currently handling core wet-lab operations and research management for the World Bank & UGC <strong>HEAT-11009-CU</strong> project.
+              </div>
+
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.65rem; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.75rem; color: #165b33;">
+                <div style="font-weight: 800; font-size: 0.675rem; text-transform: uppercase; margin-bottom: 2px;">MS Thesis (Defense: June 7, 2026):</div>
+                <div style="font-style: italic; line-height: 1.4;">&ldquo;Immunological and Computational Evaluation of Vaccine Strategies Against SARS-CoV-2 Variants in Chattogram, Bangladesh&rdquo;</div>
+              </div>
+
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55;">
+                Structural vaccinology, Dengue ED3 epitope mapping, recombinant antigen formulation, immunoinformatics, and laboratory management.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <a href="mailto:mushtakfuad@gmail.com" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none;">mushtakfuad@gmail.com</a>
+              <a href="tel:+8801704332114" style="color: var(--slate-600); font-family: var(--font-mono); text-decoration: none;">+8801704332114</a>
+              <a href="https://www.linkedin.com/in/mushtakfuad/" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="https://www.researchgate.net/profile/Mohammad-Mushtak-Fuad" target="_blank" rel="noopener noreferrer" style="color: #00ccbb; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #00ccbb; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/></svg></span>
+                <span>ResearchGate Profile ↗</span>
+              </a>
+              <a href="member.html?id=mushtak-fuad" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);">
+                <span>View Full Academic Profile &amp; Thesis</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sadia Binte Alam -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 68px; height: 68px; border-radius: 1.15rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/sadia%20binte%20alam.jpg" alt="Sadia Binte Alam" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900);">Sadia Binte Alam</h3>
+                  <span class="badge badge-accent" style="font-size: 10px; padding: 1px 6px;">Postgraduate Research Assistant</span>
+                  <div style="font-size: 0.725rem; color: var(--slate-400); font-family: var(--font-mono); margin-top: 2px;">MS Session 2023–2024 · BMB CU</div>
+                </div>
+              </div>
+
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.65rem; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.75rem; color: #165b33;">
+                <div style="font-weight: 800; font-size: 0.675rem; text-transform: uppercase; margin-bottom: 2px;">MS Thesis (Defense: June 7, 2026):</div>
+                <div style="font-style: italic; line-height: 1.4;">&ldquo;A Comprehensive Analysis of Serospecificity and Sero-Cross-Reactivity against SARS-CoV-2 Variants Following Heterologous Mix and Match Vaccination Strategy in Mice Model&rdquo;</div>
+              </div>
+
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55;">
+                SARS-CoV-2 variant neutralization dynamics, recombinant antigen expression, and ELISA serological assays. Co-author on Japanese encephalitis vaccine study.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <a href="mailto:sadiabinte316@gmail.com" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none;">sadiabinte316@gmail.com</a>
+              <a href="https://www.linkedin.com/in/sadia-binte-alam-3a271b207" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="https://www.researchgate.net/profile/Sadia-Alam-21" target="_blank" rel="noopener noreferrer" style="color: #009b8e; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #00CCBB; shrink-0; padding: 1px;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.123 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82c0-.095-.047-.142-.14-.142h-3.064c-.094 0-.14.047-.14.141v.956c0 .094.046.14.14.14h1.666c.056 0 .084.03.084.086 0 .36 0 .62-.036.865-.038.244-.1.447-.147.606-.108.385-.348.664-.638.876-.29.212-.738.35-1.227.35-.545 0-.901-.15-1.21-.353-.306-.203-.517-.454-.67-.915a3.136 3.136 0 0 1-.147-.762 17.366 17.367 0 0 1-.034-.656c-.01-.26-.014-.572-.014-.939a26.401 26.403 0 0 1 .014-.938 15.821 15.822 0 0 1 .035-.656 3.19 3.19 0 0 1 .148-.76 1.89 1.89 0 0 1 .742-1.01c.344-.244.593-.352 1.137-.352.508 0 .815.096 1.144.303.33.207.528.492.764.925.047.094.111.118.198.07l1.044-.43c.075-.048.09-.115.042-.199a3.549 3.549 0 0 0-.466-.742 3 3 0 0 0-.679-.607 3.313 3.313 0 0 0-.903-.41A4.068 4.068 0 0 0 19.586 0zM8.217 5.836c-1.69 0-3.036.086-4.297.086-1.146 0-2.291 0-3.007-.029v.831l1.088.2c.744.144 1.174.488 1.174 2.264v11.288c0 1.777-.43 2.12-1.174 2.263l-1.088.2v.832c.773-.029 2.12-.086 3.465-.086 1.29 0 2.951.057 3.667.086v-.831l-1.49-.2c-.773-.115-1.174-.487-1.174-2.264v-4.784c.688.057 1.29.057 2.206.057 1.748 3.123 3.41 5.472 4.355 6.56.86 1.032 2.177 1.691 3.839 1.691.487 0 1.003-.086 1.318-.23v-.744c-1.031 0-2.063-.716-2.808-1.518-1.26-1.376-2.95-3.582-4.355-6.074 2.32-.545 4.04-2.722 4.04-4.9 0-3.208-2.492-4.698-5.758-4.698zm-.515 1.29c2.406 0 3.839 1.26 3.839 3.552 0 2.263-1.547 3.782-4.097 3.782-.974 0-1.404-.03-2.063-.086v-7.19c.66-.059 1.547-.059 2.32-.059z"/></svg></span>
+                <span>ResearchGate Profile ↗</span>
+              </a>
+              <a href="member.html?id=sadia-binte-alam" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);">
+                <span>View Full Academic Profile &amp; Thesis</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Refath Alam Erin -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 68px; height: 68px; border-radius: 1.15rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/refath%20alam%20erin.jpg" alt="Refath Alam Erin" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900);">Refath Alam Erin</h3>
+                  <span class="badge badge-accent" style="font-size: 10px; padding: 1px 6px;">Postgraduate Research Assistant</span>
+                  <div style="font-size: 0.725rem; color: var(--slate-400); font-family: var(--font-mono); margin-top: 2px;">MS Session 2023–2024 · BMB CU</div>
+                </div>
+              </div>
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.65rem; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.75rem; color: #165b33;">
+                <div style="font-weight: 800; font-size: 0.675rem; text-transform: uppercase; margin-bottom: 2px;">MS Thesis (Defense: June 7, 2026):</div>
+                <div style="font-style: italic; line-height: 1.4;">&ldquo;A Mystic Exploration of JEV Immunogenicity: Anti JEV-ED3 Antibody Responses Against Wild-type & Destabilizing Mutants of JEV-ED3&rdquo;</div>
+              </div>
+
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55;">
+                Japanese Encephalitis Virus (JEV) ED3 subunit immunogenicity, evaluating antibody responses against wild-type and destabilizing mutants (C5I, F21A) with cobalt adjuvants in murine models.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <a href="mailto:refatherin2510@gmail.com" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none;">refatherin2510@gmail.com</a>
+              <a href="https://www.linkedin.com/in/refath-alam-erin/" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=refath-alam-erin" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);">
+                <span>View Full Academic Profile &amp; Thesis</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MS Session 2024-2025 -->
+        <div style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #065f46; background: #ecfdf5; padding: 0.25rem 0.75rem; border-radius: 9999px; border: 1px solid #a7f3d0;">MS Session 2024–2025</span>
+          <span style="font-size: 0.75rem; color: var(--slate-500);">Department of Biochemistry &amp; Molecular Biology, University of Chittagong</span>
+        </div>
+
+        <div class="grid-3" style="gap: 1.5rem;">
+
+          <!-- Sarvani Datta -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                <span class="badge badge-purple" style="font-size: 10px; padding: 1px 6px;">Graduate Research Assistant</span>
+                <span class="badge badge-accent" style="font-size: 10px; padding: 1px 6px;">Resin Anatomy &amp; GC-MS</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 68px; height: 68px; border-radius: 1.15rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/sarvani%20datta.jpg" alt="Sarvani Datta" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900);">Sarvani Datta</h3>
+                  <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Graduate Research Assistant</div>
+                  <div style="font-size: 0.725rem; color: var(--slate-400); font-family: var(--font-mono); margin-top: 2px;">MS Session 2024–2025 · BMB CU</div>
+                </div>
+              </div>
+
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.65rem; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.75rem; color: #165b33;">
+                <div style="font-weight: 800; font-size: 0.675rem; text-transform: uppercase; margin-bottom: 2px;">MS Thesis Research:</div>
+                <div style="font-style: italic; line-height: 1.4;">&ldquo;Comparative Analyses of Agarwood Formation and Resin Composition&rdquo;</div>
+              </div>
+
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55;">
+                Evaluates artificial agarwood resin induction in <em>Aquilaria</em> trees, quantifying the anatomical area of resin deposition and GC-MS profiling of quality-defining sesquiterpenes and chromones under combined biotic and abiotic stresses.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <a href="mailto:dattabani00@gmail.com" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none;">dattabani00@gmail.com</a>
+              <a href="https://www.linkedin.com/in/sarvani-datta-03b675198" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=sarvani-datta" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);"><span>View Academic Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Jafrina Akter Eva -->
+          <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                <span class="badge badge-purple" style="font-size: 10px; padding: 1px 6px;">Graduate Research Assistant</span>
+                <span class="badge badge-accent" style="font-size: 10px; padding: 1px 6px;">Induction Pathways &amp; RT-qPCR</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <div style="width: 68px; height: 68px; border-radius: 1.15rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); shrink-0;">
+                  <img src="public/Current%20Members%20and%20Alumni/Jafrina%20Akter%20Eva.png" alt="Jafrina Akter Eva" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900);">Jafrina Akter Eva</h3>
+                  <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Graduate Research Assistant</div>
+                  <div style="font-size: 0.725rem; color: var(--slate-400); font-family: var(--font-mono); margin-top: 2px;">MS Session 2024–2025 · BMB CU</div>
+                </div>
+              </div>
+
+              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.65rem; padding: 0.55rem 0.75rem; margin-bottom: 0.75rem; font-size: 0.75rem; color: #165b33;">
+                <div style="font-weight: 800; font-size: 0.675rem; text-transform: uppercase; margin-bottom: 2px;">MS Thesis Research:</div>
+                <div style="font-style: italic; line-height: 1.4;">&ldquo;Understanding Artificial Agarwood Induction Pathways and Mechanisms&rdquo;</div>
+              </div>
+
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55;">
+                Investigates the molecular and transcriptional mechanisms underlying artificial agarwood induction in <em>Aquilaria malaccensis</em>, profiling early defense signaling cascades (<em>WRKY1</em>, <em>LOX1</em>, <em>MAPK3</em>, <em>MYC2</em>) and sesquiterpene biosynthetic genes via RT-qPCR.
+              </p>
+            </div>
+            <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-200); font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.35rem;">
+              <a href="mailto:jafrinaaktereva201@gmail.com" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none;">jafrinaaktereva201@gmail.com</a>
+              <a href="https://www.linkedin.com/in/jafrina-akter-eva-6b0b61330" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=jafrina-akter-eva" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.35rem; border-top: 1px solid var(--slate-100);"><span>View Academic Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================= SECTION 3: UNDERGRADUATE RESEARCH FELLOWS ================= -->
+      <div id="undergraduate" style="margin-bottom: 4rem; scroll-margin-top: 5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--border-color); padding-bottom: 0.75rem; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span style="width: 12px; height: 12px; border-radius: 50%; background: #3b82f6; display: inline-block;"></span>
+            <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--slate-900);">Undergraduate Research Fellows (B.Sc.)</h2>
+          </div>
+          <span class="badge badge-primary" style="background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe;">8 Undergraduate Fellows</span>
+        </div>
+
+        <!-- Session 2021-2022 Cohort (Seniors First) -->
+        <div style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--slate-700); background: var(--slate-100); padding: 0.25rem 0.75rem; border-radius: 9999px; border: 1px solid var(--border-color);">Session 2021–2022</span>
+          <span style="font-size: 0.75rem; color: var(--slate-500);">Department of Biochemistry &amp; Molecular Biology, University of Chittagong</span>
+        </div>
+
+        <div class="grid-4" style="margin-bottom: 2.5rem;">
+          
+          <!-- Misbah Ul Islam -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Misbah%20Ul%20Islam.jpg" alt="Misbah Ul Islam" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Misbah Ul Islam</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2021–2022 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Recombinant plasmid design &amp; bacterial protein expression.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:misbahulislam065@gmail.com" title="Personal Email" style="color: var(--primary); font-weight: 600; font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">misbahulislam065@gmail.com</a>
+              <a href="https://www.linkedin.com/in/misbah-ul-islam-514ba1294" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=misbah-ul-islam" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Mohammad Arifur Rahman -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Mohammad%20Arifur%20Rahman.jpg" alt="Mohammad Arifur Rahman" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Mohammad Arifur Rahman</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2021–2022 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Immunoassay protocols, gel filtration &amp; surveillance curation.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:arifbinkamal01@gmail.com" title="Personal Email" style="color: var(--primary); font-weight: 600; font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">arifbinkamal01@gmail.com</a>
+              <a href="https://www.linkedin.com/in/mohammad-arifur-rahman-6a0810325" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=mohammad-arifur-rahman" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Nusrat Jahan Mim -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Nusrat%20Jahan%20Mim.jpg" alt="Nusrat Jahan Mim" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Nusrat Jahan Mim</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2021–2022 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Viral antigen thermal stability &amp; solubility peptide assays.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:xiaonusratmim@gmail.com" title="Personal Email" style="color: var(--primary); font-weight: 600; font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">xiaonusratmim@gmail.com</a>
+              <a href="https://www.linkedin.com/in/nusrat-jahan-763782359/" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=nusrat-jahan-mim" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Sadiya Rahman Faiza -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Sadiya%20Rahman%20Faiza.jpg" alt="Sadiya Rahman Faiza" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Sadiya Rahman Faiza</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2021–2022 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Host cytokine expression profiling &amp; molecular biology protocols.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:srfaiza03@gmail.com" title="Personal Email" style="color: var(--primary); font-weight: 600; font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">srfaiza03@gmail.com</a>
+              <a href="https://www.linkedin.com/in/sadiyafaizah" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=sadiya-rahman-faiza" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Session 2022-2023 -->
+        <div style="margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: #165b33; background: #ecfdf3; padding: 0.25rem 0.75rem; border-radius: 9999px; border: 1px solid #bbf7d0;">Session 2022–2023</span>
+          <span style="font-size: 0.75rem; color: var(--slate-500);">Department of Biochemistry &amp; Molecular Biology, University of Chittagong</span>
+        </div>
+
+        <div class="grid-4">
+          
+          <!-- Md. Shourov Hossain Shuvo -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Md.Shourov%20Hossain%20Shuvo.jpeg" alt="Md. Shourov Hossain Shuvo" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Md. Shourov Hossain Shuvo</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2022–2023 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Molecular immunology, structural biology, recombinant DNA technology, and host-pathogen interactions.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:erenyeager4500ad@gmail.com" title="Personal Email" style="color: var(--primary); font-weight: 600; font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">erenyeager4500ad@gmail.com</a>
+              <a href="https://www.linkedin.com/in/sourov-hossain-shuvo-827996442" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=md-shourov-hossain-shuvo" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Mahina Mostafa Chowdhury -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Mahina%20Mostafa%20Chowdhury.jpeg" alt="Mahina Mostafa Chowdhury" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Mahina Mostafa Chowdhury</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2022–2023 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Biomolecular chemistry, protein biochemistry, viral pathogenesis, and diagnostic assay workflows.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:23604021@std.cu.ac.bd" title="Institutional Email" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">23604021@std.cu.ac.bd</a>
+              <a href="mailto:mahinamostafachowdhury7@gmail.com" title="Personal Email" style="color: var(--slate-500); font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">mahinamostafachowdhury7@gmail.com</a>
+              <a href="https://www.linkedin.com/in/mahina-mostafa-chowdhury-3a3726327" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=mahina-mostafa-chowdhury" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Nazia Sultana -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Nazia%20Sultana.png" alt="Nazia Sultana" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Nazia Sultana</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2022–2023 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Immunological signaling pathways, antibody engineering, molecular genetics, and surveillance screening.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:23604017@std.cu.ac.bd" title="Institutional Email" style="color: var(--primary); font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">23604017@std.cu.ac.bd</a>
+              <a href="mailto:nazia.sultana0858@gmail.com" title="Personal Email" style="color: var(--slate-500); font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">nazia.sultana0858@gmail.com</a>
+              <a href="https://www.linkedin.com/in/nazia-sultana-1a29aa442" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=nazia-sultana" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+          <!-- Shanjida Islam Eva -->
+          <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="width: 60px; height: 60px; border-radius: 1rem; overflow: hidden; border: 2px solid #bbf7d0; box-shadow: 0 3px 8px rgba(0,0,0,0.08); margin-bottom: 0.75rem;">
+                <img src="public/Current%20Members%20and%20Alumni/Shanjida%20Islam%20Eva.jpeg" alt="Shanjida Islam Eva" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+              </div>
+              <h4 style="font-size: 1rem; font-weight: 800; color: var(--slate-900);">Shanjida Islam Eva</h4>
+              <span style="font-size: 0.725rem; color: var(--primary); font-weight: 700; display: block; margin-bottom: 0.35rem;">Session 2022–2023 · BMB CU</span>
+              <p style="font-size: 0.775rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 0.75rem;">Vaccine formulation, clinical immunology, protein purification techniques, and molecular diagnostics.</p>
+            </div>
+            <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.725rem;">
+              <a href="mailto:evabmb11@gmail.com" title="Personal Email" style="color: var(--primary); font-weight: 600; font-family: var(--font-mono); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">evabmb11@gmail.com</a>
+              <a href="https://www.linkedin.com/in/shanjida-islam-eva-824307443" target="_blank" rel="noopener noreferrer" style="color: #0a66c2; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 3px; background: #0a66c2; shrink-0;"><svg width="9" height="9" viewBox="0 0 24 24" fill="#ffffff"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+                <span>LinkedIn Profile ↗</span>
+              </a>
+              <a href="member.html?id=shanjida-islam-eva" style="color: var(--primary); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; justify-content: space-between; padding-top: 0.25rem; border-top: 1px solid var(--slate-100);"><span>View Profile</span><span>→</span></a>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Alumni Network Section with Photos -->
+  <section id="alumni" style="padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color); scroll-margin-top: 5rem;">
+    <div class="max-w-container">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 0.4rem;">Global Network</div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: var(--slate-900);">Alumni Network Across Academia & Research</h2>
+          <p style="font-size: 0.925rem; color: var(--slate-600); margin-top: 0.25rem;">
+            Graduates of MSI Lab excelling as faculty members, doctoral researchers abroad, and scientific officers.
+          </p>
+        </div>
+
+        <div style="width: 280px;">
+          <input 
+            type="text" 
+            id="alumni-search" 
+            placeholder="Search alumni or institution..." 
+            class="form-input"
+            oninput="filterAlumni()"
+          />
+        </div>
+      </div>
+
+      <div class="grid-3" id="alumni-container">
+        <!-- Rendered by JavaScript with actual photos -->
+      </div>
+
+    </div>
+  </section>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const alumniData = [
+      {
+        id: "md-rafiqul-islam",
+        name: "Md. Rafiqul Islam",
+        former: "M.Sc. Research Fellow",
+        current: "Researcher & Academic Fellow",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2009–2010",
+        supervisor: "Md. Monirul Islam, PhD",
+        thesis: "Identification of Residue Determinants of Dengue 4 Sero-specificity and / or Cross-Reactivity",
+        date: "July 7, 2012",
+        abstract: "Identified specific amino acid residue determinants on DENV4 ED3 that dictate serospecificity and cross-reactivity by evaluating mutated variants in mice."
+      },
+      {
+        id: "mamunur-rashid",
+        name: "Dr. Muhammad Mamunur Rashid Mahib",
+        former: "Postdoctoral & Senior Research Fellow",
+        current: "Associate Professor, University of Chittagong",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/mahib%20cu.jpg",
+        session: "MS Session 2009–2010",
+        supervisor: "Md. Monirul Islam, PhD",
+        thesis: "Exploration of Residues Involved in Serospecificity and / or Serocrossreactivity in Dengue Serotype III",
+        date: "July 7, 2012",
+        abstract: "Investigated residue-level structural determinants responsible for serospecificity and cross-reactive antibody generation against DENV3 ED3 variants."
+      },
+      {
+        id: "nishat-akther",
+        name: "Nishat Akther",
+        former: "M.Sc. Research Fellow",
+        current: "Biomedical Researcher & Educator",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2010–2011",
+        supervisor: "Md. Monirul Islam, PhD",
+        thesis: "Residue Specificity on the EDIII of E-Protein and Dengue Sero-Specificity: Sero-Specific and Sero-Cross-Reactive Serum Antibody Responses in Mice Model",
+        date: "March 31, 2013",
+        abstract: "Evaluated serum antibody responses against mutated DENV EDIII constructs in mice to differentiate sero-specific vs. cross-reactive immune pathways."
+      },
+      {
+        id: "payal-barua",
+        name: "Dr. Payal Barua",
+        former: "M.Sc. Research Fellow",
+        current: "Postdoctoral / Immunology Researcher, University of Chittagong",
+        location: "Chittagong, Bangladesh",
+        image: "public/Current%20Members%20and%20Alumni/Payal%20Barua.jpg",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2010–2011",
+        supervisor: "Md. Monirul Islam, PhD",
+        thesis: "Immunosensitization Against the EDIII of Dengue E-Protein and Study of Dengue Sero-Specificity Using Sensitized Lymphocyte Culture",
+        date: "March 31, 2013",
+        abstract: "Explored cell-mediated cellular immune responses and sero-specificity using sensitized lymphocyte cultures stimulated with Dengue EDIII."
+      },
+      {
+        id: "wang-kyaw-twan",
+        name: "Dr. Wang Kyaw Twan",
+        former: "Senior Research Fellow",
+        current: "Postdoctoral Fellow, National Cancer Institute (CCR / NIH)",
+        location: "Frederick, Maryland, USA",
+        image: "public/Current%20Members%20and%20Alumni/Wang%20Kyaw%20Twan.jpg",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2010–2011",
+        supervisor: "Md. Monirul Islam, PhD (Co-Supervisor: Mowri Dhali)",
+        thesis: "Manipulation of in vivo Protein Solubility and Antigen-specific Antibody Responses Using Short Poly-amino-acid Peptide Tags",
+        date: "March 31, 2013",
+        abstract: "Examined how short poly-amino-acid peptide tags attached to BPTI models manipulate protein solubility and antigen-specific humoral immune responses in vivo."
+      },
+      {
+        id: "md-waseque-mia",
+        name: "Md. Waseque Mia",
+        former: "M.Sc. Research Assistant",
+        current: "Assistant Professor, Dept. of Biochemistry & Molecular Biology, SUST",
+        location: "Sylhet, Bangladesh",
+        image: "public/Current%20Members%20and%20Alumni/waseque_mia.jpg",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2011–2012",
+        supervisor: "M. Monirul Islam, PhD (Co-Supervisor: Mowri Dhali)",
+        thesis: "Manipulation of in vivo antigen-specific serum antibody responses using short solubility enhancing peptide tags",
+        date: "January 31, 2014",
+        abstract: "Demonstrated how solubility-enhancing peptide (SEP) tags alter antigen solubility and modulate scaffold-specific antibody production in mice."
+      },
+      {
+        id: "nafsoon-rahman",
+        name: "Dr. Nafsoon Mouly (Rahman)",
+        former: "Doctoral Fellow & Co-Inventor (WO2019031446)",
+        current: "Assistant Professor, Jagannath University",
+        location: "Dhaka, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/nafsoon%20rahman%20jnu.jpg",
+        session: "MS Session 2012–2013",
+        supervisor: "Md. Monirul Islam, PhD (Co-Supervisors: Mowri Dhali & M. M. R. Mahib)",
+        thesis: "Development of a New Dengue Diagnostic Tool and Comparison of Serum Antibody Responses Against Natural Dengue Infection and Artificial Immunization",
+        date: "October 20, 2014",
+        abstract: "Developed an EDIII-based ELISA diagnostic tool and compared antibody specificity patterns between natural human dengue infections and artificially immunized mice."
+      },
+      {
+        id: "meherun-nesa",
+        name: "Meherun Nesa",
+        former: "M.Sc. Research Fellow",
+        current: "Diagnostic Immunology Researcher",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2014–2015",
+        supervisor: "Md. Monirul Islam, PhD (Co-Supervisor: M. M. R. Mahib)",
+        thesis: "The EDIII, A Generic Tool To Detect All Natural Anti-Dengue Antibodies",
+        date: "September 25, 2016",
+        abstract: "Evaluated envelope protein domain III (EDIII) as a universal diagnostic reagent capable of capturing all natural anti-dengue antibodies in patient sera."
+      },
+      {
+        id: "tanjina-tanima",
+        name: "Tanjina Afrin (Tanima)",
+        former: "M.Sc. Researcher",
+        current: "Assistant Director / Audit Officer, CAG Bangladesh",
+        location: "Dhaka, Bangladesh",
+        category: "Government Scientific",
+        badge: "badge-amber",
+        image: "public/Current%20Members%20and%20Alumni/tanima.jpg",
+        session: "MS Session 2014–2015",
+        supervisor: "Md. Monirul Islam, PhD (Co-Supervisor: M. M. R. Mahib)",
+        thesis: "Effects SEP-Tag-dependent protein oligomerization on immune response modulation in mice",
+        date: "September 25, 2016",
+        abstract: "Studied how SEP-tag-induced oligomerization and aggregate formation alter immunogenicity and antibody response kinetics in animal models."
+      },
+      {
+        id: "mamtaz-mishu",
+        name: "Mamtaz Sultana (Mishu)",
+        former: "M.Sc. Research Fellow",
+        current: "Scientific Officer, BCSIR",
+        location: "Chittagong, Bangladesh",
+        category: "Govt Research Institute",
+        badge: "badge-amber",
+        image: "public/Current%20Members%20and%20Alumni/mishu.jpg",
+        session: "MS Session 2015–2016",
+        supervisor: "M. Monirul Islam, PhD (Co-Supervisor: M. M. R. Mahib)",
+        thesis: "Investigation of natural anti-dengue antibodies using epitope-grafted ED3s possessing the sero-specificity of both DENV-3 and DENV-4",
+        date: "September 13, 2017",
+        abstract: "Characterized natural human anti-dengue antibodies using engineered, epitope-grafted dual-specificity DENV-3/DENV-4 ED3 variants to increase diagnostic accuracy."
+      },
+      {
+        id: "hasan-nazmul",
+        name: "Md. Nazmul Hasan",
+        former: "M.Sc. Research Fellow",
+        current: "PhD Candidate, Purdue University (Lecturer HSTU)",
+        location: "Indiana, USA",
+        category: "PhD Scholar Abroad",
+        badge: "badge-blue",
+        image: "public/Current%20Members%20and%20Alumni/nazmul%20hasan%20hstu.jpg",
+        session: "MS Session 2016–2017",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "SCP-tag, a tool to increase immunogenicity of poorly immunogenic dengue envelope protein domain 3 in mice model without compromising antibody specificity",
+        date: "July 15, 2018",
+        abstract: "Applied short solubility-controlling peptide (SCP) tags to enhance the immunogenicity of poorly immunogenic dengue ED3 proteins in mice without losing antibody specificity."
+      },
+      {
+        id: "abu-bakar-siddik",
+        name: "Abu Bakar Siddik",
+        former: "M.Sc. Researcher",
+        current: "PhD Candidate, University of Texas at Austin (UT Austin)",
+        location: "Austin, Texas, USA",
+        category: "PhD Scholar Abroad",
+        badge: "badge-blue",
+        image: "public/Current%20Members%20and%20Alumni/Abu%20Bakar%20Siddik.jpg",
+        session: "MS Session 2017–2018",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Effects of poly-Ile and poly-Asp tags on the immunogenicity of an epitope-grafted DENV3 envelope protein domain 3 (3ED3) in Swiss albino mice",
+        date: "July 10, 2019",
+        abstract: "Analyzed how hydrophobic (poly-Ile) and charged (poly-Asp) peptide tags influence protein oligomerization and immune responses against epitope-grafted 3ED3 in mice."
+      },
+      {
+        id: "fayaz-rezvanul-haq",
+        name: "Fayaz Rezvanul Haq",
+        former: "M.Sc. Researcher",
+        current: "Protein Formulation Researcher",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "MS Session 2017–2018",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Effects of poly-Ile and poly-Lys tags on the aggregate sizes and immunogenicity of an epitope-grafted DEN4 ED3",
+        date: "July 10, 2019",
+        abstract: "Evaluated particle size distribution and antibody titer induction of DEN4 ED3 modified with poly-isoleucine and poly-lysine tags in Swiss albino mice."
+      },
+      {
+        id: "imrul-tipo",
+        name: "Imrul Hasan Tipo",
+        former: "M.Sc. Researcher",
+        current: "PhD Candidate, University of Alabama",
+        location: "Alabama, USA",
+        category: "PhD Scholar Abroad",
+        badge: "badge-blue",
+        image: "public/Current%20Members%20and%20Alumni/imrul%20hasan%20tipo%20ustc.jpg",
+        session: "MS Session 2019–2020",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Four Different DENV ED3s Generated Different T cell Memory In Artificial Immunization In Mice Model",
+        date: "May 2022",
+        abstract: "Measured T cell memory generation and cytokine responses in mice artificially immunized with recombinant ED3 proteins representing all four dengue serotypes."
+      },
+      {
+        id: "din-islam",
+        name: "Dr. Md. Din Islam",
+        former: "Doctoral Fellow",
+        current: "Postdoctoral Research Fellow, National Chung Hsing University",
+        location: "Taichung, Taiwan",
+        category: "Postdoc / Research",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/din%20islam.jpg",
+        session: "MS Session 2019–2020",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "A Mystery of DENV Immunogenicity: Anti-DENV ED3 Responses Against Monovalent and Multivalent DENV ED3s",
+        date: "May 15, 2022",
+        abstract: "Assessed differential immunogenicity and antibody titers induced by single (monovalent) versus combined (multivalent) DENV ED3 immunization schemes in mice."
+      },
+      {
+        id: "sanjida-yesmin",
+        name: "Dr. Sanjida Yesmin",
+        former: "Doctoral Researcher",
+        current: "Research Associate, Tokyo University of Agriculture & Tech (TUAT)",
+        location: "Tokyo, Japan",
+        category: "Postdoc / Research",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/sanjida%20yeasmin.jpg",
+        session: "MS Session 2019–2020",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Anti-DENV ED3 IgG Responses Against Heterotypic Secondary DENV ED3 Immunization in Mice Model",
+        date: "May 2022",
+        abstract: "Investigated secondary heterotypic immune responses and sero-cross-reactivity patterns in mice prime-boosted with different dengue serotype ED3 domains."
+      },
+      {
+        id: "dr-md-golam-kabir",
+        name: "Dr. Md. Golam Kabir",
+        former: "Post-Doctoral Fellow",
+        current: "Professor, Department of Biochemistry & Molecular Biology, University of Chittagong",
+        image: "public/Current%20Members%20and%20Alumni/golam%20kabir.jpg",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "Post-Doctoral",
+        supervisor: "Md. Monirul Islam, PhD",
+        thesis: "Production and Characterization of Monoclonal Antibodies (mAbs) Against Dengue ED3 Variants",
+        date: "December 19, 2022",
+        abstract: "Developed and characterized monoclonal antibodies targeted against mutated Dengue ED3 variants to evaluate cross-neutralization and epitope binding dynamics."
+      },
+      {
+        id: "mahabubul-mowla",
+        name: "Mahabubul Mowla",
+        former: "M.Sc. Research Assistant",
+        current: "Senior Lecturer, USTC",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/mahabubul%20mowla%20ustc.jpg",
+        session: "MS Session 2020–2021",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Anti-Dengue Cytokine and Antibody Responses in Recombinant ED3 Immunized Mice",
+        date: "July 2023",
+        abstract: "Investigated cellular cytokine profiles and IgG antibody responses in mice immunized with recombinant dengue envelope protein domain 3 variants."
+      },
+      {
+        id: "antara-saha",
+        name: "Antara Saha",
+        former: "M.Sc. Researcher",
+        current: "PhD Candidate, Texas A&M University",
+        location: "College Station, Texas, USA",
+        category: "PhD Scholar Abroad",
+        badge: "badge-blue",
+        image: "public/Current%20Members%20and%20Alumni/antara%20saha.jpg",
+        session: "MS Session 2020–2021",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Anti-Dengue Cytokine Responses against Four Different DENV ED3s in Mice Model",
+        date: "July 20, 2023",
+        abstract: "Quantified intracellular Th1/Th2 cytokine expression profiles (IFN-γ and IL-4) in response to immunization with DENV1–4 ED3 proteins in mice."
+      },
+      {
+        id: "dr-moushumi-ghosh-roy",
+        name: "Dr. Moushumi Ghosh Roy",
+        former: "PhD Fellow",
+        current: "Assistant Professor, Dept. of Pharmacy, BGC Trust University Bangladesh",
+        location: "Chittagong, Bangladesh",
+        image: "public/Current%20Members%20and%20Alumni/moushumi_ghosh_roy.jpg",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        session: "PhD Candidate",
+        supervisor: "Dr. Anjuvan Singh (Co-Supervisor: Dr. M. Monirul Islam)",
+        thesis: "Mimicking natural anti-DENV antibody response in mice model using dengue envelope protein domain 3",
+        date: "August 2023",
+        abstract: "Correlated human natural dengue serotype prevalence and clinical symptoms in Chattogram with multi-valent ED3 artificial immunization and T-cell responses in mice."
+      },
+      {
+        id: "sabrina-akter",
+        name: "Sabrina Akter",
+        former: "M.Sc. Research Assistant",
+        current: "Lecturer, Dept. of Biochemistry & Biotechnology, USTC",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/sabrina%20akter.jpg",
+        session: "MS Session 2021–2022",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Serospecificity and sero-cross-reactivity of anti-SARS-CoV-2 antibodies developed against the Receptor Binding Domain (RBD) of Wuhan and Omicron strains in mice model",
+        date: "August 2024 / September 30, 2024",
+        abstract: "Evaluated serospecificity and cross-reactive IgG antibody responses in mice immunized with recombinant Wuhan and Omicron (BA.4/5, JN.1) SARS-CoV-2 RBDs."
+      },
+      {
+        id: "rafiqul-shanta",
+        name: "Md. Rafiqul Islam Shanta",
+        former: "Graduate Research Assistant",
+        current: "Research Fellow, Bangladesh Forest Research Institute",
+        location: "Chittagong, Bangladesh",
+        category: "Research Directorate",
+        badge: "badge-amber",
+        image: "public/Current%20Members%20and%20Alumni/rafiqul%20islam%20shanto.jpg",
+        session: "MS Session 2021–2022",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Anti-SARS-CoV2 IgG Responses in the Sinopharm-Vaccinated Individuals in Chattogram, Bangladesh and the Impact of Homologous and Heterologous Boosting",
+        date: "September 30, 2024",
+        abstract: "Profiled antibody waning and cross-recognition of Omicron vs. Wuhan strains in Sinopharm-vaccinated human cohorts receiving homologous vs. heterologous booster shots."
+      },
+      {
+        id: "asma-mazumder",
+        name: "Asma Rashid Mazumder",
+        former: "M.Sc. Research Assistant",
+        current: "Researcher & Educator, Higher Education Sector",
+        location: "Chittagong, Bangladesh",
+        category: "Faculty / Academic",
+        badge: "badge-primary",
+        image: "public/Current%20Members%20and%20Alumni/asma%20rashid%20mozumder.jpg",
+        session: "MS Session 2022–2023",
+        supervisor: "M. Monirul Islam, PhD",
+        thesis: "Trivalent SARS-CoV-2 RBD Immunization in Mice Induces Wuhan, Omicron BA.5, and JN.1 Cross-Reacting anti-SARS-CoV-2 Antibodies",
+        date: "August 3, 2025",
+        abstract: "Evaluated the immunogenicity of a trivalent RBD formulation (Wuhan + BA.5 + JN.1) in mice, demonstrating broad cross-reactivity across multiple SARS-CoV-2 variants."
+      }
+    ];
+
+    function filterAlumni() {
+      const q = document.getElementById('alumni-search').value.toLowerCase();
+      const container = document.getElementById('alumni-container');
+      const filtered = alumniData.filter(a => 
+        a.name.toLowerCase().includes(q) || 
+        a.current.toLowerCase().includes(q) || 
+        a.location.toLowerCase().includes(q) ||
+        a.category.toLowerCase().includes(q) ||
+        (a.thesis && a.thesis.toLowerCase().includes(q)) ||
+        (a.session && a.session.toLowerCase().includes(q)) ||
+        (a.supervisor && a.supervisor.toLowerCase().includes(q)) ||
+        (a.abstract && a.abstract.toLowerCase().includes(q))
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="card" style="padding: 2rem; grid-column: 1 / -1; text-align: center; color: var(--slate-400);">No alumni found matching "${q}".</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(a => `
+        <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; align-items: start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.75rem;">
+              <a href="member.html?id=${a.id}" style="width: 52px; height: 52px; border-radius: 0.85rem; overflow: hidden; border: 2px solid #e2e8f0; background: #f1f5f9; display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--slate-700); shrink-0; text-decoration: none;">
+                ${a.image ? `<img src="${a.image}" alt="${a.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">` : a.name.split(' ').map(n=>n[0]).slice(0,2).join('')}
+              </a>
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 3px;">
+                <span class="badge ${a.badge}" style="font-size: 10px;">${a.category}</span>
+                ${a.session ? `<span style="font-size: 10px; font-family: var(--font-mono); color: #165b33; background: #ecfdf3; padding: 1px 6px; border-radius: 4px; border: 1px solid #bbf7d0;">${a.session}</span>` : ''}
+              </div>
+            </div>
+            <a href="member.html?id=${a.id}" style="text-decoration: none;">
+              <h3 style="font-size: 1rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.25rem;">${a.name}</h3>
+            </a>
+            <div style="font-size: 0.775rem; color: var(--primary); font-weight: 600; margin-bottom: 0.35rem;">${a.current}</div>
+            <p style="font-size: 0.75rem; color: var(--slate-500); margin-bottom: 0.65rem;">Former ${a.former}</p>
+
+            ${a.thesis ? `
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.65rem; padding: 0.5rem 0.65rem; font-size: 0.725rem; color: var(--slate-700); margin-bottom: 0.5rem;">
+                <div style="font-weight: 800; color: var(--primary); font-size: 0.675rem; text-transform: uppercase;">Thesis Defense (${a.date}):</div>
+                <div style="font-style: italic; margin-top: 2px;">&ldquo;${a.thesis}&rdquo;</div>
+              </div>
+            ` : ''}
+          </div>
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid var(--slate-100); display: flex; flex-direction: column; gap: 0.4rem;">
+            <div style="font-size: 0.725rem; color: var(--slate-400); display: flex; align-items: center; gap: 0.35rem;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--slate-400); shrink-0; display: inline-block; vertical-align: middle;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> <span>${a.location}</span>
+            </div>
+            <a href="member.html?id=${a.id}" style="font-size: 0.75rem; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; justify-content: space-between; text-decoration: none; padding-top: 0.25rem;">
+              <span>View Thesis &amp; Research</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    window.addEventListener('DOMContentLoaded', filterAlumni);
+
+    // Close open dropdowns on click and smooth scroll
+    document.querySelectorAll('.nav-dropdown-content a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelectorAll('.nav-dropdown-content.show').forEach(el => el.classList.remove('show'));
+      });
+    });
+
+    // Auto-scroll on hash load
+    if (window.location.hash) {
+      setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+    }
+  </script>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

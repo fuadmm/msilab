@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSI Lab | Laboratory of Molecular & Structural Immunology · University of Chittagong</title>
+  <meta name="description" content="Official website of the Laboratory of Molecular & Structural Immunology (MSI Lab), led by Prof. Dr. Mohammad Monirul Islam at the Department of Biochemistry & Molecular Biology, University of Chittagong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-purple { background-color: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+    .badge-amber { background-color: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .btn-secondary:hover { background-color: var(--slate-50); color: var(--slate-900); }
+    .btn-white { background-color: #fff; color: var(--primary); font-weight: 700; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .card:hover { border-color: rgba(22,91,51,0.35); box-shadow: var(--card-hover); transform: translateY(-2px); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+    @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-6 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px) { .grid-2, .grid-3, .grid-4, .grid-6 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
+  
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+    /* Custom Modern Scrollbars */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #f8fafc; }
+    ::-webkit-scrollbar-thumb { background: #165b33; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #0e3f22; }
+
+    /* Elevated Metric & Interactive Cards */
+    .metric-card {
+      padding: 1.35rem 1.25rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fafffc 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    }
+    .metric-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -4px rgba(22, 91, 51, 0.12);
+      border-color: rgba(16, 185, 129, 0.45);
+    }
+    .metric-number-emerald {
+      font-size: 2.15rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      background: linear-gradient(135deg, #165b33 0%, #10b981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .metric-number-teal {
+      font-size: 2.15rem;
+      font-weight: 800;
+      font-family: var(--font-mono);
+      background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+    .pipeline-step {
+      padding: 1.6rem 1.35rem;
+      background: linear-gradient(135deg, #ffffff 0%, #fafffc 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .pipeline-step:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 32px -4px rgba(22, 91, 51, 0.12);
+      border-color: rgba(16, 185, 129, 0.45);
+    }
+  </style>
+  <script>
+    // Robust image loader for both local file:/// and web server protocols
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!img.dataset.retry) {
+          img.dataset.retry = '1';
+          if (currentSrc.startsWith('public/')) {
+            img.src = currentSrc.substring(7);
+          } else if (currentSrc.startsWith('/')) {
+            img.src = 'public' + currentSrc;
+          } else {
+            img.src = 'public/' + currentSrc;
+          }
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="facilities.html" class="nav-link ">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link ">Publications</a>
+        <a href="collaborations.html" class="nav-link ">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b;">
+              <span>Join Us (Fellowships)</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background-color: #fafdfb;">
+    <div class="max-w-container">
+      <div style="max-width: 920px; margin-bottom: 2.5rem;">
+        
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Center for Tropical Virology, Recombinant Vaccines &amp; Structural Biology</span>
+        </div>
+
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          Engineering Proteins to Unravel Viral Immunity &amp; 
+          <span style="color: var(--primary); background: linear-gradient(120deg, var(--primary) 0%, #0d9488 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Advance Next-Generation Vaccines</span>
+        </h1>
+
+        <p style="font-size: 1.125rem; color: var(--slate-600); line-height: 1.75; margin-bottom: 1.25rem;">
+          The Molecular Structure and Immunology (MSI) Lab at the University of Chittagong combines structural protein engineering, peptide tag chemistry, and immunological evaluation to address major viral health challenges.
+        </p>
+
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.1rem; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 9999px; font-size: 0.85rem; color: #065f46; font-weight: 600; margin-bottom: 2rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-3-5-3v6z"/></svg>
+          <span>From Atomic Structure to Population Protection: Innovations in Dengue and SARS-CoV-2 Immunology</span>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center;">
+          <a href="publications.html" class="btn btn-primary">
+            <span>Explore Publications</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="team.html" class="btn btn-secondary">
+            <span>Meet Our People</span>
+          </a>
+          <a href="apply.html" class="btn btn-secondary" style="border-color: #a7f3d0; background-color: #ecfdf5; color: #065f46;">
+            <span>Student &amp; Fellow Recruitment</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Institutional Logos Bar -->
+      <div style="padding: 1.25rem 1.5rem; background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; margin-top: 1.5rem; margin-bottom: 2rem;">
+        <span style="font-size: 0.725rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.85rem;">Affiliated Institutions &amp; Strategic Sponsors:</span>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong" style="height: 38px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">University of Chittagong</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/All%20logos/heat%20logo.png" alt="HEAT Project" style="height: 34px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">HEAT Project</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/All%20logos/world%20bank%20logo.png" alt="World Bank" style="height: 30px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">World Bank</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/All%20logos/ugc%20bangladesh.png" alt="UGC Bangladesh" style="height: 34px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">UGC Bangladesh</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/All%20logos/peoples%20govt%20of%20bangladesh.png" alt="Govt. of Bangladesh" style="height: 34px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">Govt. of Bangladesh</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/Colaborators/cmch.png" alt="Chittagong Medical College &amp; Hospital" style="height: 38px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">Chittagong Medical College &amp; Hospital</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="public/Colaborators/cmosh.png" alt="Chittagong Ma-O-Shishu Hospital" style="height: 38px; object-fit: contain;">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-700);">Chittagong Ma-O-Shishu Hospital</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1.2: Key Research Metrics & Impact Counter Cards -->
+      <div style="margin-top: 2rem;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <span style="font-size: 0.725rem; font-weight: 800; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em; display: block;">Bench-Verified Milestones</span>
+            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--slate-900); margin: 0;">Key Research Metrics &amp; Scientific Impact</h3>
+          </div>
+          <span style="font-size: 0.8rem; color: var(--slate-500); font-weight: 500;">Molecular Structure &amp; Immunology Laboratory · CU</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.15rem;">
+          
+          <div class="metric-card" style="border-left: 4px solid var(--primary);">
+            <div class="metric-number-emerald">25+</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">Completed Theses &amp; Dissertations</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">MS, PhD &amp; post-doctoral researchers trained in structural biology &amp; virology</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid #0d9488;">
+            <div class="metric-number-teal">4</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">Dengue Serotypes (DENV 1–4) Targeted</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">Epitope grafting &amp; envelope domain III (ED3) serospecificity dissection</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid var(--primary);">
+            <div class="metric-number-emerald">3+</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">SARS-CoV-2 Variants Evaluated</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">Wuhan, Omicron (BA.4/5, JN.1) RBD IgG titers &amp; cross-reactivity mapping</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid #0d9488;">
+            <div class="metric-number-teal">2</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">Patented/Engineered Tag Technologies</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">Solubility Enhancing (SEP) &amp; Solubility Controlling (SCP) peptide tags</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid var(--primary);">
+            <div class="metric-number-emerald">15+ Years</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">Dedicated Research Leadership</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">Continuous molecular biophysics and infectious disease investigation</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid #0d9488;">
+            <div class="metric-number-teal">100%</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">Source-Grounded Structural Insights</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">Empirical biophysical validation via HPLC, MS, ELISA, and docking</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid var(--primary);">
+            <div class="metric-number-emerald">Multiple</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">Regional Cohort Serosurveys</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">Translational clinical epidemiology &amp; Sinopharm booster evaluations in Chattogram</div>
+          </div>
+
+          <div class="metric-card" style="border-left: 4px solid #0d9488;">
+            <div class="metric-number-teal">10+</div>
+            <div style="font-size: 0.9rem; font-weight: 800; color: var(--slate-900); margin-top: 0.5rem;">National &amp; Int. Collaborations</div>
+            <div style="font-size: 0.775rem; color: var(--slate-600); margin-top: 0.35rem; line-height: 1.45;">TUAT Tokyo, World Bank HEAT, CMCH, CMOSH, and Govt. research grants</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2.1: PI Spotlight Card with Real Photo -->
+  <section style="padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 0.4rem;">Laboratory Leadership</div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: var(--slate-900);">Prof. Dr. Mohammad Monirul Islam</h2>
+          <p style="font-size: 0.95rem; color: var(--primary); font-weight: 600;">Head of MSI Lab · Professor, Department of Biochemistry &amp; Molecular Biology · University of Chittagong</p>
+        </div>
+        <a href="team.html" class="btn btn-secondary" style="font-size: 0.8rem;">
+          <span>Explore All Team Members &amp; Alumni →</span>
+        </a>
+      </div>
+
+      <div class="card" style="padding: 2.25rem; background: linear-gradient(135deg, #ffffff 0%, #f9fdfa 100%); border-left: 5px solid var(--primary);">
+        <div style="display: grid; grid-template-columns: 260px 1fr; gap: 2.5rem; align-items: start;">
+          
+          <!-- PI Photo & Badges -->
+          <div>
+            <div style="width: 240px; height: 260px; border-radius: 1.25rem; overflow: hidden; border: 3px solid #bbf7d0; box-shadow: 0 10px 25px rgba(22,91,51,0.2); position: relative; margin-bottom: 1rem;">
+              <img src="public/PI/Mohammad%20Monirul%20Islam,%20PI,%20MSI%20Lab.jpg" alt="Prof. Dr. Mohammad Monirul Islam" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+            </div>
+            <div class="badge badge-primary" style="font-size: 11px; margin-bottom: 0.4rem; display: block; text-align: center;">
+              TUAT Tokyo Ph.D. under Prof. Yutaka Kuroda
+            </div>
+            <div style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6; text-align: center;">
+              <a href="mailto:islammm@cu.ac.bd" style="color: var(--primary); font-weight: 600;">islammm@cu.ac.bd</a><br>
+              <span style="font-family: var(--font-mono); font-size: 0.775rem;">+8801750180422</span>
+            </div>
+          </div>
+
+          <!-- Narrative -->
+          <div>
+            <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; padding: 1.25rem 1.5rem; border-radius: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 0.25rem;">Laboratory Vision &amp; Identity</div>
+              <p style="font-size: 0.95rem; font-style: italic; color: #14532d; line-height: 1.6;">
+                &ldquo;The Molecular Structure and Immunology Laboratory (MSI Lab) is a flagship research facility situated within the Department of Biochemistry and Molecular Biology at the University of Chittagong. Under the leadership of Professor Dr. M. Monirul Islam, the MSI Lab dedicatedly pursues fundamental and applied questions at the intersection of protein chemistry, structural biophysics, and viral immunology.&rdquo;
+              </p>
+            </div>
+
+            <p style="font-size: 0.925rem; color: var(--slate-700); line-height: 1.7; margin-bottom: 1rem;">
+              Dr. M. Monirul Islam earned his PhD under Professor Yutaka Kuroda, establishing fundamental principles regarding the structure, folding, and immunogenicity of protein variants. Since establishing the MSI Lab, Dr. Islam has mentored over two dozen postgraduate thesis researchers (MS, PhD, and Post-Doctoral fellows). His pioneering work led to the invention and characterization of SEP-tags and SCP-tags for protein solubilization and controlled immunogenicity, as well as extensive mapping of Dengue domain 3 (ED3) serospecificity and SARS-CoV-2 RBD cross-protection.
+            </p>
+
+            <p style="font-size: 0.925rem; color: var(--slate-700); line-height: 1.7; margin-bottom: 1.25rem;">
+              During the COVID-19 pandemic, Dr. Islam served as <strong>Lab-In-Charge of the University of Chittagong COVID-19 Testing Facility</strong>, directing over 100,000 real-time molecular diagnostics. He also heads the <strong>Animal Ethics Review Board</strong> at the University of Chittagong.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.825rem; color: var(--slate-800); margin-bottom: 1.5rem;">
+              <div>• <strong>Head of MSI Lab &amp; Professor</strong>, Department of Biochemistry &amp; Molecular Biology, University of Chittagong</div>
+              <div>• <strong>Lab-In-Charge</strong>, COVID-19 Testing Lab, Faculty of Biological Sciences, University of Chittagong</div>
+              <div>• <strong>Head</strong>, Animal Ethics Review Board, University of Chittagong</div>
+              <div>• <strong>Co-Inventor</strong>, Patented Solubility-Controlling Peptide Tags (WO2019031446)</div>
+            </div>
+
+            <a href="team.html" class="btn btn-primary" style="font-size: 0.825rem;">
+              <span>View Full Academic CV &amp; Publications →</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 1.3: Core Research Pillars (Feature Cards from Copy Deck) -->
+  <section style="position: relative; padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color); overflow: hidden;">
+    <!-- Subtle light scientific background image overlay -->
+    <div style="position: absolute; inset: 0; background-image: url('public/images/research-domains-bg.jpg'); background-size: cover; background-position: center; opacity: 0.12; pointer-events: none; mix-blend-mode: multiply;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(248,250,252,0.85) 50%, rgba(255,255,255,0.95) 100%); pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 0.4rem;">Section 1.3 · Official Core Research Pillars</div>
+          <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900);">Research Pillars at MSI Lab</h2>
+          <p style="font-size: 0.95rem; color: var(--slate-600); margin-top: 0.4rem;">Four fundamental pillars guiding viral immunology, tag chemistry, and translational vaccine engineering.</p>
+        </div>
+        <a href="objectives.html" class="btn btn-secondary" style="font-size: 0.8rem;">
+          <span>Explore All Research Objectives &amp; Strategic Goals →</span>
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        
+        <!-- Pillar 1 -->
+        <div class="card" style="padding: 2rem; background: #ffffff; border-radius: 1rem; border: 1px solid var(--border-color); border-top: 4px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700;">
+                Pillar 01 · Structural Virology
+              </span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--slate-400);">DENV 1–4</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem; line-height: 1.3;">
+              Dengue Envelope Domain III (ED3) Biology
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.25rem;">
+              Exploring residue-level determinants of serospecificity and cross-reactivity across all four Dengue serotypes (DENV1–4). The lab utilizes epitope grafting and domain-based constructs to distinguish natural infection antibody profiles from artificial immunization responses.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--slate-100);">
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--primary);">Residue-Level Determinants &amp; Epitope Grafting</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="card" style="padding: 2rem; background: #ffffff; border-radius: 1rem; border: 1px solid var(--border-color); border-top: 4px solid #0d9488; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: #ccfbf1; color: #0f766e; font-size: 11px; font-weight: 700;">
+                Pillar 02 · Protein Engineering
+              </span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--slate-400);">SEP &amp; SCP</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem; line-height: 1.3;">
+              Peptide Tag Technology &amp; Protein Solubility
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.25rem;">
+              Development and application of Solubility Enhancing Peptide (SEP) tags, Solubility Controlling Peptide (SCP) tags, and poly-amino acid peptide tags (poly-Ile, poly-Asp, poly-Lys). These tags manipulate aggregate sizes, suppress inclusion body misfolding, and modulate antigen immunogenicity in vivo without compromising specificity.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--slate-100);">
+            <span style="font-size: 0.75rem; font-weight: 600; color: #0f766e;">Inclusion Body Suppression &amp; Controlled Aggregation</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="card" style="padding: 2rem; background: #ffffff; border-radius: 1rem; border: 1px solid var(--border-color); border-top: 4px solid var(--primary); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700;">
+                Pillar 03 · Translational Immunology
+              </span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--slate-400);">SARS-CoV-2</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem; line-height: 1.3;">
+              SARS-CoV-2 Variant Immunology &amp; Booster Strategies
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.25rem;">
+              Profiling cross-reacting IgG antibodies against Wuhan, Omicron (BA.4/5, JN.1), and monovalent/multivalent RBD immunizations. The lab evaluates homologous vs. heterologous vaccine boosting regimens in both animal models and vaccinated human cohorts in Chattogram.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--slate-100);">
+            <span style="font-size: 0.75rem; font-weight: 600; color: var(--primary);">Omicron BA.4/5 &amp; JN.1 · Mix-and-Match Boosters</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="card" style="padding: 2rem; background: #ffffff; border-radius: 1rem; border: 1px solid var(--border-color); border-top: 4px solid #0d9488; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: #ccfbf1; color: #0f766e; font-size: 11px; font-weight: 700;">
+                Pillar 04 · Cellular Memory &amp; mAbs
+              </span>
+              <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: var(--slate-400);">IFN-γ / IL-4</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.75rem; line-height: 1.3;">
+              Cellular Immune Memory &amp; Monoclonal Antibodies
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.7; margin-bottom: 1.25rem;">
+              Investigating T-cell memory generation, intracellular Th1/Th2 cytokine expression (IFN-γ and IL-4), and developing monoclonal antibodies (mAbs) against Dengue ED3 variants to dissect neutralisation mechanics.
+            </p>
+          </div>
+          <div style="padding-top: 1rem; border-top: 1px solid var(--slate-100);">
+            <span style="font-size: 0.75rem; font-weight: 600; color: #0f766e;">Th1/Th2 Intracellular Cytokines &amp; mAb Neutralization</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2.2: Technical Capabilities & Laboratory Workflow -->
+  <section style="padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 0.4rem;">Section 2.2 · Methodological Rigor</div>
+          <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900);">Technical Capabilities &amp; Laboratory Workflow</h2>
+          <p style="font-size: 0.95rem; color: var(--slate-600); margin-top: 0.4rem;">Integrated bench-to-bedside experimental pipeline: from recombinant construct expression to cellular immunology.</p>
+        </div>
+        <a href="facilities.html" class="btn btn-secondary" style="font-size: 0.8rem;">
+          <span>Explore Facilities &amp; Equipment →</span>
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+        
+        <div class="pipeline-step" style="border-top: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+              <span class="badge badge-primary" style="font-size: 0.725rem; font-weight: 800; letter-spacing: 0.04em;">STEP 01</span>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.3;">Recombinant Protein Expression</h4>
+            <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6;">
+              Construct design in pET vectors, transformation in E. coli strains (JM109, DH5α, and T7 SHuffle for disulfide bond formation), low-temperature and IPTG induction.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid var(--slate-100); font-size: 0.725rem; font-weight: 700; color: var(--primary);">
+            Molecular Construct Design
+          </div>
+        </div>
+
+        <div class="pipeline-step" style="border-top: 4px solid #0d9488;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+              <span class="badge" style="background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4; font-size: 0.725rem; font-weight: 800; letter-spacing: 0.04em;">STEP 02</span>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.3;">Inclusion Body Refolding &amp; HPLC</h4>
+            <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6;">
+              GuHCl denaturation, air oxidation of cysteines, Ni-NTA affinity chromatography, thrombin/CNBr tag cleavage, and Reverse-Phase HPLC (YMC-Pack PROTEIN-RP).
+            </p>
+          </div>
+          <div style="margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid var(--slate-100); font-size: 0.725rem; font-weight: 700; color: #0d9488;">
+            Protein Refolding &amp; Tag Cleavage
+          </div>
+        </div>
+
+        <div class="pipeline-step" style="border-top: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+              <span class="badge badge-primary" style="font-size: 0.725rem; font-weight: 800; letter-spacing: 0.04em;">STEP 03</span>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.3;">Structural Confirmation &amp; Mass Spec</h4>
+            <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6;">
+              ESI-TOF and MALDI-TOF mass spectrometry, analytical RP-HPLC, Ellman's assay for free thiol quantification, and SDS-PAGE purity validation.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid var(--slate-100); font-size: 0.725rem; font-weight: 700; color: var(--primary);">
+            Analytical MS &amp; Thiol Titration
+          </div>
+        </div>
+
+        <div class="pipeline-step" style="border-top: 4px solid #0d9488;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+              <span class="badge" style="background: #ccfbf1; color: #0f766e; border: 1px solid #99f6e4; font-size: 0.725rem; font-weight: 800; letter-spacing: 0.04em;">STEP 04</span>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.3;">Immunological Assays &amp; Serology</h4>
+            <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6;">
+              Mice artificial immunization models (Swiss albino), indirect and sandwich ELISA, intracellular cytokine staining (IFN-γ, IL-4), and sensitized lymphocyte cultures.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid var(--slate-100); font-size: 0.725rem; font-weight: 700; color: #0d9488;">
+            Humoral &amp; Cellular Memory
+          </div>
+        </div>
+
+        <div class="pipeline-step" style="border-top: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem;">
+              <span class="badge badge-primary" style="font-size: 0.725rem; font-weight: 800; letter-spacing: 0.04em;">STEP 05</span>
+            </div>
+            <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.3;">Computational Docking &amp; Biophysics</h4>
+            <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.6;">
+              HADDOCK 2.4 molecular docking, PRODIGY binding affinity thermodynamics, and epitope structural modeling in PyMOL and UCSF ChimeraX.
+            </p>
+          </div>
+          <div style="margin-top: 1rem; padding-top: 0.65rem; border-top: 1px solid var(--slate-100); font-size: 0.725rem; font-weight: 700; color: var(--primary);">
+            In Silico Interface Mechanics
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Validated Laboratory Protocols & SOPs Section -->
+  <section style="padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1.5rem;">
+        <div style="max-width: 800px;">
+          <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Open Science &amp; Reproducibility · 11 Verified SOPs</div>
+          <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900); letter-spacing: -0.02em;">
+            Standard Operating Procedures &amp; Protocol Collections
+          </h2>
+          <p style="font-size: 0.95rem; color: var(--slate-600); margin-top: 0.5rem; line-height: 1.6;">
+            Standardized, bench-verified protocols developed and utilized by MSI Lab researchers across viral surveillance, clinical serology, in vivo challenge, molecular docking, and phytochemical extractions. Available for open academic download.
+          </p>
+        </div>
+        <div>
+          <a href="protocols.html" class="btn btn-primary" style="font-size: 0.85rem;">
+            <span>Explore All 11 Protocols &amp; SOPs</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Featured Protocols Grid (Top 6 SOPs) -->
+      <div class="grid-3" style="gap: 1.5rem;">
+        
+        <div class="card proto-card" data-category="virology" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; background: #ffffff; border: 1px solid var(--border-color);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700; border: 1px solid rgba(22,91,51,0.2);">
+                Virology & Diagnostics
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--slate-600); background: var(--slate-100); padding: 0.2rem 0.55rem; border-radius: 6px; font-family: monospace;">
+                DOCX · 26 KB
+              </span>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.35;">
+              1-Step RT-qPCR Mastermix & Amplification Protocol
+            </h3>
+
+            <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">
+              Standard operating procedure for one-step real-time reverse transcription PCR, covering RNase-free glassware preparation, primer-probe mastermix assembly, and thermal cycling parameters for viral pathogen surveillance.
+            </p>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Standard Operating Procedure (SOP) Highlights:
+              </span>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.775rem; color: var(--slate-700);">
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Baking glassware at 180–200°C for ≥4 hours to destroy RNases</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">TE buffer & DEPC-treated nuclease-free water preparation</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Multiplex primer and hydrolysis probe mastermix formulation</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">qTOWER³ G linear thermal cycling and threshold baseline calibration</span>
+                  </li>
+                
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 0.5rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Validated Equipment / Platforms:
+              </span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Analytik Jena qTOWER³ G qPCR</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Benchmark SureAir™ PCR Workstation</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Refrigerated Microcentrifuge</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--slate-100);">
+            <a href="public/Protocols%20Collection/1-Step%20RT-qPCR%20Protocol.docx" download="1-Step RT-qPCR Protocol.docx" onclick="handleProtocolDownload(event, '1-Step%20RT-qPCR%20Protocol.docx')" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.825rem; font-weight: 700; padding: 0.65rem 1rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Protocol (.DOCX)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card proto-card" data-category="virology" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; background: #ffffff; border: 1px solid var(--border-color);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700; border: 1px solid rgba(22,91,51,0.2);">
+                Virology & Diagnostics
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--slate-600); background: var(--slate-100); padding: 0.2rem 0.55rem; border-radius: 6px; font-family: monospace;">
+                DOCX · 20 KB
+              </span>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.35;">
+              Extraction & Purification of Viral RNA from Whole Blood
+            </h3>
+
+            <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">
+              Phase-by-phase extraction protocol isolating high-purity total and viral genomic RNA from human clinical whole blood samples with beta-mercaptoethanol lysis optimization.
+            </p>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Standard Operating Procedure (SOP) Highlights:
+              </span>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.775rem; color: var(--slate-700);">
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">RNA Lysis Buffer (RLA) preparation with β-mercaptoethanol (BME)</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Clinical specimen homogenization and cellular disruption</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Silica-membrane spin column purification and on-column DNase digestion</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Elution in nuclease-free water and A260/A280 spectrophotometric validation</span>
+                  </li>
+                
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 0.5rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Validated Equipment / Platforms:
+              </span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Haier Class II Biosafety Cabinet</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Refrigerated Microcentrifuge</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Vortex Mixer</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--slate-100);">
+            <a href="public/Protocols%20Collection/RNA%20Extraction%20From%20Blood.docx" download="RNA Extraction From Blood.docx" onclick="handleProtocolDownload(event, 'RNA%20Extraction%20From%20Blood.docx')" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.825rem; font-weight: 700; padding: 0.65rem 1rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Protocol (.DOCX)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card proto-card" data-category="immunology" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; background: #ffffff; border: 1px solid var(--border-color);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700; border: 1px solid rgba(22,91,51,0.2);">
+                Immunology & Serology
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--slate-600); background: var(--slate-100); padding: 0.2rem 0.55rem; border-radius: 6px; font-family: monospace;">
+                DOCX · 58 KB
+              </span>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.35;">
+              Indirect ELISA Protocol, Calculations & Serological Data Analysis
+            </h3>
+
+            <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">
+              Comprehensive guide covering molarity and buffer math (% w/v, mM mass, C1V1=C2V2, RPM vs. RCF), antigen coating, blocking, serial serum dilution, and optical density (OD450) sigmoid curve fitting.
+            </p>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Standard Operating Procedure (SOP) Highlights:
+              </span>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.775rem; color: var(--slate-700);">
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Stock buffer formulation (10x PBS, coating buffer pH 9.6, wash buffer PBST)</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Solid-phase antigen coating and BSA/casein blocking optimization</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Serial dilution series of clinical plasma or murine immune sera</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">HRP-conjugated secondary antibody incubation and TMB chromogenic kinetics</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">OD450 measurement on Microplate Reader and endpoint titer calculation</span>
+                  </li>
+                
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 0.5rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Validated Equipment / Platforms:
+              </span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Tecan Infinite 200 PRO Microplate Reader</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Multichannel Pipettes</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Borosil Ultrapure Water</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--slate-100);">
+            <a href="public/Protocols%20Collection/ELISA%20Protocol%20%26%20Data%20Analysis.docx" download="ELISA Protocol & Data Analysis.docx" onclick="handleProtocolDownload(event, 'ELISA%20Protocol%20%26%20Data%20Analysis.docx')" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.825rem; font-weight: 700; padding: 0.65rem 1rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Protocol (.DOCX)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card proto-card" data-category="computational" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; background: #ffffff; border: 1px solid var(--border-color);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700; border: 1px solid rgba(22,91,51,0.2);">
+                Computational Structural Biology
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--slate-600); background: var(--slate-100); padding: 0.2rem 0.55rem; border-radius: 6px; font-family: monospace;">
+                DOCX · 26 KB
+              </span>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.35;">
+              Antigen-Antibody Docking & Interface Thermodynamics using HADDOCK 2.4
+            </h3>
+
+            <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">
+              End-to-end computational pipeline for structural preparation in PyMOL/ChimeraX, PDB cleaning, active/passive restraint definition, rigid-body docking, semi-flexible refinement, and PRODIGY binding free energy analysis.
+            </p>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Standard Operating Procedure (SOP) Highlights:
+              </span>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.775rem; color: var(--slate-700);">
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">PDB sequence trimming, heteroatom/water removal, and chain renaming in PyMOL</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Epitope and paratope CDR loop residue definition (active/passive restraints)</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">HADDOCK 2.4 webserver parameter configuration (it0, it1, and water refinement)</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Cluster analysis, Z-score ranking, and interfacial buried surface area (BSA) calculation</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">PRODIGY biophysical contact mapping and binding affinity (ΔG / Kd) prediction</span>
+                  </li>
+                
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 0.5rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Validated Equipment / Platforms:
+              </span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">HADDOCK 2.4 Server</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">PRODIGY Biophysical Suite</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">PyMOL & UCSF ChimeraX</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">High-Performance Workstation</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--slate-100);">
+            <a href="public/Protocols%20Collection/Ag-Ab%20Docking%20Protocol.docx" download="Ag-Ab Docking Protocol.docx" onclick="handleProtocolDownload(event, 'Ag-Ab%20Docking%20Protocol.docx')" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.825rem; font-weight: 700; padding: 0.65rem 1rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Protocol (.DOCX)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card proto-card" data-category="plant" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; background: #ffffff; border: 1px solid var(--border-color);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700; border: 1px solid rgba(22,91,51,0.2);">
+                Plant Molecular Biology
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--slate-600); background: var(--slate-100); padding: 0.2rem 0.55rem; border-radius: 6px; font-family: monospace;">
+                DOCX · 6.6 MB
+              </span>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.35;">
+              Clonal Propagation of Aquilaria malaccensis via Stem Cuttings
+            </h3>
+
+            <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">
+              Field-ready protocol developed by the MSI Lab for the vegetative clonal propagation and rooting induction of critically endangered agarwood (Aquilaria malaccensis) stem cuttings.
+            </p>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Standard Operating Procedure (SOP) Highlights:
+              </span>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.775rem; color: var(--slate-700);">
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Donor mother-plant selection and juvenile orthotropic branch harvesting</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Nodal cutting preparation, leaf surface area reduction, and anti-fungal washing</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Auxin hormone conditioning under humidity-controlled mist propagation chambers</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Adventitious rooting monitoring, survival rate quantification, and hardening</span>
+                  </li>
+                
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 0.5rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Validated Equipment / Platforms:
+              </span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Plant Growth Suite</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Rocker 300 Vacuum Pump</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Mist Propagation Chamber</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--slate-100);">
+            <a href="public/Protocols%20Collection/Aquilaria%20Malaccensis%20Cutting%20Protocol%20Design.docx" download="Aquilaria Malaccensis Cutting Protocol Design.docx" onclick="handleProtocolDownload(event, 'Aquilaria%20Malaccensis%20Cutting%20Protocol%20Design.docx')" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.825rem; font-weight: 700; padding: 0.65rem 1rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Protocol (.DOCX)</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card proto-card" data-category="immunology" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 16px; background: #ffffff; border: 1px solid var(--border-color);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+              <span class="badge" style="background: var(--primary-subtle); color: var(--primary); font-size: 11px; font-weight: 700; border: 1px solid rgba(22,91,51,0.2);">
+                Immunology & Serology
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: var(--slate-600); background: var(--slate-100); padding: 0.2rem 0.55rem; border-radius: 6px; font-family: monospace;">
+                DOCX · 21 KB
+              </span>
+            </div>
+
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.5rem; line-height: 1.35;">
+              Flow Cytometry Immunophenotyping & Whole Blood RBC Lysis
+            </h3>
+
+            <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">
+              Standard flow cytometry procedure for blood sample preparation, red blood cell ammonium chloride lysis, cell suspension washing, fluorophore-conjugated antibody staining, and cytometer gating.
+            </p>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 0.75rem; margin-bottom: 0.75rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Standard Operating Procedure (SOP) Highlights:
+              </span>
+              <ul style="list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.775rem; color: var(--slate-700);">
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Blood aliquot preparation (20–30 µL) in 10 mL / 5 mL FACS tubes</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">RBC lysis buffer addition and 5-minute room temperature incubation</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Low-speed centrifugation (1600 rpm / 4°C) and pellet washing</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Surface antigen antibody fluorophore cocktail staining (CD3/CD4/CD8/CD19)</span>
+                  </li>
+                
+                  <li style="display: flex; gap: 0.45rem; align-items: flex-start;">
+                    <span style="color: var(--primary); font-weight: 800; flex-shrink: 0;">✓</span>
+                    <span style="line-height: 1.35;">Acquisition and population gating on BD FACSAria / Beckman CytoFLEX</span>
+                  </li>
+                
+              </ul>
+            </div>
+
+            <div style="margin-bottom: 0.5rem;">
+              <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; color: var(--slate-400); display: block; margin-bottom: 0.35rem; letter-spacing: 0.04em;">
+                Validated Equipment / Platforms:
+              </span>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">BD FACSAria III Flow Cytometer</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Refrigerated Centrifuge</span>
+                
+                  <span style="font-size: 10px; background: var(--slate-50); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px; border: 1px solid var(--slate-200); font-weight: 600;">Euromex BioBlue.Lab</span>
+                
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 1.25rem; margin-top: 1.25rem; border-top: 1px solid var(--slate-100);">
+            <a href="public/Protocols%20Collection/Flow%20Cytometry%20Protocol.docx" download="Flow Cytometry Protocol.docx" onclick="handleProtocolDownload(event, 'Flow%20Cytometry%20Protocol.docx')" class="btn btn-primary" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem; font-size: 0.825rem; font-weight: 700; padding: 0.65rem 1rem;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Download Protocol (.DOCX)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem; text-align: center;">
+        <a href="protocols.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.75rem 2rem;">
+          <span>View Complete Collection of 11 Standard Operating Procedures (SOPs) →</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Collaborators Showcase with Real Logos -->
+  <section style="padding: 4.5rem 0; background: #ffffff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <div class="badge badge-primary" style="margin-bottom: 0.4rem;">Global & National Alliances</div>
+          <h2 style="font-size: 2rem; font-weight: 800; color: var(--slate-900);">Strategic Collaborators & Grants</h2>
+        </div>
+        <a href="collaborations.html" class="btn btn-secondary" style="font-size: 0.8rem;">
+          <span>Explore All 8 Strategic Alliances →</span>
+        </a>
+      </div>
+
+      <div class="grid-3">
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/Colaborators/kuroda%20lab.png" alt="Kuroda Lab TUAT" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Kuroda Lab (TUAT Tokyo)</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">Structural biology & patented solubility tags</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/All%20logos/heat%20logo.png" alt="World Bank HEAT" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">World Bank HEAT Project</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">Advanced viral immunology grant & genomics</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/Colaborators/cmch.png" alt="CMCH" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Chittagong Medical College &amp; Hospital</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">Clinical cohort bio-specimen acquisition &amp; Dengue diagnostics</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/Colaborators/cmosh.png" alt="CMOSH" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Chattogram Maa-O-Shishu Hospital</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">Maternal-neonatal sero-epidemiology &amp; clinical immunology trials</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/Colaborators/ministry%20of%20health.jpg" alt="MOHFW Bangladesh" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Ministry of Health (MOHFW)</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">COVID-19 diagnostics & Dengue serology</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/Colaborators/most.png" alt="MOST Bangladesh" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Ministry of Science & Tech (MOST)</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">R&D fellowship allocations & reagents</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/Colaborators/bfri.png" alt="BFRI" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">Bangladesh Forest Research Inst.</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">Antiviral secondary metabolites & plant extracts</p>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+          <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="CU Central Facilities" style="width: 60px; height: 60px; object-fit: contain; border-radius: 8px; border: 1px solid var(--border-color); padding: 4px;">
+          <div>
+            <h3 style="font-size: 0.95rem; font-weight: 700;">CU Central Biological Facilities</h3>
+            <p style="font-size: 0.75rem; color: var(--slate-500);">Animal Ethics Review Board testing suites</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Banner -->
+  <section style="background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 100%); color: #fff; padding: 4.5rem 0; text-align: center;">
+    <div class="max-w-container" style="max-width: 800px; margin: 0 auto;">
+      <div class="badge" style="background: rgba(255,255,255,0.15); color: #a7f3d0; margin-bottom: 1rem;">Join Our Laboratory</div>
+      <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); color: #fff; margin-bottom: 1rem;">Advance Your Career in Molecular Immunology</h2>
+      <p style="font-size: 1.05rem; color: #d1fae5; line-height: 1.7; margin-bottom: 2rem;">
+        Openings available for Doctoral Fellows, Postgraduate (MSc) Thesis Researchers, and Undergraduate Fellows. Visit our dedicated application portal.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="apply.html" class="btn btn-white" style="font-size: 0.95rem; padding: 0.75rem 1.75rem;">
+          <span>Go to Online Application Page →</span>
+        </a>
+        <a href="team.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25);">
+          Meet Current Researchers
+        </a>
+      </div>
+    </div>
+  </section>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Apply for Instrument Usage →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    function handleProtocolDownload(e, encodedName) {
+      // In local file:/// or web server, fallback if needed
+      var testLink = e.currentTarget;
+      if (window.location.protocol === 'file:') {
+        testLink.href = 'public/Protocols%20Collection/' + encodedName;
+      }
+    }
+
+    var activeProtoCat = 'all';
+
+    function setProtocolFilter(cat, btn) {
+      activeProtoCat = cat;
+      document.querySelectorAll('.proto-tab').forEach(function(b) {
+        b.style.background = 'var(--slate-100)';
+        b.style.color = 'var(--slate-700)';
+      });
+      btn.style.background = 'var(--primary)';
+      btn.style.color = '#fff';
+      filterProtocolCards();
+    }
+
+    function filterProtocolCards() {
+      var searchInput = document.getElementById('protocol-search');
+      var q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      var cards = document.querySelectorAll('.proto-card');
+      var visibleCount = 0;
+
+      cards.forEach(function(card) {
+        var cardCat = card.getAttribute('data-category');
+        var text = card.textContent.toLowerCase();
+        var matchCat = (activeProtoCat === 'all' || cardCat === activeProtoCat);
+        var matchQ = (q === '' || text.indexOf(q) !== -1);
+
+        if (matchCat && matchQ) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      var emptyNotice = document.getElementById('proto-empty-state');
+      if (emptyNotice) {
+        emptyNotice.style.display = (visibleCount === 0) ? 'block' : 'none';
+      }
+    }
+  </script>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaborations & Grants | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Strategic research collaborations, international partnerships, and government research grants supporting MSI Lab at the University of Chittagong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-amber { background-color: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+    .badge-blue { background-color: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .btn-secondary:hover { background-color: var(--slate-50); color: var(--slate-900); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .card:hover { border-color: rgba(22,91,51,0.35); box-shadow: var(--card-hover); transform: translateY(-2px); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    @media (max-width: 1024px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .hide-mobile { display: none !important; } }
+  
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } }
+</style>
+  <script>
+    // Robust image loader for both local file:/// and web server protocols
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!img.dataset.retry) {
+          img.dataset.retry = '1';
+          if (currentSrc.startsWith('public/')) {
+            img.src = currentSrc.substring(7);
+          } else if (currentSrc.startsWith('/')) {
+            img.src = 'public' + currentSrc;
+          } else {
+            img.src = 'public/' + currentSrc;
+          }
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="facilities.html" class="nav-link ">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link ">Publications</a>
+        <a href="collaborations.html" class="nav-link active">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  
+  <!-- Page Banner - Uniform Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Global Network & Institutional Support</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          Strategic Alliances & Research Grants
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 0;">
+          Connecting fundamental structural immunology at the University of Chittagong with premier global academic centers, multilateral development banks, and clinical hospital networks.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Alliances Highlight Banner - Matching Publication Banner Aesthetic -->
+  <section style="padding: 1.75rem 0; background: linear-gradient(135deg, #0b331c 0%, #165b33 50%, #1e7845 100%); color: #fff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.4rem; color: #a7f3d0;">
+          Global Consortia &amp; Inter-Institutional Linkages
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">
+          Strategic Research Alliances &amp; International Cooperations
+        </h2>
+        <p style="font-size: 0.825rem; color: #d1fae5; max-width: 650px; line-height: 1.5;">
+          Partnering with Tokyo University of Agriculture and Technology (TUAT), World Bank HEAT, Bangladesh MOHFW, and BFRI to advance viral disease diagnostics, therapeutics, and translational biotechnology.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Partners</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">8 Key</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Institutions</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Consortia</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">4 Global</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Initiatives</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Synergy</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">Joint</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Patents &amp; Papers</div>
+        </div>
+        <a href="#partners" class="btn" style="background: #ffffff; color: #0b331c; font-weight: 800; font-size: 0.825rem; padding: 0.7rem 1.15rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          View Partners ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Ribbon -->
+  <section id="partners" style="background-color: #fff; padding: 2.5rem 0; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      <div style="text-align: center; font-size: 0.78rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.75rem;">
+        Recognized & Funded By Major Global & National Bodies
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+        <a href="https://www.worldbank.org/en/country/bangladesh" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/All%20logos/world%20bank%20logo.png" alt="World Bank" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">World Bank ↗</span>
+        </a>
+        <a href="https://heat.ugc.gov.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/All%20logos/heat%20logo.png" alt="HEAT Project" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">HEAT Bangladesh ↗</span>
+        </a>
+        <a href="https://ugc.gov.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/All%20logos/ugc%20bangladesh.png" alt="UGC Bangladesh" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">UGC Bangladesh ↗</span>
+        </a>
+        <a href="https://bangladesh.gov.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/All%20logos/peoples%20govt%20of%20bangladesh.png" alt="Govt of Bangladesh" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">Govt. of Bangladesh ↗</span>
+        </a>
+        <a href="http://web.tuat.ac.jp/~ykuroda/" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/Colaborators/kuroda%20lab.png" alt="Kuroda Lab TUAT" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">TUAT Tokyo (Kuroda Lab) ↗</span>
+        </a>
+        <a href="https://cmc.gov.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/Colaborators/cmch.png" alt="Chittagong Medical College" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">Chittagong Medical College &amp; Hospital ↗</span>
+        </a>
+        <a href="http://cmoshbd.org" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1.25rem; border-radius: 12px; border: 1px solid var(--slate-200); background: #fff; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'; this.style.boxShadow='0 4px 12px rgba(22,91,51,0.1)'" onmouseout="this.style.borderColor='var(--slate-200)'; this.style.boxShadow='none'">
+          <img src="public/Colaborators/cmosh.png" alt="Chattogram Maa-O-Shishu Hospital" style="height: 38px; object-fit: contain;">
+          <span style="font-size: 0.8rem; font-weight: 700; color: var(--slate-800);">Chattogram Maa-O-Shishu Hospital ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Partners Grid -->
+  <section style="padding: 4rem 0; background-color: var(--slate-50);">
+    <div class="max-w-container">
+      
+      <div style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.75rem; color: var(--slate-900); margin-bottom: 0.5rem;">Active Institutional Collaborations</h2>
+        <p style="font-size: 0.95rem; color: var(--slate-600);">Explore our key research agreements, joint laboratories, and grant allocations.</p>
+      </div>
+
+      <div class="grid-2" style="gap: 2rem;">
+
+        <!-- 1. Kuroda Lab (TUAT) Japan -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="http://web.tuat.ac.jp/~ykuroda/" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit Kuroda Laboratory Website">
+                <img src="public/Colaborators/kuroda%20lab.png" alt="Kuroda Lab TUAT" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-primary">International Academic</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="http://web.tuat.ac.jp/~ykuroda/" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--slate-900)'">
+                Kuroda Laboratory, Tokyo University of Agriculture & Technology (TUAT) ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: var(--primary); margin-bottom: 0.25rem;">Tokyo, Japan · Lead Contact: Prof. Dr. Yutaka Kuroda</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Department of Biotechnology and Life Science</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Long-standing bilateral research collaboration focusing on structural immunology, protein engineering, NMR spectroscopy, X-ray crystallography, and novel peptide solubility tags.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Protein crystallization and Cryo-EM structural resolution</li>
+                <li>Peptide-tagged vaccine candidate formulation</li>
+                <li>Joint MEXT scholar mentorship & dual-lab student exchange</li>
+                <li>Co-invention of international biotechnology patents (WO2019031446)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">Joint Patents &amp; 15+ Publications</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="http://web.tuat.ac.jp/~ykuroda/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                Kuroda Lab Website ↗
+              </a>
+              <a href="https://www.tuat.ac.jp/en/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                TUAT Portal ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. HEAT Project (World Bank & UGC) -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #10b981;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="https://heat.ugc.gov.bd" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit HEAT Project Portal">
+                <img src="public/All%20logos/heat%20logo.png" alt="HEAT Project" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-accent">Major Grant Agency</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="https://heat.ugc.gov.bd" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='#047857'" onmouseout="this.style.color='var(--slate-900)'">
+                Higher Education Acceleration & Transformation (HEAT) Project ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: #047857; margin-bottom: 0.25rem;">World Bank & UGC Bangladesh · Dhaka & Chittagong</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Academic & Research Innovation Unit</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Flagship institutional grant empowering advanced vaccine research, genomics infrastructure, and state-of-the-art flow cytometry and molecular biology facilities at MSI Lab.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Modernization of viral immunology infrastructure</li>
+                <li>Competitive research grants for postgraduate and doctoral scholars</li>
+                <li>High-throughput sequencing & biosafety level enhancements</li>
+                <li>Inter-university collaborative research dissemination</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">HEAT-11009-CU Core Lab</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="https://heat.ugc.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem; background-color: #047857;">
+                HEAT Portal ↗
+              </a>
+              <a href="https://projects.worldbank.org/en/projects-operations/project-detail/P168961" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                World Bank (P168961) ↗
+              </a>
+              <a href="https://ugc.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                UGC Portal ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. MOHFW Bangladesh -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #b45309;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="http://www.mohfw.gov.bd" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit Ministry of Health & Family Welfare">
+                <img src="public/Colaborators/ministry%20of%20health.jpg" alt="Ministry of Health" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-amber">National Government</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="http://www.mohfw.gov.bd" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='#b45309'" onmouseout="this.style.color='var(--slate-900)'">
+                Ministry of Health & Family Welfare (MOHFW) ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: #b45309; margin-bottom: 0.25rem;">Govt. of Bangladesh · DGHS Directorate</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Public Health & Clinical Virology Network</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Partnership for epidemiology surveillance, regional clinical sample coordination, and rapid COVID-19 molecular testing leadership during national emergency responses.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>COVID-19 RT-PCR molecular diagnosis and variant tracking</li>
+                <li>Dengue clinical cohort surveillance in Chittagong Division</li>
+                <li>Policy advisories on regional seroprevalence and vaccination efficacy</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">100,000+ RT-PCR Diagnostics Executed</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="http://www.mohfw.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem; background-color: #b45309;">
+                MOHFW Portal ↗
+              </a>
+              <a href="https://dghs.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                DGHS Directorate ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Ministry of Science & Technology (MOST) -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #1d4ed8;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="https://most.gov.bd" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit Ministry of Science & Technology">
+                <img src="public/Colaborators/most.png" alt="MOST Bangladesh" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-blue">R&D Grants</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="https://most.gov.bd" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='#1d4ed8'" onmouseout="this.style.color='var(--slate-900)'">
+                Ministry of Science & Technology (MOST) ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: #1d4ed8; margin-bottom: 0.25rem;">Govt. of Bangladesh · R&D Fellowship Support</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">National Scientific Innovation Fund</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Continuous research grant provider supporting competitive biochemical investigations, student R&D fellowships, and reagent procurement for vaccine research.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Special R&D allocations for biochemistry & immunology research</li>
+                <li>Fellowship stipends for MSc and PhD researchers at MSI Lab</li>
+                <li>National science congress representations and symposiums</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">Annual Fellowship Allocation</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="https://most.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem; background-color: #1d4ed8;">
+                MOST Portal ↗
+              </a>
+              <a href="https://most.gov.bd/site/page/f4ee7709-6617-4f9e-99e0-811eb351ca0f" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                R&D Wing ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. BFRI -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="http://www.bfri.gov.bd" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit BFRI Website">
+                <img src="public/Colaborators/bfri.png" alt="BFRI Bangladesh" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-primary">Research Institute</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="http://www.bfri.gov.bd" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--slate-900)'">
+                Bangladesh Forest Research Institute (BFRI) ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: var(--primary); margin-bottom: 0.25rem;">Chattogram, Bangladesh</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Medicinal Plant & Natural Products Division</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Interdisciplinary collaboration investigating indigenous botanical extracts, secondary metabolites, and natural immunomodulatory compounds with antiviral properties.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Screening of native plant extracts against viral surface targets</li>
+                <li>Isolation and structural characterization of phytochemical immunomodulators</li>
+                <li>Joint field specimen collection and bioactivity assays</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">Dengue NS1 Phytochemical Screening</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="http://www.bfri.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                BFRI Portal ↗
+              </a>
+              <a href="https://moef.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                Ministry (MOEF) ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. CU Host Ecosystem -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #0f172a;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit University of Chittagong Website">
+                <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-primary">Host Ecosystem</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--slate-900)'">
+                University of Chittagong (CU) Central Biological Facilities ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: var(--slate-800); margin-bottom: 0.25rem;">Chattogram, Bangladesh</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Faculty of Biological Sciences</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Host university core ecosystem providing animal house ethical testing facilities, cell culture suites, autoclave facilities, and cross-departmental biotechnology platforms.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Animal Ethics Review Board protocol execution (murine models)</li>
+                <li>Undergraduate and postgraduate molecular biology training</li>
+                <li>Interdepartmental seminar cycles and shared instrumentation</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">Tropical Infectious Disease Bio-Repository</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                CU Main Portal ↗
+              </a>
+              <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                Department of Biochemistry &amp; Molecular Biology
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- 7. Chittagong Medical College & Hospital (CMCH) -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid var(--primary);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="https://cmc.gov.bd" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit Chittagong Medical College Portal">
+                <img src="public/Colaborators/cmch.png" alt="CMCH" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-primary">Clinical Hospital Network</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="https://cmc.gov.bd" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--slate-900)'">
+                Chittagong Medical College &amp; Hospital (CMCH) ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: var(--primary); margin-bottom: 0.25rem;">Chattogram, Bangladesh · Directorate General of Health Services</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Clinical Pathology &amp; Infectious Disease Units</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Premier regional tertiary healthcare center collaborating with MSI Lab on clinical cohort bio-specimen acquisition, acute-phase Dengue and Chikungunya patient serum biobanking, and sero-epidemiological tracking.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Clinical cohort bio-specimen acquisition and clinical diagnostics</li>
+                <li>Acute-phase Dengue and Chikungunya patient serum biobanking</li>
+                <li>Validation of novel diagnostic biomarkers on clinical patient samples</li>
+                <li>Joint clinical-immunological case investigations and cross-disciplinary rounds</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">Dengue &amp; Arboviral Cohorts</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="https://cmc.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                CMC Portal ↗
+              </a>
+              <a href="https://dghs.gov.bd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                DGHS Directorate ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Chattogram Maa-O-Shishu Hospital Medical College (CMOSH) -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #10b981;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem;">
+              <a href="http://cmoshbd.org" target="_blank" rel="noopener noreferrer" style="width: 64px; height: 64px; border-radius: 12px; background: #fff; border: 1px solid var(--slate-200); padding: 6px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); shrink-0; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" title="Visit CMOSH Hospital Portal">
+                <img src="public/Colaborators/cmosh.png" alt="CMOSH" style="width: 100%; height: 100%; object-fit: contain;">
+              </a>
+              <span class="badge badge-accent">Clinical Hospital Network</span>
+            </div>
+
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--slate-900);">
+              <a href="http://cmoshbd.org" target="_blank" rel="noopener noreferrer" style="color: var(--slate-900);" onmouseover="this.style.color='#047857'" onmouseout="this.style.color='var(--slate-900)'">
+                Chattogram Maa-O-Shishu Hospital Medical College (CMOSH) ↗
+              </a>
+            </h3>
+            <div style="font-size: 0.825rem; font-weight: 600; color: #047857; margin-bottom: 0.25rem;">Agrabad, Chattogram · CMOSH Complex</div>
+            <div style="font-size: 0.775rem; color: var(--slate-500); margin-bottom: 1rem;">Dept. of Dermatology &amp; Pediatric Immunology</div>
+
+            <p style="font-size: 0.875rem; color: var(--slate-600); line-height: 1.65; margin-bottom: 1.25rem;">
+              Specialized healthcare and medical research institution collaborating with MSI Lab on maternal-neonatal sero-epidemiology, pediatric infectious disease immunology, and cutaneous manifestation biomarker profiling.
+            </p>
+
+            <div style="background-color: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+              <div style="font-size: 0.775rem; font-weight: 700; color: var(--slate-800); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Key Collaborative Scopes:</div>
+              <ul style="font-size: 0.825rem; color: var(--slate-700); line-height: 1.6; list-style: disc; padding-left: 1.25rem;">
+                <li>Maternal and pediatric infectious disease immune profile profiling</li>
+                <li>Collaborative sample collection for arboviral sero-epidemiology</li>
+                <li>Clinical correlation of viral antibody titers with disease severity</li>
+                <li>Continuing biomedical education and clinical lab workshops</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="border-top: 1px solid var(--slate-200); padding-top: 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="font-size: 0.775rem; font-weight: 600; color: var(--slate-500);">Pediatric &amp; Clinical Immunology</div>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <a href="http://cmoshbd.org" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.75rem; border-radius: 0.5rem;">
+                CMOSH Portal ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 100%); color: #fff; padding: 4.5rem 0; text-align: center;">
+    <div class="max-w-container" style="max-width: 760px;">
+      <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 1rem;">Interested in Scientific Partnership?</h2>
+      <p style="font-size: 1rem; color: #d1fae5; line-height: 1.7; margin-bottom: 2rem;">
+        We welcome research collaborations with universities, biotechnology firms, and clinical institutes interested in recombinant vaccines, monoclonal antibody validation, and structural virology.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="mailto:islammm@cu.ac.bd" class="btn btn-white" style="padding: 0.75rem 1.75rem;">
+          Inquire About Collaboration
+        </a>
+        <a href="apply.html" class="btn btn-secondary" style="padding: 0.75rem 1.75rem; background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.25);">
+          Join the Lab as Fellow
+        </a>
+      </div>
+    </div>
+  </section>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

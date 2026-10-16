@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application for Instrument Usage & Services | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Official application form to request analytical service, assisted runs, and usage of state-of-the-art instruments at MSI Lab, University of Chittagong." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .btn-secondary:hover { background-color: var(--slate-50); color: var(--slate-900); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    
+    /* Navigation Dropdowns */
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 4px);
+      background-color: #ffffff;
+      min-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+    /* Form Styles */
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: block; font-size: 0.825rem; font-weight: 700; color: var(--slate-800); margin-bottom: 0.35rem; }
+    .form-input, .form-select, .form-textarea { width: 100%; padding: 0.75rem 1rem; border-radius: 0.65rem; border: 1px solid var(--slate-200); font-family: var(--font-body); font-size: 0.9rem; color: var(--slate-900); background: #fff; transition: all 0.15s ease; outline: none; }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(22,91,51,0.12); }
+    
+    .step-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .step-active .step-num { background: var(--primary); color: #fff; box-shadow: 0 0 0 3px rgba(22,91,51,0.2); }
+    .step-completed .step-num { background: #d1fae5; color: var(--primary); }
+    .step-pending .step-num { background: var(--slate-100); color: var(--slate-400); }
+
+    .inst-card {
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: #fff;
+    }
+    .inst-card:hover { border-color: rgba(22,91,51,0.4); background: #f8fafc; }
+    .inst-card.selected {
+      border-color: var(--primary);
+      background: #f0fdf4;
+      box-shadow: 0 0 0 2px rgba(22,91,51,0.2);
+    }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+    @media (max-width: 768px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .hide-mobile { display: none !important; }
+    }
+  </style>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="facilities.html" class="nav-link active">Facilities</a>
+        <a href="projects.html" class="nav-link">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link">Publications</a>
+        <a href="collaborations.html" class="nav-link">Collaborations</a>
+
+        <!-- More Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b;">
+              <span>Join Us (Fellowships)</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4rem 0 3rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%);">
+    <div class="max-w-container">
+      <div style="max-width: 800px;">
+        <div class="badge badge-primary" style="margin-bottom: 1rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18h12M12 2v16M2 12h20"/></svg>
+          <span>Core Infrastructure Analytical Requisition</span>
+        </div>
+        <h1 style="font-size: 2.75rem; line-height: 1.15; margin-bottom: 1rem; letter-spacing: -0.02em;">
+          State-of-the-Art Instrument Service Application
+        </h1>
+        <p style="font-size: 1.05rem; color: var(--slate-600); line-height: 1.6;">
+          Submit a formal service request for assisted sample analysis, trained self-operated block time, or collaborative research access to our CytoFLEX flow cytometer, HPLC/UHPLC systems, real-time qPCR, and NGS genomics platform.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Wizard Form Container -->
+  <main class="max-w-container" style="padding: 3rem 1.5rem 5rem 1.5rem;">
+    
+    <!-- Step Tracker -->
+    <div class="card" style="padding: 1.25rem; margin-bottom: 2rem;">
+      <div class="grid-4" style="text-align: center;">
+        <div id="step-btn-1" class="step-pill step-active" onclick="goToStep(1)">
+          <div class="step-num">1</div>
+          <span style="font-size: 0.75rem; font-weight: 700;">Applicant Profile</span>
+        </div>
+        <div id="step-btn-2" class="step-pill step-pending" onclick="goToStep(2)">
+          <div class="step-num">2</div>
+          <span style="font-size: 0.75rem; font-weight: 700;">Instrument Selection</span>
+        </div>
+        <div id="step-btn-3" class="step-pill step-pending" onclick="goToStep(3)">
+          <div class="step-num">3</div>
+          <span style="font-size: 0.75rem; font-weight: 700;">Sample &amp; Biosafety</span>
+        </div>
+        <div id="step-btn-4" class="step-pill step-pending" onclick="goToStep(4)">
+          <div class="step-num">4</div>
+          <span style="font-size: 0.75rem; font-weight: 700;">Proposal &amp; Review</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Form Card -->
+    <div class="card" style="padding: 2.5rem; max-width: 900px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.06);">
+      
+      <!-- STEP 1: APPLICANT INFO -->
+      <div id="step-pane-1">
+        <div style="border-bottom: 1px solid var(--slate-100); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px;">Step 1 of 4</span>
+          <h2 style="font-size: 1.5rem; margin-top: 0.5rem;">Applicant &amp; Institutional Profile</h2>
+          <p style="font-size: 0.85rem; color: var(--slate-500);">Provide contact information for the Principal Investigator or researcher requesting service.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group" style="grid-column: span 2;">
+            <label class="form-label">Full Name of Applicant / Principal Investigator *</label>
+            <input type="text" id="fullName" class="form-input" placeholder="e.g. Prof. / Dr. / Ms. / Mr. Name" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Academic Designation *</label>
+            <select id="designation" class="form-select">
+              <option value="Faculty / PI">Faculty Member / Principal Investigator</option>
+              <option value="Postdoctoral Fellow">Postdoctoral Research Fellow</option>
+              <option value="PhD Candidate">Doctoral Candidate (Ph.D.)</option>
+              <option value="MSc Scholar">Master's Fellow (M.Sc. / M.Phil.)</option>
+              <option value="Undergraduate Trainee">Undergraduate Researcher (B.Sc.)</option>
+              <option value="Industry Scientist">Industry / Diagnostic Scientist</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Institution Classification *</label>
+            <select id="institutionType" class="form-select">
+              <option value="University of Chittagong">University of Chittagong (Internal)</option>
+              <option value="Other Public University">Other Public University (Bangladesh)</option>
+              <option value="Private University">Private University / Medical College</option>
+              <option value="Research Institute / Hospital">National Research Institute / Hospital (ICDDR,B / BCSIR)</option>
+              <option value="Industry / Commercial">Diagnostic / Pharmaceutical Laboratory</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Department / Faculty *</label>
+            <input type="text" id="department" class="form-input" placeholder="e.g. Biochemistry & Molecular Biology" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Institution / Organization Name *</label>
+            <input type="text" id="institutionName" class="form-input" placeholder="e.g. University of Chittagong" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Official / Academic Email *</label>
+            <input type="email" id="email" class="form-input" placeholder="applicant@university.ac.bd" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone / WhatsApp *</label>
+            <input type="tel" id="phone" class="form-input" placeholder="+8801XXXXXXXXX" required />
+          </div>
+
+          <div class="form-group" style="grid-column: span 2;">
+            <label class="form-label">Supporting Research Grant / Funding Source</label>
+            <input type="text" id="grant" class="form-input" placeholder="e.g. World Bank HEAT-11009-CU, MOST Fellowship 2026, UGC Grant, Self-funded" />
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem; border-top: 1px solid var(--slate-100); padding-top: 1.25rem;">
+          <button type="button" class="btn btn-primary" onclick="goToStep(2)">
+            <span>Continue to Instrument Selection →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: INSTRUMENT SELECTION -->
+      <div id="step-pane-2" style="display: none;">
+        <div style="border-bottom: 1px solid var(--slate-100); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px;">Step 2 of 4</span>
+          <h2 style="font-size: 1.5rem; margin-top: 0.5rem;">Core Instrument &amp; Operational Setup</h2>
+          <p style="font-size: 0.85rem; color: var(--slate-500);">Select the state-of-the-art instrument requested and your preferred operating mode.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Select Core Instrument *</label>
+          <div class="grid-2" id="instruments-grid">
+            
+            <div class="inst-card selected" data-id="cytoflex-flow-cytometer" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge badge-primary" style="font-size: 0.65rem;">Beckman Coulter</span>
+                <span style="font-size: 0.7rem; color: var(--primary); font-weight: 700;">Selected</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">CytoFLEX Flow Cytometer</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">Multiparametric single-cell immunophenotyping &amp; extracellular vesicle profiling.</p>
+            </div>
+
+            <div class="inst-card" data-id="hitachi-chromaster-hplc" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">Hitachi High-Tech</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">Hitachi Chromaster HPLC</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">RP-HPLC, natural product phytochemical fractionation &amp; DAD peak purity.</p>
+            </div>
+
+            <div class="inst-card" data-id="thermo-vanquish-core-hplc" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">Thermo Scientific</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">Thermo Vanquish Core HPLC</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">High-precision biomolecular liquid chromatography &amp; peptide formulation QC.</p>
+            </div>
+
+            <div class="inst-card" data-id="analytik-jena-qtower-3g" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">Analytik Jena</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">qTOWER³ G Real-Time qPCR</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">Multiplex pathogen detection (up to 6 targets), linear gradient &amp; viral load kinetics.</p>
+            </div>
+
+            <div class="inst-card" data-id="illumina-miniseq-ngs" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">Illumina</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">MiniSeq NGS Sequencing System</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">Targeted viral whole-genome sequencing (WGS) &amp; deep mutational epitope tracking.</p>
+            </div>
+
+            <div class="inst-card" data-id="jasco-fp8600-spectrofluorometer" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">JASCO Corporation</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">JASCO FP-8600 Spectrofluorometer</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">Intrinsic protein fluorescence, thermal/chemical unfolding transitions &amp; FRET.</p>
+            </div>
+
+            <div class="inst-card" data-id="tecan-infinite-200-pro" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">Tecan Life Sciences</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">Tecan Infinite 200 PRO Plate Reader</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">High-throughput ELISA serosurveys, fluorescence/luminescence &amp; IC50 kinetics.</p>
+            </div>
+
+            <div class="inst-card" data-id="haier-biomedical-freeze-dryer" onclick="selectInstrument(this)">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                <span class="badge" style="background: #f1f5f9; color: var(--slate-700); font-size: 0.65rem;">Haier Biomedical</span>
+              </div>
+              <h4 style="font-size: 0.9rem;">Haier Laboratory Freeze Dryer</h4>
+              <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">Vacuum sublimation lyophilization of recombinant antigens &amp; enzymes.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Service Operational Mode *</label>
+            <select id="serviceMode" class="form-select">
+              <option value="Assisted Service">Assisted Analysis (Conducted by MSI Lab Staff)</option>
+              <option value="Self-Operated">Self-Operated Time (Trained / Qualified Operator)</option>
+              <option value="Collaborative Research">Collaborative Research (Joint Scientific Project)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Estimated Sample / Run Count *</label>
+            <input type="text" id="sampleCount" class="form-input" placeholder="e.g. 12 samples (24 injections)" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Target Assay / Detection Parameter *</label>
+            <input type="text" id="targetAssay" class="form-input" placeholder="e.g. UV 280nm, SYBR qPCR, FITC/PE Flow" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred Date Range</label>
+            <input type="text" id="dateRange" class="form-input" placeholder="e.g. November 2026 / First Week" />
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; border-top: 1px solid var(--slate-100); padding-top: 1.25rem;">
+          <button type="button" class="btn btn-secondary" onclick="goToStep(1)">← Back</button>
+          <button type="button" class="btn btn-primary" onclick="goToStep(3)">Continue to Biosafety →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: SAMPLE & BIOSAFETY PROFILE -->
+      <div id="step-pane-3" style="display: none;">
+        <div style="border-bottom: 1px solid var(--slate-100); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px;">Step 3 of 4</span>
+          <h2 style="font-size: 1.5rem; margin-top: 0.5rem;">Sample Characterization &amp; Biosafety</h2>
+          <p style="font-size: 0.85rem; color: var(--slate-500);">Verify sample composition to avoid column contamination or biological risk.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label class="form-label">Primary Specimen Classification *</label>
+            <select id="sampleType" class="form-select">
+              <option value="Purified Recombinant Protein">Purified Recombinant Protein</option>
+              <option value="Botanical / Phytochemical Extract">Botanical / Phytochemical Extract</option>
+              <option value="Serum / Plasma / Biological Fluid">Serum / Plasma / Biological Fluid</option>
+              <option value="Cultured Cells / Cell Pellet">Cultured Cells / Cell Pellet</option>
+              <option value="Extracted Nucleic Acid (DNA/RNA)">Extracted Nucleic Acid (DNA/RNA)</option>
+              <option value="Agarwood Inoculated Resin">Agarwood Inoculated Resin / Tissue</option>
+              <option value="Synthetic Peptide">Synthetic Peptide</option>
+              <option value="Other">Other Biological Substrate</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Biosafety Containment Level *</label>
+            <select id="biosafetyLevel" class="form-select">
+              <option value="BSL-1">BSL-1 (Non-pathogenic, recombinant proteins, plant extracts)</option>
+              <option value="BSL-2">BSL-2 (Clinical human specimens, viral isolates, mammalian cells)</option>
+              <option value="Non-biological / Chemical">Pure Chemical / Non-biological Specimen</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Storage Conditions Pre-Run *</label>
+            <select id="storageCondition" class="form-select">
+              <option value="Refrigerated (4°C)">Refrigerated (2–8°C)</option>
+              <option value="Standard Freezer (-20°C)">Standard Freezer (-20°C)</option>
+              <option value="Ultra-Low Freezer (-80°C)">Ultra-Low Freezer (-80°C)</option>
+              <option value="Ambient Room Temp">Ambient Room Temperature (22°C)</option>
+              <option value="Desiccated / Foil Wrap">Desiccated / Light-Sensitive</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Buffer / Solvent Matrix Composition *</label>
+            <input type="text" id="bufferMatrix" class="form-input" placeholder="e.g. PBS pH 7.4, 0.1% TFA, Water-Methanol" required />
+          </div>
+
+          <div class="form-group" style="grid-column: span 2;">
+            <label class="form-label">Hazard Statement &amp; Bio-Risk Declaration</label>
+            <textarea id="hazardStatement" class="form-textarea" rows="2" placeholder="Detail any volatile solvents, acids, toxicity, or confirm non-infectious nature..."></textarea>
+          </div>
+        </div>
+
+        <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 0.65rem; padding: 0.85rem; font-size: 0.8rem; color: #92400e; margin-bottom: 1.5rem;">
+          <strong>BSL-2 Safety Notice:</strong> All infectious clinical specimens or arboviral materials require MSI Lab IBC authorization before physical delivery to Room 304.
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--slate-100); padding-top: 1.25rem;">
+          <button type="button" class="btn btn-secondary" onclick="goToStep(2)">← Back</button>
+          <button type="button" class="btn btn-primary" onclick="goToStep(4)">Continue to Scientific Review →</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: PROPOSAL, UPLOAD & DECLARATION -->
+      <div id="step-pane-4" style="display: none;">
+        <div style="border-bottom: 1px solid var(--slate-100); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase; background: var(--primary-subtle); padding: 0.25rem 0.6rem; border-radius: 4px;">Step 4 of 4</span>
+          <h2 style="font-size: 1.5rem; margin-top: 0.5rem;">Research Objective &amp; Institutional Consent</h2>
+          <p style="font-size: 0.85rem; color: var(--slate-500);">Summarize your research hypothesis and agree to facility usage terms.</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Summary of Scientific Objective &amp; Analysis Plan *</label>
+          <textarea id="researchObjective" class="form-textarea" rows="4" placeholder="Describe the research background, hypothesis, and why this specific instrument measurement is required for your study..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Attach Institutional Request Letter / Requisition (PDF/DOC, Optional)</label>
+          <input type="file" id="reqFile" class="form-input" accept=".pdf,.doc,.docx" />
+          <span style="font-size: 0.75rem; color: var(--slate-400); display: block; margin-top: 0.25rem;">Official departmental recommendation or supervisor consent form.</span>
+        </div>
+
+        <div style="margin: 1.5rem 0; padding-top: 1rem; border-top: 1px solid var(--slate-100); font-size: 0.825rem; color: var(--slate-700); line-height: 1.6;">
+          <label style="display: flex; gap: 0.5rem; align-items: flex-start; cursor: pointer; margin-bottom: 0.85rem;">
+            <input type="checkbox" id="agreeCompliance" style="margin-top: 0.25rem;" required checked />
+            <span><strong>Compliance Guarantee:</strong> I certify that all samples conform to stated biosafety classifications and that manufacturer operating specifications will be upheld.</span>
+          </label>
+          <label style="display: flex; gap: 0.5rem; align-items: flex-start; cursor: pointer;">
+            <input type="checkbox" id="agreeAttribution" style="margin-top: 0.25rem;" required checked />
+            <span><strong>Scientific Attribution:</strong> I agree to acknowledge MSI Lab in resulting publications: <em>&ldquo;Analytical instrumentation was supported by the Laboratory of Molecular &amp; Structural Immunology (MSI Lab), Department of Biochemistry &amp; Molecular Biology, University of Chittagong.&rdquo;</em></span>
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; border-top: 1px solid var(--slate-100); padding-top: 1.25rem;">
+          <button type="button" class="btn btn-secondary" onclick="goToStep(3)">← Back</button>
+          <button type="button" class="btn btn-primary" onclick="submitApplication()" style="font-weight: 700;">
+            <span>Submit Instrument Application ✓</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- SUCCESS CONFIRMATION VOUCHER -->
+      <div id="step-pane-success" style="display: none; text-align: center; padding: 1.5rem 0;">
+        <div style="width: 64px; height: 64px; border-radius: 50%; background: #d1fae5; color: var(--primary); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem auto;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <span class="badge badge-primary" style="margin-bottom: 0.75rem;">Request Registered</span>
+        <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem;">Instrument Application Received</h2>
+        <p style="font-size: 0.95rem; color: var(--slate-600); max-width: 580px; margin: 0 auto 2rem auto;">
+          Your instrument service request has been logged. The technical facility committee will review slot availability and biosafety requirements within 2–3 business days.
+        </p>
+
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 1rem; padding: 1.5rem; max-width: 600px; margin: 0 auto 1.5rem auto; text-align: left;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--slate-200); padding-bottom: 0.75rem; margin-bottom: 1rem;">
+            <div>
+              <span style="font-size: 0.7rem; color: var(--slate-500); font-family: var(--font-mono); text-transform: uppercase;">Tracking Number</span>
+              <div id="res-tracking-id" style="font-size: 1.35rem; font-weight: 800; font-family: var(--font-mono); color: var(--primary);">MSI-SRV-2026-8812</div>
+            </div>
+            <span class="badge" style="background: #fef3c7; color: #92400e; font-size: 0.75rem;">Under Technical Review</span>
+          </div>
+
+          <div style="font-size: 0.8rem; line-height: 1.8; color: var(--slate-700);">
+            <div><strong>Applicant:</strong> <span id="res-name">Dr. Research Scholar</span></div>
+            <div><strong>Institution:</strong> <span id="res-inst">University of Chittagong</span></div>
+            <div><strong>Primary Instrument:</strong> <span id="res-instrument" style="color: var(--primary); font-weight: 700;">Beckman Coulter CytoFLEX Flow Cytometer</span></div>
+            <div><strong>Operating Mode:</strong> <span id="res-mode">Assisted Analysis</span></div>
+            <div><strong>Direct Desk:</strong> Room 304, Department of Biochemistry &amp; Molecular Biology</div>
+          </div>
+        </div>
+
+        <!-- Recipients Direction Box -->
+        <div style="background: var(--primary-subtle); border: 1px solid rgba(22,91,51,0.25); border-radius: 1rem; padding: 1.25rem; max-width: 600px; margin: 0 auto 1.75rem auto; text-align: left; font-size: 0.785rem;">
+          <strong style="color: var(--primary); display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.5rem;">
+            <span>Application Routed Directly To Lab Leadership:</span>
+          </strong>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; font-size: 0.725rem;">
+            <div style="background: #fff; padding: 0.5rem; border-radius: 6px; border: 1px solid #d1fae5;">
+              <span style="font-weight: 700; color: var(--slate-800); display: block;">Prof. M. Monirul Islam</span>
+              <span style="color: var(--slate-500); font-size: 0.65rem; display: block;">Principal Investigator</span>
+              <a href="mailto:islammm@cu.ac.bd" style="color: var(--primary); font-family: var(--font-mono); font-weight: 600;">islammm@cu.ac.bd</a>
+            </div>
+            <div style="background: #fff; padding: 0.5rem; border-radius: 6px; border: 1px solid #d1fae5;">
+              <span style="font-weight: 700; color: var(--slate-800); display: block;">Mohammad Mushtak Fuad</span>
+              <span style="color: var(--slate-500); font-size: 0.65rem; display: block;">Laboratory Manager</span>
+              <a href="mailto:mushtakfuad@gmail.com" style="color: var(--primary); font-family: var(--font-mono); font-weight: 600;">mushtakfuad@gmail.com</a>
+            </div>
+            <div style="background: #fff; padding: 0.5rem; border-radius: 6px; border: 1px solid #d1fae5;">
+              <span style="font-weight: 700; color: var(--slate-800); display: block;">MSI Lab Central Desk</span>
+              <span style="color: var(--slate-500); font-size: 0.65rem; display: block;">Communications</span>
+              <a href="mailto:msilab.cu@gmail.com" style="color: var(--primary); font-family: var(--font-mono); font-weight: 600;">msilab.cu@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a id="res-mailto-btn" href="#" class="btn btn-primary" style="font-weight: 700;">
+            <span>Send via Email Client to PI &amp; Team ↗</span>
+          </a>
+          <button type="button" class="btn btn-secondary" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Print Receipt Voucher</span>
+          </button>
+          <a href="facilities.html" class="btn btn-secondary">
+            <span>Return to Facilities</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--primary-deep); color: #fff; padding: 4.5rem 0 2rem 0; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a><br>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+
+  <!-- Form Interactivity Script -->
+  <script>
+    var currentStep = 1;
+    var selectedInstrumentId = 'cytoflex-flow-cytometer';
+    var selectedInstrumentName = 'Beckman Coulter CytoFLEX Flow Cytometer';
+
+    // Parse URL parameter if provided (e.g. ?instrument=hitachi-chromaster-hplc)
+    window.addEventListener('DOMContentLoaded', function() {
+      var params = new URLSearchParams(window.location.search);
+      var instParam = params.get('instrument');
+      if (instParam) {
+        var card = document.querySelector('.inst-card[data-id="' + instParam + '"]');
+        if (card) {
+          selectInstrument(card);
+        }
+      }
+    });
+
+    function selectInstrument(el) {
+      document.querySelectorAll('.inst-card').forEach(function(c) {
+        c.classList.remove('selected');
+        var selBadge = c.querySelector('.sel-tag');
+        if (selBadge) selBadge.remove();
+      });
+      el.classList.add('selected');
+      selectedInstrumentId = el.getAttribute('data-id');
+      selectedInstrumentName = el.querySelector('h4').textContent;
+    }
+
+    function goToStep(step) {
+      if (step > currentStep) {
+        // Simple validation
+        if (currentStep === 1) {
+          var name = document.getElementById('fullName').value.trim();
+          var email = document.getElementById('email').value.trim();
+          var dept = document.getElementById('department').value.trim();
+          if (!name || !email || !dept) {
+            alert('Please fill in required fields (Name, Department, Email).');
+            return;
+          }
+        }
+      }
+
+      currentStep = step;
+      for (var i = 1; i <= 4; i++) {
+        var pane = document.getElementById('step-pane-' + i);
+        var btn = document.getElementById('step-btn-' + i);
+        if (pane) pane.style.display = (i === step) ? 'block' : 'none';
+        if (btn) {
+          btn.className = 'step-pill ' + (i === step ? 'step-active' : (i < step ? 'step-completed' : 'step-pending'));
+        }
+      }
+      window.scrollTo({ top: 350, behavior: 'smooth' });
+    }
+
+    function submitApplication() {
+      var obj = document.getElementById('researchObjective').value.trim();
+      if (!obj || obj.length < 20) {
+        alert('Please provide a brief scientific objective (at least 20 characters).');
+        return;
+      }
+
+      var randomNum = Math.floor(1000 + Math.random() * 9000);
+      var trackingCode = 'MSI-SRV-2026-' + randomNum;
+      var applicantName = document.getElementById('fullName').value || 'Research Scholar';
+      var applicantEmail = document.getElementById('email').value || '';
+      var applicantPhone = document.getElementById('phone').value || '';
+      var applicantDept = document.getElementById('department').value || '';
+      var applicantInst = document.getElementById('institutionName').value || 'University of Chittagong';
+      var sampleType = document.getElementById('sampleType').value;
+      var biosafety = document.getElementById('biosafetyLevel').value;
+      var buffer = document.getElementById('bufferMatrix').value;
+      var sampleCount = document.getElementById('sampleCount').value || 'N/A';
+      var mode = document.getElementById('serviceMode').value;
+
+      document.getElementById('res-tracking-id').textContent = trackingCode;
+      document.getElementById('res-name').textContent = applicantName;
+      document.getElementById('res-inst').textContent = applicantInst;
+      document.getElementById('res-instrument').textContent = selectedInstrumentName;
+      document.getElementById('res-mode').textContent = mode;
+
+      // Construct mailto link
+      var mailSubject = encodeURIComponent('[MSI Lab Instrument Application: ' + trackingCode + '] - ' + applicantName);
+      var mailBody = encodeURIComponent(
+        'Dear MSI Lab Leadership (Prof. Dr. Mohammad Monirul Islam & Lab Manager Mohammad Mushtak Fuad),\n\n' +
+        'I have submitted an Instrument Usage Application for research facility services at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong.\n\n' +
+        '=== APPLICATION DETAILS ===\n' +
+        'Tracking ID: ' + trackingCode + '\n' +
+        'Applicant: ' + applicantName + '\n' +
+        'Department & Institution: ' + applicantDept + ', ' + applicantInst + '\n' +
+        'Email: ' + applicantEmail + ' | Phone: ' + applicantPhone + '\n\n' +
+        '=== INSTRUMENT & RUN DETAILS ===\n' +
+        'Primary Instrument: ' + selectedInstrumentName + '\n' +
+        'Service Delivery Mode: ' + mode + '\n' +
+        'Estimated Samples / Injections: ' + sampleCount + '\n' +
+        'Sample Type: ' + sampleType + '\n' +
+        'Biosafety Level: ' + biosafety + '\n' +
+        'Buffer / Solvent: ' + buffer + '\n\n' +
+        '=== RESEARCH OBJECTIVE ===\n' +
+        obj + '\n\n' +
+        'Thank you.\n\nSincerely,\n' + applicantName
+      );
+
+      var mailtoHref = 'mailto:islammm@cu.ac.bd?cc=mushtakfuad@gmail.com,msilab.cu@gmail.com&subject=' + mailSubject + '&body=' + mailBody;
+      var mailtoBtn = document.getElementById('res-mailto-btn');
+      if (mailtoBtn) mailtoBtn.href = mailtoHref;
+
+      // Try background API dispatch
+      try {
+        fetch('/api/applications', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'instrument-service',
+            trackingId: trackingCode,
+            fullName: applicantName,
+            email: applicantEmail,
+            phone: applicantPhone,
+            department: applicantDept,
+            institutionName: applicantInst,
+            primaryInstrument: selectedInstrumentName,
+            serviceMode: mode,
+            sampleType: sampleType,
+            biosafetyLevel: biosafety,
+            researchObjective: obj
+          })
+        }).catch(function() {});
+      } catch (e) {}
+
+      for (var i = 1; i <= 4; i++) {
+        var pane = document.getElementById('step-pane-' + i);
+        if (pane) pane.style.display = 'none';
+      }
+      document.getElementById('step-pane-success').style.display = 'block';
+      window.scrollTo({ top: 250, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
