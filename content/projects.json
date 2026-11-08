@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "dengue-seroprevalence-genomic-surveillance",
+    "title": "Dengue Seroprevalence, Mutational Dynamics & Clinical Correlation",
+    "shortDescription": "Comprehensive surveillance correlating clinical disease severity with DENV lineage shifts, host seroprevalence, and in vivo murine challenge models.",
+    "category": "Viral Immunology & Molecular Epidemiology",
+    "status": "Ongoing",
+    "tags": ["Dengue (DENV)", "Seroprevalence", "In Vivo Murine Models", "Clinical Correlation", "Viral Genomics"],
+    "keyHighlights": [
+      "Serological profiling and antibody neutralization kinetics across longitudinal clinical cohorts.",
+      "Genomic surveillance identifying lineage-specific single nucleotide variants (SNVs) linked to severe dengue phenotypes.",
+      "Translational validation utilizing immunocompromised/adapted mouse models to dissect viral pathogenesis and vascular permeability."
+    ],
+    "methods": ["Indirect & Neutralization ELISA", "qRT-PCR & Amplicon Sequencing", "In Vivo Murine Challenge Models", "Biostatistical & Regression Modeling"],
+    "image": "/images/projects/dengue-surveillance.jpg"
+  },
+  {
+    "slug": "chikungunya-genomics-pathogenesis",
+    "title": "Chikungunya Genetic Variations, Mutational Trajectories & Disease Severity",
+    "shortDescription": "Investigating CHIKV structural and non-structural polyprotein mutations, mapping lineage divergences, and dissecting their mechanistic links to acute vs. chronic arthralgia.",
+    "category": "Viral Genomics & Pathogenesis",
+    "status": "Ongoing",
+    "tags": ["Chikungunya (CHIKV)", "Mutational Profiling", "Severity Biomarkers", "Molecular Epidemiology"],
+    "keyHighlights": [
+      "Targeted sequencing of envelope glycoproteins (E1/E2) to track fitness-enhancing adaptive mutations.",
+      "Association mapping between patient viral load, pro-inflammatory cytokine signatures, and chronic joint debilitation.",
+      "Comparative pathogenesis modeling examining cell tropism and viral replication efficiency across emergent lineages."
+    ],
+    "methods": ["Next-Generation Sequencing (NGS)", "Cytokine Profiling (Multiplex)", "qRT-PCR Lineage Typing", "Phylogenetic Reconstruction"],
+    "image": "/images/projects/chikungunya-genomics.jpg"
+  },
+  {
+    "slug": "sars-cov-2-epitope-escape-structural-biology",
+    "title": "Atomic-Scale Structural Profiling of SARS-CoV-2 Immune Evasion & Receptor Binding",
+    "shortDescription": "High-resolution computational docking and thermodynamic profiling elucidating the structural biophysics of spike mutation-driven antibody evasion and ACE2 binding affinity.",
+    "category": "Computational Structural Biology",
+    "status": "Active / Publications Under Review",
+    "tags": ["SARS-CoV-2", "HADDOCK 2.4", "PRODIGY", "Molecular Docking", "Epitope Mapping", "Structural Biophysics"],
+    "keyHighlights": [
+      "All-atom protein-protein docking of monoclonal neutralizing antibodies against ancestral and evolving subvariants (BA.4/5, JN.1, KP lineages).",
+      "Per-residue interfacial contact mapping, buried surface area (BSA) quantification, and binding free energy (ΔG) calculations.",
+      "Decoupling the structural trade-offs between ACE2 high-affinity preservation and broad humoral escape mutations."
+    ],
+    "methods": ["HADDOCK 2.4 / PRODIGY", "PyMOL & ChimeraX Molecular Rendering", "Residue Interaction Networks", "Thermodynamic ΔG Prediction"],
+    "image": "/images/projects/sarscov2-docking.jpg"
+  },
+  {
+    "slug": "aquilaria-malaccensis-resin-induction",
+    "title": "Molecular Mechanisms & Elicitor-Mediated Induction of Agarwood Resin in Aquilaria malaccensis",
+    "shortDescription": "Elucidating the biochemical cascades, terpene synthase activation, and molecular pathways governing artificial agarwood oleoresin synthesis.",
+    "category": "Plant Molecular Biology & Phytochemistry",
+    "status": "Ongoing",
+    "tags": ["Aquilaria malaccensis", "Agarwood Induction", "Sesquiterpene Biosynthesis", "RT-qPCR", "GC-MS"],
+    "keyHighlights": [
+      "Profiling differential expression of critical terpene synthases (TPS) and signaling pathways during artificial chemical and physical wound induction.",
+      "Characterizing the volatile and semi-volatile sesquiterpene metabolite spectrum of induced resinous heartwood.",
+      "Optimizing reproducible, high-efficiency elicitation formulations for sustainable industrial resin production."
+    ],
+    "methods": ["Quantitative Real-Time PCR (RT-qPCR)", "GC-MS Resin Metabolomics", "Histological & Phyto-biochemical Assays", "Column Chromatography"],
+    "image": "/images/projects/aquilaria-resin.jpg"
+  },
+  {
+    "slug": "chimeric-pan-dengue-vaccine-design",
+    "title": "Rational Immunogen Design of a Chimeric Multi-Epitope Pan-Dengue Vaccine",
+    "shortDescription": "In silico structure-guided reverse vaccinology engineering chimeric immunogens capable of eliciting broad cross-neutralizing antibody titers across DENV-1–4 without ADE risk.",
+    "category": "Rational Vaccine Design & Immunoengineering",
+    "status": "Ongoing",
+    "tags": ["Dengue Vaccine", "Chimeric Immunogen", "Reverse Vaccinology", "Epitope Scaffolding", "Antibody-Dependent Enhancement (ADE)"],
+    "keyHighlights": [
+      "Conserved, neutralizing B-cell and CD4+/CD8+ T-cell epitope mapping across DENV envelope domain III (EDIII) and non-structural protein 1 (NS1).",
+      "Structural scaffolding using flexible linkers and molecular adjuvants designed to suppress antibody-dependent enhancement (ADE).",
+      "Molecular dynamics simulation and in silico immune response modeling predicting humoral and cellular protective longevity."
+    ],
+    "methods": ["In Silico Epitope Prediction", "Scaffold Grafting & Fold Modeling", "Molecular Dynamics (MD) Simulations", "Immune Profiling Simulations"],
+    "image": "/images/projects/dengue-vaccine.jpg"
+  },
+  {
+    "slug": "jev-subunit-vaccine-murine-evaluation",
+    "title": "Preclinical Immunogenicity & Protective Efficacy of a Recombinant JEV Subunit Vaccine",
+    "shortDescription": "Development, expression, and in vivo murine immunogenicity assessment of novel Japanese Encephalitis Virus recombinant subunit candidates formulated with nano-adjuvants.",
+    "category": "Translational Vaccinology & In Vivo Immunology",
+    "status": "Ongoing",
+    "tags": ["Japanese Encephalitis Virus (JEV)", "Subunit Vaccine", "Murine Immunogenicity", "Recombinant Protein", "Neutralizing Titers"],
+    "keyHighlights": [
+      "Recombinant expression and purity verification of JEV envelope domain antigen targets.",
+      "In vivo immunization schedules in BALB/c mice evaluating humoral IgG subclass polarization (IgG1 vs. IgG2a) and T-cell responses.",
+      "Assessment of plaque reduction neutralization titers (PRNT50) and protective efficacy against viral challenge."
+    ],
+    "methods": ["Recombinant Protein Purification (SDS-PAGE/Affinity)", "Indirect & Plaque Reduction Neutralization (PRNT)", "Flow Cytometry / Splenocyte Assays", "In Vivo Murine Immunizations"],
+    "image": "/images/projects/jev-vaccine.jpg"
+  }
+]

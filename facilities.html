@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>State-of-the-Art Research Facilities | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Explore our state-of-the-art laboratory infrastructure, flow cytometers, HPLC/UHPLC systems, real-time qPCR, lyophilizers, NGS sequencer, and biophysical instruments at MSI Lab." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .card:hover { border-color: rgba(22,91,51,0.35); box-shadow: var(--card-hover); transform: translateY(-2px); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
+  
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+  </style>
+  <script>
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!img.dataset.retry) {
+          img.dataset.retry = '1';
+          if (currentSrc.startsWith('public/')) {
+            img.src = currentSrc.substring(7);
+          } else if (currentSrc.startsWith('/')) {
+            img.src = 'public' + currentSrc;
+          } else {
+            img.src = 'public/' + currentSrc;
+          }
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+            <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="facilities.html" class="nav-link active">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link ">Publications</a>
+        <a href="collaborations.html" class="nav-link ">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  
+  <!-- Page Banner - Uniform Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Core Infrastructure & Instrumentation Platforms</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          State-of-the-Art Research Facilities
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 0;">
+          Explore the advanced instrumentation suites, biophysical platforms, high-throughput flow cytometry, and computational modeling infrastructure powering discovery at MSI Lab.
+        </p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="facilities-apply.html" class="btn btn-primary" style="font-weight: 700;">
+            <span>Apply for Instrument Usage / Service →</span>
+          </a>
+          <a href="#inventory" class="btn btn-secondary" style="font-weight: 600;">
+            <span>Explore Instrument Arsenal</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facilities National Center Highlight Banner - Matching Publication Banner Aesthetic -->
+  <section style="padding: 1.75rem 0; background: linear-gradient(135deg, #0b331c 0%, #165b33 50%, #1e7845 100%); color: #fff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.4rem; color: #a7f3d0;">
+          Certified Core Infrastructure &amp; Biocontainment
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">
+          National Center of Excellence for Structural &amp; Viral Immunology
+        </h2>
+        <p style="font-size: 0.825rem; color: #d1fae5; max-width: 650px; line-height: 1.5;">
+          Empowered by the World Bank HEAT Project (HEAT-11009-CU) and MOST grants, providing certified BSL-2 biocontainment, 16+ core analytical platforms, and open research service access.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Platforms</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">16+</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Benchtop Suites</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Safety</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">BSL-2</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Certified Suite</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Access</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">Open</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">Research Service</div>
+        </div>
+        <a href="facilities-apply.html" class="btn" style="background: #ffffff; color: #0b331c; font-weight: 800; font-size: 0.825rem; padding: 0.7rem 1.15rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          Apply for Service ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Facilities & Instruments -->
+  <section id="inventory" style="padding: 5rem 0; background: var(--slate-50); border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      <div style="text-align: center; max-width: 800px; margin: 0 auto 3.5rem auto;">
+        <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Core Experimental Arsenal</div>
+        <h2 style="font-size: 2.35rem; font-weight: 800; color: var(--slate-900); letter-spacing: -0.02em;">State-of-the-Art Research Facilities</h2>
+        <p style="font-size: 1rem; color: var(--slate-600); margin-top: 0.75rem; line-height: 1.6;">
+          Equipped with advanced analytical, biophysical, sequencing, and purification platforms supported by the World Bank HEAT Project, Ministry of Science & Technology (MOST), and Chittagong University.
+        </p>
+      </div>
+
+      <div class="grid-3" style="gap: 1.75rem;">
+        
+        <!-- 1. CytoFLEX Flow Cytometer -->
+        <div id="inst-cytoflex" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/cytoflex.png" alt="Beckman Coulter CytoFLEX Flow Cytometer" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Beckman Coulter</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Cellular Immunology</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Beckman Coulter CytoFLEX Flow Cytometer</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">CytoFLEX Research Cytometer</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Multiparametric single-cell immunophenotyping, high-sensitivity nanoparticle & extracellular vesicle resolution, and intracellular cytokine dynamics.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Single-Cell Phenotyping</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Extracellular Vesicles (80 nm)</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Intracellular Cytokine Staining</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">T/B Cell Activation Assays</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> WDM optics, up to 3 lasers (488/638/405 nm), 13 channels, 15,000 events/sec, >7 decades linear range.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.beckman.com/flow-cytometry/research-flow-cytometers/cytoflex" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. Hitachi Chromaster HPLC -->
+        <div id="inst-hplc" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/chromaster.jpg" alt="Hitachi Chromaster HPLC System" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Hitachi High-Tech</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Analytical Chromatography</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Hitachi Chromaster HPLC System</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Chromaster Series (5110/5210/5430 DAD)</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">High-precision separation, quantification of secondary metabolites, bioactive peptide purity checks, and chromatographic validation.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Reversed-Phase HPLC</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Phytochemical Quantification</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Peptide Purity Profiling</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Diode Array Detection (DAD)</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Ultra-low pulsation pump (≤0.05% RSD), DAD wavelength 190–900 nm, 0.001–9.999 mL/min flow rate.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.hitachi-hightech.com/global/en/products/analytical-systems/hplc/hplc/chromaster.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. Thermo Scientific Vanquish Core HPLC -->
+        <div id="inst-vanquish" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/vanquish_core.jpg" alt="Thermo Scientific Vanquish Core HPLC System" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Thermo Fisher</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Advanced HPLC / UHPLC</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Thermo Scientific Vanquish Core HPLC</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Vanquish Core HPLC / UHPLC System</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">High-throughput chromatographic profiling, intact protein/subunit purity verification, peptide mapping, and pharmacokinetics.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Recombinant Antigen Purity</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Peptide Fingerprinting</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Size-Exclusion Chromatography</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Charge Variant (IEX)</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Biocompatible fluidics up to 700 bar (10,150 psi), smartTune automated diagnostics, active pre-heating column chamber.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.thermofisher.com/bd/en/home/industrial/chromatography/liquid-chromatography-lc/hplc-uhplc-systems/vanquish-core-hplc-system.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Haier Freeze Dryer -->
+        <div id="inst-freeze-dryer" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/freeze_dryer.png" alt="Haier Biomedical Laboratory Freeze Dryer" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Haier Biomedical</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Lyophilization & Biologics</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Haier Biomedical Freeze Dryer</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Laboratory Series Lyophilizer</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Sublimation drying for thermostable peptide antigens, vaccine candidate formulations, and long-term preservation of sera and enzymes.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Antigen Lyophilization</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Cold-Chain Independence</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Preservation of Antibodies</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Vacuum Sublimation</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Condenser down to -80°C / -50°C, microcomputer touch-control, automated defroster and freeze curve memory.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.haiermedical.com/freeze-dryer/Freeze-Dryer.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Haier Biomedical Benchtop High-Speed Refrigerated Centrifuge -->
+        <div id="inst-centrifuge-haier" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/haier_centrifuge.png" alt="Haier Biomedical Benchtop High-Speed Refrigerated Centrifuge" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Haier Biomedical</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Refrigerated Centrifugation</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Haier Biomedical High-Speed Refrigerated Centrifuge</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">LX-185T100R / LX-165T2R Series</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">High-speed refrigerated separation and purification of cellular fractions, macromolecular proteins, blood, body fluids, DNA/RNA, plasmids, bacteria, and viral particles.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Cellular Fractionation</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Plasmid & RNA Pelleting</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Recombinant Harvest</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Blood / Serum Clarification</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Max 18,500 rpm / 16,500 rpm, capacity 4 × 100 mL, PID temp control (-20°C to +40°C), Smart Anti-Vibration lock, ≤52 dB(A).
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.haiermedical.com/centrifuge/Benchtop-high-speed-refrigerated-centrifuge.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Analytik Jena qTOWER³ G -->
+        <div id="inst-qpcr" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/qtower_3g.jpg" alt="Analytik Jena qTOWER³ G Real-Time qPCR Thermal Cycler" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Analytik Jena</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Quantitative PCR</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Analytik Jena qTOWER³ G qPCR</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">qTOWER³ G (3G) Real-Time Thermal Cycler</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Ultra-fast multiplex quantitative real-time PCR, linear thermal gradient assay optimization, viral load quantification (SARS-CoV-2, DENV 1-4), and host transcriptomics.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">6-Plex Multiplex qPCR</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Thermal Gradient Optimization</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Absolute Viral Copy Number</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">High-Resolution Melting (HRM)</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Patented fiber-optic shuttle system, silver block with gold coating, gradient function over 12 columns, heating rate up to 8°C/s, uniformity ±0.15°C.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.analytik-jena.com/products/life-science/pcr-qpcr-thermal-cycler/real-time-thermal-cycler-qpcr/qtower3-series/" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Illumina MiniSeq -->
+        <div id="inst-miniseq" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/miniseq.png" alt="Illumina MiniSeq Sequencing System" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Illumina</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Next-Generation Sequencing</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Illumina MiniSeq Sequencing System</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">MiniSeq Benchtop NGS System</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Targeted viral whole-genome sequencing, lineage tracking (DENV variants, SARS-CoV-2 escape mutants), and multiplex gene panels.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Viral Whole-Genome Sequencing</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Variant & Lineage Surveillance</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Immune Transcriptome RNA-Seq</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Targeted Amplicon Panels</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Sequencing by Synthesis (SBS), up to 7.5 Gb throughput, 25M single-end / 50M paired-end reads, run time 4–24 hours.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.illumina.com/systems/sequencing-platforms/miniseq.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. JASCO FP-8600 -->
+        <div id="inst-spectro" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/jasco_fp8600.png" alt="JASCO FP-8600 Spectrofluorometer" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">JASCO Corporation</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Biophysical Spectroscopy</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">JASCO FP-8600 Spectrofluorometer</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">FP-8600 High-Sensitivity System</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Deep biophysical characterization of protein folding, intrinsic tryptophan fluorescence, macromolecular interactions, and FRET.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Intrinsic Tryptophan Quenching</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Protein Folding & Stability</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Förster Resonance (FRET)</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Binding Affinity (Kd) Analysis</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Wavelength range 200–1010 nm (ex/em), S/N ratio >2,500:1 (RMS), rapid scanning up to 60,000 nm/min.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.jasco.co.uk/fp-8600.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. Tecan Infinite 200 PRO -->
+        <div id="inst-tecan" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/tecan_infinite200.jpg" alt="Tecan Infinite 200 PRO Multimode Microplate Reader" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Tecan Life Sciences</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">High-Throughput Bioassays</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Tecan Infinite 200 PRO Reader</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Infinite 200 PRO (M Plex / F Plex)</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Flexible multi-mode microplate assays including high-throughput ELISA, antibody neutralization titers, and enzymatic kinetics.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">High-Throughput ELISA</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">FRET & Time-Resolved TRF</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Luminescent Neutralization</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Enzymatic Inhibition (IC50)</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Quad4 Monochromators & filters, absorbance (200–1000 nm), fluorescence top/bottom, glow/flash luminescence.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://lifesciences.tecan.com/plate_readers/infinite_200_pro" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 10. Borosil OmniTap XS Touch -->
+        <div id="inst-water-purification" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/omniatap_xs.png" alt="Borosil Scientific OmniTap XS Touch Water Purification System" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Borosil Scientific</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Water Purification</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Borosil OmniTap XS Touch Water System</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">OmniTap XS Touch (Type I & II)</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Continuous supply of Type I ultrapure (18.2 MΩ·cm) and Type II pure water essential for NGS, HPLC, cell culture, and enzymatic assays.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">HPLC & LC-MS Mobile Phases</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">qPCR Reagent Reconstitution</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Endotoxin-Free Cell Culture</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">RNase/DNase-Free Buffers</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Resistivity 18.2 MΩ·cm at 25°C, TOC < 5 ppb, bacteria < 0.01 CFU/mL, endotoxin < 0.001 EU/mL, smart touch UI.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.borosilscientific.com/product/omniatap-xs-touch/" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 11. Benchmark Scientific Pulse 650 -->
+        <div id="inst-sonic-disruptor" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/pulse_650.jpg" alt="Benchmark Scientific Pulse 650 Ultrasonic Homogenizer" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Benchmark Scientific</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Cell Lysis & Homogenization</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Benchmark Scientific Pulse 650</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Pulse 650™ (DP0650) with Soundproof Enclosure</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">High-power ultrasonic cavitation for bacterial and mammalian cell disruption, genomic DNA shearing, inclusion body extraction, and nanoparticle emulsification.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Ultrasonic Cell Disruption</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Genomic DNA & Chromatin Shearing</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Inclusion Body Solubilization</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Nanoparticle Emulsification</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> 650 W power (variable 6.5–650 W), 20–25 kHz frequency, volume 0.1–500 mL, 7" touchscreen, motorized lift, UV-C chamber.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.benchmarkscientific.com/product/pulse-650-ultrasonic-homogenizer/" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 12. Haier Biomedical Class II Biological Safety Cabinet -->
+        <div id="inst-biosafety" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/haier_bsc.png" alt="Haier Biomedical Class II Biological Safety Cabinet" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Haier Biomedical</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Biosafety & Cell Culture</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Haier Class II Biological Safety Cabinet</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Smart IoT Series (Touchscreen X Series)</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Primary biocontainment and sterile barrier for handling infectious arboviruses (Dengue, Chikungunya, SARS-CoV-2), mammalian cell lines, and viral neutralization.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Class II Type A2 Containment</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Aseptic Cell Propagation</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Live Viral Neutralization</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Sterile Vaccine Formulation</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Dual ULPA filtration (99.9995% @ 0.12 µm), 7" LCD touchscreen, velocity monitoring, DC ECM blowers, motorized 10° sash.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.haiermedical.com/biological-safety-cabinet/biological-safety-cabinet-touchscreen.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 13. Rocker 300 Oil-Free Vacuum Pump -->
+        <div id="inst-rocker-pump" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/rocker_300.jpg" alt="Rocker 300 Oil-Free Laboratory Vacuum Pump" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Rocker Scientific</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Filtration & Aspiration</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Rocker 300 Oil-Free Vacuum Pump</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Rocker 300 (Part No. 167300-22)</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Clean, oil-free vacuum generation for sterile media bottle filtration (0.22 µm), microbial testing, tissue culture supernatant aspiration, and sample cleanup.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Sterile Bottle Filtration (0.22 µm)</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Culture Supernatant Aspiration</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Solid-Phase Extraction (SPE)</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Microbial Membrane Capture</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Piston oil-free design, Prote™ overflow trap & gauge, max vacuum 105 mbar abs., max flow 23 L/min, quiet 50 dB.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.rocker.com.tw/en/product/laboratory-pump-en/oil-free-vacuum-pump-en/rocker-300-oil-free-vacuum-pump/" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 14. ASTEC Water Jacketed CO2 Incubator WCI Series -->
+        <div id="inst-incubator" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/astec_wci.webp" alt="ASTEC Water Jacketed CO2 Incubator WCI Series" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">ASTEC Bio (Japan)</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Cell Incubation & Infection</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">ASTEC Water Jacketed CO₂ Incubator</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">WCI-180 / WCI Series</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Ultra-stable 37°C temperature homogeneity and precise 5% CO₂ atmosphere for continuous propagation of mammalian cell lines, hybridomas, and live viral infection assays.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Cell Propagation & Culture</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Viral Plaque Assays</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Water Jacket Stability (±0.1°C)</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Infrared (IR) CO₂ Control</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Water jacket thermal insulation, dual-beam IR CO₂ sensor (0–20%), stainless interior, copper shelves, auto door heater.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.astec-bio.com/global/product/1831/" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 15. Euromex Oxion Biological & Epi-Fluorescence Microscope -->
+        <div id="inst-microscope" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/euromex_oxion.jpg" alt="Euromex Oxion Biological & Epi-Fluorescence Microscope" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Euromex (Netherlands)</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Fluorescence Microscopy</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Euromex Oxion Fluorescence Microscope</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">Oxion Series (Fluorescence Configuration)</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Direct immunofluorescence visualization of intracellular viral antigens, fluorophore-conjugated antibody staining, and cytopathic cellular morphology.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Epi-Fluorescence Imaging</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Viral Antigen Localization</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Brightfield & Phase Contrast</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Plan Fluarex IOS Optics</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> Siedentopf trinocular head 30°, Plan Fluarex IOS infinity optics, 100W mercury / FluoLED epi-illumination, NeoLED light.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.medicalexpo.com/prod/euromex/product-93717-580353.html" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- 16. Benchmark Scientific SureAir PCR Workstation -->
+        <div id="inst-pcr-workstation" class="card" style="scroll-margin-top: 100px;" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="height: 220px; background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%); display: flex; align-items: center; justify-content: center; padding: 1.25rem; border-bottom: 1px solid var(--border-color); position: relative;">
+              <img src="public/facilities/sureair_pcr.jpg" alt="Benchmark Scientific SureAir PCR Workstation" style="max-height: 100%; max-width: 100%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));" loading="lazy">
+              <span style="position: absolute; top: 12px; right: 12px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: rgba(255,255,255,0.95); color: var(--primary); padding: 0.25rem 0.65rem; border-radius: 9999px; border: 1px solid rgba(22,91,51,0.2);">Benchmark / Thomas</span>
+            </div>
+            <div style="padding: 1.5rem 1.5rem 1rem 1.5rem;">
+              <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.55rem; border-radius: 4px; display: inline-block; margin-bottom: 0.5rem;">Aseptic PCR Clean Bench</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.2rem; line-height: 1.35;">Benchmark SureAir™ PCR Workstation</h3>
+              <p style="font-size: 0.75rem; color: var(--slate-500); font-weight: 600; margin-bottom: 0.75rem;">SureAir™ Laminar Flow PCR Workstation</p>
+              <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.55; margin-bottom: 1rem;">Sterile ISO Class 5 vertical laminar clean-air environment for preparing sensitive viral RT-qPCR mastermixes and preventing amplicon contamination.</p>
+              
+              <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100);">
+                <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-500); display: block; margin-bottom: 0.4rem;">Key Techniques:</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem;">
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Aerosol-Free qPCR Dispensing</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">UVC (254 nm) Decontamination</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">ISO Class 5 Laminar Flow</span>
+                  <span style="font-size: 0.7rem; background: var(--slate-100); color: var(--slate-700); padding: 0.2rem 0.5rem; border-radius: 4px;">Pre-PCR Reaction Assembly</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 0.75rem; background: var(--slate-50); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 0.65rem 0.85rem; font-size: 0.72rem; color: var(--slate-600); line-height: 1.45;">
+                <strong style="color: var(--slate-800);">Specs:</strong> ISO 5 HEPA filter (99.97% @ 0.3 µm), 254 nm UVC lamp with auto-shutoff timer & safety shield, LED light, pipette shelf.
+              </div>
+            </div>
+          </div>
+          <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+            <a href="https://www.thomassci.com/p/sureair-pcr-workstation" target="_blank" rel="noopener noreferrer" class="btn" style="width: 100%; font-size: 0.775rem; padding: 0.55rem 1rem; background: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.25);">
+              Manufacturer Portal ↗
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Supporting Infrastructure & Biosafety Suites -->
+  <section style="padding: 4.5rem 0; background: #fff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto;">
+        <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Safety & Standards</div>
+        <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900);">Supporting Infrastructure & Safety Environment</h2>
+        <p style="font-size: 0.95rem; color: var(--slate-600); margin-top: 0.5rem;">
+          Our instrumentation is operated under strict standard operating procedures (SOPs) complying with bio-risk management guidelines.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card" style="padding: 1.5rem;">
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem;">Biosafety Level 2</span>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">BSL-2 Tissue Culture Suite</h3>
+          <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.55;">Certified Class II biosafety cabinets, CO2 incubators, inverted microscopy, and cryogenic storage for viral neutralization and cell assays.</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem;">Cold-Chain Integrity</span>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">Cryogenic Specimen Biobank</h3>
+          <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.55;">Ultra-low (-80°C) deep freezers, liquid nitrogen storage, and temperature loggers for long-term clinical serum samples and hybridomas.</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem;">Bioprocessing</span>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">Recombinant Protein Prep</h3>
+          <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.55;">Automated autoclaves, refrigerated centrifuges, orbital shaking incubators, and sterile filtration assemblies for microbial expression.</p>
+        </div>
+
+        <div class="card" style="padding: 1.5rem;">
+          <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--primary); background: var(--primary-subtle); padding: 0.2rem 0.5rem; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem;">In Silico Synergy</span>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--slate-900); margin-bottom: 0.35rem;">Structural Modeling Station</h3>
+          <p style="font-size: 0.8rem; color: var(--slate-600); line-height: 1.55;">GPU-accelerated computing workstations for molecular dynamics (GROMACS), Rosetta de novo protein engineering, and Cryo-EM models.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA to Apply / Access -->
+  <section style="background: linear-gradient(135deg, var(--primary-deep) 0%, var(--primary) 100%); color: #fff; padding: 4rem 0; text-align: center;">
+    <div class="max-w-container" style="max-width: 760px; margin: 0 auto;">
+      <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 1rem;">Collaborate or Access Our Core Facilities</h2>
+      <p style="font-size: 1rem; color: #d1fae5; line-height: 1.7; margin-bottom: 2rem;">
+        We welcome applications from motivated students and collaborate with academic groups and clinical research teams seeking access to our specialized platforms.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="facilities-apply.html" class="btn" style="font-size: 0.95rem; padding: 0.75rem 1.75rem; background: #fff; color: var(--primary); font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,0.2);">
+          Apply for Instrument Service &amp; Usage →
+        </a>
+        <a href="collaborations.html" class="btn" style="font-size: 0.95rem; padding: 0.75rem 1.75rem; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);">
+          Collaborative Frameworks
+        </a>
+        <a href="apply.html" class="btn" style="font-size: 0.95rem; padding: 0.75rem 1.75rem; background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3);">
+          Apply for Thesis / Fellowship
+        </a>
+      </div>
+    </div>
+  </section>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Apply for Instrument Usage →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

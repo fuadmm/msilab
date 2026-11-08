@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Gallery | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Visual gallery of the Laboratory of Molecular & Structural Immunology (MSI Lab), grouped by scientific research purpose." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-950: #020617;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 10px 25px -4px rgba(15, 23, 42, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-900); background-color: #f8fafc; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 800; color: var(--slate-950); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: #d1fae5; color: #065f46; border: 1px solid #a7f3d0; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 220px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+    /* Filter Buttons */
+    .filter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.15rem;
+      border-radius: 0.75rem;
+      font-size: 0.825rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid var(--border-color);
+      background: #f1f5f9;
+      color: var(--slate-700);
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      background: #e2e8f0;
+      color: var(--slate-950);
+    }
+    .filter-btn.active {
+      background: #165B33;
+      color: #ffffff;
+      border-color: #165B33;
+      box-shadow: 0 4px 12px rgba(22, 91, 51, 0.25);
+    }
+    .filter-count {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      background: #e2e8f0;
+      color: var(--slate-700);
+    }
+    .filter-btn.active .filter-count {
+      background: rgba(255,255,255,0.25);
+      color: #ffffff;
+    }
+
+    /* Purpose Group Section */
+    .group-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      margin-bottom: 3rem;
+      box-shadow: var(--card-shadow);
+      transition: box-shadow 0.2s ease;
+    }
+    .group-section:hover {
+      box-shadow: var(--card-hover);
+    }
+    .group-header {
+      padding: 1.75rem 2rem;
+      background: linear-gradient(to right, #f8fafc 0%, #ffffff 50%, #f0fdf4 100%);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .group-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--slate-950);
+      margin: 0.5rem 0;
+      line-height: 1.3;
+    }
+    .group-purpose-box {
+      margin-top: 1rem;
+      padding: 1rem 1.25rem;
+      background: #ecfdf5;
+      border-left: 4px solid #165b33;
+      border-radius: 0.5rem;
+      border-top: 1px solid #d1fae5;
+      border-right: 1px solid #d1fae5;
+      border-bottom: 1px solid #d1fae5;
+    }
+    .group-purpose-title {
+      font-size: 0.725rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #065f46;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .group-purpose-text {
+      font-size: 0.875rem;
+      color: #0f172a;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Grid inside Group */
+    .group-photos-grid {
+      padding: 1.75rem 2rem;
+      background: #f8fafc;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 1200px) { .group-photos-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 860px) { .group-photos-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .group-photos-grid { grid-template-columns: 1fr; } }
+
+    /* Photo Card */
+    .photo-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .photo-card:hover {
+      border-color: #10b981;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+    }
+    .photo-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+    .photo-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .photo-card:hover .photo-img-wrapper img {
+      transform: scale(1.06);
+    }
+    .photo-card-body {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #ffffff;
+    }
+    .photo-title {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--slate-950);
+      margin-bottom: 0.35rem;
+      line-height: 1.35;
+    }
+    .photo-card:hover .photo-title {
+      color: #165b33;
+    }
+    .photo-desc {
+      font-size: 0.775rem;
+      color: var(--slate-600);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .photo-footer {
+      margin-top: 0.85rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+    }
+    
+    /* Interactive View Photo Button */
+    .btn-view-photo {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-view-photo:hover {
+      background: #165b33;
+      color: #ffffff;
+      border-color: #165b33;
+    }
+
+    .btn-view-group {
+      background: #ffffff;
+      color: #165b33;
+      border: 1.5px solid #165b33;
+      padding: 0.45rem 1rem;
+      border-radius: 0.65rem;
+      font-size: 0.775rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-view-group:hover {
+      background: #165b33;
+      color: #ffffff;
+    }
+
+    /* High-contrast Category Pills */
+    .pill-category {
+      font-size: 0.675rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      border: 1px solid;
+    }
+    .pill-lab { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
+    .pill-botanical { background: #ccfbf1; color: #115e59; border-color: #99f6e4; }
+    .pill-field { background: #fef3c7; color: #92400e; border-color: #fde68a; }
+    .pill-seminar { background: #dbeafe; color: #1e40af; border-color: #bfdbfe; }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(2, 6, 23, 0.95);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .lightbox-modal.active { display: flex; }
+    .lightbox-box {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 1.25rem;
+      width: 100%;
+      max-width: 1100px;
+      max-height: 94vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85);
+      position: relative;
+    }
+    .lightbox-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.25rem;
+      background: #020617;
+      border-bottom: 1px solid #1e293b;
+    }
+    .lightbox-body {
+      position: relative;
+      background: #000000;
+      min-height: 340px;
+      height: 56vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .lightbox-body img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.25s ease;
+    }
+    .lightbox-body img.zoomed {
+      transform: scale(1.6);
+      cursor: zoom-out;
+    }
+    .lightbox-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+    .lightbox-nav-btn:hover {
+      background: #165b33;
+      border-color: #34d399;
+      transform: translateY(-50%) scale(1.08);
+    }
+    .lightbox-prev { left: 1.25rem; }
+    .lightbox-next { right: 1.25rem; }
+    .lightbox-info {
+      padding: 1.25rem;
+      background: #0f172a;
+      border-top: 1px solid #1e293b;
+      overflow-y: auto;
+      max-height: 26vh;
+    }
+    .lightbox-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1.25rem;
+      background: #020617;
+      border-top: 1px solid #1e293b;
+      font-size: 0.75rem;
+      color: #94a3b8;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .lb-btn {
+      background: #1e293b;
+      color: #ffffff;
+      border: 1px solid #334155;
+      padding: 0.35rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.15s ease;
+    }
+    .lb-btn:hover {
+      background: #165b33;
+      border-color: #34d399;
+    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+  @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } }
+</style>
+
+  <script>
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!currentSrc) return;
+        
+        var attempts = parseInt(img.dataset.attempts || '0', 10);
+        if (attempts >= 2) return;
+        img.dataset.attempts = (attempts + 1) + '';
+
+        if (currentSrc.startsWith('public/')) {
+          img.src = currentSrc.substring(7);
+        } else if (currentSrc.startsWith('/')) {
+          img.src = 'public' + currentSrc;
+        } else {
+          img.src = 'public/' + currentSrc;
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation with More Dropdown -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="facilities.html" class="nav-link ">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link ">Publications</a>
+        <a href="collaborations.html" class="nav-link ">Collaborations</a>
+
+        <!-- More Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn active" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f1f5f9;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Light, High-Contrast Banner -->
+  
+  <!-- Page Banner - Uniform Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Scientific Life & Laboratory Records</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          Laboratory Photo Gallery
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 0;">
+          Visual documentation of experimental workflows, field expeditions, clinical sample collections, symposium presentations, and team activities at MSI Lab.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery Main Section -->
+  <section style="padding: 3rem 0 5rem;">
+    <div class="max-w-container">
+      
+      <!-- Filter Bar -->
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; box-shadow: var(--card-shadow);">
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;" id="filter-container">
+          <button class="filter-btn active" data-category="all">
+            <span>All Collections</span>
+            <span class="filter-count">5 Sets</span>
+          </button>
+          <button class="filter-btn" data-category="lab">
+            <span>Laboratory Suites</span>
+            <span class="filter-count">2 Sets</span>
+          </button>
+          <button class="filter-btn" data-category="botanical">
+            <span>Botanical Garden</span>
+            <span class="filter-count">1 Set</span>
+          </button>
+          <button class="filter-btn" data-category="field">
+            <span>Hill Tracts Expedition</span>
+            <span class="filter-count">1 Set</span>
+          </button>
+          <button class="filter-btn" data-category="seminar">
+            <span>Academic Seminars</span>
+            <span class="filter-count">1 Set</span>
+          </button>
+        </div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #64748b;" id="groups-counter">
+          Showing 5 of 5 Purpose Groups
+        </div>
+      </div>
+
+      <!-- Groups Container -->
+      <div id="groups-container">
+        
+        <div class="group-section" data-category="lab" id="group-heat-lab">
+          <div class="group-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+                  <span style="font-size: 0.7rem; font-weight: 900; background: #0f172a; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono);">
+                    GROUP 01
+                  </span>
+                  <span class="pill-category pill-lab">
+                    Laboratory Facilities
+                  </span>
+                  
+                </div>
+                <h2 class="group-title">HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites</h2>
+                <div style="display: flex; flex-wrap: gap: 1.25rem; font-size: 0.8rem; color: #475569; font-weight: 600;">
+                  <span style="margin-right: 1rem;"><strong style="color: #0f172a;">Date:</strong> April 2026</span>
+                  <span><strong style="color: #0f172a;">Location:</strong> Dept. of Biochemistry & Molecular Biology, University of Chittagong</span>
+                </div>
+              </div>
+
+              <!-- Action button for group -->
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                <button type="button" class="btn-view-group" onclick="openGroupPhotos('group-heat-lab')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>View photos in this set</span>
+                </button>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; max-width: 320px; justify-content: flex-end;">
+                  <span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#HEAT-11009-CU</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Molecular Biology</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#RT-PCR</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Biosafety Cleanbench</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Bio-Bank Archive</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Research Purpose Callout -->
+            <div class="group-purpose-box">
+              <span class="group-purpose-title">Singular Research & Operational Purpose:</span>
+              <p class="group-purpose-text">Specialized facility infrastructure establishing high-containment molecular diagnostics, RT-PCR genetic amplification, HEPA-filtered cleanbench culturing, and ultra-low temperature specimen bio-banking funded under the World Bank HEAT Project.</p>
+            </div>
+          </div>
+
+          <!-- Photos Grid for this group -->
+          <div class="group-photos-grid">
+            
+            <div class="photo-card" onclick="openLightboxById('lab-signage')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-signage-facilities.jpg" alt="HEAT-11009-CU Research Facility Signage" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">HEAT-11009-CU Research Facility Signage</h3>
+                  <p class="photo-desc">Official entrance signage designating the Higher Education Acceleration and Transformation (HEAT-11009-CU) molecular research suites, including RT-PCR, Proteomics, and Cell Culture facilities.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-signage')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('lab-pcr-suite')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-pcr-molecular-suite.jpg" alt="Molecular Diagnostics & Thermal Cycling Suite" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Molecular Diagnostics & Thermal Cycling Suite</h3>
+                  <p class="photo-desc">Dedicated PCR workstation configured for genetic amplification, target primer validation, and high-precision diagnostic assays for infectious pathogens.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-pcr-suite')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('lab-biosafety')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-biosafety-cleanbench.jpg" alt="Class II Biosafety Workstation & Culture Suite" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Class II Biosafety Workstation & Culture Suite</h3>
+                  <p class="photo-desc">HEPA-filtered laminar airflow biosafety station providing sterile biocontainment for aseptic microbial inoculant culture and mammalian cell line maintenance.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-biosafety')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('lab-electrophoresis')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-electrophoresis-gel-doc.jpg" alt="Horizontal Gel Electrophoresis & Power Unit" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Horizontal Gel Electrophoresis & Power Unit</h3>
+                  <p class="photo-desc">Submerged agarose gel electrophoresis tanks and programmable power supplies for resolving and validating PCR amplicons and RNA integrity.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-electrophoresis')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('lab-cold-storage')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-cold-storage-archive.jpg" alt="Low-Temperature Biological Specimen Archive" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Low-Temperature Biological Specimen Archive</h3>
+                  <p class="photo-desc">Ultra-cold freezer infrastructure maintaining long-term repository integrity for microbial isolates, bio-inoculant strains, and clinical serum specimens.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-cold-storage')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="group-section" data-category="lab" id="group-biochem-core">
+          <div class="group-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+                  <span style="font-size: 0.7rem; font-weight: 900; background: #0f172a; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono);">
+                    GROUP 02
+                  </span>
+                  <span class="pill-category pill-lab">
+                    Laboratory Facilities
+                  </span>
+                  
+                </div>
+                <h2 class="group-title">Biochemistry Core Analytical & Sample Preparation Facility</h2>
+                <div style="display: flex; flex-wrap: gap: 1.25rem; font-size: 0.8rem; color: #475569; font-weight: 600;">
+                  <span style="margin-right: 1rem;"><strong style="color: #0f172a;">Date:</strong> April 2026</span>
+                  <span><strong style="color: #0f172a;">Location:</strong> Sample Preparation & Proteomics Facilities</span>
+                </div>
+              </div>
+
+              <!-- Action button for group -->
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                <button type="button" class="btn-view-group" onclick="openGroupPhotos('group-biochem-core')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>View photos in this set</span>
+                </button>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; max-width: 320px; justify-content: flex-end;">
+                  <span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Analytical Balance</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Refrigerated Centrifugation</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Proteomics Analytics</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Enzyme Kinetics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Research Purpose Callout -->
+            <div class="group-purpose-box">
+              <span class="group-purpose-title">Singular Research & Operational Purpose:</span>
+              <p class="group-purpose-text">Core biochemical workstations dedicated to biomolecule fractionation, refrigerated centrifugation, precision buffer and elicitor weighing, and spectrophotometric protein characterization.</p>
+            </div>
+          </div>
+
+          <!-- Photos Grid for this group -->
+          <div class="group-photos-grid">
+            
+            <div class="photo-card" onclick="openLightboxById('lab-centrifugation')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-centrifugation-prep.jpg" alt="Benchtop Centrifugation & Vortexing Station" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Benchtop Centrifugation & Vortexing Station</h3>
+                  <p class="photo-desc">High-speed refrigerated centrifugation and microtube vortexing equipment for biomolecule fractionation, phase separation, and lysate clearance.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-centrifugation')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('lab-analytical-balance')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-analytical-balance.jpg" alt="Analytical Weighing & Reagent Formulation Station" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Analytical Weighing & Reagent Formulation Station</h3>
+                  <p class="photo-desc">Precision analytical microbalance equipped with draft shielding for formulating biochemical buffers, culture media, and quantitative inducing agents.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-analytical-balance')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('lab-proteomics')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-lab-proteomics-spectrophotometry.jpg" alt="Proteomics & Optical Density Analytics Station" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Proteomics & Optical Density Analytics Station</h3>
+                  <p class="photo-desc">Spectrophotometric and quantitative analytical setup for protein characterization, kinetic measurements, and enzymatic activity validation.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('lab-proteomics')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="group-section" data-category="botanical" id="group-botanical-trials">
+          <div class="group-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+                  <span style="font-size: 0.7rem; font-weight: 900; background: #0f172a; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono);">
+                    GROUP 03
+                  </span>
+                  <span class="pill-category pill-botanical">
+                    Botanical Garden Research
+                  </span>
+                  
+                </div>
+                <h2 class="group-title">CU Botanical Garden Agarwood Bio-Induction Research</h2>
+                <div style="display: flex; flex-wrap: gap: 1.25rem; font-size: 0.8rem; color: #475569; font-weight: 600;">
+                  <span style="margin-right: 1rem;"><strong style="color: #0f172a;">Date:</strong> October 25–29, 2025</span>
+                  <span><strong style="color: #0f172a;">Location:</strong> Botanical Garden, University of Chittagong</span>
+                </div>
+              </div>
+
+              <!-- Action button for group -->
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                <button type="button" class="btn-view-group" onclick="openGroupPhotos('group-botanical-trials')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>View photos in this set</span>
+                </button>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; max-width: 320px; justify-content: flex-end;">
+                  <span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Aquilaria Inoculation</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Bio-Elicitors</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Vascular Infusion</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Field Physiology</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Tree Biometrics</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Research Purpose Callout -->
+            <div class="group-purpose-box">
+              <span class="group-purpose-title">Singular Research & Operational Purpose:</span>
+              <p class="group-purpose-text">Live experimental field trials testing fungal inoculant formulations, continuous gravity-fed fluidic infusions, and aseptic tree-surgery sealing methods on Aquilaria agallocha specimens within the University botanical reserve.</p>
+            </div>
+          </div>
+
+          <!-- Photos Grid for this group -->
+          <div class="group-photos-grid">
+            
+            <div class="photo-card" onclick="openLightboxById('botanical-media')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-botanical-media-preparation.jpg" alt="Bio-Induction Media Preparation" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Bio-Induction Media Preparation</h3>
+                  <p class="photo-desc">Formulating specialized fungal liquid broths and elicitor media cocktails prior to field-scale agarwood resin induction experiments.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('botanical-media')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('botanical-injection-setup')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-botanical-onsite-injection-setup.jpg" alt="On-Site Inoculant Infusion Rig Assembly" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">On-Site Inoculant Infusion Rig Assembly</h3>
+                  <p class="photo-desc">Custom gravity-assisted continuous delivery apparatus engineered to supply controlled bio-elicitor dosages into drilled trunk conduits.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('botanical-injection-setup')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('botanical-team-monitoring')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-botanical-field-team-monitoring.jpg" alt="Research Team Fieldwork & Trial Logging" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Research Team Fieldwork & Trial Logging</h3>
+                  <p class="photo-desc">MSI Lab researchers working collaboratively on site to record tree diameter at breast height (DBH), GPS coordinates, and inoculant infusion volumes.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('botanical-team-monitoring')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="group-section" data-category="field" id="group-marishya-expedition">
+          <div class="group-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+                  <span style="font-size: 0.7rem; font-weight: 900; background: #0f172a; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono);">
+                    GROUP 04
+                  </span>
+                  <span class="pill-category pill-field">
+                    Hill Tracts Expeditions
+                  </span>
+                  
+                </div>
+                <h2 class="group-title">Rangamati & Marishya Agarwood Plantation Expedition</h2>
+                <div style="display: flex; flex-wrap: gap: 1.25rem; font-size: 0.8rem; color: #475569; font-weight: 600;">
+                  <span style="margin-right: 1rem;"><strong style="color: #0f172a;">Date:</strong> February 4–5, 2026</span>
+                  <span><strong style="color: #0f172a;">Location:</strong> Marishya Plantation, Rangamati District</span>
+                </div>
+              </div>
+
+              <!-- Action button for group -->
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                <button type="button" class="btn-view-group" onclick="openGroupPhotos('group-marishya-expedition')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>View photos in this set</span>
+                </button>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; max-width: 320px; justify-content: flex-end;">
+                  <span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Hill Tracts Fieldwork</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Mechanical Boreholing</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Multi-Tier Infusion</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Weather Sealing</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Longitudinal GC-MS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Research Purpose Callout -->
+            <div class="group-purpose-box">
+              <span class="group-purpose-title">Singular Research & Operational Purpose:</span>
+              <p class="group-purpose-text">Comprehensive field expedition into the Chittagong Hill Tracts agarwood plantations, conducting mechanical tree boreholing, hanging multi-tier inoculant reservoirs, weatherproof sealing, and longitudinal specimen cataloging for GC-MS studies.</p>
+            </div>
+          </div>
+
+          <!-- Photos Grid for this group -->
+          <div class="group-photos-grid">
+            
+            <div class="photo-card" onclick="openLightboxById('field-reservoir')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-field-marishya-reservoir-setup.jpg" alt="Suspended Infusion Reservoirs on Plantation Trees" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Suspended Infusion Reservoirs on Plantation Trees</h3>
+                  <p class="photo-desc">Suspended volumetric reservoirs supplying continuous microbial inoculants down through multi-tier vascular ports in remote plantation groves.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('field-reservoir')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('field-tagging')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-field-marishya-tree-tagging.jpg" alt="Longitudinal Specimen Tagging & Trial Tracking" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Longitudinal Specimen Tagging & Trial Tracking</h3>
+                  <p class="photo-desc">Systematic tagging and cataloging of treated specimens to enable longitudinal resin sampling and GC-MS chemical profiling over 3 to 12 months.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('field-tagging')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="group-section" data-category="seminar" id="group-seminar-defense">
+          <div class="group-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem; flex-wrap: wrap;">
+                  <span style="font-size: 0.7rem; font-weight: 900; background: #0f172a; color: #ffffff; padding: 2px 8px; border-radius: 4px; font-family: var(--font-mono);">
+                    GROUP 05
+                  </span>
+                  <span class="pill-category pill-seminar">
+                    Academic Seminars & Defenses
+                  </span>
+                  
+                </div>
+                <h2 class="group-title">Academic Research Defense & Departmental Scientific Colloquium</h2>
+                <div style="display: flex; flex-wrap: gap: 1.25rem; font-size: 0.8rem; color: #475569; font-weight: 600;">
+                  <span style="margin-right: 1rem;"><strong style="color: #0f172a;">Date:</strong> September 3, 2026</span>
+                  <span><strong style="color: #0f172a;">Location:</strong> Seminar Auditorium, Dept. of Biochemistry & Molecular Biology</span>
+                </div>
+              </div>
+
+              <!-- Action button for group -->
+              <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem;">
+                <button type="button" class="btn-view-group" onclick="openGroupPhotos('group-seminar-defense')">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>View photos in this set</span>
+                </button>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.35rem; max-width: 320px; justify-content: flex-end;">
+                  <span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Thesis Defense</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Viral Biomarkers</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Faculty Examination Panel</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Scientific Colloquium</span><span style="font-size: 0.675rem; font-weight: 600; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; padding: 2px 7px; border-radius: 4px;">#Dr. Monirul Islam</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Group Research Purpose Callout -->
+            <div class="group-purpose-box">
+              <span class="group-purpose-title">Singular Research & Operational Purpose:</span>
+              <p class="group-purpose-text">Dissemination of Master's thesis investigations on vector-borne viral biomarkers, RT-qPCR methodology, and epidemiological surveillance before the faculty examination board and scholarly community.</p>
+            </div>
+          </div>
+
+          <!-- Photos Grid for this group -->
+          <div class="group-photos-grid">
+            
+            <div class="photo-card" onclick="openLightboxById('seminar-presentation')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-seminar-research-presentation.jpg" alt="Master's Thesis Defense & Scientific Colloquium" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Master's Thesis Defense & Scientific Colloquium</h3>
+                  <p class="photo-desc">Oral research defense presenting epidemiological and serological findings on vector-borne viral infections, cytokine profiles, and prognostic biomarkers.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('seminar-presentation')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="photo-card" onclick="openLightboxById('seminar-closing')" title="Click to view full photo">
+              <div class="photo-img-wrapper">
+                <img src="public/images/gallery/thumb-seminar-closing-remarks.jpg" alt="Academic Concluding Remarks & Future Perspectives" loading="lazy">
+              </div>
+              <div class="photo-card-body">
+                <div>
+                  <h3 class="photo-title">Academic Concluding Remarks & Future Perspectives</h3>
+                  <p class="photo-desc">Panel summation reinforcing institutional research goals, inter-hospital clinical collaborations, and high-impact biotechnology directions for MSI Lab.</p>
+                </div>
+                <div class="photo-footer">
+                  <button type="button" class="btn-view-photo" onclick="event.stopPropagation(); openLightboxById('seminar-closing')">
+                    <span>View photo</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  </button>
+                  <span style="color: #94a3b8; font-family: var(--font-mono); font-size: 0.65rem;">1600px HD</span>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Institutional Research Note -->
+      <div style="margin-top: 2rem; padding: 2rem; background: #ffffff; border: 1px solid var(--border-color); border-radius: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; box-shadow: var(--card-shadow);">
+        <div style="max-width: 760px;">
+          <span style="font-size: 0.725rem; font-weight: 800; color: #165b33; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.4rem;">Institutional Research Record</span>
+          <h3 style="font-size: 1.25rem; font-weight: 800; color: #020617; margin-bottom: 0.5rem;">Authentic Scientific &amp; Fieldwork Documentation</h3>
+          <p style="font-size: 0.85rem; color: #334155; line-height: 1.6; font-weight: 500;">
+            All images depict verified laboratory infrastructure, on-site biological inoculations, and scholarly defenses supervised by Prof. Dr. Mohammad Monirul Islam. Infrastructure funded under the Higher Education Acceleration and Transformation (HEAT-11009-CU) project at the University of Chittagong.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem;">
+          <a href="facilities.html" class="btn btn-primary" style="font-size: 0.8rem;">Explore Facilities →</a>
+          <a href="projects.html" class="btn" style="font-size: 0.8rem; background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1;">Research Projects</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal (High Contrast & Robust Image Loader) -->
+  <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
+    <div class="lightbox-box" onclick="event.stopPropagation()">
+      <div class="lightbox-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+          <span class="pill-category" id="lb-category-tag" style="position: static;">Category</span>
+          <span id="lb-group-tag" style="font-size: 0.75rem; font-weight: 700; color: #34d399;">Group Name</span>
+          <span style="font-size: 0.75rem; color: #94a3b8; font-family: var(--font-mono);" id="lb-counter">1 / 15</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <button type="button" class="lb-btn" id="lb-zoom-btn" onclick="toggleZoom()" title="Zoom in / out">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+            <span id="lb-zoom-text">Zoom</span>
+          </button>
+          <button style="background: #1e293b; border: 1px solid #334155; color: #ffffff; cursor: pointer; padding: 6px 10px; border-radius: 8px; display: flex; align-items: center;" onclick="closeLightbox()" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="lightbox-body">
+        <img id="lb-image" alt="Full size photograph preview">
+        <button class="lightbox-nav-btn lightbox-prev" onclick="navigateLightbox(-1)" aria-label="Previous">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="lightbox-nav-btn lightbox-next" onclick="navigateLightbox(1)" aria-label="Next">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="lightbox-info">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <h3 id="lb-title" style="font-size: 1.15rem; font-weight: 700; color: #ffffff;">Title</h3>
+          <div style="font-size: 0.75rem; color: #cbd5e1; font-weight: 500;">
+            <span id="lb-date" style="margin-right: 0.75rem;">Date</span>
+            <span id="lb-location">Location</span>
+          </div>
+        </div>
+        <p id="lb-desc" style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.6; margin-bottom: 0.75rem;">Description</p>
+        <div id="lb-tags" style="display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+      </div>
+
+      <div class="lightbox-footer">
+        <span>Use <strong>←</strong> and <strong>→</strong> keys to navigate, <strong>Esc</strong> to close</span>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a id="lb-raw-link" href="#" target="_blank" style="color: #34d399; font-weight: 700;">Open 1600px HD Photo ↗</a>
+          <a id="lb-original-link" href="#" target="_blank" style="color: #60a5fa; font-weight: 700;">Open Camera Original File ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox & Filter Script -->
+  <script>
+    const ALL_ITEMS = [{"id":"lab-signage","title":"HEAT-11009-CU Research Facility Signage","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Dept. of Biochemistry & Molecular Biology, University of Chittagong","image":"public/images/gallery/lab-signage-facilities.jpg","thumbnail":"public/images/gallery/thumb-lab-signage-facilities.jpg","rawImage":"public/images/gallery/lab-signage-facilities.jpg","description":"Official entrance signage designating the Higher Education Acceleration and Transformation (HEAT-11009-CU) molecular research suites, including RT-PCR, Proteomics, and Cell Culture facilities.","tags":["HEAT Project","RT-PCR Lab","Proteomics","Cell Culture"]},{"id":"lab-pcr-suite","title":"Molecular Diagnostics & Thermal Cycling Suite","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"RT-PCR & Molecular Biology Suite","image":"public/images/gallery/lab-pcr-molecular-suite.jpg","thumbnail":"public/images/gallery/thumb-lab-pcr-molecular-suite.jpg","rawImage":"public/images/gallery/lab-pcr-molecular-suite.jpg","description":"Dedicated PCR workstation configured for genetic amplification, target primer validation, and high-precision diagnostic assays for infectious pathogens.","tags":["Molecular Biology","Thermal Cycler","Diagnostics"]},{"id":"lab-biosafety","title":"Class II Biosafety Workstation & Culture Suite","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Cell Culture & Bio-containment Unit","image":"public/images/gallery/lab-biosafety-cleanbench.jpg","thumbnail":"public/images/gallery/thumb-lab-biosafety-cleanbench.jpg","rawImage":"public/images/gallery/lab-biosafety-cleanbench.jpg","description":"HEPA-filtered laminar airflow biosafety station providing sterile biocontainment for aseptic microbial inoculant culture and mammalian cell line maintenance.","tags":["Biosafety Cabinet","Laminar Flow","Aseptic Technique"]},{"id":"lab-electrophoresis","title":"Horizontal Gel Electrophoresis & Power Unit","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Molecular Biology Lab","image":"public/images/gallery/lab-electrophoresis-gel-doc.jpg","thumbnail":"public/images/gallery/thumb-lab-electrophoresis-gel-doc.jpg","rawImage":"public/images/gallery/lab-electrophoresis-gel-doc.jpg","description":"Submerged agarose gel electrophoresis tanks and programmable power supplies for resolving and validating PCR amplicons and RNA integrity.","tags":["Electrophoresis","Agarose Gel","Amplicon Validation"]},{"id":"lab-cold-storage","title":"Low-Temperature Biological Specimen Archive","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Specimen Bio-Bank","image":"public/images/gallery/lab-cold-storage-archive.jpg","thumbnail":"public/images/gallery/thumb-lab-cold-storage-archive.jpg","rawImage":"public/images/gallery/lab-cold-storage-archive.jpg","description":"Ultra-cold freezer infrastructure maintaining long-term repository integrity for microbial isolates, bio-inoculant strains, and clinical serum specimens.","tags":["Bio-Bank","Cold Storage","Specimen Archive"]},{"id":"lab-centrifugation","title":"Benchtop Centrifugation & Vortexing Station","groupId":"group-biochem-core","groupTitle":"Biochemistry Core Analytical & Sample Preparation Facility","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Sample Preparation Room","image":"public/images/gallery/lab-centrifugation-prep.jpg","thumbnail":"public/images/gallery/thumb-lab-centrifugation-prep.jpg","rawImage":"public/images/gallery/lab-centrifugation-prep.jpg","description":"High-speed refrigerated centrifugation and microtube vortexing equipment for biomolecule fractionation, phase separation, and lysate clearance.","tags":["Centrifugation","Sample Prep","Fractionation"]},{"id":"lab-analytical-balance","title":"Analytical Weighing & Reagent Formulation Station","groupId":"group-biochem-core","groupTitle":"Biochemistry Core Analytical & Sample Preparation Facility","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Biochemistry Core Laboratory","image":"public/images/gallery/lab-analytical-balance.jpg","thumbnail":"public/images/gallery/thumb-lab-analytical-balance.jpg","rawImage":"public/images/gallery/lab-analytical-balance.jpg","description":"Precision analytical microbalance equipped with draft shielding for formulating biochemical buffers, culture media, and quantitative inducing agents.","tags":["Analytical Balance","Reagent Prep","Buffer Chemistry"]},{"id":"lab-proteomics","title":"Proteomics & Optical Density Analytics Station","groupId":"group-biochem-core","groupTitle":"Biochemistry Core Analytical & Sample Preparation Facility","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Proteomics Facility","image":"public/images/gallery/lab-proteomics-spectrophotometry.jpg","thumbnail":"public/images/gallery/thumb-lab-proteomics-spectrophotometry.jpg","rawImage":"public/images/gallery/lab-proteomics-spectrophotometry.jpg","description":"Spectrophotometric and quantitative analytical setup for protein characterization, kinetic measurements, and enzymatic activity validation.","tags":["Proteomics","Spectrophotometry","Enzyme Kinetics"]},{"id":"botanical-media","title":"Bio-Induction Media Preparation","groupId":"group-botanical-trials","groupTitle":"CU Botanical Garden Agarwood Bio-Induction Research","category":"botanical","categoryLabel":"Botanical Garden","date":"October 25, 2025","location":"CU Botanical Garden Field Base","image":"public/images/gallery/botanical-media-preparation.jpg","thumbnail":"public/images/gallery/thumb-botanical-media-preparation.jpg","rawImage":"public/images/gallery/botanical-media-preparation.jpg","description":"Formulating specialized fungal liquid broths and elicitor media cocktails prior to field-scale agarwood resin induction experiments.","tags":["Media Prep","Bio-Induction","Fungal Broth"]},{"id":"botanical-injection-setup","title":"On-Site Inoculant Infusion Rig Assembly","groupId":"group-botanical-trials","groupTitle":"CU Botanical Garden Agarwood Bio-Induction Research","category":"botanical","categoryLabel":"Botanical Garden","date":"October 25, 2025","location":"Botanical Garden, University of Chittagong","image":"public/images/gallery/botanical-onsite-injection-setup.jpg","thumbnail":"public/images/gallery/thumb-botanical-onsite-injection-setup.jpg","rawImage":"public/images/gallery/botanical-onsite-injection-setup.jpg","description":"Custom gravity-assisted continuous delivery apparatus engineered to supply controlled bio-elicitor dosages into drilled trunk conduits.","tags":["Infusion Rig","Field Equipment","Bioreactor Delivery"]},{"id":"botanical-team-monitoring","title":"Research Team Fieldwork & Trial Logging","groupId":"group-botanical-trials","groupTitle":"CU Botanical Garden Agarwood Bio-Induction Research","category":"botanical","categoryLabel":"Botanical Garden","date":"October 29, 2025","location":"Botanical Garden, University of Chittagong","image":"public/images/gallery/botanical-field-team-monitoring.jpg","thumbnail":"public/images/gallery/thumb-botanical-field-team-monitoring.jpg","rawImage":"public/images/gallery/botanical-field-team-monitoring.jpg","description":"MSI Lab researchers working collaboratively on site to record tree diameter at breast height (DBH), GPS coordinates, and inoculant infusion volumes.","tags":["Team Fieldwork","Data Logging","Tree Biometrics"]},{"id":"field-reservoir","title":"Suspended Infusion Reservoirs on Plantation Trees","groupId":"group-marishya-expedition","groupTitle":"Rangamati & Marishya Agarwood Plantation Expedition","category":"field","categoryLabel":"Hill Tracts Expedition","date":"February 5, 2026","location":"Marishya Agarwood Plantation, Rangamati","image":"public/images/gallery/field-marishya-reservoir-setup.jpg","thumbnail":"public/images/gallery/thumb-field-marishya-reservoir-setup.jpg","rawImage":"public/images/gallery/field-marishya-reservoir-setup.jpg","description":"Suspended volumetric reservoirs supplying continuous microbial inoculants down through multi-tier vascular ports in remote plantation groves.","tags":["Hanging Reservoirs","Plantation Trial","Marishya"]},{"id":"field-tagging","title":"Longitudinal Specimen Tagging & Trial Tracking","groupId":"group-marishya-expedition","groupTitle":"Rangamati & Marishya Agarwood Plantation Expedition","category":"field","categoryLabel":"Hill Tracts Expedition","date":"February 5, 2026","location":"Marishya Agarwood Plantation, Rangamati","image":"public/images/gallery/field-marishya-tree-tagging.jpg","thumbnail":"public/images/gallery/thumb-field-marishya-tree-tagging.jpg","rawImage":"public/images/gallery/field-marishya-tree-tagging.jpg","description":"Systematic tagging and cataloging of treated specimens to enable longitudinal resin sampling and GC-MS chemical profiling over 3 to 12 months.","tags":["Specimen Tagging","Longitudinal Study","GC-MS Tracking"]},{"id":"seminar-presentation","title":"Master's Thesis Defense & Scientific Colloquium","groupId":"group-seminar-defense","groupTitle":"Academic Research Defense & Departmental Scientific Colloquium","category":"seminar","categoryLabel":"Academic Seminar","date":"September 3, 2026","location":"Seminar Hall, Dept. of Biochemistry & Molecular Biology","image":"public/images/gallery/seminar-research-presentation.jpg","thumbnail":"public/images/gallery/thumb-seminar-research-presentation.jpg","rawImage":"public/images/gallery/seminar-research-presentation.jpg","description":"Oral research defense presenting epidemiological and serological findings on vector-borne viral infections, cytokine profiles, and prognostic biomarkers.","tags":["Thesis Defense","Infectious Disease","Biomarkers"]},{"id":"seminar-closing","title":"Academic Concluding Remarks & Future Perspectives","groupId":"group-seminar-defense","groupTitle":"Academic Research Defense & Departmental Scientific Colloquium","category":"seminar","categoryLabel":"Academic Seminar","date":"September 3, 2026","location":"Dept. of Biochemistry & Molecular Biology, University of Chittagong","image":"public/images/gallery/seminar-closing-remarks.jpg","thumbnail":"public/images/gallery/thumb-seminar-closing-remarks.jpg","rawImage":"public/images/gallery/seminar-closing-remarks.jpg","description":"Panel summation reinforcing institutional research goals, inter-hospital clinical collaborations, and high-impact biotechnology directions for MSI Lab.","tags":["Closing Remarks","Institutional Goals","Future Directions"]}];
+
+    const ALL_GROUPS = [{"id":"group-heat-lab","title":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","purpose":"Specialized facility infrastructure establishing high-containment molecular diagnostics, RT-PCR genetic amplification, HEPA-filtered cleanbench culturing, and ultra-low temperature specimen bio-banking funded under the World Bank HEAT Project.","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Dept. of Biochemistry & Molecular Biology, University of Chittagong","photoCount":5,"tags":["HEAT-11009-CU","Molecular Biology","RT-PCR","Biosafety Cleanbench","Bio-Bank Archive"],"photos":[{"id":"lab-signage","title":"HEAT-11009-CU Research Facility Signage","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Dept. of Biochemistry & Molecular Biology, University of Chittagong","image":"public/images/gallery/lab-signage-facilities.jpg","thumbnail":"public/images/gallery/thumb-lab-signage-facilities.jpg","rawImage":"public/images/gallery/lab-signage-facilities.jpg","description":"Official entrance signage designating the Higher Education Acceleration and Transformation (HEAT-11009-CU) molecular research suites, including RT-PCR, Proteomics, and Cell Culture facilities.","tags":["HEAT Project","RT-PCR Lab","Proteomics","Cell Culture"]},{"id":"lab-pcr-suite","title":"Molecular Diagnostics & Thermal Cycling Suite","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"RT-PCR & Molecular Biology Suite","image":"public/images/gallery/lab-pcr-molecular-suite.jpg","thumbnail":"public/images/gallery/thumb-lab-pcr-molecular-suite.jpg","rawImage":"public/images/gallery/lab-pcr-molecular-suite.jpg","description":"Dedicated PCR workstation configured for genetic amplification, target primer validation, and high-precision diagnostic assays for infectious pathogens.","tags":["Molecular Biology","Thermal Cycler","Diagnostics"]},{"id":"lab-biosafety","title":"Class II Biosafety Workstation & Culture Suite","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Cell Culture & Bio-containment Unit","image":"public/images/gallery/lab-biosafety-cleanbench.jpg","thumbnail":"public/images/gallery/thumb-lab-biosafety-cleanbench.jpg","rawImage":"public/images/gallery/lab-biosafety-cleanbench.jpg","description":"HEPA-filtered laminar airflow biosafety station providing sterile biocontainment for aseptic microbial inoculant culture and mammalian cell line maintenance.","tags":["Biosafety Cabinet","Laminar Flow","Aseptic Technique"]},{"id":"lab-electrophoresis","title":"Horizontal Gel Electrophoresis & Power Unit","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Molecular Biology Lab","image":"public/images/gallery/lab-electrophoresis-gel-doc.jpg","thumbnail":"public/images/gallery/thumb-lab-electrophoresis-gel-doc.jpg","rawImage":"public/images/gallery/lab-electrophoresis-gel-doc.jpg","description":"Submerged agarose gel electrophoresis tanks and programmable power supplies for resolving and validating PCR amplicons and RNA integrity.","tags":["Electrophoresis","Agarose Gel","Amplicon Validation"]},{"id":"lab-cold-storage","title":"Low-Temperature Biological Specimen Archive","groupId":"group-heat-lab","groupTitle":"HEAT-11009-CU Advanced Molecular Biology & Diagnostic Suites","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Specimen Bio-Bank","image":"public/images/gallery/lab-cold-storage-archive.jpg","thumbnail":"public/images/gallery/thumb-lab-cold-storage-archive.jpg","rawImage":"public/images/gallery/lab-cold-storage-archive.jpg","description":"Ultra-cold freezer infrastructure maintaining long-term repository integrity for microbial isolates, bio-inoculant strains, and clinical serum specimens.","tags":["Bio-Bank","Cold Storage","Specimen Archive"]}]},{"id":"group-biochem-core","title":"Biochemistry Core Analytical & Sample Preparation Facility","purpose":"Core biochemical workstations dedicated to biomolecule fractionation, refrigerated centrifugation, precision buffer and elicitor weighing, and spectrophotometric protein characterization.","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Sample Preparation & Proteomics Facilities","photoCount":3,"tags":["Analytical Balance","Refrigerated Centrifugation","Proteomics Analytics","Enzyme Kinetics"],"photos":[{"id":"lab-centrifugation","title":"Benchtop Centrifugation & Vortexing Station","groupId":"group-biochem-core","groupTitle":"Biochemistry Core Analytical & Sample Preparation Facility","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Sample Preparation Room","image":"public/images/gallery/lab-centrifugation-prep.jpg","thumbnail":"public/images/gallery/thumb-lab-centrifugation-prep.jpg","rawImage":"public/images/gallery/lab-centrifugation-prep.jpg","description":"High-speed refrigerated centrifugation and microtube vortexing equipment for biomolecule fractionation, phase separation, and lysate clearance.","tags":["Centrifugation","Sample Prep","Fractionation"]},{"id":"lab-analytical-balance","title":"Analytical Weighing & Reagent Formulation Station","groupId":"group-biochem-core","groupTitle":"Biochemistry Core Analytical & Sample Preparation Facility","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Biochemistry Core Laboratory","image":"public/images/gallery/lab-analytical-balance.jpg","thumbnail":"public/images/gallery/thumb-lab-analytical-balance.jpg","rawImage":"public/images/gallery/lab-analytical-balance.jpg","description":"Precision analytical microbalance equipped with draft shielding for formulating biochemical buffers, culture media, and quantitative inducing agents.","tags":["Analytical Balance","Reagent Prep","Buffer Chemistry"]},{"id":"lab-proteomics","title":"Proteomics & Optical Density Analytics Station","groupId":"group-biochem-core","groupTitle":"Biochemistry Core Analytical & Sample Preparation Facility","category":"lab","categoryLabel":"Laboratory Facilities","date":"April 2026","location":"Proteomics Facility","image":"public/images/gallery/lab-proteomics-spectrophotometry.jpg","thumbnail":"public/images/gallery/thumb-lab-proteomics-spectrophotometry.jpg","rawImage":"public/images/gallery/lab-proteomics-spectrophotometry.jpg","description":"Spectrophotometric and quantitative analytical setup for protein characterization, kinetic measurements, and enzymatic activity validation.","tags":["Proteomics","Spectrophotometry","Enzyme Kinetics"]}]},{"id":"group-botanical-trials","title":"CU Botanical Garden Agarwood Bio-Induction Research","purpose":"Live experimental field trials testing fungal inoculant formulations, continuous gravity-fed fluidic infusions, and aseptic tree-surgery sealing methods on Aquilaria agallocha specimens within the University botanical reserve.","category":"botanical","categoryLabel":"Botanical Garden Research","date":"October 25–29, 2025","location":"Botanical Garden, University of Chittagong","photoCount":3,"tags":["Aquilaria Inoculation","Bio-Elicitors","Vascular Infusion","Field Physiology","Tree Biometrics"],"photos":[{"id":"botanical-media","title":"Bio-Induction Media Preparation","groupId":"group-botanical-trials","groupTitle":"CU Botanical Garden Agarwood Bio-Induction Research","category":"botanical","categoryLabel":"Botanical Garden","date":"October 25, 2025","location":"CU Botanical Garden Field Base","image":"public/images/gallery/botanical-media-preparation.jpg","thumbnail":"public/images/gallery/thumb-botanical-media-preparation.jpg","rawImage":"public/images/gallery/botanical-media-preparation.jpg","description":"Formulating specialized fungal liquid broths and elicitor media cocktails prior to field-scale agarwood resin induction experiments.","tags":["Media Prep","Bio-Induction","Fungal Broth"]},{"id":"botanical-injection-setup","title":"On-Site Inoculant Infusion Rig Assembly","groupId":"group-botanical-trials","groupTitle":"CU Botanical Garden Agarwood Bio-Induction Research","category":"botanical","categoryLabel":"Botanical Garden","date":"October 25, 2025","location":"Botanical Garden, University of Chittagong","image":"public/images/gallery/botanical-onsite-injection-setup.jpg","thumbnail":"public/images/gallery/thumb-botanical-onsite-injection-setup.jpg","rawImage":"public/images/gallery/botanical-onsite-injection-setup.jpg","description":"Custom gravity-assisted continuous delivery apparatus engineered to supply controlled bio-elicitor dosages into drilled trunk conduits.","tags":["Infusion Rig","Field Equipment","Bioreactor Delivery"]},{"id":"botanical-team-monitoring","title":"Research Team Fieldwork & Trial Logging","groupId":"group-botanical-trials","groupTitle":"CU Botanical Garden Agarwood Bio-Induction Research","category":"botanical","categoryLabel":"Botanical Garden","date":"October 29, 2025","location":"Botanical Garden, University of Chittagong","image":"public/images/gallery/botanical-field-team-monitoring.jpg","thumbnail":"public/images/gallery/thumb-botanical-field-team-monitoring.jpg","rawImage":"public/images/gallery/botanical-field-team-monitoring.jpg","description":"MSI Lab researchers working collaboratively on site to record tree diameter at breast height (DBH), GPS coordinates, and inoculant infusion volumes.","tags":["Team Fieldwork","Data Logging","Tree Biometrics"]}]},{"id":"group-marishya-expedition","title":"Rangamati & Marishya Agarwood Plantation Expedition","purpose":"Comprehensive field expedition into the Chittagong Hill Tracts agarwood plantations, conducting mechanical tree boreholing, hanging multi-tier inoculant reservoirs, weatherproof sealing, and longitudinal specimen cataloging for GC-MS studies.","category":"field","categoryLabel":"Hill Tracts Expeditions","date":"February 4–5, 2026","location":"Marishya Plantation, Rangamati District","photoCount":2,"tags":["Hill Tracts Fieldwork","Mechanical Boreholing","Multi-Tier Infusion","Weather Sealing","Longitudinal GC-MS"],"photos":[{"id":"field-reservoir","title":"Suspended Infusion Reservoirs on Plantation Trees","groupId":"group-marishya-expedition","groupTitle":"Rangamati & Marishya Agarwood Plantation Expedition","category":"field","categoryLabel":"Hill Tracts Expedition","date":"February 5, 2026","location":"Marishya Agarwood Plantation, Rangamati","image":"public/images/gallery/field-marishya-reservoir-setup.jpg","thumbnail":"public/images/gallery/thumb-field-marishya-reservoir-setup.jpg","rawImage":"public/images/gallery/field-marishya-reservoir-setup.jpg","description":"Suspended volumetric reservoirs supplying continuous microbial inoculants down through multi-tier vascular ports in remote plantation groves.","tags":["Hanging Reservoirs","Plantation Trial","Marishya"]},{"id":"field-tagging","title":"Longitudinal Specimen Tagging & Trial Tracking","groupId":"group-marishya-expedition","groupTitle":"Rangamati & Marishya Agarwood Plantation Expedition","category":"field","categoryLabel":"Hill Tracts Expedition","date":"February 5, 2026","location":"Marishya Agarwood Plantation, Rangamati","image":"public/images/gallery/field-marishya-tree-tagging.jpg","thumbnail":"public/images/gallery/thumb-field-marishya-tree-tagging.jpg","rawImage":"public/images/gallery/field-marishya-tree-tagging.jpg","description":"Systematic tagging and cataloging of treated specimens to enable longitudinal resin sampling and GC-MS chemical profiling over 3 to 12 months.","tags":["Specimen Tagging","Longitudinal Study","GC-MS Tracking"]}]},{"id":"group-seminar-defense","title":"Academic Research Defense & Departmental Scientific Colloquium","purpose":"Dissemination of Master's thesis investigations on vector-borne viral biomarkers, RT-qPCR methodology, and epidemiological surveillance before the faculty examination board and scholarly community.","category":"seminar","categoryLabel":"Academic Seminars & Defenses","date":"September 3, 2026","location":"Seminar Auditorium, Dept. of Biochemistry & Molecular Biology","photoCount":2,"tags":["Thesis Defense","Viral Biomarkers","Faculty Examination Panel","Scientific Colloquium","Dr. Monirul Islam"],"photos":[{"id":"seminar-presentation","title":"Master's Thesis Defense & Scientific Colloquium","groupId":"group-seminar-defense","groupTitle":"Academic Research Defense & Departmental Scientific Colloquium","category":"seminar","categoryLabel":"Academic Seminar","date":"September 3, 2026","location":"Seminar Hall, Dept. of Biochemistry & Molecular Biology","image":"public/images/gallery/seminar-research-presentation.jpg","thumbnail":"public/images/gallery/thumb-seminar-research-presentation.jpg","rawImage":"public/images/gallery/seminar-research-presentation.jpg","description":"Oral research defense presenting epidemiological and serological findings on vector-borne viral infections, cytokine profiles, and prognostic biomarkers.","tags":["Thesis Defense","Infectious Disease","Biomarkers"]},{"id":"seminar-closing","title":"Academic Concluding Remarks & Future Perspectives","groupId":"group-seminar-defense","groupTitle":"Academic Research Defense & Departmental Scientific Colloquium","category":"seminar","categoryLabel":"Academic Seminar","date":"September 3, 2026","location":"Dept. of Biochemistry & Molecular Biology, University of Chittagong","image":"public/images/gallery/seminar-closing-remarks.jpg","thumbnail":"public/images/gallery/thumb-seminar-closing-remarks.jpg","rawImage":"public/images/gallery/seminar-closing-remarks.jpg","description":"Panel summation reinforcing institutional research goals, inter-hospital clinical collaborations, and high-impact biotechnology directions for MSI Lab.","tags":["Closing Remarks","Institutional Goals","Future Directions"]}]}];
+
+    let activeItemsList = [...ALL_ITEMS];
+    let currentIdx = 0;
+    let isZoomed = false;
+
+    // Filter by Category
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const cat = this.getAttribute('data-category');
+
+        const groupSections = document.querySelectorAll('.group-section');
+        let visibleCount = 0;
+
+        groupSections.forEach(sec => {
+          if (cat === 'all' || sec.getAttribute('data-category') === cat) {
+            sec.style.display = 'block';
+            visibleCount++;
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+
+        if (cat === 'all') {
+          activeItemsList = [...ALL_ITEMS];
+        } else {
+          activeItemsList = ALL_ITEMS.filter(item => item.category === cat);
+        }
+
+        document.getElementById('groups-counter').textContent = 
+          'Showing ' + visibleCount + ' of ' + groupSections.length + ' Purpose Groups';
+      });
+    });
+
+    // Open lightbox for a specific photo
+    function openLightboxById(itemId) {
+      const idx = activeItemsList.findIndex(i => i.id === itemId);
+      currentIdx = idx >= 0 ? idx : 0;
+      updateLightbox();
+      document.getElementById('lightbox-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Open lightbox with all photos from a group
+    function openGroupPhotos(groupId) {
+      const group = ALL_GROUPS.find(g => g.id === groupId);
+      if (group && group.photos.length > 0) {
+        activeItemsList = [...group.photos];
+        currentIdx = 0;
+        updateLightbox();
+        document.getElementById('lightbox-modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.remove('active');
+      document.body.style.overflow = '';
+      if (isZoomed) toggleZoom();
+    }
+
+    function navigateLightbox(dir) {
+      if (activeItemsList.length === 0) return;
+      currentIdx = (currentIdx + dir + activeItemsList.length) % activeItemsList.length;
+      if (isZoomed) toggleZoom();
+      updateLightbox();
+    }
+
+    function toggleZoom() {
+      const img = document.getElementById('lb-image');
+      isZoomed = !isZoomed;
+      if (isZoomed) {
+        img.classList.add('zoomed');
+        document.getElementById('lb-zoom-text').textContent = 'Reset';
+      } else {
+        img.classList.remove('zoomed');
+        document.getElementById('lb-zoom-text').textContent = 'Zoom';
+      }
+    }
+
+    function updateLightbox() {
+      const item = activeItemsList[currentIdx];
+      if (!item) return;
+
+      const imgEl = document.getElementById('lb-image');
+      imgEl.dataset.attempts = '0';
+      imgEl.src = item.image;
+      imgEl.alt = item.title;
+
+      document.getElementById('lb-title').textContent = item.title;
+      document.getElementById('lb-counter').textContent = (currentIdx + 1) + ' / ' + activeItemsList.length;
+      document.getElementById('lb-date').textContent = '' + item.date;
+      document.getElementById('lb-location').textContent = '' + item.location;
+      document.getElementById('lb-desc').textContent = item.description;
+      document.getElementById('lb-raw-link').href = item.image;
+      if (document.getElementById('lb-original-link')) document.getElementById('lb-original-link').href = item.image;
+      document.getElementById('lb-group-tag').textContent = item.groupTitle;
+
+      const catTag = document.getElementById('lb-category-tag');
+      catTag.textContent = item.categoryLabel;
+      catTag.className = 'pill-category pill-' + item.category;
+
+      const tagsContainer = document.getElementById('lb-tags');
+      tagsContainer.innerHTML = '';
+      (item.tags || []).forEach(t => {
+        const span = document.createElement('span');
+        span.style.cssText = 'font-size: 0.675rem; font-weight: 600; background: #1e293b; color: #34d399; border: 1px solid #334155; padding: 2px 7px; border-radius: 4px;';
+        span.textContent = '#' + t;
+        tagsContainer.appendChild(span);
+      });
+    }
+
+    window.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('lightbox-modal');
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+
+    document.getElementById('lb-image').addEventListener('click', function() {
+      toggleZoom();
+    });
+  </script>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>

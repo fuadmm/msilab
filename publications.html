@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications & Patents | MSI Lab · University of Chittagong</title>
+  <meta name="description" content="Peer-reviewed scientific articles, international patents (WO2019031446), and research findings in Vaccine, PNAS, Frontiers, Molecules, and IJMS by MSI Lab researchers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #165b33;
+      --primary-dark: #0e3f22;
+      --primary-deep: #072212;
+      --primary-subtle: #ecfdf3;
+      --accent: #10b981;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      --card-hover: 0 12px 30px -4px rgba(22, 91, 51, 0.12);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); color: var(--slate-800); background-color: #fff; line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--slate-900); }
+    a { color: inherit; text-decoration: none; }
+    .max-w-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+    .lab-grid-bg { background-image: linear-gradient(to right, rgba(22,91,51,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,91,51,0.05) 1px, transparent 1px); background-size: 32px 32px; }
+    .badge { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background-color: var(--primary-subtle); color: var(--primary); border: 1px solid rgba(22,91,51,0.2); }
+    .badge-accent { background-color: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .badge-purple { background-color: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; font-family: var(--font-heading); font-weight: 600; font-size: 0.875rem; padding: 0.65rem 1.35rem; border-radius: 0.75rem; transition: all 0.2s ease; cursor: pointer; border: 1px solid transparent; }
+    .btn-primary { background-color: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(22,91,51,0.25); }
+    .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+    .btn-secondary { background-color: #fff; color: var(--slate-700); border-color: var(--slate-200); }
+    .btn-secondary:hover { background-color: var(--slate-50); color: var(--slate-900); }
+    .card { background: #fff; border: 1px solid var(--border-color); border-radius: 1rem; transition: all 0.25s ease; box-shadow: var(--card-shadow); }
+    .card:hover { border-color: rgba(22,91,51,0.35); box-shadow: var(--card-hover); transform: translateY(-2px); }
+    .top-ribbon { background-color: var(--primary-deep); color: #d1fae5; font-size: 0.75rem; padding: 0.45rem 1rem; border-bottom: 1px solid rgba(22,91,51,0.3); }
+    header.sticky-nav { position: sticky; top: 0; z-index: 50; background: #0b331c; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem; transition: all 0.15s ease; }
+    .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
+    .tab-btn { padding: 0.45rem 1rem; font-size: 0.8rem; font-weight: 700; border-radius: 0.65rem; background: var(--slate-100); color: var(--slate-600); border: 1px solid transparent; cursor: pointer; transition: all 0.2s ease; }
+    .tab-btn:hover { background: var(--slate-200); color: var(--slate-900); }
+    .tab-btn.active { background: var(--primary); color: #fff; }
+    .form-input { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--slate-200); border-radius: 0.75rem; font-size: 0.9rem; font-family: inherit; }
+    .form-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(22,91,51,0.15); }
+    #toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 120; background: #0f172a; color: #fff; padding: 0.75rem 1.25rem; border-radius: 0.75rem; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.25); border-left: 4px solid var(--accent); transform: translateY(100px); opacity: 0; transition: all 0.3s ease; pointer-events: none; }
+    #toast.show { transform: translateY(0); opacity: 1; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
+  
+    .nav-dropdown { position: relative; display: inline-block; }
+    .nav-dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      min-width: 210px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      border: 1px solid var(--border-color, #e2e8f0);
+      padding: 0.4rem;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-content,
+    .nav-dropdown:focus-within .nav-dropdown-content,
+    .nav-dropdown-content.show { display: block !important; }
+    .nav-dropdown-item {
+      display: flex;
+      align-items: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.825rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-dropdown-item:hover {
+      background-color: #f1f5f9 !important;
+      color: #165b33 !important;
+    }
+
+  </style>
+  <script>
+    // Robust image loader for both local file:/// and web server protocols
+    document.addEventListener('error', function(e) {
+      if (e.target && e.target.tagName === 'IMG') {
+        var img = e.target;
+        var currentSrc = img.getAttribute('src');
+        if (!img.dataset.retry) {
+          img.dataset.retry = '1';
+          if (currentSrc.startsWith('public/')) {
+            img.src = currentSrc.substring(7);
+          } else if (currentSrc.startsWith('/')) {
+            img.src = 'public' + currentSrc;
+          } else {
+            img.src = 'public/' + currentSrc;
+          }
+        }
+      }
+    }, true);
+  </script>
+
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="public/All%20logos/msi%20lab.png">
+  <link rel="apple-touch-icon" href="public/All%20logos/msi%20lab.png">
+
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="sticky-nav">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; height: 74px;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 0.85rem;">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: #fff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; padding: 3px; box-shadow: 0 4px 12px rgba(22, 91, 51, 0.15);">
+          <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab Logo" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <div>
+          <div>
+            <span style="font-weight: 800; font-size: 1.25rem; color: #ffffff; font-family: var(--font-heading); letter-spacing: -0.02em; display: block;">MSI Lab</span>
+            <span style="font-size: 0.725rem; color: #ffffff; font-weight: 500; display: block; margin-top: -2px; opacity: 0.9;">Molecular &amp; Structural Immunology</span>
+          </div>
+        </div>
+      </a>
+
+            <!-- Desktop Links with More Menu -->
+      <nav class="hide-mobile" style="display: flex; align-items: center; gap: 0.35rem;">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="facilities.html" class="nav-link ">Facilities</a>
+        <a href="projects.html" class="nav-link ">Research</a>
+        <!-- People Dropdown -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link  nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>People</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content" style="min-width: 260px; left: 0; right: auto;">
+            <a href="team.html" class="nav-dropdown-item" style="font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>All Members Overview</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#pi" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Principal Investigator</span>
+            </a>
+            <a href="team.html#doctoral" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Doctoral Fellows (Ph.D.)</span>
+            </a>
+            <a href="team.html#masters" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Master's Fellows (M.Sc.)</span>
+            </a>
+            <a href="team.html#staff" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Research Assistants &amp; Staff</span>
+            </a>
+            <a href="team.html#undergraduate" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Undergraduate Fellows (B.Sc.)</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="team.html#alumni" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Alumni Network</span>
+            </a>
+          </div>
+        </div>
+        <a href="publications.html" class="nav-link active">Publications</a>
+        <a href="collaborations.html" class="nav-link ">Collaborations</a>
+
+        <!-- More Dropdown (Protocols, Objectives, Events, Join Us) -->
+        <div class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-btn" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; font-family: inherit; font-size: 0.875rem; font-weight: 600; color: #ffffff; padding: 0.5rem 0.85rem; border-radius: 0.5rem;" onclick="this.nextElementSibling.classList.toggle('show')">
+            <span>More</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="nav-dropdown-content">
+            <a href="protocols.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Protocols</span>
+            </a>
+            <a href="objectives.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Objectives</span>
+            </a>
+            <a href="gallery.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Gallery</span>
+            </a>
+            <a href="news.html" class="nav-dropdown-item" style="font-weight: 600; color: #1e293b; background: transparent;">
+              <span>Events</span>
+            </a>
+            <div style="border-top: 1px solid #e2e8f0; margin: 0.3rem 0;"></div>
+            <a href="facilities-apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Instrument Service Application</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="apply.html" class="nav-dropdown-item" style="justify-content: space-between; font-weight: 700; color: #165b33; background: #f0fdf4;">
+              <span>Join Us</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  
+  <!-- Page Banner - Uniform Home Page Upper Phase -->
+  <section class="lab-grid-bg" style="position: relative; padding: 4.5rem 0 3.5rem 0; border-bottom: 1px solid var(--border-color); background: linear-gradient(180deg, #f2f9f4 0%, #ffffff 50%, #f8fafc 100%); overflow: hidden;">
+    <!-- Glowing Ambient Radial Gradients -->
+    <div style="position: absolute; top: -80px; right: 15%; width: 420px; height: 420px; background: radial-gradient(circle, rgba(22,91,51,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+    <div style="position: absolute; bottom: -60px; left: -40px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+    <div class="max-w-container" style="position: relative; z-index: 10;">
+      <div style="max-width: 860px;">
+        <div class="badge badge-primary" style="margin-bottom: 1.25rem;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);"></span>
+          <span>Scientific Archive & Intellectual Property</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; color: var(--slate-900); letter-spacing: -0.03em; margin-bottom: 1.25rem; line-height: 1.15;">
+          Publications
+        </h1>
+        <p style="font-size: 1.1rem; color: var(--slate-600); line-height: 1.7; max-width: 780px; margin-bottom: 0;">
+          Explore our peer-reviewed discoveries in Nature Communications, Vaccine, PNAS, and international patent portfolios in engineered solubilization tags.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Google Scholar Live Profile Banner -->
+  <section style="padding: 1.75rem 0; background: linear-gradient(135deg, #0b331c 0%, #165b33 50%, #1e7845 100%); color: #fff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.4rem; color: #a7f3d0;">
+          Google Scholar Verified Academic Record
+        </div>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 0.25rem;">
+          Prof. Mohammad Monirul Islam, Ph.D.
+        </h2>
+        <p style="font-size: 0.825rem; color: #d1fae5; max-width: 650px; line-height: 1.5;">
+          Principal Investigator · 48+ International peer-reviewed articles, international patent, and preprints across dengue, SARS-CoV-2, Japanese encephalitis, and protein engineering.
+        </p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap;">
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 85px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">Citations</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">766+</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">404 since 2021</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 75px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">h-index</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">16</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">12 since 2021</div>
+        </div>
+        <div style="background: rgba(255,255,255,0.12); padding: 0.6rem 1rem; border-radius: 12px; text-align: center; min-width: 75px; border: 1px solid rgba(255,255,255,0.18);">
+          <div style="font-size: 0.68rem; text-transform: uppercase; font-weight: 700; color: #a7f3d0;">i10-index</div>
+          <div style="font-size: 1.35rem; font-weight: 900; color: #fff;">22</div>
+          <div style="font-size: 0.65rem; color: #cbd5e1;">17 since 2021</div>
+        </div>
+        <a href="https://scholar.google.com/citations?user=dKS4v_gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn" style="background: #ffffff; color: #0b331c; font-weight: 800; font-size: 0.825rem; padding: 0.7rem 1.15rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+          Scholar Profile ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- International Patent Highlight Banner -->
+  <section style="padding: 2.5rem 0; background: #fff; border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      <div class="card" style="padding: 1.75rem 2rem; background: linear-gradient(135deg, #faf5ff 0%, #ffffff 100%); border-left: 5px solid #7e22ce;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <span class="badge badge-purple" style="font-size: 11px;">International Patent Highlight</span>
+              <span style="font-family: var(--font-mono); font-size: 0.775rem; color: #7e22ce; font-weight: 700;">WO2019031446</span>
+            </div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.35rem;">
+              Method for Controlling the Solubility and Immunogenicity of Recombinant Proteins
+            </h2>
+            <p style="font-size: 0.85rem; color: var(--slate-600); max-width: 820px; line-height: 1.6;">
+              <strong>Inventors:</strong> Yutaka Kuroda, T. Kamioka, Nafsoon Rahman, Mohammad Monirul Islam, S. Miura · World Intellectual Property Organization (WIPO).
+              Pioneering peptide sequence tags that eliminate inclusion bodies and allow high-yield folding of viral antigens in bacterial expression hosts.
+            </p>
+          </div>
+          <button onclick="copyBibtex('patent-2019-solubility-tag')" class="btn btn-secondary" style="border-color: #d8b4fe; color: #6b21a8; font-size: 0.8rem;">
+            Copy Patent Citation
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Filter & Search Section -->
+  <section style="padding: 3.5rem 0; background: var(--slate-50); border-bottom: 1px solid var(--border-color);">
+    <div class="max-w-container">
+      
+      <!-- Filter Controls Box -->
+      <div class="card" style="padding: 1.5rem; margin-bottom: 2rem; background: #fff;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <input 
+            type="text" 
+            id="pub-search" 
+            placeholder="Search publications by title, author, journal, topic, or DOI..." 
+            class="form-input"
+            oninput="renderPublications()"
+          />
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center;">
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Topic Filter:</span>
+            <button class="tab-btn active" onclick="setFilterTopic('all', this)">All Topics</button>
+            <button class="tab-btn" onclick="setFilterTopic('SARS-CoV-2', this)">SARS-CoV-2</button>
+            <button class="tab-btn" onclick="setFilterTopic('Dengue Virus', this)">Dengue Virus</button>
+            <button class="tab-btn" onclick="setFilterTopic('Japanese Encephalitis', this)">Japanese Encephalitis</button>
+            <button class="tab-btn" onclick="setFilterTopic('Protein Technology', this)">Protein Technology</button>
+            <button class="tab-btn" onclick="setFilterTopic('Immunology', this)">Immunology</button>
+            <button class="tab-btn" onclick="setFilterTopic('Infectious Diseases', this)">Infectious Diseases</button>
+            <button class="tab-btn" onclick="setFilterTopic('Patents', this)">Patents</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publications List -->
+      <div id="pubs-list" style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <!-- Rendered by JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div id="toast">Citation Copied to Clipboard!</div>
+
+      <!-- Footer -->
+  <footer style="background-color: var(--primary-deep, #0b2817); color: #cbd5e1; padding: 4.5rem 0 2rem 0; border-top: 4px solid var(--primary, #165b33);">
+    <style>
+      .msi-footer-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.9fr 0.9fr 1fr;
+        gap: 2.5rem;
+        margin-bottom: 3.5rem;
+      }
+      @media (max-width: 1024px) {
+        .msi-footer-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+      }
+      @media (max-width: 640px) {
+        .msi-footer-grid {
+          grid-template-columns: 1fr !important;
+          gap: 2rem !important;
+        }
+      }
+    </style>
+    <div class="max-w-container" style="max-width: 1280px; margin: 0 auto; padding: 0 1.5rem;">
+      <div class="msi-footer-grid">
+        
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 42px; height: 42px; border-radius: 10px; background: #fff; padding: 3px; shrink-0;">
+              <img src="public/All%20logos/msi%20lab.png" alt="MSI Lab" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <div>
+              <span style="font-weight: 800; font-size: 1.15rem; color: #fff; display: block;">MSI Lab</span>
+              <span style="font-size: 0.725rem; color: #a7f3d0;">Molecular &amp; Structural Immunology</span>
+            </div>
+          </div>
+          <p style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 1rem;">
+            Dedicated to elucidating immune mechanisms at atomic resolution and translating discoveries into stable vaccines and diagnostic countermeasures.
+          </p>
+                              <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem;">
+            <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="Department of Biochemistry &amp; Molecular Biology, University of Chittagong">
+              <img src="public/All%20logos/bmbcu%20logo.png" alt="Department of Biochemistry &amp; Molecular Biology Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">Department of Biochemistry &amp; Molecular Biology</span>
+            </a>
+            <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #a7f3d0; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'" title="University of Chittagong, Bangladesh">
+              <img src="public/All%20logos/University_of_Chittagong_logo.svg.jpg" alt="University of Chittagong (CU) Seal" style="width: 24px; height: 24px; border-radius: 50%; background: #fff; object-fit: contain; flex-shrink: 0;">
+              <span style="font-size: 0.775rem; font-weight: 600; color: #a7f3d0;">University of Chittagong, Bangladesh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 0.85rem; padding-top: 0.65rem; border-top: 1px solid rgba(255,255,255,0.1);">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(10, 102, 194, 0.2); border: 1px solid rgba(10, 102, 194, 0.45); padding: 0.35rem 0.7rem; border-radius: 8px; color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: 600; transition: all 0.2s;" onmouseover="this.style.background='#0a66c2'; this.style.borderColor='#0a66c2'" onmouseout="this.style.background='rgba(10, 102, 194, 0.2)'; this.style.borderColor='rgba(10, 102, 194, 0.45)'" title="Follow MSI Lab on LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>Follow MSI Lab on LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Site Menus</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; padding: 0; margin: 0;">
+            <li><a href="index.html" style="color: #cbd5e1; text-decoration: none;">Home Overview</a></li>
+            <li><a href="objectives.html" style="color: #cbd5e1; text-decoration: none;">Research Objectives</a></li>
+            <li><a href="facilities.html" style="color: #cbd5e1; text-decoration: none;">State-of-the-Art Facilities</a></li>
+            <li><a href="facilities-apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Instrument Service Application →</a></li>
+            <li><a href="team.html" style="color: #cbd5e1; text-decoration: none;">Team &amp; Alumni</a></li>
+            <li><a href="publications.html" style="color: #cbd5e1; text-decoration: none;">Publications</a></li>
+            <li><a href="collaborations.html" style="color: #cbd5e1; text-decoration: none;">Strategic Collaborations</a></li>
+            <li><a href="news.html" style="color: #cbd5e1; text-decoration: none;">News &amp; Insights</a></li>
+            <li><a href="apply.html" style="color: #6ee7b7; font-weight: 700; text-decoration: none;">Join Us →</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Research Pillars</h4>
+          <ul style="list-style: none; font-size: 0.825rem; line-height: 2; color: #94a3b8; padding: 0; margin: 0;">
+            <li>• Advanced Viral Immunology</li>
+            <li>• Dengue Envelope Domain III (ED3)</li>
+            <li>• SARS-CoV-2 Pan-Sarbecovirus</li>
+            <li>• COVID-19 RT-PCR Surveillance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Contact &amp; Office</h4>
+          <div style="font-size: 0.825rem; line-height: 1.6; color: #94a3b8; margin-bottom: 0.75rem;">
+            Room 304, Department of Biochemistry &amp; Molecular Biology<br>
+            University of Chittagong, Chattogram-4331
+          </div>
+          <div style="font-size: 0.825rem; margin-bottom: 0.35rem;">
+            Email: <a href="mailto:islammm@cu.ac.bd" style="color: #6ee7b7; font-family: var(--font-mono); text-decoration: none;">islammm@cu.ac.bd</a>
+          </div>
+          <div style="font-size: 0.825rem; font-family: var(--font-mono); color: #a7f3d0;">
+            Tel: +8801750180422
+          </div>
+          <div style="font-size: 0.8rem; margin-top: 0.4rem;">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.4rem; color: #a7f3d0; text-decoration: none; font-weight: 600;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="flex-shrink: 0;"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M5.5 8.75h2.95v9.5H5.5v-9.5zm1.48-4.75a1.72 1.72 0 1 0 0 3.44 1.72 1.72 0 0 0 0-3.44zm3.92 4.75h2.82v1.3h.04c.39-.75 1.35-1.54 2.8-1.54 2.99 0 3.55 1.97 3.55 4.54v5.2h-2.94v-4.61c0-1.1-.02-2.52-1.53-2.52-1.54 0-1.77 1.2-1.77 2.44v4.69H10.9v-9.5z" fill="#FFFFFF"/></svg>
+              <span>MSI Lab Official LinkedIn ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+            <div style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.75rem; color: #94a3b8;">
+        <div>© MSI Lab · <a href="https://cu.ac.bd/dbmb" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Department of Biochemistry &amp; Molecular Biology</a> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">University of Chittagong</a>. All rights reserved.</div>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span>Designed by <strong style="color: #a7f3d0;">@MushtakFuad</strong> · <a href="https://cu.ac.bd" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">University of Chittagong</a></span>
+          <span style="color: #475569;">·</span>
+          <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 600;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const pubData = [
+  {
+    "id": "virology-110894-2026-omicron-rbd-expressed-in-e-col",
+    "title": "Omicron RBD expressed in E. coli outperforms mammalian-expressed S1 spike protein in generating highly neutralizing anti-SARS-CoV-2 antibodies in mice",
+    "authors": "Z Wang, R Wongnak, M Oba, T Mizutani, MM Islam, Y Kuroda",
+    "journal": "Virology, 110894",
+    "year": 2026,
+    "citations": 1,
+    "type": "article",
+    "topics": [
+      "SARS-CoV-2",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "1 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Virology, 110894. Investigating SARS-CoV-2 & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:BrmTIyaxlBUC",
+    "bibtex": "@article{islam2026_virology_110894_2026_omicron_rbd_expressed_in_e_col,\n  title={Omicron RBD expressed in E. coli outperforms mammalian-expressed S1 spike protein in generating highly neutralizing anti-SARS-CoV-2 antibodies in mice},\n  author={Z Wang and R Wongnak and M Oba and T Mizutani and MM Islam and Y Kuroda},\n  journal={Virology, 110894},\n  year={2026}\n}"
+  },
+  {
+    "id": "journal-of-pure-amp-applied-microbiology-2026-dengue-sero-prevalence-and-nat",
+    "title": "Dengue Sero-prevalence and Natural Anti-dengue Response in Dengue Outbreaks 2019 in Dhaka and Chittagong.",
+    "authors": "MG Roy, M Sultana, A Singh, MM Islam",
+    "journal": "Journal of Pure &amp; Applied Microbiology 20(2), 1184",
+    "year": 2026,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Dengue Virus"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Journal of Pure &amp; Applied Microbiology. Investigating Dengue Virus with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:kRWSkSYxWN8C",
+    "bibtex": "@article{islam2026_journal_of_pure_amp_applied_microbiology_2026_dengue_sero_prevalence_and_nat,\n  title={Dengue Sero-prevalence and Natural Anti-dengue Response in Dengue Outbreaks 2019 in Dhaka and Chittagong.},\n  author={MG Roy and M Sultana and A Singh and MM Islam},\n  journal={Journal of Pure &amp; Applied Microbiology},\n  year={2026}\n}"
+  },
+  {
+    "id": "international-journal-of-biological-macromolecules-151430-2026-biophysical-and-colloidal-prop",
+    "title": "Biophysical and colloidal properties govern anti-drug antibody generation: A case study using the tumoricidal murine-derived monoclonal antibody 4713",
+    "authors": "S Yesmin, MM Islam, MD Islam, H Tsurui, T Saotome, S Matsuoka",
+    "journal": "International Journal of Biological Macromolecules, 151430",
+    "year": 2026,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Immunology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in International Journal of Biological Macromolecules, 151430. Investigating Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:V3AGJWp-ZtQC",
+    "bibtex": "@article{islam2026_international_journal_of_biological_macromolecules_151430_2026_biophysical_and_colloidal_prop,\n  title={Biophysical and colloidal properties govern anti-drug antibody generation: A case study using the tumoricidal murine-derived monoclonal antibody 4713},\n  author={S Yesmin and MM Islam and MD Islam and H Tsurui and T Saotome and S Matsuoka},\n  journal={International Journal of Biological Macromolecules, 151430},\n  year={2026}\n}"
+  },
+  {
+    "id": "journal-of-biotechnology-2025-ni2-induced-selective-precipit",
+    "title": "Ni2+-induced selective precipitation of His-tagged recombinant proteins shortens purification time while maintaining high yield",
+    "authors": "MD Islam, MM Islam, Y Kuroda",
+    "journal": "Journal of Biotechnology 399, 38-46",
+    "year": 2025,
+    "citations": 12,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "12 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Journal of Biotechnology. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:8AbLer7MMksC",
+    "bibtex": "@article{islam2025_journal_of_biotechnology_2025_ni2_induced_selective_precipit,\n  title={Ni2+-induced selective precipitation of His-tagged recombinant proteins shortens purification time while maintaining high yield},\n  author={MD Islam and MM Islam and Y Kuroda},\n  journal={Journal of Biotechnology},\n  year={2025}\n}"
+  },
+  {
+    "id": "vaccine-2025-neutralizing-antibodies-agains",
+    "title": "Neutralizing antibodies against the Japanese encephalitis virus are produced by a 12ákDa E. coli-expressed envelope protein domain III (EDIII) tagged with a solubility …",
+    "authors": "MD Islam, MM Islam, A Inoue, S Yesmin, S Brindha, T Yoshizue, H Tsurui",
+    "journal": "Vaccine 56, 127143",
+    "year": 2025,
+    "citations": 10,
+    "type": "article",
+    "topics": [
+      "Japanese Encephalitis",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "10 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Vaccine. Investigating Japanese Encephalitis & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:yD5IFk8b50cC",
+    "bibtex": "@article{islam2025_vaccine_2025_neutralizing_antibodies_agains,\n  title={Neutralizing antibodies against the Japanese encephalitis virus are produced by a 12ákDa E. coli-expressed envelope protein domain III (EDIII) tagged with a solubility …},\n  author={MD Islam and MM Islam and A Inoue and S Yesmin and S Brindha and T Yoshizue and H Tsurui},\n  journal={Vaccine},\n  year={2025}\n}"
+  },
+  {
+    "id": "vaccine-2025-trace-amounts-of-cobalt-serve",
+    "title": "Trace amounts of cobalt serve as an adjuvant for unglycosylated JEV-ED3 expressed in E. coli, inducing a potent virus-neutralizing immune response",
+    "authors": "MD Islam, T Kurosu, M Okawa, N Morikoshi, MM Islam, H Tsurui",
+    "journal": "Vaccine 64, 127742",
+    "year": 2025,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Japanese Encephalitis",
+      "Immunology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Vaccine. Investigating Japanese Encephalitis & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:fQNAKQ3IYiAC",
+    "bibtex": "@article{islam2025_vaccine_2025_trace_amounts_of_cobalt_serve,\n  title={Trace amounts of cobalt serve as an adjuvant for unglycosylated JEV-ED3 expressed in E. coli, inducing a potent virus-neutralizing immune response},\n  author={MD Islam and T Kurosu and M Okawa and N Morikoshi and MM Islam and H Tsurui},\n  journal={Vaccine},\n  year={2025}\n}"
+  },
+  {
+    "id": "biorxiv-2025-09-03-674127-2025-biophysical-and-colloidal-prop",
+    "title": "Biophysical and Colloidal Properties Govern Anti-Drug Antibody Generation: A Case Study Using the Tumoricidal mAb 4713",
+    "authors": "S Yesmin, M Monirul Islam, MD Islam, H Tsurui, T Saotome, S Matsuoka",
+    "journal": "bioRxiv, 2025.09. 03.674127",
+    "year": 2025,
+    "citations": 0,
+    "type": "preprint",
+    "topics": [
+      "Immunology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in bioRxiv, 2025.09. 03.674127. Investigating Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:sSrBHYA8nusC",
+    "bibtex": "@article{islam2025_biorxiv_2025_09_03_674127_2025_biophysical_and_colloidal_prop,\n  title={Biophysical and Colloidal Properties Govern Anti-Drug Antibody Generation: A Case Study Using the Tumoricidal mAb 4713},\n  author={S Yesmin and M Monirul Islam and MD Islam and H Tsurui and T Saotome and S Matsuoka},\n  journal={bioRxiv, 2025.09. 03.674127},\n  year={2025}\n}"
+  },
+  {
+    "id": "research-article-2025-assessing-community-resilience",
+    "title": "Assessing Community Resilience in Disaster-Prone Char Lands of Bangladesh: A Capital-Based Empirical Approach",
+    "authors": "MA Rakib, A Farhana, MM Islam, A Newaz, K Roy",
+    "journal": "Research Article",
+    "year": 2025,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Research Article. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:wbdj-CoPYUoC",
+    "bibtex": "@article{islam2025_research_article_2025_assessing_community_resilience,\n  title={Assessing Community Resilience in Disaster-Prone Char Lands of Bangladesh: A Capital-Based Empirical Approach},\n  author={MA Rakib and A Farhana and MM Islam and A Newaz and K Roy},\n  journal={Research Article},\n  year={2025}\n}"
+  },
+  {
+    "id": "journal-of-king-saud-university-science-2024-toxins-profiles-toxicological",
+    "title": "Toxins profiles, toxicological properties, and histological alteration potentiality of Trimeresurus erythrurus venom: In vitro and in vivo experiments",
+    "authors": "IK Al Haidar, MAW Chowdhury, M Miah, M Hasan, MSR Sohan, M Noman",
+    "journal": "Journal of King Saud University-Science 36(5), 103150",
+    "year": 2024,
+    "citations": 6,
+    "type": "article",
+    "topics": [
+      "Infectious Diseases"
+    ],
+    "doi": "6 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Journal of King Saud University-Science. Investigating Infectious Diseases with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:M05iB0D1s5AC",
+    "bibtex": "@article{islam2024_journal_of_king_saud_university_science_2024_toxins_profiles_toxicological,\n  title={Toxins profiles, toxicological properties, and histological alteration potentiality of Trimeresurus erythrurus venom: In vitro and in vivo experiments},\n  author={IK Al Haidar and MAW Chowdhury and M Miah and M Hasan and MSR Sohan and M Noman},\n  journal={Journal of King Saud University-Science},\n  year={2024}\n}"
+  },
+  {
+    "id": "molecules-2024-non-glycosylated-sars-cov-2-om",
+    "title": "Non-Glycosylated SARS-CoV-2 Omicron BA. 5 Receptor Binding Domain (RBD) with a Native-like Conformation Induces a Robust Immune Response with Potent Neutralization in a Mouse Model",
+    "authors": "R Wongnak, S Brindha, M Oba, T Yoshizue, MD Islam, MM Islam",
+    "journal": "Molecules 29(11), 2676",
+    "year": 2024,
+    "citations": 4,
+    "type": "article",
+    "topics": [
+      "SARS-CoV-2",
+      "Immunology"
+    ],
+    "doi": "4 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Molecules. Investigating SARS-CoV-2 & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:g5m5HwL7SMYC",
+    "bibtex": "@article{islam2024_molecules_2024_non_glycosylated_sars_cov_2_om,\n  title={Non-Glycosylated SARS-CoV-2 Omicron BA. 5 Receptor Binding Domain (RBD) with a Native-like Conformation Induces a Robust Immune Response with Potent Neutralization in a Mouse Model},\n  author={R Wongnak and S Brindha and M Oba and T Yoshizue and MD Islam and MM Islam},\n  journal={Molecules},\n  year={2024}\n}"
+  },
+  {
+    "id": "asian-pacific-journal-of-tropical-medicine-2024-anti-denv-ed3-antibody-cross-t",
+    "title": "Anti-DENV-ED3 antibody cross-talks generate immune interference among the four DENVs",
+    "authors": "MD Islam, S Yesmin, T Sharmin, MA Khan, Y Kuroda, MM Islam",
+    "journal": "Asian Pacific Journal of Tropical Medicine 17(12), 553-562",
+    "year": 2024,
+    "citations": 2,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Immunology"
+    ],
+    "doi": "2 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Asian Pacific Journal of Tropical Medicine. Investigating Dengue Virus & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:4OULZ7Gr8RgC",
+    "bibtex": "@article{islam2024_asian_pacific_journal_of_tropical_medicine_2024_anti_denv_ed3_antibody_cross_t,\n  title={Anti-DENV-ED3 antibody cross-talks generate immune interference among the four DENVs},\n  author={MD Islam and S Yesmin and T Sharmin and MA Khan and Y Kuroda and MM Islam},\n  journal={Asian Pacific Journal of Tropical Medicine},\n  year={2024}\n}"
+  },
+  {
+    "id": "research-article-2024-co2-potentiates-immunogenicity",
+    "title": "Co2+ potentiates immunogenicity of poorly immunogenic Japanese encephalitis virus envelope protein domain 3 by generating JEV-neutralizing antibodies in mice",
+    "authors": "MD Islam, T Kurosu, M Okawa, N Morikoshi, MM Islam, H Tsurui",
+    "journal": "Research Article",
+    "year": 2024,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Japanese Encephalitis",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Research Article. Investigating Japanese Encephalitis & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:eflP2zaiRacC",
+    "bibtex": "@article{islam2024_research_article_2024_co2_potentiates_immunogenicity,\n  title={Co2+ potentiates immunogenicity of poorly immunogenic Japanese encephalitis virus envelope protein domain 3 by generating JEV-neutralizing antibodies in mice},\n  author={MD Islam and T Kurosu and M Okawa and N Morikoshi and MM Islam and H Tsurui},\n  journal={Research Article},\n  year={2024}\n}"
+  },
+  {
+    "id": "research-article-2024-scp-tag-mediated-oligomers-of",
+    "title": "SCP tag-mediated oligomers of a 12 kDa Japanese encephalitis virus envelope protein domain III generated neutralizing antibodies",
+    "authors": "MD Islam, MM Islam, A Inoue, S Yesmin, S Brindha, T Yoshizue, H Tsurui",
+    "journal": "Research Article",
+    "year": 2024,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Japanese Encephalitis",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Research Article. Investigating Japanese Encephalitis & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:D_sINldO8mEC",
+    "bibtex": "@article{islam2024_research_article_2024_scp_tag_mediated_oligomers_of,\n  title={SCP tag-mediated oligomers of a 12 kDa Japanese encephalitis virus envelope protein domain III generated neutralizing antibodies},\n  author={MD Islam and MM Islam and A Inoue and S Yesmin and S Brindha and T Yoshizue and H Tsurui},\n  journal={Research Article},\n  year={2024}\n}"
+  },
+  {
+    "id": "-no-title-0-2024-thermodynamic-and-structural-a",
+    "title": "Thermodynamic and structural analysis of bovine pancreatic trypsin inhibitor variants",
+    "authors": "MM Islam",
+    "journal": "(No Title), 0",
+    "year": 2024,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in (No Title), 0. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:eJXPG6dFmWUC",
+    "bibtex": "@article{islam2024__no_title_0_2024_thermodynamic_and_structural_a,\n  title={Thermodynamic and structural analysis of bovine pancreatic trypsin inhibitor variants},\n  author={MM Islam},\n  journal={(No Title), 0},\n  year={2024}\n}"
+  },
+  {
+    "id": "research-article-2024-structural-analysis-of-a-size",
+    "title": "Structural analysis of a “size switch type repacking” during the evolution of dengue envelope protein domain III (ED3)",
+    "authors": "M Elahi, MM Islam, Y Kuroda",
+    "journal": "Research Article",
+    "year": 2024,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Research Article. Investigating Dengue Virus & Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:bEWYMUwI8FkC",
+    "bibtex": "@article{islam2024_research_article_2024_structural_analysis_of_a_size,\n  title={Structural analysis of a “size switch type repacking” during the evolution of dengue envelope protein domain III (ED3)},\n  author={M Elahi and MM Islam and Y Kuroda},\n  journal={Research Article},\n  year={2024}\n}"
+  },
+  {
+    "id": "international-journal-of-molecular-sciences-2023-the-immunogenicity-of-denv1-4",
+    "title": "The immunogenicity of DENV1–4 ED3s strongly differ despite their almost identical three-dimensional structures and high sequence similarities",
+    "authors": "MD Islam, T Sharmin, IH Tipo, A Saha, S Yesmin, MG Roy, S Brindha",
+    "journal": "International Journal of Molecular Sciences 24(3), 2393",
+    "year": 2023,
+    "citations": 10,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Immunology"
+    ],
+    "doi": "10 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in International Journal of Molecular Sciences. Investigating Dengue Virus & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:_Qo2XoVZTnwC",
+    "bibtex": "@article{islam2023_international_journal_of_molecular_sciences_2023_the_immunogenicity_of_denv1_4,\n  title={The immunogenicity of DENV1–4 ED3s strongly differ despite their almost identical three-dimensional structures and high sequence similarities},\n  author={MD Islam and T Sharmin and IH Tipo and A Saha and S Yesmin and MG Roy and S Brindha},\n  journal={International Journal of Molecular Sciences},\n  year={2023}\n}"
+  },
+  {
+    "id": "j-appl-biol-biotechnol-2023-prevalence-of-dengue-virus-the",
+    "title": "Prevalence of dengue virus, their infection, diagnosis, and challenges",
+    "authors": "MG Roy, MM Islam, A Singh",
+    "journal": "J Appl Biol Biotechnol 11(3), 20-27",
+    "year": 2023,
+    "citations": 7,
+    "type": "article",
+    "topics": [
+      "Dengue Virus"
+    ],
+    "doi": "7 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in J Appl Biol Biotechnol. Investigating Dengue Virus with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:RHpTSmoSYBkC",
+    "bibtex": "@article{islam2023_j_appl_biol_biotechnol_2023_prevalence_of_dengue_virus_the,\n  title={Prevalence of dengue virus, their infection, diagnosis, and challenges},\n  author={MG Roy and MM Islam and A Singh},\n  journal={J Appl Biol Biotechnol},\n  year={2023}\n}"
+  },
+  {
+    "id": "j-surv-fish-sci-2023-secondary-denv-infections-alon",
+    "title": "Secondary DENV infections along with concurrent multiple DENV serotypes in a single dengue session contributing to dengue severity in Chittagong Bangladesh",
+    "authors": "MG Roy, K Uddin, D Islam, MM Islam, A Singh",
+    "journal": "J Surv Fish Sci 10(4), 627-642",
+    "year": 2023,
+    "citations": 1,
+    "type": "article",
+    "topics": [
+      "Dengue Virus"
+    ],
+    "doi": "1 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in J Surv Fish Sci. Investigating Dengue Virus with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:GnPB-g6toBAC",
+    "bibtex": "@article{islam2023_j_surv_fish_sci_2023_secondary_denv_infections_alon,\n  title={Secondary DENV infections along with concurrent multiple DENV serotypes in a single dengue session contributing to dengue severity in Chittagong Bangladesh},\n  author={MG Roy and K Uddin and D Islam and MM Islam and A Singh},\n  journal={J Surv Fish Sci},\n  year={2023}\n}"
+  },
+  {
+    "id": "bioresearch-communications-2022-all-four-dengue-virus-serotype",
+    "title": "All four dengue virus serotypes co-circulate in concurrent dengue infections in a single dengue session in Chittagong, Bangladesh",
+    "authors": "MG Roy, K Uddin, D Islam, A Singh, MM Islam",
+    "journal": "Bioresearch Communications 8(1), 1042-1048",
+    "year": 2022,
+    "citations": 14,
+    "type": "article",
+    "topics": [
+      "Dengue Virus"
+    ],
+    "doi": "14 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Bioresearch Communications. Investigating Dengue Virus with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:TQgYirikUcIC",
+    "bibtex": "@article{islam2022_bioresearch_communications_2022_all_four_dengue_virus_serotype,\n  title={All four dengue virus serotypes co-circulate in concurrent dengue infections in a single dengue session in Chittagong, Bangladesh},\n  author={MG Roy and K Uddin and D Islam and A Singh and MM Islam},\n  journal={Bioresearch Communications},\n  year={2022}\n}"
+  },
+  {
+    "id": "asian-pacific-journal-of-tropical-medicine-2022-systematic-mutational-analysis",
+    "title": "Systematic mutational analysis of epitope-grafted ED3 immunogenicity reveals a DENV3-DENV4 bi-serospecific ED3 mutant",
+    "authors": "MMI Mamtaz Sultana, Nazmul Hasan, Mamunur R Mahib",
+    "journal": "Asian Pacific Journal of Tropical Medicine 15(2), 63-70",
+    "year": 2022,
+    "citations": 2,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Immunology"
+    ],
+    "doi": "2 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Asian Pacific Journal of Tropical Medicine. Investigating Dengue Virus & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:R3hNpaxXUhUC",
+    "bibtex": "@article{islam2022_asian_pacific_journal_of_tropical_medicine_2022_systematic_mutational_analysis,\n  title={Systematic mutational analysis of epitope-grafted ED3 immunogenicity reveals a DENV3-DENV4 bi-serospecific ED3 mutant},\n  author={MMI Mamtaz Sultana and Nazmul Hasan and Mamunur R Mahib},\n  journal={Asian Pacific Journal of Tropical Medicine},\n  year={2022}\n}"
+  },
+  {
+    "id": "int-j-community-med-public-health-2021-survey-on-common-trends-for-no",
+    "title": "Survey on common trends for non-prescribed medication use among the young generation in Dhaka, Bangladesh: A cross sectional study",
+    "authors": "MIN Manik, A Khan, MH Ali, A Zobayed, MM Islam",
+    "journal": "Int J Community Med Public Health 8(3), 1104-1109",
+    "year": 2021,
+    "citations": 7,
+    "type": "article",
+    "topics": [
+      "Infectious Diseases"
+    ],
+    "doi": "7 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Int J Community Med Public Health. Investigating Infectious Diseases with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:t6usbXjVLHcC",
+    "bibtex": "@article{islam2021_int_j_community_med_public_health_2021_survey_on_common_trends_for_no,\n  title={Survey on common trends for non-prescribed medication use among the young generation in Dhaka, Bangladesh: A cross sectional study},\n  author={MIN Manik and A Khan and MH Ali and A Zobayed and MM Islam},\n  journal={Int J Community Med Public Health},\n  year={2021}\n}"
+  },
+  {
+    "id": "frontiers-in-immunology-2021-solubility-controlling-peptide",
+    "title": "Solubility controlling peptide tags of opposite charges generate a bivalent immune response against dengue ED3 serotypes 3 and 4",
+    "authors": "N Rahman, S Miura, M Okawa, MG Kibria, MM Islam, Y Kuroda",
+    "journal": "Frontiers in Immunology 12, 671590",
+    "year": 2021,
+    "citations": 6,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "6 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Frontiers in Immunology. Investigating Dengue Virus & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:k_IJM867U9cC",
+    "bibtex": "@article{islam2021_frontiers_in_immunology_2021_solubility_controlling_peptide,\n  title={Solubility controlling peptide tags of opposite charges generate a bivalent immune response against dengue ED3 serotypes 3 and 4},\n  author={N Rahman and S Miura and M Okawa and MG Kibria and MM Islam and Y Kuroda},\n  journal={Frontiers in Immunology},\n  year={2021}\n}"
+  },
+  {
+    "id": "carbohydrate-research-2020-novel-mannopyranoside-esters-a",
+    "title": "Novel mannopyranoside esters as sterol 14α-demethylase inhibitors: Synthesis, PASS predication, molecular docking, and pharmacokinetic studies",
+    "authors": "MM Matin, P Chakraborty, MS Alam, MM Islam, U Hanee",
+    "journal": "Carbohydrate Research 496, 108130",
+    "year": 2020,
+    "citations": 53,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "53 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Carbohydrate Research. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:9ZlFYXVOiuMC",
+    "bibtex": "@article{islam2020_carbohydrate_research_2020_novel_mannopyranoside_esters_a,\n  title={Novel mannopyranoside esters as sterol 14α-demethylase inhibitors: Synthesis, PASS predication, molecular docking, and pharmacokinetic studies},\n  author={MM Matin and P Chakraborty and MS Alam and MM Islam and U Hanee},\n  journal={Carbohydrate Research},\n  year={2020}\n}"
+  },
+  {
+    "id": "frontiers-in-immunology-2020-anti-dengue-ed3-long-term-immu",
+    "title": "Anti-dengue ED3 long-term immune response with T-cell memory generated using solubility controlling peptide tags",
+    "authors": "MM Islam, S Miura, MN Hasan, N Rahman, Y Kuroda",
+    "journal": "Frontiers in immunology 11, 333",
+    "year": 2020,
+    "citations": 29,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "29 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Frontiers in immunology. Investigating Dengue Virus & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:qxL8FJ1GzNcC",
+    "bibtex": "@article{islam2020_frontiers_in_immunology_2020_anti_dengue_ed3_long_term_immu,\n  title={Anti-dengue ED3 long-term immune response with T-cell memory generated using solubility controlling peptide tags},\n  author={MM Islam and S Miura and MN Hasan and N Rahman and Y Kuroda},\n  journal={Frontiers in immunology},\n  year={2020}\n}"
+  },
+  {
+    "id": "molecular-pharmaceutics-2020-nanometer-sized-aggregates-gen",
+    "title": "Nanometer-Sized Aggregates Generated Using Short Solubility Controlling Peptide Tags Do Increase the In Vivo Immunogenicity of a Nonimmunogenic Protein",
+    "authors": "N Rahman, MM Islam, S Unzai, S Miura, Y Kuroda",
+    "journal": "Molecular Pharmaceutics 17(5), 1629-1637",
+    "year": 2020,
+    "citations": 20,
+    "type": "article",
+    "topics": [
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "20 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Molecular Pharmaceutics. Investigating Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:4DMP91E08xMC",
+    "bibtex": "@article{islam2020_molecular_pharmaceutics_2020_nanometer_sized_aggregates_gen,\n  title={Nanometer-Sized Aggregates Generated Using Short Solubility Controlling Peptide Tags Do Increase the In Vivo Immunogenicity of a Nonimmunogenic Protein},\n  author={N Rahman and MM Islam and S Unzai and S Miura and Y Kuroda},\n  journal={Molecular Pharmaceutics},\n  year={2020}\n}"
+  },
+  {
+    "id": "https-febs-onlinelibrary-wiley-com-doi-epdf-10-1002-2211-5463-12941-2020-a-systematic-mutational-analys",
+    "title": "A systematic mutational analysis identifies a 5-residue proline tag that enhances the in vivo immunogenicity of a non-immunogenic model protein 240 folds",
+    "authors": "N Rahman, MM Islam, MG Kibria, S Unzai, Y Kuroda",
+    "journal": "https://febs.onlinelibrary.wiley.com/doi/epdf/10.1002/2211-5463.12941",
+    "year": 2020,
+    "citations": 16,
+    "type": "article",
+    "topics": [
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "16 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in https://febs.onlinelibrary.wiley.com/doi/epdf/10.1002/2211-5463.12941. Investigating Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:mVmsd5A6BfQC",
+    "bibtex": "@article{islam2020_https_febs_onlinelibrary_wiley_com_doi_epdf_10_1002_2211_5463_12941_2020_a_systematic_mutational_analys,\n  title={A systematic mutational analysis identifies a 5-residue proline tag that enhances the in vivo immunogenicity of a non-immunogenic model protein 240 folds},\n  author={N Rahman and MM Islam and MG Kibria and S Unzai and Y Kuroda},\n  journal={https://febs.onlinelibrary.wiley.com/doi/epdf/10.1002/2211-5463.12941},\n  year={2020}\n}"
+  },
+  {
+    "id": "the-febs-journal-2019-hydrophobic-surface-residues-c",
+    "title": "Hydrophobic surface residues can stabilize a protein through improved water–protein interactions",
+    "authors": "MM Islam, K Kobayashi, SI Kidokoro, Y Kuroda",
+    "journal": "The FEBS Journal 286(20), 4122-4134",
+    "year": 2019,
+    "citations": 61,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "61 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in The FEBS Journal. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:ULOm3_A8WrAC",
+    "bibtex": "@article{islam2019_the_febs_journal_2019_hydrophobic_surface_residues_c,\n  title={Hydrophobic surface residues can stabilize a protein through improved water–protein interactions},\n  author={MM Islam and K Kobayashi and SI Kidokoro and Y Kuroda},\n  journal={The FEBS Journal},\n  year={2019}\n}"
+  },
+  {
+    "id": "scripta-materialia-2019-glass-fracture-by-focusing-of",
+    "title": "Glass fracture by focusing of laser-generated nanosecond surface acoustic waves",
+    "authors": "D Veysset, SE Kooi, R Haferssas, M Hassani-Gangaraj, M Islam",
+    "journal": "Scripta Materialia 158, 42-45",
+    "year": 2019,
+    "citations": 21,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "21 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Scripta Materialia. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:1qzjygNMrQYC",
+    "bibtex": "@article{islam2019_scripta_materialia_2019_glass_fracture_by_focusing_of,\n  title={Glass fracture by focusing of laser-generated nanosecond surface acoustic waves},\n  author={D Veysset and SE Kooi and R Haferssas and M Hassani-Gangaraj and M Islam},\n  journal={Scripta Materialia},\n  year={2019}\n}"
+  },
+  {
+    "id": "biorxiv-793687-2019-generation-of-nanometer-size-a",
+    "title": "Generation of “nanometer-size aggregates” using Solubility Controlling Peptide tags and their ability to increase a protein’s immunogenicity in vivo",
+    "authors": "N Rahman, MM Islam, S Unzai, S Miura, Y Kuroda",
+    "journal": "bioRxiv, 793687",
+    "year": 2019,
+    "citations": 1,
+    "type": "preprint",
+    "topics": [
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "1 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in bioRxiv, 793687. Investigating Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:TFP_iSt0sucC",
+    "bibtex": "@article{islam2019_biorxiv_793687_2019_generation_of_nanometer_size_a,\n  title={Generation of “nanometer-size aggregates” using Solubility Controlling Peptide tags and their ability to increase a protein’s immunogenicity in vivo},\n  author={N Rahman and MM Islam and S Unzai and S Miura and Y Kuroda},\n  journal={bioRxiv, 793687},\n  year={2019}\n}"
+  },
+  {
+    "id": "patent-wo2019031446",
+    "title": "Method for controlling the solubility and immunogenicity of recombinant proteins using tailored peptide tags (WO2019031446)",
+    "authors": "Yutaka Kuroda, T. Kamioka, Nafsoon Rahman, Mohammad Monirul Islam, S. Miura",
+    "journal": "World Intellectual Property Organization (WIPO)",
+    "year": 2019,
+    "citations": 0,
+    "type": "patent",
+    "topics": [
+      "Patents",
+      "Protein Technology"
+    ],
+    "doi": "WO2019031446",
+    "abstract": "An international patent disclosing novel peptide tag constructs and compositions that modulate the solubility, folding kinetics, and in vivo immunogenicity of recombinant therapeutic proteins and vaccine subunit targets, enabling cost-effective biopharmaceutical production.",
+    "scholarUrl": "https://scholar.google.com/citations?user=dKS4v_gAAAAJ&hl=en",
+    "bibtex": "@article{islam2019_patent_wo2019031446,\n  title={Method for controlling the solubility and immunogenicity of recombinant proteins using tailored peptide tags (WO2019031446)},\n  author={Yutaka Kuroda and T. Kamioka and Nafsoon Rahman and Mohammad Monirul Islam and S. Miura},\n  journal={World Intellectual Property Organization (WIPO)},\n  year={2019}\n}"
+  },
+  {
+    "id": "biochimica-et-biophysica-acta-bba-proteins-and-proteomics-2018-reversible-association-of-prot",
+    "title": "Reversible association of proteins into sub-visible amorphous aggregates using short solubility controlling peptide tags",
+    "authors": "MG Kabir, MM Islam, Y Kuroda",
+    "journal": "Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics 1866(2), 366-372",
+    "year": 2018,
+    "citations": 23,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "23 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:Zph67rFs4hoC",
+    "bibtex": "@article{islam2018_biochimica_et_biophysica_acta_bba_proteins_and_proteomics_2018_reversible_association_of_prot,\n  title={Reversible association of proteins into sub-visible amorphous aggregates using short solubility controlling peptide tags},\n  author={MG Kabir and MM Islam and Y Kuroda},\n  journal={Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics},\n  year={2018}\n}"
+  },
+  {
+    "id": "biochemical-and-biophysical-research-communications-2017-a-hetero-micro-seeding-strateg",
+    "title": "A hetero-micro-seeding strategy for readily crystallizing closely related protein variants",
+    "authors": "MM Islam, Y Kuroda",
+    "journal": "Biochemical and biophysical research communications 493(1), 504-508",
+    "year": 2017,
+    "citations": 9,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "9 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochemical and biophysical research communications. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:KlAtU1dfN6UC",
+    "bibtex": "@article{islam2017_biochemical_and_biophysical_research_communications_2017_a_hetero_micro_seeding_strateg,\n  title={A hetero-micro-seeding strategy for readily crystallizing closely related protein variants},\n  author={MM Islam and Y Kuroda},\n  journal={Biochemical and biophysical research communications},\n  year={2017}\n}"
+  },
+  {
+    "id": "asian-journal-of-medicine-and-health-2017-risk-factors-assessment-of-zoo",
+    "title": "Risk factors assessment of zoonotic anthrax among the people at risk (PAR) in selected areas of Bangladesh",
+    "authors": "MA Islam, MM Mahmud, S Yesmin, MM Islam, MSA Sarker, KH Nazir",
+    "journal": "Asian Journal of Medicine and Health 4(1), 1-7",
+    "year": 2017,
+    "citations": 9,
+    "type": "article",
+    "topics": [
+      "Infectious Diseases"
+    ],
+    "doi": "9 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Asian Journal of Medicine and Health. Investigating Infectious Diseases with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:5ugPr518TE4C",
+    "bibtex": "@article{islam2017_asian_journal_of_medicine_and_health_2017_risk_factors_assessment_of_zoo,\n  title={Risk factors assessment of zoonotic anthrax among the people at risk (PAR) in selected areas of Bangladesh},\n  author={MA Islam and MM Mahmud and S Yesmin and MM Islam and MSA Sarker and KH Nazir},\n  journal={Asian Journal of Medicine and Health},\n  year={2017}\n}"
+  },
+  {
+    "id": "scientific-reports-2017-crystal-structures-of-highly-s",
+    "title": "Crystal structures of highly simplified BPTIs provide insights into hydration-driven increase of unfolding enthalpy",
+    "authors": "MM Islam, M Yohda, S Kidokoro, Y Kuroda",
+    "journal": "Scientific Reports 7(1), 41205",
+    "year": 2017,
+    "citations": 6,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "6 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Scientific Reports. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:3fE2CSJIrl8C",
+    "bibtex": "@article{islam2017_scientific_reports_2017_crystal_structures_of_highly_s,\n  title={Crystal structures of highly simplified BPTIs provide insights into hydration-driven increase of unfolding enthalpy},\n  author={MM Islam and M Yohda and S Kidokoro and Y Kuroda},\n  journal={Scientific Reports},\n  year={2017}\n}"
+  },
+  {
+    "id": "biochemistry-2016-unusual-reversible-oligomeriza",
+    "title": "Unusual reversible oligomerization of unfolded dengue envelope protein domain 3 at high temperatures and its abolition by a point mutation",
+    "authors": "T Saotome, S Nakamura, MM Islam, A Nakazawa, M Dellarole, F Arisaka",
+    "journal": "Biochemistry 55(32), 4469-4475",
+    "year": 2016,
+    "citations": 21,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology"
+    ],
+    "doi": "21 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochemistry. Investigating Dengue Virus & Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:YsMSGLbcyi4C",
+    "bibtex": "@article{islam2016_biochemistry_2016_unusual_reversible_oligomeriza,\n  title={Unusual reversible oligomerization of unfolded dengue envelope protein domain 3 at high temperatures and its abolition by a point mutation},\n  author={T Saotome and S Nakamura and MM Islam and A Nakazawa and M Dellarole and F Arisaka},\n  journal={Biochemistry},\n  year={2016}\n}"
+  },
+  {
+    "id": "crystal-growth-amp-design-2015-analysis-and-control-of-protei",
+    "title": "Analysis and control of protein crystallization using short peptide tags that change solubility without affecting structure, thermal stability, and function",
+    "authors": "MM Islam, S Nakamura, K Noguchi, M Yohda, S Kidokoro, Y Kuroda",
+    "journal": "Crystal Growth &amp; Design 15(6), 2703-2711",
+    "year": 2015,
+    "citations": 32,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "32 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Crystal Growth &amp; Design. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:qjMakFHDy7sC",
+    "bibtex": "@article{islam2015_crystal_growth_amp_design_2015_analysis_and_control_of_protei,\n  title={Analysis and control of protein crystallization using short peptide tags that change solubility without affecting structure, thermal stability, and function},\n  author={MM Islam and S Nakamura and K Noguchi and M Yohda and S Kidokoro and Y Kuroda},\n  journal={Crystal Growth &amp; Design},\n  year={2015}\n}"
+  },
+  {
+    "id": "biochimica-et-biophysica-acta-bba-proteins-and-proteomics-2015-structural-and-biophysical-ana",
+    "title": "Structural and biophysical analysis of sero-specific immune responses using epitope grafted Dengue ED3 mutants",
+    "authors": "MR Kulkarni, MM Islam, N Numoto, M Elahi, MR Mahib, N Ito, Y Kuroda",
+    "journal": "Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics 1854(10), 1438-1443",
+    "year": 2015,
+    "citations": 14,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "14 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics. Investigating Dengue Virus & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:UebtZRa9Y70C",
+    "bibtex": "@article{islam2015_biochimica_et_biophysica_acta_bba_proteins_and_proteomics_2015_structural_and_biophysical_ana,\n  title={Structural and biophysical analysis of sero-specific immune responses using epitope grafted Dengue ED3 mutants},\n  author={MR Kulkarni and MM Islam and N Numoto and M Elahi and MR Mahib and N Ito and Y Kuroda},\n  journal={Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics},\n  year={2015}\n}"
+  },
+  {
+    "id": "biochimica-et-biophysica-acta-bba-proteins-and-proteomics-2014-computational-prediction-and-e",
+    "title": "Computational prediction and experimental characterization of a “size switch type repacking” during the evolution of dengue envelope protein domain III (ED3)",
+    "authors": "M Elahi, MM Islam, K Noguchi, M Yohda, H Toh, Y Kuroda",
+    "journal": "Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics 1844(3), 585-592",
+    "year": 2014,
+    "citations": 35,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology"
+    ],
+    "doi": "35 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics. Investigating Dengue Virus & Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:roLk4NBRz8UC",
+    "bibtex": "@article{islam2014_biochimica_et_biophysica_acta_bba_proteins_and_proteomics_2014_computational_prediction_and_e,\n  title={Computational prediction and experimental characterization of a “size switch type repacking” during the evolution of dengue envelope protein domain III (ED3)},\n  author={M Elahi and MM Islam and K Noguchi and M Yohda and H Toh and Y Kuroda},\n  journal={Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics},\n  year={2014}\n}"
+  },
+  {
+    "id": "biochimica-et-biophysica-acta-bba-proteins-and-proteomics-2013-analysis-of-protein-aggregatio",
+    "title": "Analysis of protein aggregation kinetics using short amino acid peptide tags",
+    "authors": "MA Khan, MM Islam, Y Kuroda",
+    "journal": "Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics 1834(10), 2107-2115",
+    "year": 2013,
+    "citations": 40,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "40 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:2osOgNQ5qMEC",
+    "bibtex": "@article{islam2013_biochimica_et_biophysica_acta_bba_proteins_and_proteomics_2013_analysis_of_protein_aggregatio,\n  title={Analysis of protein aggregation kinetics using short amino acid peptide tags},\n  author={MA Khan and MM Islam and Y Kuroda},\n  journal={Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics},\n  year={2013}\n}"
+  },
+  {
+    "id": "the-journal-of-physical-chemistry-b-2013-probing-the-physical-determina",
+    "title": "Probing the physical determinants of thermal expansion of folded proteins",
+    "authors": "M Dellarole, K Kobayashi, JB Rouget, JA Caro, J Roche, MM Islam",
+    "journal": "The Journal of Physical Chemistry B 117(42), 12742-12749",
+    "year": 2013,
+    "citations": 33,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "33 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in The Journal of Physical Chemistry B. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:9yKSN-GCB0IC",
+    "bibtex": "@article{islam2013_the_journal_of_physical_chemistry_b_2013_probing_the_physical_determina,\n  title={Probing the physical determinants of thermal expansion of folded proteins},\n  author={M Dellarole and K Kobayashi and JB Rouget and JA Caro and J Roche and MM Islam},\n  journal={The Journal of Physical Chemistry B},\n  year={2013}\n}"
+  },
+  {
+    "id": "proteins-structure-function-and-bioinformatics-2013-high-resolution-crystal-struct",
+    "title": "High resolution crystal structure of dengue‐3 envelope protein domain III suggests possible molecular mechanisms for serospecific antibody recognition",
+    "authors": "M Elahi, MM Islam, K Noguchi, M Yohda, Y Kuroda",
+    "journal": "Proteins: Structure, Function, and Bioinformatics 81(6), 1090-1095",
+    "year": 2013,
+    "citations": 29,
+    "type": "article",
+    "topics": [
+      "Dengue Virus",
+      "Protein Technology",
+      "Immunology"
+    ],
+    "doi": "29 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Proteins: Structure, Function, and Bioinformatics. Investigating Dengue Virus & Protein Technology & Immunology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:Se3iqnhoufwC",
+    "bibtex": "@article{islam2013_proteins_structure_function_and_bioinformatics_2013_high_resolution_crystal_struct,\n  title={High resolution crystal structure of dengue‐3 envelope protein domain III suggests possible molecular mechanisms for serospecific antibody recognition},\n  author={M Elahi and MM Islam and K Noguchi and M Yohda and Y Kuroda},\n  journal={Proteins: Structure, Function, and Bioinformatics},\n  year={2013}\n}"
+  },
+  {
+    "id": "biochimica-et-biophysica-acta-bba-proteins-and-proteomics-2012-analysis-of-amino-acid-contrib",
+    "title": "Analysis of amino acid contributions to protein solubility using short peptide tags fused to a simplified BPTI variant",
+    "authors": "MM Islam, MA Khan, Y Kuroda",
+    "journal": "Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics 1824(10), 1144-1150",
+    "year": 2012,
+    "citations": 54,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "54 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:d1gkVwhDpl0C",
+    "bibtex": "@article{islam2012_biochimica_et_biophysica_acta_bba_proteins_and_proteomics_2012_analysis_of_amino_acid_contrib,\n  title={Analysis of amino acid contributions to protein solubility using short peptide tags fused to a simplified BPTI variant},\n  author={MM Islam and MA Khan and Y Kuroda},\n  journal={Biochimica et Biophysica Acta (BBA)-Proteins and Proteomics},\n  year={2012}\n}"
+  },
+  {
+    "id": "proteins-structure-function-and-bioinformatics-2009-thermodynamic-and-structural-a",
+    "title": "Thermodynamic and structural analysis of highly stabilized BPTIs by single and double mutations",
+    "authors": "MM Islam, S Sohya, K Noguchi, S Kidokoro, M Yohda, Y Kuroda",
+    "journal": "Proteins: Structure, Function, and Bioinformatics 77(4), 962-970",
+    "year": 2009,
+    "citations": 27,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "27 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Proteins: Structure, Function, and Bioinformatics. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:u-x6o8ySG0sC",
+    "bibtex": "@article{islam2009_proteins_structure_function_and_bioinformatics_2009_thermodynamic_and_structural_a,\n  title={Thermodynamic and structural analysis of highly stabilized BPTIs by single and double mutations},\n  author={MM Islam and S Sohya and K Noguchi and S Kidokoro and M Yohda and Y Kuroda},\n  journal={Proteins: Structure, Function, and Bioinformatics},\n  year={2009}\n}"
+  },
+  {
+    "id": "proceedings-of-the-national-academy-of-sciences-2008-crystal-structure-of-an-extens",
+    "title": "Crystal structure of an extensively simplified variant of bovine pancreatic trypsin inhibitor in which over one-third of the residues are alanines",
+    "authors": "MM Islam, S Sohya, K Noguchi, M Yohda, Y Kuroda",
+    "journal": "Proceedings of the National Academy of Sciences 105(40), 15334-15339",
+    "year": 2008,
+    "citations": 35,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "35 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Proceedings of the National Academy of Sciences. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:u5HHmVD_uO8C",
+    "bibtex": "@article{islam2008_proceedings_of_the_national_academy_of_sciences_2008_crystal_structure_of_an_extens,\n  title={Crystal structure of an extensively simplified variant of bovine pancreatic trypsin inhibitor in which over one-third of the residues are alanines},\n  author={MM Islam and S Sohya and K Noguchi and M Yohda and Y Kuroda},\n  journal={Proceedings of the National Academy of Sciences},\n  year={2008}\n}"
+  },
+  {
+    "id": "hamdard-medicus-2006-dyslipidemia-in-type-ii-diabet",
+    "title": "Dyslipidemia in Type II Diabetes and the effect of Glycaemic control on Type II Diabetes",
+    "authors": "CC Banik GR, Islam MM, Zafar MA",
+    "journal": "Hamdard medicus 49(4), 55-62",
+    "year": 2006,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Protein Technology"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Hamdard medicus. Investigating Protein Technology with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:8k81kl-MbHgC",
+    "bibtex": "@article{islam2006_hamdard_medicus_2006_dyslipidemia_in_type_ii_diabet,\n  title={Dyslipidemia in Type II Diabetes and the effect of Glycaemic control on Type II Diabetes},\n  author={CC Banik GR and Islam MM and Zafar MA},\n  journal={Hamdard medicus},\n  year={2006}\n}"
+  },
+  {
+    "id": "pakistan-j-biol-sci-2004-detection-of-vibrio-cholerae-o",
+    "title": "Detection of Vibrio cholerae O1 and O139 serogroups directly from stool specimens by combined immunomagnetic separation and polymerase chain reaction",
+    "authors": "MM Islam, MG Kabir, PK Moly, A Islam, MA Rakib",
+    "journal": "Pakistan J Biol Sci 7, 1654-9",
+    "year": 2004,
+    "citations": 3,
+    "type": "article",
+    "topics": [
+      "Infectious Diseases"
+    ],
+    "doi": "3 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Pakistan J Biol Sci. Investigating Infectious Diseases with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:hqOjcs7Dif8C",
+    "bibtex": "@article{islam2004_pakistan_j_biol_sci_2004_detection_of_vibrio_cholerae_o,\n  title={Detection of Vibrio cholerae O1 and O139 serogroups directly from stool specimens by combined immunomagnetic separation and polymerase chain reaction},\n  author={MM Islam and MG Kabir and PK Moly and A Islam and MA Rakib},\n  journal={Pakistan J Biol Sci},\n  year={2004}\n}"
+  },
+  {
+    "id": "research-article-2004-coagglutination-a-rapid-and-se",
+    "title": "Coagglutination: a rapid and sensitive assay method for detection of Vibrio cholerae O1 and O139 serogroups directly from stool specimens.",
+    "authors": "MM Islam, MG Kabir, A Islam, MA Rakib",
+    "journal": "Research Article",
+    "year": 2004,
+    "citations": 0,
+    "type": "article",
+    "topics": [
+      "Infectious Diseases"
+    ],
+    "doi": "Peer-Reviewed",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Research Article. Investigating Infectious Diseases with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:0EnyYjriUFMC",
+    "bibtex": "@article{islam2004_research_article_2004_coagglutination_a_rapid_and_se,\n  title={Coagglutination: a rapid and sensitive assay method for detection of Vibrio cholerae O1 and O139 serogroups directly from stool specimens.},\n  author={MM Islam and MG Kabir and A Islam and MA Rakib},\n  journal={Research Article},\n  year={2004}\n}"
+  },
+  {
+    "id": "infection-and-immunity-2003-antigen-specific-immunoglobuli",
+    "title": "Antigen-specific immunoglobulin A antibodies secreted from circulating B cells are an effective marker for recent local immune responses in patients with cholera: comparison to …",
+    "authors": "F Qadri, ET Ryan, ASG Faruque, F Ahmed, AI Khan, MM Islam",
+    "journal": "Infection and immunity 71(8), 4808-4814",
+    "year": 2003,
+    "citations": 113,
+    "type": "article",
+    "topics": [
+      "Immunology",
+      "Infectious Diseases"
+    ],
+    "doi": "113 Citations",
+    "abstract": "Published research contribution by Dr. Mohammad Monirul Islam and collaborators in Infection and immunity. Investigating Immunology & Infectious Diseases with experimental and structural validation.",
+    "scholarUrl": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=dKS4v_gAAAAJ&pagesize=100&sortby=pubdate&citation_for_view=dKS4v_gAAAAJ:5nxA0vEk-isC",
+    "bibtex": "@article{islam2003_infection_and_immunity_2003_antigen_specific_immunoglobuli,\n  title={Antigen-specific immunoglobulin A antibodies secreted from circulating B cells are an effective marker for recent local immune responses in patients with cholera: comparison to …},\n  author={F Qadri and ET Ryan and ASG Faruque and F Ahmed and AI Khan and MM Islam},\n  journal={Infection and immunity},\n  year={2003}\n}"
+  }
+];
+
+    let currentTopic = 'all';
+
+    function setFilterTopic(t, btn) {
+      currentTopic = t;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderPublications();
+    }
+
+    function renderPublications() {
+      const q = document.getElementById('pub-search').value.toLowerCase();
+      const container = document.getElementById('pubs-list');
+      
+      const filtered = pubData.filter(p => {
+        const matchTopic = currentTopic === 'all' || p.topics.includes(currentTopic);
+        const matchSearch = p.title.toLowerCase().includes(q) || 
+                            p.authors.toLowerCase().includes(q) || 
+                            p.journal.toLowerCase().includes(q) || 
+                            p.year.toString().includes(q);
+        return matchTopic && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="card" style="padding: 2.5rem; text-align: center; color: var(--slate-400);">No publications found matching your search.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(p => `
+        <article class="card" style="padding: 1.5rem 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <span class="badge ${p.type === 'patent' ? 'badge-purple' : (p.type === 'preprint' ? 'badge-amber' : 'badge-primary')}">${p.journal}</span>
+              <span style="font-family: var(--font-mono); font-size: 0.775rem; color: var(--slate-500); font-weight: 700;">${p.year}</span>
+              ${p.citations > 0 ? `<span style="background: #fef3c7; color: #92400e; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; border: 1px solid #fde68a;">${p.citations} Citations</span>` : ''}
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--slate-400);">${p.doi}</span>
+          </div>
+
+          <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--slate-900); margin-bottom: 0.35rem; line-height: 1.35;">
+            ${p.title}
+          </h3>
+
+          <div style="font-size: 0.8rem; color: var(--slate-600); margin-bottom: 0.75rem;">
+            <strong>Authors:</strong> ${p.authors}
+          </div>
+
+          <p style="font-size: 0.825rem; color: var(--slate-600); line-height: 1.6; margin-bottom: 1rem;">
+            ${p.abstract}
+          </p>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--slate-100); padding-top: 0.85rem; flex-wrap: wrap; gap: 0.75rem;">
+            <div style="display: flex; gap: 0.35rem; flex-wrap: wrap;">
+              ${p.topics.map(t => `<span class="badge badge-accent" style="font-size: 10px;">#${t}</span>`).join('')}
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button onclick="copyBibtex('${p.id}')" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;">
+                Copy BibTeX
+              </button>
+              <a href="${p.scholarUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.35rem 0.85rem;">
+                View on Google Scholar ↗
+              </a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function copyBibtex(id) {
+      const pub = pubData.find(p => p.id === id);
+      if (pub && pub.bibtex) {
+        navigator.clipboard.writeText(pub.bibtex);
+        const toast = document.getElementById('toast');
+        toast.innerText = 'Citation Copied to Clipboard!';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', renderPublications);
+  </script>
+
+  <!-- Universal MSI Lab Search Modal -->
+  <script src="public/js/search-modal.js"></script>
+</body>
+</html>
