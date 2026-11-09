@@ -1035,8 +1035,44 @@
       // Only display on screens <= 1024px
       const styleTag = document.createElement('style');
       styleTag.textContent = `
+        /* Prevent mobile page wobble / horizontal blow-out */
+        html, body {
+          overflow-x: hidden !important;
+          max-width: 100vw;
+        }
+
+        /* Seamless mobile controls and navigation synchronization */
         @media (max-width: 1024px) {
           #msi-mobile-controls { display: flex !important; }
+          .hide-mobile, header nav.hide-mobile { display: none !important; }
+          .pi-spotlight-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+          .pi-spotlight-grid > div:first-child { text-align: center; }
+          .pi-spotlight-grid > div:first-child > div:first-child { margin: 0 auto 1.25rem auto !important; }
+          .featured-news-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+        }
+
+        @media (max-width: 640px) {
+          .sticky-nav .max-w-container, header .max-w-container {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            height: 68px !important;
+          }
+          #msi-mobile-drawer {
+            top: 68px !important;
+            padding: 1rem 1rem !important;
+          }
+          .card {
+            padding: 1.25rem !important;
+          }
+          .sticky-nav a span[style*="font-size: 0.725rem"],
+          header a span[style*="font-size: 0.725rem"] {
+            font-size: 0.65rem !important;
+            max-width: 160px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
         }
       `;
       document.head.appendChild(styleTag);
@@ -1085,7 +1121,7 @@
           </a>
           <a href="team.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
             <span>People &amp; Alumni Directory</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">41 Researchers</span>
+            <span style="color: #a7f3d0; font-size: 0.8rem;">42 Researchers</span>
           </a>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; padding: 0.4rem 0.75rem 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
             <a href="team.html#pi" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Principal Investigator</a>
@@ -1138,6 +1174,21 @@
       }
 
       hamburgerBtn.addEventListener('click', toggleMobileMenu);
+
+      // Highlight active link in mobile drawer based on current page
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      drawer.querySelectorAll('.msi-mob-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
+          link.style.background = 'rgba(255, 255, 255, 0.15)';
+          link.style.borderLeft = '4px solid #10b981';
+        }
+      });
+
+      // Close drawer on Escape key
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isMobileMenuOpen) toggleMobileMenu();
+      });
 
       // Close drawer when any mobile link is clicked
       drawer.querySelectorAll('a').forEach(a => {
