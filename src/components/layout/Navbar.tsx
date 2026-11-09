@@ -20,14 +20,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
-  { 
-    label: "Facilities", 
-    href: "/facilities",
-    subItems: [
-      { label: "Core Instrument Suites", href: "/facilities", description: "Explore the 13+ state-of-the-art platforms" },
-      { label: "Request Instrument Usage", href: "/facilities/service-request", description: "Online application form for sample analysis & services" },
-    ]
-  },
+  { label: "Facilities", href: "/facilities" },
   { label: "Research", href: "/projects" },
   { 
     label: "People", 
@@ -53,7 +46,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: "Gallery", href: "/gallery", description: "Facilities, field research & seminars" },
       { label: "Events", href: "/news", description: "Lab seminars, press & announcements" },
       { label: "Instrument Service Application", href: "/facilities/service-request", description: "Online application form for sample analysis & services" },
-      { label: "Join Us", href: "/apply", description: "Student & fellow recruitment" },
+      { label: "Join Us (Fellowships)", href: "/apply", description: "Student & fellow recruitment" },
     ]
   },
 ];

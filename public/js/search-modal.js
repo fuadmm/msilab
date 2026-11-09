@@ -1058,7 +1058,7 @@
       nav.appendChild(btn);
     }
 
-    // 2. Mobile Header Controls & Drawer Menu
+    // 2. Mobile Header Controls & Drawer Menu (Exact 1:1 Mirror of Desktop Navigation)
     const headerContainer = document.querySelector('.sticky-nav .max-w-container') || document.querySelector('header .max-w-container');
     if (headerContainer && !document.getElementById('msi-mobile-controls')) {
       // Mobile Controls Container (search + hamburger)
@@ -1093,7 +1093,7 @@
           }
           #msi-mobile-drawer {
             top: 68px !important;
-            padding: 1rem 1rem !important;
+            padding: 1rem 1rem 2.5rem 1rem !important;
           }
           .card {
             padding: 1.25rem !important;
@@ -1107,6 +1107,78 @@
             overflow: hidden;
             text-overflow: ellipsis;
           }
+        }
+
+        /* Mobile Drawer Links & Accordions - Exact Mirror of Desktop Navigation */
+        .msi-mob-item {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          padding-bottom: 0.25rem;
+        }
+        .msi-mob-link, .msi-mob-btn {
+          color: #ffffff;
+          font-weight: 600;
+          font-size: 1.05rem;
+          padding: 0.7rem 0.85rem;
+          border-radius: 8px;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: transparent;
+          width: 100%;
+          border: none;
+          font-family: inherit;
+          cursor: pointer;
+          text-align: left;
+          transition: all 0.15s ease;
+          box-sizing: border-box;
+        }
+        .msi-mob-link:hover, .msi-mob-btn:hover {
+          background: rgba(255, 255, 255, 0.08);
+          color: #a7f3d0;
+        }
+        .msi-mob-link.active, .msi-mob-btn.active {
+          background: rgba(255, 255, 255, 0.14);
+          color: #ffffff;
+          font-weight: 700;
+          border-left: 4px solid #10b981;
+        }
+        .msi-mob-submenu {
+          display: none;
+          flex-direction: column;
+          gap: 0.2rem;
+          padding: 0.4rem 0.5rem 0.6rem 1rem;
+          background: rgba(0, 0, 0, 0.22);
+          border-radius: 8px;
+          margin: 0.25rem 0 0.4rem 0;
+          border-left: 2px solid rgba(16, 185, 129, 0.4);
+        }
+        .msi-mob-sublink {
+          color: #e2e8f0;
+          font-size: 0.925rem;
+          font-weight: 500;
+          padding: 0.5rem 0.65rem;
+          text-decoration: none;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          transition: all 0.15s ease;
+        }
+        .msi-mob-sublink:hover {
+          background: rgba(255, 255, 255, 0.1);
+          color: #10b981;
+        }
+        .msi-mob-sublink.active {
+          color: #10b981;
+          font-weight: 700;
+          background: rgba(16, 185, 129, 0.15);
+        }
+        .msi-mob-chevron {
+          transition: transform 0.2s ease;
+        }
+        .msi-mob-chevron.rotated {
+          transform: rotate(180deg);
         }
       `;
       document.head.appendChild(styleTag);
@@ -1131,68 +1203,108 @@
       mobileControls.appendChild(hamburgerBtn);
       headerContainer.appendChild(mobileControls);
 
-      // Create Mobile Drawer
+      // Create Mobile Drawer (Exact 1:1 Mirror of Desktop Navigation)
       const drawer = document.createElement('div');
       drawer.id = 'msi-mobile-drawer';
-      drawer.style.cssText = 'display: none; position: fixed; top: 74px; left: 0; right: 0; bottom: 0; background: rgba(11, 40, 23, 0.98); backdrop-filter: blur(8px); z-index: 9999; padding: 1.25rem 1.5rem; overflow-y: auto; font-family: inherit;';
+      drawer.style.cssText = 'display: none; position: fixed; top: 74px; left: 0; right: 0; bottom: 0; background: rgba(7, 34, 18, 0.98); backdrop-filter: blur(12px); z-index: 9999; padding: 1.25rem 1.25rem 2.5rem; overflow-y: auto; font-family: inherit; border-top: 1px solid rgba(255,255,255,0.1);';
       drawer.innerHTML = `
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; max-width: 500px; margin: 0 auto; padding-bottom: 2rem;">
-          <a href="index.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Home</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">→</span>
-          </a>
-          <a href="facilities.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Core Facilities &amp; Equipment</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">16+ Platforms</span>
-          </a>
-          <a href="facilities-apply.html" class="msi-mob-link" style="color: #a7f3d0; font-weight: 700; font-size: 0.95rem; padding: 0.5rem 0.75rem 0.5rem 1.5rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <span>↳ Instrument Usage Application</span>
-            <span style="background: rgba(16,185,129,0.3); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem;">Apply</span>
-          </a>
-          <a href="projects.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Research Projects</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">6 Key Areas</span>
-          </a>
-          <a href="team.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>People &amp; Alumni Directory</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">42 Researchers</span>
-          </a>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem; padding: 0.4rem 0.75rem 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
-            <a href="team.html#pi" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Principal Investigator</a>
-            <a href="team.html#doctoral" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Doctoral (Ph.D.)</a>
-            <a href="team.html#masters" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Masters (M.Sc.)</a>
-            <a href="team.html#staff" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Research Assistants</a>
-            <a href="team.html#undergraduate" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Undergraduates</a>
-            <a href="team.html#alumni" style="color: #d1fae5; font-size: 0.85rem; text-decoration: none; padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);">• Alumni Network</a>
+        <div class="msi-mob-nav-list" style="display: flex; flex-direction: column; gap: 0.35rem; max-width: 500px; margin: 0 auto; padding-bottom: 2rem;">
+          
+          <!-- 1. Home -->
+          <div class="msi-mob-item">
+            <a href="index.html" class="msi-mob-link">
+              <span>Home</span>
+            </a>
           </div>
-          <a href="publications.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Publications &amp; Scholarly Works</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">Articles</span>
-          </a>
-          <a href="collaborations.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Collaborations &amp; Grants</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">Partners</span>
-          </a>
-          <a href="protocols.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Protocols &amp; SOPs</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">11 Protocols</span>
-          </a>
-          <a href="objectives.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Mission &amp; Strategic Roadmap</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">Vision</span>
-          </a>
-          <a href="gallery.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Photo Gallery</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">Photos</span>
-          </a>
-          <a href="news.html" class="msi-mob-link" style="color: #ffffff; font-weight: 700; font-size: 1.05rem; padding: 0.65rem 0.75rem; border-radius: 8px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1);">
-            <span>Events &amp; Announcements</span>
-            <span style="color: #a7f3d0; font-size: 0.8rem;">News</span>
-          </a>
-          <a href="apply.html" class="msi-mob-link" style="color: #10b981; background: rgba(255,255,255,0.12); font-weight: 800; font-size: 1.05rem; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; display: flex; align-items: center; justify-content: space-between; margin-top: 0.75rem; border: 1px solid rgba(16,185,129,0.3);">
-            <span>Join MSI Lab (Fellowships)</span>
-            <span>→</span>
-          </a>
+
+          <!-- 2. Facilities -->
+          <div class="msi-mob-item">
+            <a href="facilities.html" class="msi-mob-link">
+              <span>Facilities</span>
+            </a>
+          </div>
+
+          <!-- 3. Research -->
+          <div class="msi-mob-item">
+            <a href="projects.html" class="msi-mob-link">
+              <span>Research</span>
+            </a>
+          </div>
+
+          <!-- 4. People (Dropdown) -->
+          <div class="msi-mob-item">
+            <button type="button" class="msi-mob-btn" id="msi-mob-people-btn">
+              <span>People</span>
+              <svg class="msi-mob-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="msi-mob-people-menu" class="msi-mob-submenu">
+              <a href="team.html" class="msi-mob-sublink" style="font-weight: 700; color: #a7f3d0;">
+                <span>All Members Overview</span>
+              </a>
+              <a href="team.html#pi" class="msi-mob-sublink">
+                <span>Principal Investigator</span>
+              </a>
+              <a href="team.html#doctoral" class="msi-mob-sublink">
+                <span>Doctoral Fellows (Ph.D.)</span>
+              </a>
+              <a href="team.html#masters" class="msi-mob-sublink">
+                <span>Master's Fellows (M.Sc.)</span>
+              </a>
+              <a href="team.html#staff" class="msi-mob-sublink">
+                <span>Research Assistants &amp; Staff</span>
+              </a>
+              <a href="team.html#undergraduate" class="msi-mob-sublink">
+                <span>Undergraduate Fellows (B.Sc.)</span>
+              </a>
+              <a href="team.html#alumni" class="msi-mob-sublink">
+                <span>Alumni Network</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 5. Publications -->
+          <div class="msi-mob-item">
+            <a href="publications.html" class="msi-mob-link">
+              <span>Publications</span>
+            </a>
+          </div>
+
+          <!-- 6. Collaborations -->
+          <div class="msi-mob-item">
+            <a href="collaborations.html" class="msi-mob-link">
+              <span>Collaborations</span>
+            </a>
+          </div>
+
+          <!-- 7. More (Dropdown) -->
+          <div class="msi-mob-item">
+            <button type="button" class="msi-mob-btn" id="msi-mob-more-btn">
+              <span>More</span>
+              <svg class="msi-mob-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div id="msi-mob-more-menu" class="msi-mob-submenu">
+              <a href="protocols.html" class="msi-mob-sublink">
+                <span>Protocols</span>
+              </a>
+              <a href="objectives.html" class="msi-mob-sublink">
+                <span>Objectives</span>
+              </a>
+              <a href="gallery.html" class="msi-mob-sublink">
+                <span>Gallery</span>
+              </a>
+              <a href="news.html" class="msi-mob-sublink">
+                <span>Events</span>
+              </a>
+              <a href="facilities-apply.html" class="msi-mob-sublink" style="font-weight: 700; color: #a7f3d0;">
+                <span>Instrument Service Application</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="apply.html" class="msi-mob-sublink">
+                <span>Join Us (Fellowships)</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       `;
       document.body.appendChild(drawer);
@@ -1209,13 +1321,63 @@
 
       hamburgerBtn.addEventListener('click', toggleMobileMenu);
 
+      // Accordion toggles for People and More dropdowns
+      const peopleBtn = drawer.querySelector('#msi-mob-people-btn');
+      const peopleMenu = drawer.querySelector('#msi-mob-people-menu');
+      const moreBtn = drawer.querySelector('#msi-mob-more-btn');
+      const moreMenu = drawer.querySelector('#msi-mob-more-menu');
+
+      function setupAccordion(btn, menu) {
+        if (!btn || !menu) return;
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const isOpen = menu.style.display === 'flex';
+          menu.style.display = isOpen ? 'none' : 'flex';
+          const chev = btn.querySelector('.msi-mob-chevron');
+          if (chev) {
+            if (isOpen) chev.classList.remove('rotated');
+            else chev.classList.add('rotated');
+          }
+        });
+      }
+      setupAccordion(peopleBtn, peopleMenu);
+      setupAccordion(moreBtn, moreMenu);
+
       // Highlight active link in mobile drawer based on current page
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
       drawer.querySelectorAll('.msi-mob-link').forEach(link => {
         const href = link.getAttribute('href');
         if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
-          link.style.background = 'rgba(255, 255, 255, 0.15)';
-          link.style.borderLeft = '4px solid #10b981';
+          link.classList.add('active');
+        }
+      });
+
+      // Auto-expand and highlight People if on team or member page
+      if (currentPath.startsWith('team') || currentPath.startsWith('member')) {
+        if (peopleMenu) peopleMenu.style.display = 'flex';
+        if (peopleBtn) {
+          peopleBtn.classList.add('active');
+          const chev = peopleBtn.querySelector('.msi-mob-chevron');
+          if (chev) chev.classList.add('rotated');
+        }
+      }
+
+      // Auto-expand and highlight More if on More pages
+      const morePages = ['protocols.html', 'objectives.html', 'gallery.html', 'news.html', 'facilities-apply.html', 'apply.html'];
+      if (morePages.includes(currentPath)) {
+        if (moreMenu) moreMenu.style.display = 'flex';
+        if (moreBtn) {
+          moreBtn.classList.add('active');
+          const chev = moreBtn.querySelector('.msi-mob-chevron');
+          if (chev) chev.classList.add('rotated');
+        }
+      }
+
+      // Highlight matching sublink
+      drawer.querySelectorAll('.msi-mob-sublink').forEach(sublink => {
+        const href = sublink.getAttribute('href');
+        if (href && href.split('#')[0] === currentPath) {
+          sublink.classList.add('active');
         }
       });
 
@@ -1224,7 +1386,7 @@
         if (e.key === 'Escape' && isMobileMenuOpen) toggleMobileMenu();
       });
 
-      // Close drawer when any mobile link is clicked
+      // Close drawer when any link is clicked
       drawer.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
           if (isMobileMenuOpen) toggleMobileMenu();
