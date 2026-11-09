@@ -472,7 +472,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
     "researchInterest": "Airway ciliary biology, ciliopathies, primary ciliary dyskinesia (PCD), axonemal dynein macromolecular complexes, and respiratory mucosal epithelial homeostasis."
   },
   "nafsoon-rahman": {
-    "name": "Dr. Nafsoon Rahman (Mouly)",
+    "name": "Dr. Nafsoon Rahman",
     "role": "Assistant Professor · Former Doctoral Fellow & Co-Inventor (WO2019031446)",
     "currentPosition": "Assistant Professor, Department of Biochemistry & Molecular Biology",
     "currentInstitution": "Jagannath University (JnU), Dhaka",
@@ -488,7 +488,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
     "thesisTitle": "Development of a New Dengue Diagnostic Tool and Comparison of Serum Antibody Responses Against Natural Dengue Infection and Artificial Immunization",
     "submissionDate": "October 20, 2014",
     "shortAbstract": "Developed an EDIII-based ELISA diagnostic tool and compared antibody specificity patterns between natural human dengue infections and artificially immunized mice.",
-    "bioSnippet": "Dr. Nafsoon Rahman (Mouly) is an Assistant Professor in the Department of Biochemistry and Molecular Biology at Jagannath University (JnU). She received her Ph.D. in Protein Engineering from Tokyo University of Agriculture and Technology (TUAT), Japan (2020), and her M.Sc. (2015) and B.Sc. (2014) from the University of Chittagong. She is a co-inventor of international patent WO2019031446 for solubility-controlling peptide tags applied to biotherapeutics and diagnostics.",
+    "bioSnippet": "Dr. Nafsoon Rahman is an Assistant Professor in the Department of Biochemistry and Molecular Biology at Jagannath University (JnU). She received her Ph.D. in Protein Engineering from Tokyo University of Agriculture and Technology (TUAT), Japan (2020), and her M.Sc. (2015) and B.Sc. (2014) from the University of Chittagong. She is a co-inventor of international patent WO2019031446 for solubility-controlling peptide tags applied to biotherapeutics and diagnostics.",
     "education": [
       {
         "degree": "Ph.D.",

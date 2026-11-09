@@ -619,7 +619,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "nafsoon-rahman",
-    name: "Dr. Nafsoon Rahman (Mouly)",
+    name: "Dr. Nafsoon Rahman",
     formerRole: "M.Sc. Research Fellow",
     currentPosition: "Assistant Professor",
     currentInstitution: "Department of Biochemistry & Molecular Biology, Jagannath University (JnU)",

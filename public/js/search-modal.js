@@ -514,6 +514,24 @@
     ]
   },
   {
+    "id": "nafsoon-rahman",
+    "name": "Dr. Nafsoon Rahman",
+    "role": "Assistant Professor · Former Doctoral Fellow & Co-Inventor (WO2019031446)",
+    "category": "People",
+    "description": "Assistant Professor, Dept. of Biochemistry & Molecular Biology, Jagannath University (JnU) — Co-Inventor of WO2019031446.",
+    "href": "member.html?id=nafsoon-rahman",
+    "badge": "Alumni",
+    "tags": [
+      "nafsoon",
+      "rahman",
+      "dr nafsoon rahman",
+      "alumni",
+      "jnu",
+      "patent",
+      "dengue"
+    ]
+  },
+  {
     "id": "proj-dengue-seroprevalence-genomic-surveillance",
     "title": "Dengue Seroprevalence, Mutational Dynamics & Clinical Correlation",
     "category": "Projects",

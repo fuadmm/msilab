@@ -1,4 +1,4 @@
-# Curriculum Vitae: Dr. Nafsoon Rahman (Mouly)
+# Curriculum Vitae: Dr. Nafsoon Rahman
 **Assistant Professor · Former Doctoral Fellow & Co-Inventor (WO2019031446)**  
 **Institution:** Jagannath University (JnU), Dhaka  
 **Contact:** nafsoonrahman@bmb.jnu.ac.bd | Tel: +8801715503350  
@@ -7,7 +7,7 @@
 ---
 
 ## 1. Executive Summary & Research Profile
-Dr. Nafsoon Rahman (Mouly) is an Assistant Professor in the Department of Biochemistry and Molecular Biology at Jagannath University (JnU). She received her Ph.D. in Protein Engineering from Tokyo University of Agriculture and Technology (TUAT), Japan (2020), and her M.Sc. (2015) and B.Sc. (2014) from the University of Chittagong. She is a co-inventor of international patent WO2019031446 for solubility-controlling peptide tags applied to biotherapeutics and diagnostics.
+Dr. Nafsoon Rahman is an Assistant Professor in the Department of Biochemistry and Molecular Biology at Jagannath University (JnU). She received her Ph.D. in Protein Engineering from Tokyo University of Agriculture and Technology (TUAT), Japan (2020), and her M.Sc. (2015) and B.Sc. (2014) from the University of Chittagong. She is a co-inventor of international patent WO2019031446 for solubility-controlling peptide tags applied to biotherapeutics and diagnostics.
 
 ---
 
