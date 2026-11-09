@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/msilabcuac/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/cp -f *.html $DEPLOYPATH
+    - /bin/cp -Rf public/ $DEPLOYPATH 2>/dev/null || true
