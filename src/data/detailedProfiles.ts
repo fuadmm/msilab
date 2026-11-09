@@ -2397,5 +2397,90 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
     "awards": [
       "University Postgraduate Research Award"
     ]
+  },
+  "md-ayoub-khan": {
+    "name": "Md. Ayoub Khan",
+    "role": "Office Manager · Former Graduate Research Assistant (Non-Thesis)",
+    "currentPosition": "Office Manager, HEAT-11009-CU-sub-project",
+    "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
+    "location": "Chittagong, Bangladesh",
+    "email": "ayoubkhan9377@gmail.com",
+    "personalEmail": "ayoubkhan9377@gmail.com",
+    "phone": "+8801623-119377",
+    "image": "/Current%20Members%20and%20Alumni/md-ayoub-khan.jpeg",
+    "senioritySession": "MS Session 2021–2022 (Non-Thesis)",
+    "supervisor": "M. Monirul Islam, PhD",
+    "thesisTitle": "Research Project (Non-Thesis): Serotype Cross-Talks of Anti-DENV Antibodies & Intracellular Cytokine Responses in Mice Model (with Dr. Md. Din Islam)",
+    "submissionDate": "December 2024",
+    "shortAbstract": "Conducted collaborative immunological research with Dr. Md. Din Islam investigating anti-DENV ED3 cross-talks, immune interference, and cytokine responses in murine models, alongside anti-SARS-CoV-2 serosurveillance.",
+    "bioSnippet": "Md. Ayoub Khan is an alumnus of the Laboratory of Molecular and Structural Immunology (MSI Lab), Department of Biochemistry and Molecular Biology at the University of Chittagong. He completed his M.Sc. (Non-Thesis track) and B.Sc. (Honours) in Biochemistry and Molecular Biology at the University of Chittagong. During his research tenure at MSI Lab (2021–2024), he collaborated on key immunological projects with Dr. Md. Din Islam and lab researchers, focusing on anti-DENV antibody serotype cross-talks, intracellular cytokine responses in murine models, and anti-SARS-CoV-2 serology. He currently serves as the Office Manager for the HEAT-11009-CU-sub-project at the Department of Biochemistry and Molecular Biology, University of Chittagong.",
+    "education": [
+      {
+        "degree": "Master of Science (M.Sc.) — Non-Thesis",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2021 – 2022"
+      },
+      {
+        "degree": "Bachelor of Science (B.Sc. Honours)",
+        "field": "Biochemistry & Molecular Biology",
+        "institution": "University of Chittagong",
+        "years": "2016 – 2021"
+      },
+      {
+        "degree": "Higher Secondary Certificate (HSC)",
+        "field": "Science",
+        "institution": "Hathazari Govt. College, Chittagong Board",
+        "years": "2016"
+      },
+      {
+        "degree": "Secondary School Certificate (SSC)",
+        "field": "Science",
+        "institution": "Hathazari Parbati Model Govt. High School, Chittagong Board",
+        "years": "2014"
+      }
+    ],
+    "experiences": [
+      {
+        "title": "Office Manager",
+        "institution": "HEAT-11009-CU-sub-project, Department of Biochemistry & Molecular Biology, CU",
+        "years": "September 2025 – Present",
+        "details": "Managing administrative functions, procurement documentation, project reporting, and operational coordination for the Higher Education Acceleration and Transformation (HEAT) sub-project."
+      },
+      {
+        "title": "Application Executive",
+        "institution": "Bio-Trade International (Specialized Diagnostics Reagent & Laboratory Equipment)",
+        "years": "July 2024 – June 2025",
+        "details": "Managed specialized clinical diagnostic reagents, laboratory equipment applications, and technical consultation for scientific and clinical laboratories."
+      },
+      {
+        "title": "Graduate Research Student (Non-Thesis)",
+        "institution": "Laboratory of Molecular & Structural Immunology (MSI Lab), CU",
+        "years": "January 2021 – December 2024",
+        "details": "Conducted collaborative immunological research with Dr. Md. Din Islam investigating anti-DENV ED3 cross-talks, cytokine responses in mice models, and anti-SARS-CoV-2 S-RBD IgG antibody levels."
+      }
+    ],
+    "skills": [
+      "Flow Cytometry & Intracellular Cytokine Staining",
+      "Enzyme-Linked Immunosorbent Assay (ELISA)",
+      "Protein Quantification (BCA/Bradford)",
+      "Nucleic Acid Extraction & Quantification, cDNA Synthesis",
+      "Conventional PCR & RT-PCR",
+      "In Vivo Murine Model Handling & Immunization",
+      "Microbial Culture & Anti-Microbial Activity Assays",
+      "Microsoft Office Suite (Word, Excel, PowerPoint) & Scientific Data Analysis"
+    ],
+    "publications": [
+      "The serotype-cross-talks of anti-DENV antibodies contribute to immune interference, dominance and tolerance of four DENVs limiting the success of dengue vaccine candidates (Collaborative research with Dr. Md. Din Islam).",
+      "Investigation of DENV ED3-mediated intracellular cytokine responses in mice models.",
+      "Investigation of anti-SARS-CoV-2 S-RBD IgG antibody in naturally infected and vaccinated individuals in Chattogram, Bangladesh."
+    ],
+    "awards": [
+      "Champion in Oral Presentation — 1st Jamal Nazrul Islam National Conference (2022)",
+      "2nd Runner Up in Poster Presentation — 3rd Chittagong Science Carnival (2023)",
+      "Poster Presentation — 2nd Chittagong Science Carnival (2022)",
+      "Poster Presentation — BSBMB-SABC-OMC International Conference (2023)"
+    ],
+    "cvUrl": "/cv/md-ayoub-khan_cv.pdf"
   }
 };

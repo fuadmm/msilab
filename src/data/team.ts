@@ -912,6 +912,26 @@ export const ALUMNI_DATA: Alumni[] = [
     submissionDate: "August 3, 2025",
     shortAbstract: "Evaluated the immunogenicity of a trivalent RBD formulation (Wuhan + BA.5 + JN.1) in mice, demonstrating broad cross-reactivity across multiple SARS-CoV-2 variants.",
     researchInterest: "SARS-CoV-2 variant RBD cross-reactivity, pre/post vaccination serology, and immunology."
+  },
+  {
+    id: "md-ayoub-khan",
+    name: "Md. Ayoub Khan",
+    formerRole: "Graduate Research Assistant (Non-Thesis)",
+    currentPosition: "Office Manager, HEAT-11009-CU-sub-project",
+    currentInstitution: "Department of Biochemistry and Molecular Biology, University of Chittagong",
+    location: "Chittagong, Bangladesh",
+    email: "ayoubkhan9377@gmail.com",
+    personalEmail: "ayoubkhan9377@gmail.com",
+    phone: "+8801623-119377",
+    image: "/Current%20Members%20and%20Alumni/md-ayoub-khan.jpeg",
+    category: "academic",
+    senioritySession: "MS Session 2021–2022 (Non-Thesis)",
+    supervisor: "M. Monirul Islam, PhD",
+    thesisTitle: "Research Project (Non-Thesis): Serotype Cross-Talks of Anti-DENV Antibodies & Intracellular Cytokine Responses in Mice Model (with Dr. Md. Din Islam)",
+    submissionDate: "December 2024",
+    shortAbstract: "Conducted collaborative immunological research with Dr. Md. Din Islam investigating anti-DENV ED3 cross-talks, immune interference, and cytokine responses in murine models, alongside anti-SARS-CoV-2 serosurveillance.",
+    researchInterest: "Dengue virus ED3 immunogenicity, serotype cross-talks, intracellular cytokine responses in murine models, and SARS-CoV-2 serosurveillance.",
+    cvUrl: "/cv/md-ayoub-khan_cv.pdf"
   }
 ];
 
@@ -923,6 +943,7 @@ export function getAllTeamMembers(): UnifiedMemberProfile[] {
     "jafrina-akter-eva": "/cv/jafrina-akter-eva_cv.pdf",
     "sadia-binte-alam": "/cv/sadia-binte-alam_cv.pdf",
     "sadiya-rahman-faiza": "/cv/sadiya-rahman-faiza_cv.pdf",
+    "md-ayoub-khan": "/cv/md-ayoub-khan_cv.pdf",
   };
 
   // 1. Principal Investigator
@@ -1056,6 +1077,9 @@ export function getMemberById(id: string): UnifiedMemberProfile | undefined {
   }
   if (normalized === "shamsun" || normalized === "shamsun-nahar" || normalized === "shamsun-nahar-binte-mannan") {
     return all.find((m) => m.id === "dr-shamsun-nahar");
+  }
+  if (normalized === "ayoub" || normalized === "ayoub-khan" || normalized === "md-ayoub-khan" || normalized === "md-ayub-khan" || normalized === "ayub-khan") {
+    return all.find((m) => m.id === "md-ayoub-khan");
   }
   return all.find((m) => m.id.toLowerCase() === normalized);
 }

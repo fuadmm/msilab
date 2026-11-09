@@ -495,6 +495,25 @@
     ]
   },
   {
+    "id": "alumni-ayoub-khan",
+    "title": "Md. Ayoub Khan",
+    "category": "People",
+    "description": "Alumni (Graduate Research Assistant, Non-Thesis) — Now Office Manager, HEAT-11009-CU-sub-project, Dept. of Biochemistry & Molecular Biology, CU.",
+    "href": "member.html?id=md-ayoub-khan",
+    "badge": "Alumni",
+    "tags": [
+      "ayoub",
+      "khan",
+      "ayub",
+      "md ayoub khan",
+      "alumni",
+      "heat",
+      "dengue",
+      "din islam",
+      "non thesis"
+    ]
+  },
+  {
     "id": "proj-dengue-seroprevalence-genomic-surveillance",
     "title": "Dengue Seroprevalence, Mutational Dynamics & Clinical Correlation",
     "category": "Projects",
