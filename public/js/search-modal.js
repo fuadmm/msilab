@@ -743,6 +743,22 @@
     ]
   },
   {
+    "id": "proto-rna-serum",
+    "title": "Extraction & Purification of Total RNA from Serum",
+    "category": "Protocols",
+    "description": "Standard operating procedure for spin-column isolation of cell-free viral and circulating total RNA from human or murine serum.",
+    "href": "protocols.html#proto-rna-serum",
+    "badge": "RNA Extraction",
+    "tags": [
+      "rna",
+      "serum",
+      "total rna",
+      "extraction",
+      "purification",
+      "sop"
+    ]
+  },
+  {
     "id": "proto-docking",
     "title": "Antigen-Antibody Docking & Interface Thermodynamics using HADDOCK 2.4",
     "category": "Protocols",

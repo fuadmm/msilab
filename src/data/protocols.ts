@@ -51,7 +51,7 @@ export const PROTOCOLS_DATA: ProtocolItem[] = [
   },
   {
     id: "rna-serum",
-    title: "Extraction & Purification of Circulating RNA from Serum",
+    title: "Extraction & Purification of Total RNA from Serum",
     category: "virology",
     categoryLabel: "Virology & Diagnostics",
     description: "Optimized protocol for recovery of cell-free circulating viral genomic RNA from patient serum samples, calibrated for acute viremic titers in arboviral infections.",
