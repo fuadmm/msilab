@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Ensure cPanel deployment configs always use Unix LF line endings
+.cpanel.yml text eol=lf
+cpanel.yml text eol=lf
