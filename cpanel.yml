@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/msilabcuac/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+    - /bin/rsync -a --exclude='.git*' --exclude='.cpanel.yml' --exclude='cpanel.yml' --exclude='node_modules' --exclude='.next' ./ $DEPLOYPATH
