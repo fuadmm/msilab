@@ -53,11 +53,6 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
     key: 'field',
     label: 'Hill Tracts Expeditions',
     description: 'Field expeditions and tree inoculation across the Agarwood plantations of Rangamati & Marishya.'
-  },
-  {
-    key: 'seminar',
-    label: 'Academic Seminars & Defenses',
-    description: 'Master\'s thesis defenses, examination panels, and scientific colloquia.'
   }
 ];
 
@@ -263,23 +258,6 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     rawImage: '/images/gallery/field-marishya-tree-tagging.jpg',
     description: 'Systematic tagging and cataloging of treated specimens to enable longitudinal resin sampling and GC-MS chemical profiling over 3 to 12 months.',
     tags: ['Specimen Tagging', 'Longitudinal Study', 'GC-MS Tracking']
-  },
-
-  // GROUP 5: Master's Research Defense & Scientific Colloquium
-  {
-    id: 'seminar-closing',
-    title: 'Academic Concluding Remarks & Future Perspectives',
-    groupId: 'group-seminar-defense',
-    groupTitle: 'Academic Research Defense & Departmental Scientific Colloquium',
-    category: 'seminar',
-    categoryLabel: 'Academic Seminar',
-    date: 'September 3, 2026',
-    location: 'Dept. of Biochemistry & Molecular Biology, University of Chittagong',
-    image: '/images/gallery/seminar-closing-remarks.jpg',
-    thumbnail: '/images/gallery/thumb-seminar-closing-remarks.jpg',
-    rawImage: '/images/gallery/seminar-closing-remarks.jpg',
-    description: 'Panel summation reinforcing institutional research goals, inter-hospital clinical collaborations, and high-impact biotechnology directions for MSI Lab.',
-    tags: ['Closing Remarks', 'Institutional Goals', 'Future Directions']
   }
 ];
 
@@ -331,17 +309,5 @@ export const GALLERY_GROUPS: GalleryGroup[] = [
     photoCount: 2,
     tags: ['Hill Tracts Fieldwork', 'Mechanical Boreholing', 'Multi-Tier Infusion', 'Weather Sealing', 'Longitudinal GC-MS'],
     photos: GALLERY_ITEMS.filter(item => item.groupId === 'group-marishya-expedition')
-  },
-  {
-    id: 'group-seminar-defense',
-    title: 'Academic Research Defense & Departmental Scientific Colloquium',
-    purpose: 'Dissemination of Master\'s thesis investigations on vector-borne viral biomarkers, RT-qPCR methodology, and epidemiological surveillance before the faculty examination board and scholarly community.',
-    category: 'seminar',
-    categoryLabel: 'Academic Seminars & Defenses',
-    date: 'September 3, 2026',
-    location: 'Seminar Auditorium, Dept. of Biochemistry & Molecular Biology',
-    photoCount: 1,
-    tags: ['Thesis Defense', 'Viral Biomarkers', 'Faculty Examination Panel', 'Scientific Colloquium', 'Dr. Monirul Islam'],
-    photos: GALLERY_ITEMS.filter(item => item.groupId === 'group-seminar-defense')
   }
 ];
