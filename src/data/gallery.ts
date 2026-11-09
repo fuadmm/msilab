@@ -265,22 +265,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     tags: ['Specimen Tagging', 'Longitudinal Study', 'GC-MS Tracking']
   },
 
-  // GROUP 5: Master's Research Defense & Scientific Colloquium (2 photos kept: #23, #28)
-  {
-    id: 'seminar-presentation',
-    title: 'Master\'s Thesis Defense & Scientific Colloquium',
-    groupId: 'group-seminar-defense',
-    groupTitle: 'Academic Research Defense & Departmental Scientific Colloquium',
-    category: 'seminar',
-    categoryLabel: 'Academic Seminar',
-    date: 'September 3, 2026',
-    location: 'Seminar Hall, Dept. of Biochemistry & Molecular Biology',
-    image: '/images/gallery/seminar-research-presentation.jpg',
-    thumbnail: '/images/gallery/thumb-seminar-research-presentation.jpg',
-    rawImage: '/images/gallery/seminar-research-presentation.jpg',
-    description: 'Oral research defense presenting epidemiological and serological findings on vector-borne viral infections, cytokine profiles, and prognostic biomarkers.',
-    tags: ['Thesis Defense', 'Infectious Disease', 'Biomarkers']
-  },
+  // GROUP 5: Master's Research Defense & Scientific Colloquium
   {
     id: 'seminar-closing',
     title: 'Academic Concluding Remarks & Future Perspectives',
@@ -355,7 +340,7 @@ export const GALLERY_GROUPS: GalleryGroup[] = [
     categoryLabel: 'Academic Seminars & Defenses',
     date: 'September 3, 2026',
     location: 'Seminar Auditorium, Dept. of Biochemistry & Molecular Biology',
-    photoCount: 2,
+    photoCount: 1,
     tags: ['Thesis Defense', 'Viral Biomarkers', 'Faculty Examination Panel', 'Scientific Colloquium', 'Dr. Monirul Islam'],
     photos: GALLERY_ITEMS.filter(item => item.groupId === 'group-seminar-defense')
   }
