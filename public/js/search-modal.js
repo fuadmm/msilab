@@ -1084,11 +1084,15 @@
         /* Seamless mobile controls and navigation synchronization */
         @media (max-width: 1024px) {
           #msi-mobile-controls { display: flex !important; }
-          .hide-mobile, header nav.hide-mobile { display: none !important; }
+          .hide-mobile, header nav.hide-mobile, .sticky-nav nav.hide-mobile { display: none !important; }
           .pi-spotlight-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
           .pi-spotlight-grid > div:first-child { text-align: center; }
           .pi-spotlight-grid > div:first-child > div:first-child { margin: 0 auto 1.25rem auto !important; }
           .featured-news-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+        }
+        @media (min-width: 1025px) {
+          #msi-mobile-controls { display: none !important; }
+          #msi-mobile-drawer { display: none !important; }
         }
 
         @media (max-width: 640px) {
@@ -1311,6 +1315,25 @@
             </div>
           </div>
 
+          <!-- 8. LinkedIn -->
+          <div class="msi-mob-item">
+            <a href="https://www.linkedin.com/company/110175191" target="_blank" rel="noopener noreferrer" class="msi-mob-link" style="color: #38bdf8;">
+              <span style="display: flex; align-items: center; gap: 0.65rem;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <span>LinkedIn</span>
+              </span>
+              <span style="font-size: 0.75rem; color: #38bdf8; font-family: monospace;">↗</span>
+            </a>
+          </div>
+
+          <!-- 9. Search Trigger -->
+          <div style="padding-top: 0.75rem;">
+            <button type="button" id="msi-mob-drawer-search-btn" class="msi-mob-btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); justify-content: center; gap: 0.5rem; color: #a7f3d0; font-size: 0.95rem; font-weight: 700;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <span>Search MSI Lab</span>
+            </button>
+          </div>
+
         </div>
       `;
       document.body.appendChild(drawer);
@@ -1349,6 +1372,15 @@
       setupAccordion(peopleBtn, peopleMenu);
       setupAccordion(moreBtn, moreMenu);
 
+      // Drawer search button listener
+      const drawerSearchBtn = drawer.querySelector('#msi-mob-drawer-search-btn');
+      if (drawerSearchBtn) {
+        drawerSearchBtn.addEventListener('click', () => {
+          if (isMobileMenuOpen) toggleMobileMenu();
+          openSearch();
+        });
+      }
+
       // Highlight active link in mobile drawer based on current page
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
       drawer.querySelectorAll('.msi-mob-link').forEach(link => {
@@ -1358,25 +1390,15 @@
         }
       });
 
-      // Auto-expand and highlight People if on team or member page
+      // Highlight People button if on team or member page (starts collapsed like desktop)
       if (currentPath.startsWith('team') || currentPath.startsWith('member')) {
-        if (peopleMenu) peopleMenu.style.display = 'flex';
-        if (peopleBtn) {
-          peopleBtn.classList.add('active');
-          const chev = peopleBtn.querySelector('.msi-mob-chevron');
-          if (chev) chev.classList.add('rotated');
-        }
+        if (peopleBtn) peopleBtn.classList.add('active');
       }
 
-      // Auto-expand and highlight More if on More pages
+      // Highlight More button if on More pages (starts collapsed like desktop)
       const morePages = ['protocols.html', 'objectives.html', 'gallery.html', 'news.html', 'facilities-apply.html', 'apply.html'];
       if (morePages.includes(currentPath)) {
-        if (moreMenu) moreMenu.style.display = 'flex';
-        if (moreBtn) {
-          moreBtn.classList.add('active');
-          const chev = moreBtn.querySelector('.msi-mob-chevron');
-          if (chev) chev.classList.add('rotated');
-        }
+        if (moreBtn) moreBtn.classList.add('active');
       }
 
       // Highlight matching sublink

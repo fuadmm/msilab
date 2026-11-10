@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -55,6 +55,7 @@
     .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem; }
     @media (max-width: 1024px) { .grid-2 { grid-template-columns: 1fr; } }
+    @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
     @media (max-width: 640px) { .hide-mobile { display: none !important; } }
   
     .nav-dropdown { position: relative; display: inline-block; }
@@ -90,7 +91,8 @@
 
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
   @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } }
+  @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
+    @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } }
 </style>
   <script>
     // Robust image loader for both local file:/// and web server protocols
@@ -543,7 +545,8 @@
           gap: 2rem !important;
         }
       }
-      @media (max-width: 640px) {
+      @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
+    @media (max-width: 640px) {
         .msi-footer-grid {
           grid-template-columns: 1fr !important;
           gap: 2rem !important;
@@ -644,6 +647,6 @@
   </footer>
 
   <!-- Universal MSI Lab Search Modal -->
-  <script src="public/js/search-modal.js"></script>
+  <script src="public/js/search-modal.js?v=3.0"></script>
 </body>
 </html>

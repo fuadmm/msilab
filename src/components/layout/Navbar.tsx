@@ -55,6 +55,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
@@ -90,6 +91,7 @@ export default function Navbar() {
     setPrevPathname(pathname);
     setIsMobileMenuOpen(false);
     setActiveDropdown(null);
+    setMobileDropdown(null);
   }
 
   const isActive = (item: NavItem) => {
@@ -286,68 +288,116 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Navigation Drawer (Exact 1:1 Mirror of Desktop Navigation) */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white shadow-xl animate-in fade-in slide-in-from-top-4 duration-200">
-          <div className="px-4 pt-3 pb-6 space-y-1 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden border-t border-emerald-900/60 bg-[#072212]/98 backdrop-blur-md shadow-2xl animate-in fade-in slide-in-from-top-4 duration-200">
+          <div className="px-4 pt-3 pb-6 space-y-1 max-h-[85vh] overflow-y-auto">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item);
-              return (
-                <div key={item.label} className="border-b border-slate-100 pb-1">
-                  {item.href === "#" ? (
-                    <div className="flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-bold text-slate-800">
-                      <span>{item.label}</span>
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={`flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-semibold ${
-                        active
-                          ? "text-[#165B33] bg-emerald-50"
-                          : "text-slate-800 hover:bg-slate-50"
+
+              if (item.subItems) {
+                const isOpen = mobileDropdown === item.label;
+
+                return (
+                  <div key={item.label} className="border-b border-white/10 pb-1">
+                    <button
+                      type="button"
+                      onClick={() => setMobileDropdown(isOpen ? null : item.label)}
+                      className={`w-full flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-semibold text-white transition-all cursor-pointer ${
+                        active || isOpen ? "bg-white/15 font-bold" : "hover:bg-white/10"
                       }`}
                     >
                       <span>{item.label}</span>
-                      {active && <span className="w-2 h-2 rounded-full bg-[#165B33]"></span>}
-                    </Link>
-                  )}
+                      <ChevronDown
+                        className={`w-4 h-4 text-emerald-300 transition-transform duration-200 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
 
-                  {item.subItems && (
-                    <div className="pl-4 pr-2 py-1 space-y-1">
-                      {item.subItems.map((sub) => (
-                        <Link
-                          key={sub.href}
-                          href={sub.href}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className={`block py-1.5 px-3 rounded-md text-sm ${
-                            pathname === sub.href
-                              ? "text-[#165B33] font-semibold bg-emerald-50/50"
-                              : "text-slate-600 hover:text-slate-900"
-                          }`}
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                    {isOpen && (
+                      <div className="mt-1 ml-2 pl-3 border-l-2 border-emerald-500/50 space-y-1 py-1.5 bg-black/25 rounded-r-lg">
+                        {item.subItems.map((sub) => {
+                          const isSubActive = pathname === sub.href;
+                          return (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setMobileDropdown(null);
+                              }}
+                              className={`block py-2 px-3 rounded-md text-sm transition-colors ${
+                                isSubActive
+                                  ? "text-emerald-300 font-bold bg-white/15"
+                                  : "text-white/80 hover:text-white hover:bg-white/10"
+                              }`}
+                            >
+                              <div className="font-semibold text-sm">{sub.label}</div>
+                              {sub.description && (
+                                <div className="text-xs text-white/50 mt-0.5 line-clamp-1">
+                                  {sub.description}
+                                </div>
+                              )}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+
+              return (
+                <div key={item.label} className="border-b border-white/10 pb-1">
+                  <Link
+                    href={item.href}
+                    onClick={() => {
+                      setIsMobileMenuOpen(false);
+                      setMobileDropdown(null);
+                    }}
+                    className={`flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-semibold text-white transition-all ${
+                      active ? "bg-white/20 font-bold border-l-4 border-emerald-400" : "hover:bg-white/10"
+                    }`}
+                  >
+                    <span>{item.label}</span>
+                    {active && <span className="w-2 h-2 rounded-full bg-emerald-400"></span>}
+                  </Link>
                 </div>
               );
             })}
 
-            <div className="pt-4 px-2">
-              <Link
-                href="/apply"
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-base font-bold text-white bg-[#165B33] hover:bg-[#114929] shadow-md"
+            {/* Official Lab LinkedIn Link in Mobile Menu */}
+            <div className="border-b border-white/10 pb-1">
+              <a
+                href="https://www.linkedin.com/company/110175191"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between py-2.5 px-3 rounded-lg text-base font-semibold text-sky-300 hover:bg-white/10 transition-all"
               >
-                <span>Join Us</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+                <span className="flex items-center gap-2.5">
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                  LinkedIn
+                </span>
+                <span className="text-xs text-sky-400 font-mono">↗</span>
+              </a>
             </div>
 
-            <div className="pt-4 px-3 text-xs text-slate-500 space-y-1 border-t border-slate-100">
-              <p className="font-semibold text-slate-700">Lab Contact Information:</p>
-              <p>Email: islammm@cu.ac.bd | msilab.cu@gmail.com</p>
-              <p>Phone: +8801750180422</p>
+            {/* Search Trigger in Mobile Drawer */}
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsSearchOpen(true);
+                }}
+                className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-emerald-950/90 border border-emerald-500/50 text-emerald-200 hover:text-white font-semibold text-sm transition-all cursor-pointer shadow-xs"
+              >
+                <Search className="w-4 h-4 text-emerald-300" />
+                <span>Search MSI Lab</span>
+              </button>
             </div>
           </div>
         </div>

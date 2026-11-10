@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -103,6 +103,9 @@
       grid-template-columns: 280px 1fr;
       gap: 2.5rem;
       align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .hide-mobile { display: none !important; }
     }
     @media (max-width: 900px) {
       .profile-card-grid {
@@ -3630,6 +3633,6 @@
   </script>
 
   <!-- Universal Search Modal -->
-  <script src="public/js/search-modal.js"></script>
+  <script src="public/js/search-modal.js?v=3.0"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -61,6 +61,7 @@
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
     .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
     @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } .grid-4 { grid-template-columns: repeat(2, 1fr); } .grid-6 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
     @media (max-width: 640px) { .grid-2, .grid-3, .grid-4, .grid-6 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
   
     .nav-dropdown { position: relative; display: inline-block; }
@@ -1278,7 +1279,8 @@
           gap: 2rem !important;
         }
       }
-      @media (max-width: 640px) {
+      @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
+    @media (max-width: 640px) {
         .msi-footer-grid {
           grid-template-columns: 1fr !important;
           gap: 2rem !important;
@@ -1429,6 +1431,6 @@
   </script>
 
   <!-- Universal MSI Lab Search Modal -->
-  <script src="public/js/search-modal.js"></script>
+  <script src="public/js/search-modal.js?v=3.0"></script>
 </body>
 </html>

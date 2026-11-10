@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
@@ -53,6 +53,7 @@
     .nav-link:hover, .nav-link.active { color: #ffffff; background-color: rgba(255,255,255,0.18); }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     @media (max-width: 1024px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
     @media (max-width: 640px) { .grid-3 { grid-template-columns: 1fr; } .hide-mobile { display: none !important; } }
     .form-input { width: 100%; padding: 0.65rem 1rem 0.65rem 2.25rem; border-radius: 0.75rem; border: 1px solid var(--slate-200); font-size: 0.85rem; outline: none; }
     .form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(22,91,51,0.1); }
@@ -90,7 +91,8 @@
 
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
   @media (max-width: 1024px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } }
+  @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
+    @media (max-width: 640px) { .grid-4 { grid-template-columns: 1fr; } }
 </style>
 
   <!-- Favicon & App Icons -->
@@ -1105,7 +1107,8 @@
           gap: 2rem !important;
         }
       }
-      @media (max-width: 640px) {
+      @media (max-width: 1024px) { .hide-mobile { display: none !important; } }
+    @media (max-width: 640px) {
         .msi-footer-grid {
           grid-template-columns: 1fr !important;
           gap: 2rem !important;
@@ -1256,6 +1259,6 @@
   </script>
 
   <!-- Universal MSI Lab Search Modal -->
-  <script src="public/js/search-modal.js"></script>
+  <script src="public/js/search-modal.js?v=3.0"></script>
 </body>
 </html>
