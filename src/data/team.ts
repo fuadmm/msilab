@@ -256,12 +256,16 @@ export const CURRENT_MEMBERS: TeamMember[] = [
   },
   {
     id: "dr-shamsun-nahar",
-    name: "Dr. Shamsun Nahar Binte Mannan",
-    role: "Doctoral Fellow (Ph.D. Candidate)",
+    name: "Dr. Shamsun Nahar Bintha Mannan",
+    role: "Doctoral Fellow (Ph.D. Candidate) · Associate Professor",
     category: "doctoral",
-    institution: "Associate Professor & Head, Department of Skin & VD, Chattogram Maa-O-Shishu Hospital Medical College",
+    institution: "Associate Professor & Head, Department of Dermatology & Venereology, Chattogram Maa-O-Shishu Hospital Medical College (CMOSHMC)",
+    email: "nahar18.sn@gmail.com",
+    phone: "+8801711448449",
+    profileUrl: "https://www.doctorbangladesh.com/dr-shamsun-nahar-skin/",
+    cvUrl: "/cv/dr-shamsun-nahar_cv.pdf",
     image: "/Current%20Members%20and%20Alumni/Dr.%20Shamsun%20Nahar.jpg",
-    researchInterest: "Multiplex PCR-based molecular detection of sexually transmitted infections (STIs) in pregnant women in Chittagong for early clinical intervention and appropriate maternal-fetal treatment."
+    researchInterest: "Multiplex PCR-based molecular detection and diagnostic efficacy for sexually transmitted infections (STIs) in pregnant women, maternal-neonatal dermatoses, and recalcitrant fungal infections."
   },
   {
     id: "dr-md-aqiv-javed",
@@ -1075,7 +1079,7 @@ export function getMemberById(id: string): UnifiedMemberProfile | undefined {
   if (normalized === "rafi" || normalized === "aqiv-javed" || normalized === "dr-rafi" || normalized === "aqiv") {
     return all.find((m) => m.id === "dr-md-aqiv-javed");
   }
-  if (normalized === "shamsun" || normalized === "shamsun-nahar" || normalized === "shamsun-nahar-binte-mannan") {
+  if (normalized === "shamsun" || normalized === "shamsun-nahar" || normalized === "shamsun-nahar-binte-mannan" || normalized === "shamsun-nahar-bintha-mannan" || normalized === "shamsunnahar-bintha-mannan" || normalized === "dr-shamsunnahar") {
     return all.find((m) => m.id === "dr-shamsun-nahar");
   }
   if (normalized === "ayoub" || normalized === "ayoub-khan" || normalized === "md-ayoub-khan" || normalized === "md-ayub-khan" || normalized === "ayub-khan") {

@@ -242,18 +242,24 @@
   },
   {
     "id": "doc-shamsun",
-    "title": "Dr. Shamsun Nahar Binte Mannan",
+    "title": "Dr. Shamsun Nahar Bintha Mannan",
     "category": "People",
-    "description": "Doctoral Fellow (Ph.D. Candidate) & Associate Professor, Dept. of Skin & VD (CMOSHMC). Multiplex PCR STIs molecular detection.",
+    "description": "Doctoral Fellow (Ph.D. Candidate) & Associate Professor & Head, Dept. of Dermatology & Venereology (CMOSHMC). Multiplex PCR STIs molecular detection.",
     "href": "member.html?id=dr-shamsun-nahar",
     "badge": "Doctoral Fellow",
     "tags": [
       "shamsun",
       "nahar",
+      "bintha",
       "binte",
       "mannan",
       "cmoshmc",
       "dermatology",
+      "venereology",
+      "mph",
+      "ddv",
+      "sti",
+      "multiplex pcr",
       "doctoral",
       "phd"
     ]

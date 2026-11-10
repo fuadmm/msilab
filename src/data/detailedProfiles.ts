@@ -1941,61 +1941,157 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
     "awards": []
   },
   "dr-shamsun-nahar": {
-    "name": "Dr. Shamsun Nahar Binte Mannan",
-    "role": "Associate Professor & Head, Dept. of Skin & VD · Doctoral Fellow (Ph.D. Candidate)",
-    "currentPosition": "Associate Professor & Head, Department of Skin & VD",
-    "currentInstitution": "Chattogram Maa-O-Shishu Hospital Medical College",
+    "name": "Dr. Shamsun Nahar Bintha Mannan",
+    "role": "Associate Professor & Head, Dept. of Dermatology & Venereology · Doctoral Fellow (Ph.D. Candidate)",
+    "currentPosition": "Associate Professor & Head, Department of Dermatology & Venereology",
+    "currentInstitution": "Chattogram Maa-O-Shishu Hospital Medical College (CMOSHMC)",
+    "institution": "Associate Professor & Head, Department of Dermatology & Venereology, Chattogram Maa-O-Shishu Hospital Medical College (CMOSHMC)",
     "location": "Chittagong, Bangladesh",
-    "department": "Biochemistry & Molecular Biology",
+    "department": "Biochemistry & Molecular Biology (MSI Lab, CU)",
+    "email": "nahar18.sn@gmail.com",
+    "phone": "+8801711448449",
     "image": "/Current%20Members%20and%20Alumni/Dr.%20Shamsun%20Nahar.jpg",
-    "senioritySession": "Ph.D. Researcher",
+    "senioritySession": "Ph.D. Researcher (Doctoral Fellow)",
     "supervisor": "Prof. Dr. Mohammad Monirul Islam",
-    "bioSnippet": "Dr. Shamsun Nahar Binte Mannan is a Doctoral Fellow (Ph.D. Candidate) at MSI Lab, Department of Biochemistry & Molecular Biology, University of Chittagong. She serves as Associate Professor & Head of the Department of Skin & VD at Chattogram Maa-O-Shishu Hospital Medical College. Her doctoral investigation focuses on multiplex PCR-based molecular detection of sexually transmitted infections in pregnant women.",
+    "coSupervisors": "Dr. Md. Golam Kabir",
+    "thesisTitle": "Multiplex PCR-Based Molecular Detection of Sexually Transmitted Infections (STIs) in Pregnant Women: Diagnostic Efficacy and Maternal-Fetal Clinical Implications",
+    "submissionDate": "Ongoing Doctoral Research",
+    "shortAbstract": "Investigating the diagnostic efficacy, affordability, and reliability of multiplex PCR for the molecular identification and screening of sexually transmitted pathogens from vaginal swabs of pregnant women in Chattogram, facilitating early clinical intervention and optimizing maternal-neonatal health outcomes.",
+    "bioSnippet": "Dr. Shamsun Nahar Bintha Mannan is an Associate Professor & Head of the Department of Dermatology & Venereology at Chattogram Maa-O-Shishu Hospital Medical College (CMOSHMC) and a Doctoral Fellow (Ph.D. Candidate) at the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry & Molecular Biology, University of Chittagong. With over two decades of distinguished clinical practice, academic teaching, and medical research in dermatology, venereology, and public health, her doctoral investigation focuses on multiplex PCR-based molecular detection of sexually transmitted infections in pregnant women. She holds an MBBS, DDV, MPH, and Fellowships in Aesthetic Dermatology, Trichology, and Aesthetic Medicine (AAAM).",
     "education": [
+      {
+        "degree": "Master of Public Health (MPH)",
+        "field": "Public Health & Epidemiology",
+        "institution": "Chittagong Veterinary and Animal Sciences University (CVASU)",
+        "years": "2023 – 2025"
+      },
+      {
+        "degree": "Diploma in Dermatology & Venereology (DDV)",
+        "field": "Dermatology & Venereology",
+        "institution": "Chittagong Medical College (CMC), Chittagong University",
+        "years": "2008 – 2010"
+      },
+      {
+        "degree": "Fellowship in Aesthetic Medicine (FAM)",
+        "field": "Aesthetic Medicine & Minimally Invasive Cosmetic Procedures",
+        "institution": "American Academy of Aesthetic Medicine (AAAM)",
+        "years": "2023"
+      },
+      {
+        "degree": "Fellow in Aesthetic Dermatology & Trichology",
+        "field": "Clinical Aesthetics, Trichology & Hair Restoration",
+        "institution": "Dhaka Dermatology Institute (DDI)",
+        "years": "2021"
+      },
       {
         "degree": "MBBS",
         "field": "Medicine & Surgery",
-        "institution": "University of Chittagong",
-        "years": "Completed"
+        "institution": "USTC, University of Chittagong",
+        "years": "1996 – 2003"
       },
       {
-        "degree": "DDV",
+        "degree": "Postgraduate Residency Training",
         "field": "Dermatology & Venereology",
-        "institution": "Chittagong Medical College Hospital",
-        "years": "Postgraduate"
+        "institution": "Chittagong Medical College & Hospital (CMCH)",
+        "years": "2008 – 2009"
       },
       {
-        "degree": "Advanced Clinical Training",
-        "field": "Aesthetic Dermatology, Laser Medicine & Cosmetology",
-        "institution": "Specialized Clinical Institutes",
-        "years": "Fellowship"
+        "degree": "Postgraduate Clinical Training",
+        "field": "Internal Medicine",
+        "institution": "Chittagong Medical College & Hospital (CMCH)",
+        "years": "2006 – 2007"
       }
     ],
     "experiences": [
       {
         "title": "Associate Professor & Head",
-        "institution": "Dept. of Skin & VD, CMOSHMC",
-        "years": "Present"
+        "institution": "Department of Dermatology & Venereology, CMOSHMC",
+        "years": "2021 – Present",
+        "details": "Head of Department, leading clinical inpatient/outpatient management, postgraduate FCPS and undergraduate MBBS academic curriculum, and clinical research."
       },
       {
-        "title": "Doctoral Fellow",
+        "title": "Doctoral Fellow (Ph.D. Researcher)",
         "institution": "MSI Lab, Dept. of Biochemistry & Molecular Biology, CU",
-        "years": "Present"
+        "years": "2021 – Present",
+        "details": "Investigating multiplex PCR molecular diagnostics for sexually transmitted infections in pregnant women cohorts."
+      },
+      {
+        "title": "Senior Consultant",
+        "institution": "Department of Dermatology & Venereology, CMOSHMC",
+        "years": "2016 – 2021",
+        "details": "Specialist consultation, interventional cutaneous surgery, phototherapy, and specialized pediatric and aesthetic dermatology."
+      },
+      {
+        "title": "Consultant",
+        "institution": "Department of Dermatology & Venereology, CMOSHMC",
+        "years": "2013 – 2016",
+        "details": "Clinical consultation, inpatient management, dermatosurgical procedures, and academic bedside clinical teaching."
+      },
+      {
+        "title": "Consultant",
+        "institution": "Department of Dermatology & Venereology, USTC",
+        "years": "2011 – 2013",
+        "details": "Outpatient clinical services and undergraduate clinical training."
+      },
+      {
+        "title": "Assistant Registrar",
+        "institution": "Department of Dermatology & Venereology, BGC Trust Medical College",
+        "years": "2008",
+        "details": "Clinical care, patient evaluations, and bedside teaching."
       }
     ],
     "skills": [
-      "Potassium hydroxide (KOH) direct mount microscopy for fungal hyphae/spores, Slit-skin smear (SSS) for Hansen's disease, comedone extraction and acne subcision, superficial chemical peels (glycolic, salicylic, TCA), intralesional triamcinolone acetonide infiltration for keloids and hypertrophic scars, cryosurgery, dermabrasion, and skin prick testing.",
-      "Polarized light dermoscopy systems, clinical dermatological documentation software, skin barrier assessment tools, dermatopathology diagnostic review."
+      "Molecular Diagnostics: Multiplex PCR, conventional PCR, nucleic acid extraction from clinical swab specimens, gel electrophoresis, diagnostic biomarker analysis.",
+      "Clinical Dermatology & Venereology: Polarized light dermoscopy systems, slit-skin smear (SSS) for Hansen's disease, potassium hydroxide (KOH) direct mount fungal microscopy, skin prick allergy testing, venereological screening and syndromic STI management.",
+      "Dermatosurgery & Aesthetic Medicine: Superficial and medium chemical peeling (TCA, glycolic, salicylic), cryosurgery, radiofrequency ablation, electrocautery, intralesional steroid infiltration (triamcinolone), acne scar subcision, microneedling, PRP (Platelet-Rich Plasma) therapy, hair restoration, surgical excision of cutaneous cysts and benign neoplasms, and skin punch biopsy.",
+      "Academic & Clinical Governance: Postgraduate clinical training, MBBS final examination moderation, clinical trial management, pharmacovigilance, and medical journal peer review."
     ],
     "publications": [
-      "Clinical reports on emerging antifungal resistance in superficial dermatophytosis, protocols for multimodal treatment of melasma in South Asian skin types, and clinical presentations at National Dermatological Conferences."
+      "Biswas RSR, Ullah AZMF, Begam T, Malik A, Mabud FN, Yeasmin MS, Mannan SNB. (2026). Clinicopathological Features and Treatment Outcomes of Surgical Site Tuberculosis: A Prospective Observational Study. Bangladesh Journal of Medicine, 27(1): 35–40.",
+      "Mannan SNB, Akhter F, Bakul KA, Aurin BH. (2025). A Case of Disseminated Neonatal Varicella Infection: A Challenge to Treat. Journal of Brahmanbaria Medical College, 7(2): 45–48. DOI: 10.3329/jbrmc.v7i2.88142",
+      "Hossain I, Mannan SNB. (2024). Sonographic Measurement of the Liver in a Private Care Setting in Chattogram, Bangladesh. Journal of Pharmaceutical Research International, 36(1): 61–68. DOI: 10.9734/jpri/2024/v36i17498",
+      "Biswas RSR, Uddin MN, Imam H, Mannan SNB. (2024). Dermatitis Artefacta: A Rare Case of Psychodermatological Disorder. Chattagram Maa-O-Shishu Hospital Medical College Journal, 23(2): 104–107.",
+      "Ahmed S, Mannan SNB. (2023). Pattern of Skin Diseases among the Outpatients of a Tertiary Care Hospital, Chattogram. IAHS Medical Journal, 6(1): 58–61. DOI: 10.3329/iahsmj.v6i1.75547",
+      "Bakar MA, Mannan SNB. (2022). Association of Vitiligo with Thyroid Autoimmunity. Chittagong Medical University Journal, 2(2): 22–27.",
+      "Ata M, Hoque R, Mostafa A, Shakil MRI, Biswas RSR, Akhter S, Mannan SNB. (2021). Current Status of Adverse Drug Reaction Reporting by the Physicians in A Medical College Hospital. Chattagram Maa-O-Shishu Hospital Medical College Journal, 20(1/2): 8–13. DOI: 10.3329/cmoshmcj.v20i2.56465",
+      "Mannan SNB, Bakar MA, Mamun SH, Biswas RSR, Hossain I. (2020). Prevalence of metabolic syndrome among patients with superficial mycotic infections in a tertiary care hospital. International Journal of Research in Dermatology, 6(6): 723–728. DOI: 10.18203/issn.2455-4529.IntJResDermatol20204560",
+      "Mannan SNB, Dey D, Elahi A, Haider N, Biswas RSR. (2020). Pattern of Dermatosis Among the Admitted Neonates in A Tertiary Care Hospital. Chattagram Maa-O-Shishu Hospital Medical College Journal, 19(1): 15–19.",
+      "Biswas RSR, Mannan SNB, Mamun SMH. (2019). Adverse Drug Reactions: Experience Of 4 Cases. The Healer, 23(1): 37–39.",
+      "Mannan SNB, Alam MZ, Biswas RSR. (2018). Age, Sex and Seasonal Variations of Dermatosis Attending in Dermatology Department of A Tertiary Care Hospital. Chattagram Maa-O-Shishu Hospital Medical College Journal, 17(2): 47–49. DOI: 10.3329/cmoshmcj.v17i2.39777",
+      "Das J, Das S, Mannan SNB, Majumder D, Kabir M, Shaha KK, Rashid MM. (2016). Cardiac risk ratio in obese post-menopausal women: A case control study. Southern Medical College Journal, 2(1): 4–6.",
+      "Sarker S, Hoque MG, Das J, Kamal M, Mandal RR, Mannan SNB, Das BC. (2016). A Cross Sectional Descriptive Study on Echocardiographic Evaluation in Systemic Hypertensive Patient. Southern Medical College Journal, 1(1): 15–17.",
+      "Bhuiyan SN, Yunus EB, Faiz A, Hussain MM, Mannan SNB, Hussain AJM, Agordzo GK. (1999). Essential Skills of a Medical Graduate: Developing a Consensus. The Study Report. Shasthya Chinta, 3(1): 14–19.",
+      "[Completed Manuscript] Mannan SNB, Jalal UM, Sharmin C, Anik D. Prevalence and Pattern of Skin Disorders Among Government Primary School Students in Chattogram City.",
+      "[Completed Manuscript] Mannan SNB, Shurovi FA, Hossain A, Bakul KA. Pattern of vulvar dermatosis and its impact on female sexual health among the patients attending dermatology outpatient department of Chattogram Maa-O-Shishu Hospital.",
+      "[Ongoing Research Project] Molecular identification of organisms in vaginal swab of pregnant women through multiplex PCR: A prospective cohort study.",
+      "[Ongoing Research Project] Reliability, affordability and effectivity of multiplex PCR for screening and diagnosis of STIs compared to conventional diagnostic methods.",
+      "[Ongoing Research Project] Relationship between severe psoriasis, Metabolic syndrome and Cardiovascular Health outcome: A multicentric study.",
+      "[Ongoing Research Project] Pattern of Neonatal dermatological emergencies in neonatal intensive care unit of a tertiary care hospital.",
+      "[Ongoing Research Project] Treated various dermatological emergencies with intravenous immunoglobulin: An experiences from a tertiary care hospital.",
+      "[Ongoing Research Project] Cutaneous aspergillosis: A rare Systemic fungal disease with solely cutaneous lesion."
     ],
     "awards": [
+      "Principal Investigator: Research Grant from Chittagong Medical University (CMU) — 'Reliability, Affordability, and Effectivity of Multiplex PCR for Screening and Diagnosis of STIs in Comparison to Conventional Diagnostic Methods'",
+      "Principal Investigator: Research Grant from CMOSHMC — 'Prevalence and Pattern of Vulvar Dermatosis Attending OPD of Skin Department of CMOSHMC and Its Impact on Female Sexual Health'",
+      "Co-Investigator: Research Grant from Chittagong Medical University (CMU) — 'Association of Vitiligo with Thyroid Autoimmunity'",
+      "Scientific Secretary, Society of Dermatologic Surgeons of Bangladesh (SDSB)",
+      "Executive Member, Bangladesh Academy of Dermatology (BAD)",
+      "Executive Member, South Asian Association of Regional Cooperation Academy of Aesthetic Dermatology (SAARCAAD)",
+      "Executive Member, Association of Dermatology Society of Bangladesh",
       "Life Member, Bangladesh Dermatological Society (BDS)",
       "Member, Bangladesh Medical Association (BMA)",
-      "Member, South Asian Regional Association of Dermatologists (SARAD)."
+      "Member, Association of Cutaneous Surgeons of Bangladesh (ACSB)",
+      "Member, International Society of Pediatric Dermatology (ISPD)",
+      "Member, Pediatric Dermatology Research Alliance (PDRA)",
+      "Member, European Academy of Dermatology and Venereology (EADV)",
+      "Member, International League of Dermatological Societies (ILDS)",
+      "Member, International Alliance of Global Dermatology (Gloderm)",
+      "Life Member & Teacher's Association Member, CMOSHMC",
+      "Editorial Board Member, Chattagram Maa-O-Shishu Hospital Medical College Journal (Since 2018)",
+      "BMDC Registration: A-38796"
     ],
-    "researchInterest": "Medical and aesthetic dermatology, cutaneous mycology (recalcitrant tinea infections), chronic urticaria, allergic contact eczema, acne scar revision, melasma and facial hyperpigmentation, pediatric dermatoses, sexually transmitted diseases (STDs), autoimmune bullous disorders, and laser cutaneous therapies.",
+    "cvUrl": "/cv/dr-shamsun-nahar_cv.pdf",
+    "researchInterest": "Multiplex PCR molecular diagnostics of sexually transmitted infections (STIs), maternal-neonatal dermatoses, cutaneous mycology (recalcitrant dermatophytosis), psychodermatological disorders, aesthetic dermatology & trichology, metabolic syndrome in dermatological diseases, and adverse drug reaction monitoring.",
     "profileUrl": "https://www.doctorbangladesh.com/dr-shamsun-nahar-skin/"
   },
   "dr-md-aqiv-javed": {
