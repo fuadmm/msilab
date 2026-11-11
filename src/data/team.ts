@@ -763,17 +763,19 @@ export const ALUMNI_DATA: Alumni[] = [
     name: "Dr. Md. Din Islam",
     formerRole: "Graduate Research Assistant",
     currentPosition: "Postdoctoral Researcher",
-    currentInstitution: "Graduate Institute of Microbiology and Public Health, National Chung Hsing University (NCHU)",
+    currentInstitution: "Graduate Institute of Microbiology and Public Health, National Chung Hsing University (NCHU), Taiwan · Ph.D. from TUAT, Japan",
     location: "Taichung, Taiwan",
+    linkedin: "https://www.linkedin.com/in/md-din-islam-phd-1024a51a6/",
     researchgate: "https://www.researchgate.net/profile/Md-Islam-2210",
     image: "/Current%20Members%20and%20Alumni/din%20islam.jpg",
+    cvUrl: "/cv/din-islam_cv.md",
     category: "academic",
     senioritySession: "MS Session 2019–2020",
     supervisor: "M. Monirul Islam, PhD",
     thesisTitle: "A Mystery of DENV Immunogenicity: Anti-DENV ED3 Responses Against Monovalent and Multivalent DENV ED3s",
     submissionDate: "May 15, 2022",
     shortAbstract: "Assessed differential immunogenicity and antibody titers induced by single (monovalent) versus combined (multivalent) DENV ED3 immunization schemes in mice.",
-    researchInterest: "Virology, oncolytic Orf virus, dengue envelope domain 3 (ED3) serotype specificity, and recombinant subunit vaccines."
+    researchInterest: "Recombinant subunit vaccine platforms, flavivirus (DENV, JEV) and influenza immunology, short peptide solubility-controlling tags, metal-assisted protein purification, and oncolytic Orf virus (ORFV) genetic engineering."
   },
   {
     id: "sanjida-yesmin",

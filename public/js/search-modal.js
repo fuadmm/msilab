@@ -501,6 +501,28 @@
     ]
   },
   {
+    "id": "alumni-din-islam",
+    "title": "Dr. Md. Din Islam",
+    "category": "People",
+    "description": "Alumni (Postdoctoral Researcher, NCHU, Taiwan · Ph.D. from TUAT, Tokyo, Japan) — Recombinant Vaccines & Viral Immunology.",
+    "href": "member.html?id=din-islam",
+    "badge": "Alumni",
+    "tags": [
+      "din",
+      "islam",
+      "din islam",
+      "md din islam",
+      "dr md din islam",
+      "alumni",
+      "tuat",
+      "nchu",
+      "postdoc",
+      "vaccine",
+      "dengue",
+      "kuroda"
+    ]
+  },
+  {
     "id": "alumni-ayoub-khan",
     "title": "Md. Ayoub Khan",
     "category": "People",
