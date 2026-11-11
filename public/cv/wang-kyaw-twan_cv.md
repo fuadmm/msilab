@@ -2,7 +2,7 @@
 **Postdoctoral Fellow · Senior Research Fellow**  
 **Institution:** National Institutes of Health (NIH), Frederick, Maryland, USA  
 **Contact:** Available upon request   
-**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Wang-Kyaw-Twan) | [LinkedIn](https://www.linkedin.com/in/wang-kyaw-twan-ph-d-9b96986b/)
+**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Wang-Kyaw-Twan) | [LinkedIn](https://www.linkedin.com/in/wang-kyaw-twan-ph-d-9b96986b/) | [Google Scholar](https://scholar.google.com/citations?user=-WXGn9cAAAAJ&hl=en)
 
 ---
 

@@ -2,7 +2,7 @@
 **Postdoctoral & Senior Research Fellow · Associate Professor**  
 **Institution:** University of Chittagong  
 **Contact:** mahib@cu.ac.bd | Tel: +8801821078048  
-**Profile Links:** [University Profile](https://cu.ac.bd/public_profile/index.php?ein=5212) | [Google Scholar](https://scholar.google.com/citations?user=xdRnLzEAAAAJ&hl=en)
+**Profile Links:** [University Profile](https://cu.ac.bd/public_profile/index.php?ein=5212) | [Google Scholar](https://scholar.google.com/citations?user=xdRnLzEAAAAJ&hl=en) | [ResearchGate](https://www.researchgate.net/profile/Muhammad-Mahib-2)
 
 ---
 

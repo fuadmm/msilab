@@ -17,6 +17,8 @@ export interface PIProfile {
     office: string;
     researchgate?: string;
     linkedin?: string;
+    googleScholar?: string;
+    profileUrl?: string;
   };
   bio: string;
   image?: string;
@@ -185,7 +187,9 @@ export const PI_DATA: PIProfile = {
     email: "islammm@cu.ac.bd",
     phone: "+8801750180422",
     office: "Room 304, Department of Biochemistry & Molecular Biology, University of Chittagong, Chattogram-4331, Bangladesh",
-    researchgate: "https://www.researchgate.net/profile/Md-Islam-2210",
+    researchgate: "https://www.researchgate.net/profile/Mohammad-Islam-142",
+    googleScholar: "https://scholar.google.com/citations?user=vT57c5kAAAAJ",
+    profileUrl: "https://cu.ac.bd/faculty/faculty_member_details.php?id=1411&is_prof=1",
     linkedin: "https://www.linkedin.com/company/110175191"
   },
   bio: "Prof. Dr. Mohammad Monirul Islam leads the Laboratory of Molecular & Structural Immunology (MSI Lab) at the University of Chittagong. With over two decades of experience across structural biology, molecular immunology, and protein technology, his research focuses on understanding the biophysical mechanisms governing host-pathogen interactions, vaccine development against emerging tropical viruses (Dengue, SARS-CoV-2, JEV), and the development of novel peptide tags for solubility and immunogenicity control.",
@@ -373,6 +377,7 @@ export const CURRENT_MEMBERS: TeamMember[] = [
   },
   {
     id: "jafrina-akter-eva",
+    researchgate: "https://www.researchgate.net/profile/Jafrina-Eva",
     name: "Jafrina Akter Eva",
     role: "Graduate Research Assistant",
     cohort: "MS Session 2024–2025",
@@ -534,6 +539,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "mamunur-rashid",
+    researchgate: "https://www.researchgate.net/profile/Muhammad-Mahib-2",
     name: "Dr. Muhammad Mamunur Rashid Mahib",
     formerRole: "Postdoctoral & Senior Research Fellow",
     currentPosition: "Associate Professor",
@@ -569,6 +575,8 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "payal-barua",
+    googleScholar: "https://scholar.google.com/citations?user=NG2zuW0AAAAJ&hl=en",
+    researchgate: "https://www.researchgate.net/profile/Payal-Barua",
     name: "Dr. Payal Barua",
     formerRole: "M.Sc. Research Fellow",
     currentPosition: "Postdoctoral / Immunology Researcher",
@@ -585,6 +593,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "wang-kyaw-twan",
+    googleScholar: "https://scholar.google.com/citations?user=-WXGn9cAAAAJ&hl=en",
     name: "Dr. Wang Kyaw Twan",
     formerRole: "Senior Research Fellow",
     currentPosition: "Postdoctoral Fellow",
@@ -623,6 +632,8 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "nafsoon-rahman",
+    googleScholar: "https://scholar.google.com/citations?user=gkMAD6kAAAAJ&hl=en",
+    researchgate: "https://www.researchgate.net/profile/Nafsoon-Rahman",
     name: "Dr. Nafsoon Rahman",
     formerRole: "M.Sc. Research Fellow",
     currentPosition: "Assistant Professor",
@@ -675,6 +686,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "mamtaz-mishu",
+    researchgate: "https://www.researchgate.net/profile/Mamtaz-Sultana",
     name: "Mamtaz Sultana (Mishu)",
     formerRole: "M.Sc. Research Fellow",
     currentPosition: "Scientific Officer",
@@ -691,6 +703,8 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "hasan-nazmul",
+    googleScholar: "https://scholar.google.com/citations?user=h-yKDlAAAAAJ&hl=en",
+    researchgate: "https://www.researchgate.net/profile/Md-Nazmul-Hasan-3",
     name: "Md. Nazmul Hasan",
     formerRole: "Graduate Research Assistant",
     currentPosition: "Lecturer (on study leave) & PhD Researcher at Purdue University",
@@ -710,6 +724,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "abu-bakar-siddik",
+    googleScholar: "https://scholar.google.com/citations?user=FwhJCXwAAAAJ&hl=en",
     name: "Abu Bakar Siddik",
     formerRole: "Graduate Research Assistant",
     currentPosition: "Graduate Research Assistant & Ph.D. Candidate",
@@ -741,6 +756,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "imrul-tipo",
+    googleScholar: "https://scholar.google.com/citations?user=DsQGfbQAAAAJ&hl=en",
     name: "Imrul Hasan Tipo",
     formerRole: "Graduate Research Assistant",
     currentPosition: "Lecturer & PhD Fellow at University of Alabama",
@@ -796,6 +812,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "dr-md-golam-kabir",
+    googleScholar: "https://scholar.google.com/citations?user=1oRYYKAAAAAJ&hl=en",
     name: "Dr. Md. Golam Kabir",
     formerRole: "Post-Doctoral Fellow",
     currentPosition: "Professor",
@@ -815,6 +832,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "mahabubul-mowla",
+    researchgate: "https://www.researchgate.net/profile/Mahabubul-Mowla-2",
     name: "Mahabubul Mowla",
     formerRole: "M.Sc. Research Fellow",
     currentPosition: "Lecturer",
@@ -834,6 +852,8 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "antara-saha",
+    profileUrl: "https://bcbp.tamu.edu/people/saha-antara/",
+    googleScholar: "https://scholar.google.com/citations?user=avFRH6UAAAAJ&hl=en",
     name: "Antara Saha",
     formerRole: "Graduate Research Assistant",
     currentPosition: "Graduate Research Assistant & Ph.D. Student",
@@ -851,6 +871,7 @@ export const ALUMNI_DATA: Alumni[] = [
   },
   {
     id: "dr-moushumi-ghosh-roy",
+    googleScholar: "https://scholar.google.com/citations?user=kUXjWq4AAAAJ&hl=en",
     name: "Dr. Moushumi Ghosh Roy",
     formerRole: "PhD Fellow",
     currentPosition: "Assistant Professor",
@@ -890,7 +911,7 @@ export const ALUMNI_DATA: Alumni[] = [
     name: "Md. Rafiqul Islam Shanta",
     formerRole: "Graduate Research Assistant",
     currentPosition: "Research Fellow",
-    currentInstitution: "Bangladesh Forest Research Institute (BFRI)",
+    currentInstitution: "Bangladesh Forest Research Institute (BFRI), Chittagong",
     location: "Chittagong, Bangladesh",
     linkedin: "https://www.linkedin.com/in/rafiqul-islam-691710153/",
     image: "/Current%20Members%20and%20Alumni/rafiqul%20islam%20shanto.jpg",
@@ -975,7 +996,11 @@ export function getAllTeamMembers(): UnifiedMemberProfile[] {
     researchInterest: PI_DATA.researchFocus.join("; "),
     awards: PI_DATA.awards,
     education: PI_DATA.education,
-    cvUrl: PI_DATA.cvUrl || PDF_MEMBERS["dr-m-monirul-islam"]
+    cvUrl: PI_DATA.cvUrl || PDF_MEMBERS["dr-m-monirul-islam"],
+    researchgate: PI_DATA.contact.researchgate,
+    googleScholar: PI_DATA.contact.googleScholar,
+    profileUrl: PI_DATA.contact.profileUrl,
+    linkedin: PI_DATA.contact.linkedin
   });
 
   // 2. Current Members

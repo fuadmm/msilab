@@ -2,7 +2,7 @@
 **Assistant Professor · Former Doctoral Fellow & Co-Inventor (WO2019031446)**  
 **Institution:** Jagannath University (JnU), Dhaka  
 **Contact:** nafsoonrahman@bmb.jnu.ac.bd | Tel: +8801715503350  
-**Profile Links:** [University Profile](https://jnu.ac.bd/fm/pview/10834/home)
+**Profile Links:** [University Profile](https://jnu.ac.bd/fm/pview/10834/home) | [ResearchGate](https://www.researchgate.net/profile/Nafsoon-Rahman) | [Google Scholar](https://scholar.google.com/citations?user=gkMAD6kAAAAJ&hl=en)
 
 ---
 

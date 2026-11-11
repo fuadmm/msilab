@@ -125,6 +125,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "mamunur-rashid": {
     "name": "Dr. Muhammad Mamunur Rashid Mahib",
+    "researchgate": "https://www.researchgate.net/profile/Muhammad-Mahib-2",
     "role": "Postdoctoral & Senior Research Fellow · Associate Professor",
     "currentPosition": "Associate Professor, Department of Biochemistry & Molecular Biology",
     "currentInstitution": "University of Chittagong",
@@ -205,6 +206,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "dr-md-golam-kabir": {
     "name": "Prof. Dr. Md. Golam Kabir",
+    "googleScholar": "https://scholar.google.com/citations?user=1oRYYKAAAAAJ&hl=en",
     "role": "Professor · Senior Monoclonal Antibody Scientist",
     "currentPosition": "Professor, Department of Biochemistry & Molecular Biology",
     "currentInstitution": "University of Chittagong",
@@ -335,6 +337,8 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "payal-barua": {
     "name": "Dr. Payal Barua",
+    "googleScholar": "https://scholar.google.com/citations?user=NG2zuW0AAAAJ&hl=en",
+    "researchgate": "https://www.researchgate.net/profile/Payal-Barua",
     "role": "Postdoctoral Researcher · Former M.Sc. Research Fellow",
     "currentPosition": "Postdoctoral / Immunology Researcher",
     "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
@@ -401,6 +405,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "wang-kyaw-twan": {
     "name": "Dr. Wang Kyaw Twan",
+    "googleScholar": "https://scholar.google.com/citations?user=-WXGn9cAAAAJ&hl=en",
     "role": "Postdoctoral Fellow · Senior Research Fellow",
     "currentPosition": "Postdoctoral Fellow, National Cancer Institute (NCI-Frederick / NIH)",
     "currentInstitution": "National Institutes of Health (NIH), Frederick, Maryland, USA",
@@ -473,6 +478,8 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "nafsoon-rahman": {
     "name": "Dr. Nafsoon Rahman",
+    "googleScholar": "https://scholar.google.com/citations?user=gkMAD6kAAAAJ&hl=en",
+    "researchgate": "https://www.researchgate.net/profile/Nafsoon-Rahman",
     "role": "Assistant Professor · Former Doctoral Fellow & Co-Inventor (WO2019031446)",
     "currentPosition": "Assistant Professor, Department of Biochemistry & Molecular Biology",
     "currentInstitution": "Jagannath University (JnU), Dhaka",
@@ -542,6 +549,8 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "hasan-nazmul": {
     "name": "Md. Nazmul Hasan",
+    "googleScholar": "https://scholar.google.com/citations?user=h-yKDlAAAAAJ&hl=en",
+    "researchgate": "https://www.researchgate.net/profile/Md-Nazmul-Hasan-3",
     "role": "Lecturer (on study leave) & PhD Researcher at Purdue University",
     "currentPosition": "Lecturer, HSTU · PhD Researcher, Purdue University",
     "currentInstitution": "Hajee Mohammad Danesh Science & Technology University (HSTU) / Purdue University, USA",
@@ -614,6 +623,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "abu-bakar-siddik": {
     "name": "Abu Bakar Siddik",
+    "googleScholar": "https://scholar.google.com/citations?user=FwhJCXwAAAAJ&hl=en",
     "role": "Graduate Research Assistant & Ph.D. Candidate",
     "currentPosition": "Ph.D. Candidate & Graduate Research Assistant",
     "currentInstitution": "Department of Molecular Biosciences, University of Texas at Austin, USA",
@@ -673,6 +683,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "imrul-tipo": {
     "name": "Imrul Hasan Tipo",
+    "googleScholar": "https://scholar.google.com/citations?user=DsQGfbQAAAAJ&hl=en",
     "role": "Lecturer, USTC & PhD Fellow, University of Alabama",
     "currentPosition": "Lecturer, Department of Biochemistry and Biotechnology",
     "currentInstitution": "University of Science and Technology Chittagong (USTC)",
@@ -876,6 +887,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "mahabubul-mowla": {
     "name": "Mahabubul Mowla",
+    "researchgate": "https://www.researchgate.net/profile/Mahabubul-Mowla-2",
     "role": "Lecturer, USTC · Former MSI Lab Research Fellow",
     "currentPosition": "Lecturer, Department of Biochemistry and Biotechnology",
     "currentInstitution": "University of Science and Technology Chittagong (USTC)",
@@ -941,6 +953,8 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "antara-saha": {
     "name": "Antara Saha",
+    "profileUrl": "https://bcbp.tamu.edu/people/saha-antara/",
+    "googleScholar": "https://scholar.google.com/citations?user=avFRH6UAAAAJ&hl=en",
     "role": "Graduate Research Assistant & Ph.D. Student",
     "currentPosition": "Graduate Research Assistant & Ph.D. Student",
     "currentInstitution": "Department of Biochemistry & Biophysics, Texas A&M University, USA",
@@ -1001,6 +1015,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "dr-moushumi-ghosh-roy": {
     "name": "Dr. Moushumi Ghosh Roy",
+    "googleScholar": "https://scholar.google.com/citations?user=kUXjWq4AAAAJ&hl=en",
     "role": "Assistant Professor & Doctoral Scholar",
     "currentPosition": "Assistant Professor, Department of Pharmacy",
     "currentInstitution": "BGC Trust University Bangladesh, Chittagong",
@@ -1067,8 +1082,8 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   "sabrina-akter": {
     "name": "Sabrina Akter",
     "role": "Lecturer, USTC · Former MSI Lab Research Associate",
-    "currentPosition": "Lecturer, Department of Biochemistry and Biotechnology",
-    "currentInstitution": "University of Science and Technology Chittagong (USTC)",
+    "currentPosition": "Lecturer",
+    "currentInstitution": "Department of Biochemistry and Biotechnology, University of Science and Technology Chittagong (USTC)",
     "location": "Chittagong, Bangladesh",
     "email": "sabrina@ustc.ac.bd",
     "institutionalEmail": "sabrina@ustc.ac.bd",
@@ -1121,7 +1136,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   "rafiqul-shanta": {
     "name": "Md. Rafiqul Islam Shanta",
     "role": "Research Fellow, BFRI · Former Graduate Research Assistant",
-    "currentPosition": "Research Fellow, Bangladesh Forest Research Institute (BFRI)",
+    "currentPosition": "Research Fellow",
     "currentInstitution": "Bangladesh Forest Research Institute (BFRI), Chittagong",
     "location": "Chittagong, Bangladesh",
     "linkedin": "https://www.linkedin.com/in/rafiqul-islam-691710153/",
@@ -1492,6 +1507,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "jafrina-akter-eva": {
     "name": "Jafrina Akter Eva",
+    "researchgate": "https://www.researchgate.net/profile/Jafrina-Eva",
     "role": "Graduate Research Assistant",
     "currentPosition": "Graduate Research Assistant, MSI Lab",
     "currentInstitution": "Department of Biochemistry & Molecular Biology, University of Chittagong",
@@ -1796,6 +1812,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "dr-m-monirul-islam": {
     "name": "Prof. Dr. Mohammad Monirul Islam",
+    "googleScholar": "https://scholar.google.com/citations?user=vT57c5kAAAAJ",
     "role": "Professor & Principal Investigator",
     "currentPosition": "Professor & Head of Laboratory",
     "currentInstitution": "University of Chittagong",
@@ -1804,8 +1821,8 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
     "email": "islammm@cu.ac.bd",
     "institutionalEmail": "islammm@cu.ac.bd",
     "phone": "+8801750180422",
-    "researchgate": "https://www.researchgate.net/profile/Md-Islam-2210",
-    "profileUrl": "https://cu.ac.bd",
+    "researchgate": "https://www.researchgate.net/profile/Mohammad-Islam-142",
+    "profileUrl": "https://cu.ac.bd/faculty/faculty_member_details.php?id=1411&is_prof=1",
     "cvUrl": "/cv/dr-m-monirul-islam_cv.pdf",
     "image": "/PI/Mohammad%20Monirul%20Islam,%20PI,%20MSI%20Lab.jpg",
     "senioritySession": "PhD Research (TUAT, Tokyo)",
@@ -2410,6 +2427,7 @@ export const DETAILED_PROFILES: Record<string, ProfileDetail> = {
   },
   "mamtaz-mishu": {
     "name": "Mamtaz Sultana (Mishu)",
+    "researchgate": "https://www.researchgate.net/profile/Mamtaz-Sultana",
     "role": "M.Sc. Research Fellow (Alumna)",
     "currentPosition": "Scientific Officer",
     "currentInstitution": "Bangladesh Council of Scientific and Industrial Research (BCSIR)",

@@ -2,7 +2,7 @@
 **Lecturer, USTC & PhD Fellow, University of Alabama**  
 **Institution:** University of Science and Technology Chittagong (USTC)  
 **Contact:** tipo@ustc.ac.bd   
-**Profile Links:** [University Profile](https://ustc.ac.bd/fm-imrul-hasan-tipo/)
+**Profile Links:** [University Profile](https://ustc.ac.bd/fm-imrul-hasan-tipo/) | [Google Scholar](https://scholar.google.com/citations?user=DsQGfbQAAAAJ&hl=en)
 
 ---
 

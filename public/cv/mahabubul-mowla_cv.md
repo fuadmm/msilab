@@ -2,7 +2,7 @@
 **Lecturer, USTC · Former MSI Lab Research Fellow**  
 **Institution:** University of Science and Technology Chittagong (USTC)  
 **Contact:** mahabubul@ustc.ac.bd   
-**Profile Links:** [University Profile](https://ustc.ac.bd/fm-mahabubul-mowla/)
+**Profile Links:** [University Profile](https://ustc.ac.bd/fm-mahabubul-mowla/) | [ResearchGate](https://www.researchgate.net/profile/Mahabubul-Mowla-2)
 
 ---
 

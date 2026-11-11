@@ -2,7 +2,7 @@
 **Lecturer (on study leave) & PhD Researcher at Purdue University**  
 **Institution:** Hajee Mohammad Danesh Science & Technology University (HSTU) / Purdue University, USA  
 **Contact:** bmb.nazmul@gmail.com | Tel: +8801515284213  
-**Profile Links:** [University Profile](https://hstu.ac.bd/teacher/nazmulbmb)
+**Profile Links:** [University Profile](https://hstu.ac.bd/teacher/nazmulbmb) | [ResearchGate](https://www.researchgate.net/profile/Md-Nazmul-Hasan-3) | [Google Scholar](https://scholar.google.com/citations?user=h-yKDlAAAAAJ&hl=en)
 
 ---
 

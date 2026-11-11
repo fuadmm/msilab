@@ -2,9 +2,7 @@
 **M.Sc. Research Fellow (Alumna)**  
 **Institution:** Bangladesh Council of Scientific and Industrial Research (BCSIR)  
 **Contact:** Available upon request   
-**Profile Links:** 
-
----
+**Profile Links:** --- | [ResearchGate](https://www.researchgate.net/profile/Mamtaz-Sultana)
 
 ## 1. Executive Summary & Research Profile
 Mamtaz Sultana (Mishu) investigated engineered epitope-grafted dual-specificity ED3 domains capable of simultaneously recognizing DENV-3 and DENV-4 antibodies. She is currently a Scientific Officer at BCSIR, Bangladesh.

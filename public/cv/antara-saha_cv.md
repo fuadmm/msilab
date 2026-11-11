@@ -2,7 +2,7 @@
 **Graduate Research Assistant & Ph.D. Student**  
 **Institution:** Department of Biochemistry & Biophysics, Texas A&M University, USA  
 **Contact:** Available upon request   
-**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Antara-Saha-5)
+**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Antara-Saha-5) | [Google Scholar](https://scholar.google.com/citations?user=avFRH6UAAAAJ&hl=en) | [Texas A&M Profile](https://bcbp.tamu.edu/people/saha-antara/)
 
 ---
 

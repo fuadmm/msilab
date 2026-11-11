@@ -2,7 +2,7 @@
 **Graduate Research Assistant**  
 **Institution:** Department of Biochemistry & Molecular Biology, University of Chittagong  
 **Contact:** jafrinaaktereva201@gmail.com  
-**Profile Links:** [LinkedIn](https://www.linkedin.com/in/jafrina-akter-eva/)
+**Profile Links:** [LinkedIn](https://www.linkedin.com/in/jafrina-akter-eva/) | [ResearchGate](https://www.researchgate.net/profile/Jafrina-Eva)
 
 ---
 

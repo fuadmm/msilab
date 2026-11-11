@@ -2,7 +2,7 @@
 **Graduate Research Assistant & Ph.D. Candidate**  
 **Institution:** Department of Molecular Biosciences, University of Texas at Austin, USA  
 **Contact:** Available upon request   
-**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Abu-Bakar-Siddik-7)
+**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Abu-Bakar-Siddik-7) | [Google Scholar](https://scholar.google.com/citations?user=FwhJCXwAAAAJ&hl=en)
 
 ---
 

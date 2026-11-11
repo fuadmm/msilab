@@ -2,7 +2,7 @@
 **Assistant Professor & Doctoral Scholar**  
 **Institution:** BGC Trust University Bangladesh, Chittagong  
 **Contact:** Available upon request   
-**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Moushumi-Ghosh-Roy)
+**Profile Links:** [ResearchGate](https://www.researchgate.net/profile/Moushumi-Ghosh-Roy) | [Google Scholar](https://scholar.google.com/citations?user=kUXjWq4AAAAJ&hl=en)
 
 ---
 

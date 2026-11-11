@@ -2,7 +2,7 @@
 **Professor · Senior Monoclonal Antibody Scientist**  
 **Institution:** University of Chittagong  
 **Contact:** Available upon request | Tel: 01786233770  
-**Profile Links:** [University Profile](https://cu.ac.bd/public_profile/index.php?ein=3780) | [ResearchGate](https://www.researchgate.net/profile/Md-Kabir-160)
+**Profile Links:** [University Profile](https://cu.ac.bd/public_profile/index.php?ein=3780) | [ResearchGate](https://www.researchgate.net/profile/Md-Kabir-160) | [Google Scholar](https://scholar.google.com/citations?user=1oRYYKAAAAAJ&hl=en)
 
 ---
 

@@ -2,9 +2,7 @@
 **Postdoctoral Researcher · Former M.Sc. Research Fellow**  
 **Institution:** Department of Biochemistry & Molecular Biology, University of Chittagong  
 **Contact:** Available upon request   
-**Profile Links:** 
-
----
+**Profile Links:** --- | [ResearchGate](https://www.researchgate.net/profile/Payal-Barua) | [Google Scholar](https://scholar.google.com/citations?user=NG2zuW0AAAAJ&hl=en)
 
 ## 1. Executive Summary & Research Profile
 Dr. Payal Barua is an immunology researcher and alumnus of the Laboratory of Molecular & Structural Immunology (MSI Lab), Department of Biochemistry and Molecular Biology at the University of Chittagong. Her research explores cell-mediated immune responses, lymphocyte sensitization, cytokine secretion dynamics, and sero-specificity in dengue virus infection.
